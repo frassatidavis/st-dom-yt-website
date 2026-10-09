@@ -1,6 +1,7 @@
 {
   "nav": {
-    "subtitle": "Catholic Church",
+    "brand": "St. Dominic Church",
+    "subtitle": "Youngstown, Ohio",
     "home": "Home",
     "massTimes": "Mass & Confession",
     "sacraments": "Sacraments",
@@ -58,7 +59,7 @@
   "home": {
     "hero": {
       "subtitle": "Served by the Dominican Friars",
-      "title": "St. Dominic\nCatholic Church",
+      "title": "St. Dominic Church",
       "location": "Youngstown, Ohio",
       "ctaVisit": "Start Here",
       "ctaMass": "Mass & Confession Times",

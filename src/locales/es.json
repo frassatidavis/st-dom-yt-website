@@ -1,6 +1,7 @@
 {
   "nav": {
-    "subtitle": "Iglesia Católica",
+    "brand": "Iglesia Santo Domingo",
+    "subtitle": "Youngstown, Ohio",
     "home": "Inicio",
     "massTimes": "Misa y Confesión",
     "sacraments": "Sacramentos",
@@ -58,7 +59,7 @@
   "home": {
     "hero": {
       "subtitle": "Servida por los Frailes Dominicos",
-      "title": "Santo Domingo\nIglesia Católica",
+      "title": "Iglesia Santo Domingo",
       "location": "Youngstown, Ohio",
       "ctaVisit": "Empiece Aquí",
       "ctaMass": "Horarios de Misa y Confesión",

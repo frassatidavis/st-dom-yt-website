@@ -234,8 +234,8 @@ export default function Nav() {
             }}
           />
           <div>
-            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: 17, color: T.burgundy, lineHeight: 1.1, letterSpacing: 0.5 }}>
-              St. Dominic
+            <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 700, fontSize: 16, color: T.burgundy, lineHeight: 1.1, letterSpacing: "0.04em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
+              {t("nav.brand")}
             </div>
             <div style={{ fontSize: 11, letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
               {t("nav.subtitle")}
