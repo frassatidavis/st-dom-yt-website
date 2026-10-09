@@ -2,15 +2,15 @@
   "name": "St. Dominic Catholic Church",
   "short_name": "St. Dominic",
   "description": "St. Dominic Catholic Church — Youngstown, Ohio",
-  "start_url": "/st-dom-yt-website/",
-  "scope": "/st-dom-yt-website/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#FAF6F0",
   "theme_color": "#6B1D2A",
   "orientation": "portrait-primary",
   "icons": [
-    { "src": "/st-dom-yt-website/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/st-dom-yt-website/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "/st-dom-yt-website/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

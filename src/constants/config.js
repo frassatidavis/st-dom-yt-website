@@ -78,9 +78,9 @@ export const CONFIG = {
   // PDFs are posted there before print, so this is always current.
   diocesanBulletinUrl: "https://discovermass.com/church/st-dominic-youngstown-oh/#bulletins",
 
-  // Site URL for SEO (canonical, OpenGraph, etc.)
-  // Update this when deploying to the production domain
-  siteUrl: (import.meta.env.VITE_SITE_URL || "https://jmmarquez2025.github.io/st-dom-yt-website").replace(/\/$/, ""),
+  // Site URL for SEO (canonical, OpenGraph, etc.). Also sets the path the
+  // build is served under (see vite.config.js).
+  siteUrl: (import.meta.env.VITE_SITE_URL || "https://saintdominic.org").replace(/\/$/, ""),
 
   // Admin CMS — Google Apps Script URL backing the Staff Dashboard.
   // Lets admin edits sync across browsers/devices instead of living only

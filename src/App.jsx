@@ -13,6 +13,7 @@ import AnnouncementBanner from "./announcements/AnnouncementBanner";
 import AnnouncementPopup from "./announcements/AnnouncementPopup";
 import { pullAll, installAutoSync, isConfigured as adminCmsConfigured } from "./cms/adminSync";
 import useLenis from "./hooks/useLenis";
+import { LEGACY_REDIRECTS } from "./data/legacyRedirects";
 
 // Install the localStorage interceptor immediately (module-eval time) so
 // every admin write — even ones that happen before React mounts — is seen.
@@ -100,6 +101,13 @@ function AppRoutes() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/writers-guide" element={<WritersGuide />} />
             <Route path="/connect" element={<Connect />} />
+            {/* Old eCatholic URLs (the build also writes static redirect pages for these) */}
+            {Object.entries(LEGACY_REDIRECTS).map(([from, to]) => (
+              <Route key={from} path={from} element={<Navigate to={to} replace />} />
+            ))}
+            <Route path="/events/:slug" element={<Navigate to="/events" replace />} />
+            <Route path="/news/:slug" element={<Navigate to="/" replace />} />
+            <Route path="/photoalbums/:slug" element={<Navigate to="/gallery" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -1,5 +1,8 @@
-const CACHE_NAME = "st-dominic-v5";
-const BASE = "/st-dom-yt-website/";
+// Bump CACHE_NAME whenever cached files must be refetched by returning visitors.
+const CACHE_NAME = "st-dominic-v6";
+// sw.js sits at the site root, so its own directory is the base path
+// ("/" on saintdominic.org, "/st-dom-yt-website/" on the GitHub Pages URL).
+const BASE = new URL("./", self.location).pathname;
 
 // App shell files to precache on install
 const PRECACHE_URLS = [

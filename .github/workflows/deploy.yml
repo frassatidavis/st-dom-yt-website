@@ -12,6 +12,11 @@ permissions:
 
 env:
   VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN: ${{ vars.VITE_CLOUDFLARE_WEB_ANALYTICS_TOKEN }}
+  # Public URL of the site. It also sets the path the build is served under.
+  # Stays on the GitHub Pages project URL until the saintdominic.org cutover:
+  # then set the repository variable VITE_SITE_URL=https://saintdominic.org
+  # and re-run this workflow (docs/domain-transfer.md).
+  VITE_SITE_URL: ${{ vars.VITE_SITE_URL || 'https://jmmarquez2025.github.io/st-dom-yt-website' }}
 
 concurrency:
   group: pages
@@ -33,6 +38,7 @@ jobs:
       # Audit production dependencies only — dev-only tooling vulns (vitest/vite/esbuild)
       # don't ship to the site and shouldn't block deploys. Real shipped vulns still gate.
       - run: npm audit --audit-level=high --omit=dev
+      - run: npm run test:run
       - run: npm run build
 
       - uses: actions/upload-pages-artifact@v5
