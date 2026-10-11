@@ -25,7 +25,7 @@ const RESOURCES = [
   {
     key: "rosary",
     icon: Headphones,
-    url: "https://hfrrosary.com",
+    url: "https://ascensionpress.com/rosaryinayear",
     color: "#3A5BA0",
   },
   {
@@ -202,7 +202,7 @@ export default function FaithFormation() {
                     <h3
                       style={{
                         fontSize: 19,
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontWeight: 700,
                         color: T.softBlack,
                         margin: 0,
@@ -258,7 +258,7 @@ export default function FaithFormation() {
               <h3
                 style={{
                   fontSize: 18,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   color: T.softBlack,
                   marginBottom: 12,
                 }}
@@ -284,7 +284,7 @@ export default function FaithFormation() {
               <h3
                 style={{
                   fontSize: 18,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   color: T.softBlack,
                   marginBottom: 12,
                 }}
@@ -319,7 +319,7 @@ export default function FaithFormation() {
           <h3
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               color: T.softBlack,
               marginBottom: 14,
             }}

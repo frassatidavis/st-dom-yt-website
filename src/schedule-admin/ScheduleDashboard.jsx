@@ -12,7 +12,7 @@ import { Plus, Trash2, Save, RotateCcw, Clock } from "lucide-react";
 const INPUT = {
   padding: "8px 12px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 6,
   outline: "none",
@@ -61,7 +61,7 @@ function CategoryEditor({ catKey, label, initialRows, onSave }) {
   return (
     <div style={{ background: "#fff", border: `1px solid ${T.stone}`, borderRadius: 10, padding: 20, marginBottom: 16 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: 0, display: "flex", alignItems: "center", gap: 8 }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: 0, display: "flex", alignItems: "center", gap: 8 }}>
           <Clock size={18} color={T.burgundy} /> {label}
         </h3>
         {saved && <span style={{ fontSize: 12, color: "#1a7d42", fontWeight: 600 }}>✓ Saved</span>}
@@ -89,14 +89,14 @@ function CategoryEditor({ catKey, label, initialRows, onSave }) {
       <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
         <button
           onClick={addRow}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
         >
           <Plus size={14} /> Add Time
         </button>
         <button
           onClick={handleSave}
           disabled={!dirty}
-          style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 16px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 6, fontSize: 13, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: dirty ? "pointer" : "default" }}
+          style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 16px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 6, fontSize: 13, fontWeight: 600, fontFamily: "var(--font-body)", cursor: dirty ? "pointer" : "default" }}
         >
           <Save size={14} /> Save
         </button>
@@ -128,14 +128,14 @@ export default function ScheduleDashboard({ onToast }) {
     <div key={nonce}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
         <div>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Mass Schedule</h2>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Mass Schedule</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
             Weekly Mass, confession, and adoration times that appear on the public Mass Times page.
           </p>
         </div>
         <button
           onClick={handleReset}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 13, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 13, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
         >
           <RotateCcw size={14} /> Reset to Defaults
         </button>

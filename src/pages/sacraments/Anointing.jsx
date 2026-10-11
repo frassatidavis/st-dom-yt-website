@@ -71,7 +71,7 @@ export default function Anointing() {
               fontSize: 22,
               color: T.burgundy,
               marginBottom: 16,
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               textAlign: "center",
             }}
           >

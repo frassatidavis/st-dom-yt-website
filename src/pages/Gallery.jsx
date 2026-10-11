@@ -66,7 +66,7 @@ export default function Gallery() {
           <h1
             style={{
               fontSize: "clamp(36px, 7vw, 60px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 700,
               lineHeight: 1.1,
               color: "#fff",
@@ -217,7 +217,7 @@ export default function Gallery() {
             style={{
               color: "rgba(255,255,255,0.85)",
               fontSize: 15,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               marginTop: 16,
               textAlign: "center",
               maxWidth: "80vw",

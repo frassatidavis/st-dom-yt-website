@@ -15,7 +15,7 @@ const INPUT_STYLE = {
   width: "100%",
   padding: "10px 14px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 8,
   outline: "none",
@@ -33,7 +33,7 @@ const LABEL_STYLE = {
   textTransform: "uppercase",
   color: T.warmGray,
   marginBottom: 6,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 function formatDate(str) {
@@ -135,7 +135,7 @@ function EntryForm({ initial = {}, onSave, onCancel, isNew }) {
             padding: "8px 16px", background: "none",
             border: `1.5px solid ${T.stone}`, borderRadius: 8,
             fontSize: 13, color: T.warmGray, cursor: "pointer",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           <X size={13} /> Cancel
@@ -147,7 +147,7 @@ function EntryForm({ initial = {}, onSave, onCancel, isNew }) {
             padding: "8px 18px", background: T.burgundy,
             border: "none", borderRadius: 8,
             fontSize: 13, fontWeight: 600, color: "#fff", cursor: "pointer",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           <Check size={13} /> {isNew ? "Add" : "Save"}
@@ -199,7 +199,7 @@ export default function BulletinDashboard({ onToast }) {
       <div style={{ marginBottom: 32 }}>
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 28,
             fontWeight: 600,
             color: T.softBlack,
@@ -208,7 +208,7 @@ export default function BulletinDashboard({ onToast }) {
         >
           Bulletin Manager
         </h2>
-        <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
           Manage the current bulletin embed and the archive list shown on the Bulletin page.
         </p>
       </div>
@@ -227,7 +227,7 @@ export default function BulletinDashboard({ onToast }) {
           <Link2 size={18} color={T.burgundy} />
           <h3
             style={{
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               fontSize: 15,
               fontWeight: 700,
               letterSpacing: 0.5,
@@ -239,7 +239,7 @@ export default function BulletinDashboard({ onToast }) {
             Current Bulletin URL
           </h3>
         </div>
-        <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 13, color: T.warmGray, margin: "0 0 16px" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: T.warmGray, margin: "0 0 16px" }}>
           Paste the embed URL for this week's bulletin — usually from FlipHTML5, Issuu, or another flipbook/PDF host. It displays on the public Bulletin page.
         </p>
 
@@ -268,7 +268,7 @@ export default function BulletinDashboard({ onToast }) {
               borderRadius: 8,
               fontSize: 14,
               fontWeight: 600,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               cursor: "pointer",
               transition: "background 0.2s",
               whiteSpace: "nowrap",
@@ -315,7 +315,7 @@ export default function BulletinDashboard({ onToast }) {
             <FileText size={18} color={T.burgundy} />
             <h3
               style={{
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 fontSize: 15,
                 fontWeight: 700,
                 letterSpacing: 0.5,
@@ -333,7 +333,7 @@ export default function BulletinDashboard({ onToast }) {
                 borderRadius: 12,
                 fontSize: 12,
                 color: T.warmGray,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
               }}
             >
               {archive.length}
@@ -354,7 +354,7 @@ export default function BulletinDashboard({ onToast }) {
                 borderRadius: 8,
                 fontSize: 13,
                 fontWeight: 600,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 cursor: "pointer",
               }}
             >
@@ -383,7 +383,7 @@ export default function BulletinDashboard({ onToast }) {
               border: `1px dashed ${T.stone}`,
               borderRadius: 10,
               color: T.warmGray,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             <Newspaper size={36} style={{ opacity: 0.25, marginBottom: 12 }} />
@@ -426,7 +426,7 @@ export default function BulletinDashboard({ onToast }) {
                       flexShrink: 0,
                     }}
                   >
-                    <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "'Cormorant Garamond', serif", color: T.burgundy, lineHeight: 1 }}>
+                    <div style={{ fontSize: 18, fontWeight: 700, fontFamily: "var(--font-display)", color: T.burgundy, lineHeight: 1 }}>
                       {b.date ? new Date(b.date + "T00:00:00").getDate() : "—"}
                     </div>
                     <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1, color: T.warmGray, marginTop: 2 }}>
@@ -436,10 +436,10 @@ export default function BulletinDashboard({ onToast }) {
 
                   {/* Info */}
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 15, fontWeight: 600, color: T.softBlack }}>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 600, color: T.softBlack }}>
                       {b.label || "Untitled"}
                     </div>
-                    <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: T.warmGray, marginTop: 2 }}>
+                    <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: T.warmGray, marginTop: 2 }}>
                       {formatDate(b.date)}
                     </div>
                   </div>
@@ -501,7 +501,7 @@ export default function BulletinDashboard({ onToast }) {
         )}
 
         {archive.length > 0 && (
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: T.warmGray, marginTop: 12, textAlign: "center" }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 12, color: T.warmGray, marginTop: 12, textAlign: "center" }}>
             Entries are automatically sorted newest first.
           </p>
         )}

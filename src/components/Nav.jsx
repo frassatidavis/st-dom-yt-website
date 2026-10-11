@@ -194,7 +194,7 @@ export default function Nav() {
     borderLeft: "none",
     borderBottom: active ? `2px solid ${T.gold}` : "2px solid transparent",
     transition: "all 0.3s",
-    fontFamily: "'Source Sans 3', sans-serif",
+    fontFamily: "var(--font-body)",
     letterSpacing: 0.3,
     display: "flex",
     alignItems: "center",
@@ -222,7 +222,7 @@ export default function Nav() {
         }}
       >
         {/* Logo */}
-        <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
+        <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
           <img
             src={PHOTOS.stDomLogo}
             alt=""
@@ -233,8 +233,8 @@ export default function Nav() {
               border: `1px solid ${T.stone}`, objectFit: "contain", padding: 2, display: "block",
             }}
           />
-          <div>
-            <div style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontWeight: 700, fontSize: 16, color: T.burgundy, lineHeight: 1.1, letterSpacing: "0.04em", textTransform: "uppercase", whiteSpace: "nowrap" }}>
+          <div style={{ minWidth: 0 }}>
+            <div className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, lineHeight: 1.1, letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {t("nav.brand")}
             </div>
             <div style={{ fontSize: 11, letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
@@ -341,7 +341,7 @@ export default function Nav() {
                           fontWeight: isActive(child.to) ? 600 : 400,
                           color: isActive(child.to) ? T.burgundy : T.charcoal,
                           textDecoration: "none",
-                          fontFamily: "'Source Sans 3', sans-serif",
+                          fontFamily: "var(--font-body)",
                           transition: "background 0.2s",
                           whiteSpace: "nowrap",
                         }}
@@ -371,7 +371,7 @@ export default function Nav() {
             style={{
               textDecoration: "none", padding: "8px 16px", fontSize: 13, fontWeight: 600,
               background: T.gold, color: T.softBlack, borderRadius: 2, letterSpacing: 0.5,
-              fontFamily: "'Source Sans 3', sans-serif", marginLeft: 4,
+              fontFamily: "var(--font-body)", marginLeft: 4,
             }}
           >
             {t("nav.give")}
@@ -390,7 +390,7 @@ export default function Nav() {
           className="nav-mobile-toggle"
           style={{
             background: "none", border: "none", cursor: "pointer",
-            padding: 8, fontSize: 24, color: T.burgundy, lineHeight: 1,
+            padding: 8, fontSize: 24, color: T.burgundy, lineHeight: 1, flexShrink: 0,
           }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -441,7 +441,7 @@ export default function Nav() {
                   fontSize: 12,
                   fontWeight: 700,
                   lineHeight: 1.15,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 <IconComp size={18} color={isActive(to) ? T.burgundy : T.goldText} />
@@ -467,7 +467,7 @@ export default function Nav() {
                     fontSize: 16,
                     fontWeight: isGroupActive(item) ? 600 : 400,
                     color: isGroupActive(item) ? T.burgundy : T.charcoal,
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                     background: "none",
                     // Longhand-only border: a bottom divider, no other sides.
                     borderTop: "none",
@@ -507,7 +507,7 @@ export default function Nav() {
                           fontWeight: isActive(child.to) ? 600 : 400,
                           color: isActive(child.to) ? T.burgundy : T.charcoal,
                           borderBottom: `1px solid ${T.stoneLight}`,
-                          fontFamily: "'Source Sans 3', sans-serif",
+                          fontFamily: "var(--font-body)",
                         }}
                       >
                         {t(`nav.${child.key}`)}
@@ -528,7 +528,7 @@ export default function Nav() {
                   fontWeight: isActive(item.to) ? 600 : 400,
                   color: isActive(item.to) ? T.burgundy : T.charcoal,
                   borderBottom: `1px solid ${T.stoneLight}`,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 {t(`nav.${item.key}`)}
@@ -545,7 +545,7 @@ export default function Nav() {
               fontWeight: isActive("/give") ? 600 : 400,
               color: T.goldText,
               borderBottom: `1px solid ${T.stoneLight}`,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             {t("nav.give")}

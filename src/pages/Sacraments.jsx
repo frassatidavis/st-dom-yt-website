@@ -120,7 +120,7 @@ export default function Sacraments() {
                   fontSize: 22,
                   color: T.burgundy,
                   marginBottom: 8,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                 }}
               >
                 {t(`sacraments.${s.key}.title`)}

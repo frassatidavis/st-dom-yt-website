@@ -6,6 +6,15 @@ import { useSchedule } from "../cms/hooks";
 import { getTodayScheduleSummary } from "../utils/schedule";
 import Icon from "./Icon";
 
+// Let a value wrap only between whole times: "8:00 AM, 10:00 AM" may break
+// after the comma, "11:15 AM – 12:00 PM" after the dash, never inside a time.
+function keepTimesTogether(value) {
+  return String(value)
+    .replace(/ (AM|PM)\b/g, "\u00a0$1")
+    .replace(/ – /g, "\u00a0– ")
+    .replace(/\) /g, ")\u00a0");
+}
+
 export default function ParishActionBar() {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -39,9 +48,9 @@ export default function ParishActionBar() {
         const content = (
           <>
             <Icon name={action.icon} size={18} color={T.goldLight} />
-            <span>
+            <span className="parish-action-bar__text">
               <span className="parish-action-bar__label">{action.label}</span>
-              <span className="parish-action-bar__value">{action.value}</span>
+              <span className="parish-action-bar__value">{keepTimesTogether(action.value)}</span>
             </span>
           </>
         );

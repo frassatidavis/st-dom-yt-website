@@ -104,7 +104,7 @@ export default function Events() {
           background: #fff;
           font-size: 12px;
           letter-spacing: 0.2px;
-          font-family: 'Source Sans 3', sans-serif;
+          font-family: var(--font-body);
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -188,7 +188,7 @@ export default function Events() {
                     <div
                       style={{
                         fontSize: 36,
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontWeight: 700,
                         lineHeight: 1,
                         color: "#fff",
@@ -215,7 +215,7 @@ export default function Events() {
                     <h3
                       style={{
                         fontSize: 19,
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontWeight: 600,
                         color: T.softBlack,
                         marginBottom: 6,
@@ -300,7 +300,7 @@ export default function Events() {
                     <span
                       style={{
                         fontSize: 15,
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontWeight: 600,
                         color: T.softBlack,
                       }}

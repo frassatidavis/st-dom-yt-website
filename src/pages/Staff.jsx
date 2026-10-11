@@ -91,7 +91,7 @@ export default function Staff() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           fontWeight: 700,
           fontSize: Math.round(size * 0.32),
           margin: "0 auto",
@@ -133,14 +133,14 @@ export default function Staff() {
           padding: "32px 24px",
           textAlign: "center",
           boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         <Avatar name={person.name} photo={person.photo} size={130} />
         <h3
           style={{
             fontSize: 21,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             marginTop: 18,
             marginBottom: 8,
@@ -200,7 +200,7 @@ export default function Staff() {
         <h3
           style={{
             fontSize: 17,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             marginTop: 14,
             marginBottom: 6,
@@ -276,7 +276,7 @@ export default function Staff() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
             fontSize: 28,
             border: `2px solid ${T.stone}`,
@@ -288,7 +288,7 @@ export default function Staff() {
         <h3
           style={{
             fontSize: 18,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             marginTop: 14,
             marginBottom: 6,
@@ -553,7 +553,7 @@ export default function Staff() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "var(--font-display)",
                     fontWeight: 700,
                     fontSize: 40,
                     margin: "0 auto",
@@ -565,7 +565,7 @@ export default function Staff() {
               <h2
                 style={{
                   fontSize: 26,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   color: modal.group === "staff" ? T.softBlack : "#fff",
                   marginTop: 20,

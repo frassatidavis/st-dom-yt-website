@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Search, X, ArrowRight } from "lucide-react";
@@ -141,6 +142,13 @@ export default function SiteSearch() {
   useEffect(() => {
     const handler = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        // Nav mounts two instances (desktop row + mobile menu); only one
+        // should answer. Prefer the one whose trigger is on screen.
+        const visible = triggerRef.current?.offsetParent != null;
+        const otherVisible = [...document.querySelectorAll("[data-site-search-trigger]")].some(
+          (el) => el !== triggerRef.current && el.offsetParent != null
+        );
+        if (!visible && otherVisible) return;
         e.preventDefault();
         setOpen((prev) => {
           if (prev) setQuery("");
@@ -157,6 +165,7 @@ export default function SiteSearch() {
       {/* Search trigger button */}
       <button
         ref={triggerRef}
+        data-site-search-trigger
         onClick={() => setOpen(true)}
         aria-label="Search the site"
         aria-haspopup="dialog"
@@ -179,8 +188,9 @@ export default function SiteSearch() {
         <Search size={18} strokeWidth={2} />
       </button>
 
-      {/* Modal overlay */}
-      {open && (
+      {/* Modal overlay — portaled to <body> so it shows even when the trigger's
+          nav row is hidden (Cmd/Ctrl+K at widths where the menu button shows). */}
+      {open && createPortal(
         <div
           onClick={handleOverlayClick}
           style={{
@@ -238,7 +248,7 @@ export default function SiteSearch() {
                   outline: "none",
                   background: "transparent",
                   fontSize: 17,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                   color: T.softBlack,
                   letterSpacing: 0.2,
                 }}
@@ -266,7 +276,7 @@ export default function SiteSearch() {
               <kbd
                 style={{
                   fontSize: 11,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                   color: T.warmGray,
                   background: T.cream,
                   border: `1px solid ${T.stone}`,
@@ -294,7 +304,7 @@ export default function SiteSearch() {
                     padding: "40px 20px",
                     textAlign: "center",
                     color: T.warmGray,
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                     fontSize: 15,
                   }}
                 >
@@ -324,7 +334,7 @@ export default function SiteSearch() {
                       cursor: "pointer",
                       textAlign: "left",
                       transition: "background 0.15s",
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                     }}
                   >
                     <div style={{ flex: 1, minWidth: 0 }}>
@@ -333,7 +343,7 @@ export default function SiteSearch() {
                           fontSize: 15,
                           fontWeight: 600,
                           color: isActive ? T.burgundy : T.charcoal,
-                          fontFamily: "'Cormorant Garamond', serif",
+                          fontFamily: "var(--font-display)",
                           letterSpacing: 0.3,
                           transition: "color 0.15s",
                         }}
@@ -370,7 +380,7 @@ export default function SiteSearch() {
                   padding: "20px 20px 24px",
                   textAlign: "center",
                   color: T.warmGray,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                   fontSize: 13,
                 }}
               >
@@ -412,7 +422,8 @@ export default function SiteSearch() {
               to { opacity: 1; transform: scale(1) translateY(0); }
             }
           `}</style>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
@@ -420,7 +431,7 @@ export default function SiteSearch() {
 
 const kbdSmall = {
   fontSize: 10,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   background: "#E8E2D8",
   borderRadius: "var(--radius-control)",
   padding: "1px 5px",

@@ -102,7 +102,7 @@ export default function Give() {
                 fontSize: 28,
                 color: T.burgundy,
                 marginBottom: 16,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
               }}
             >
               {t("give.onlineTitle")}
@@ -176,7 +176,7 @@ export default function Give() {
                   textTransform: "uppercase",
                   borderRadius: 2,
                   textDecoration: "none",
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 {t("give.flocknoteBtn")}

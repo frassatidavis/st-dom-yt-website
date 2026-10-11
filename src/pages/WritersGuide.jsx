@@ -107,7 +107,7 @@ function PassphraseGate({ onUnlock }) {
           <h1
             style={{
               fontSize: 24,
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               color: T.softBlack,
               marginBottom: 8,
@@ -140,7 +140,7 @@ function PassphraseGate({ onUnlock }) {
               border: `1.5px solid ${error ? T.error : T.stone}`,
               borderRadius: "var(--radius-card)",
               outline: "none",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               textAlign: "center",
               letterSpacing: 2,
               transition: "border-color 0.2s",
@@ -174,7 +174,7 @@ function PassphraseGate({ onUnlock }) {
               border: "none",
               borderRadius: "var(--radius-card)",
               cursor: "pointer",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             Enter
@@ -225,7 +225,7 @@ function Toast({ message, type, onDismiss }) {
         boxShadow: "0 4px 16px rgba(0,0,0,0.16)",
         fontSize: 14,
         fontWeight: 600,
-        fontFamily: "'Source Sans 3', sans-serif",
+        fontFamily: "var(--font-body)",
         animation: "fadeInUp 0.3s ease",
       }}
       role="status"
@@ -285,7 +285,7 @@ function SectionTabs({ active, onChange }) {
                 color: isActive ? T.burgundy : T.warmGray,
                 fontSize: 14,
                 fontWeight: isActive ? 600 : 400,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 cursor: "pointer",
                 transition: "all 0.15s",
                 marginBottom: -1, // overlap the border-bottom of the container
@@ -364,7 +364,7 @@ function WelcomeHint({ onGoToData, onDismiss }) {
           alignItems: "center",
           gap: 14,
           flexWrap: "wrap",
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         <span style={{ fontSize: 20 }}>👋</span>
@@ -384,7 +384,7 @@ function WelcomeHint({ onGoToData, onDismiss }) {
             fontSize: 13,
             fontWeight: 600,
             cursor: "pointer",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           Open Data & Help

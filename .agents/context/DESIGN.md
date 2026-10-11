@@ -22,10 +22,10 @@ custom properties. Update both when changing a token.
 Palette is **warm, liturgical (burgundy + gold + cream)** — deliberately not a "tech" palette. Keep it.
 
 ## Typography
-- **Cormorant Garamond** (serif) — headings, display, pull quotes. Weights 400–700 + italic.
-- **Source Sans 3** (sans) — body, labels, UI. Weights 300–600.
-- Loaded via Google Fonts with `display=optional`.
-- Serif headings + sans body is the parish's identity — keep. (Watch for the "generic sans body" tell only where Source Sans is doing display work it shouldn't.)
+- **Georgia** (serif) — headings, display, pull quotes, wordmark. System font; Gelasio (a metric-compatible Georgia) is the web-font fallback for devices without Georgia (e.g. Android). Token: `--font-display`.
+- **Nunito Sans** (sans) — body, labels, UI. Weights 300–800. Token: `--font-body`.
+- Loaded via Google Fonts with `display=swap`. Always use the CSS tokens (`var(--font-display)` / `var(--font-body)`), never a font name, so the theme stays switchable in one place.
+- Serif headings + sans body is the parish's identity — keep.
 
 ## Components & patterns (existing)
 - `Section` / `SectionTitle` (eyebrow + serif H2 + optional gold divider) — `src/components/Section.jsx`

@@ -91,7 +91,7 @@ export default function Funerals() {
               fontSize: 26,
               color: T.softBlack,
               marginBottom: 16,
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
             }}
           >
             {t("sacraments.funerals.cta")}

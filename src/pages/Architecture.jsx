@@ -107,7 +107,7 @@ function StopMarker({ number }) {
           justifyContent: "center",
           fontSize: 15,
           fontWeight: 700,
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           flexShrink: 0,
         }}
       >
@@ -179,7 +179,7 @@ export default function Architecture() {
         <h1
           style={{
             fontSize: "clamp(40px, 8vw, 68px)",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
             lineHeight: 1.1,
             color: "#fff",
@@ -260,7 +260,7 @@ export default function Architecture() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -320,7 +320,7 @@ export default function Architecture() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -360,7 +360,7 @@ export default function Architecture() {
           <blockquote
             style={{
               fontSize: "clamp(22px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontStyle: "italic",
               lineHeight: 1.5,
               color: "#fff",
@@ -391,7 +391,7 @@ export default function Architecture() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -438,7 +438,7 @@ export default function Architecture() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -472,7 +472,7 @@ export default function Architecture() {
           <blockquote
             style={{
               fontSize: "clamp(22px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontStyle: "italic",
               lineHeight: 1.5,
               color: "#fff",
@@ -503,7 +503,7 @@ export default function Architecture() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -565,7 +565,7 @@ export default function Architecture() {
           <h3
             style={{
               fontSize: "clamp(26px, 5vw, 40px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               marginBottom: 20,
               color: "#fff",
               fontWeight: 600,

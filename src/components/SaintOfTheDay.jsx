@@ -90,7 +90,7 @@ export default function SaintOfTheDay() {
       <h2
         style={{
           fontSize: "clamp(26px, 4vw, 36px)",
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           fontWeight: 700,
           lineHeight: 1.15,
           color: T.softBlack,
@@ -104,7 +104,7 @@ export default function SaintOfTheDay() {
       {/* Feast line — italic serif, not a badge */}
       <p
         style={{
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           fontStyle: "italic",
           fontSize: 18,
           color: T.goldText,

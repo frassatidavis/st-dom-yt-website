@@ -232,7 +232,7 @@ export default function GetInvolved() {
                     <h3
                       style={{
                         fontSize: 18,
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontWeight: 600,
                         marginBottom: 8,
                         lineHeight: 1.3,
@@ -273,7 +273,7 @@ export default function GetInvolved() {
           <h2
             style={{
               fontSize: "clamp(26px, 5vw, 38px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               color: "#fff",
               marginBottom: 16,
@@ -354,7 +354,7 @@ export default function GetInvolved() {
               <h2
                 style={{
                   fontSize: 26,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 700,
                   color: "#fff",
                   lineHeight: 1.2,

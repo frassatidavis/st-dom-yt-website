@@ -32,7 +32,7 @@ export default function AnnouncementBanner() {
         color: "#fff",
         padding: "8px 48px 8px 16px",
         fontSize: 13,
-        fontFamily: "'Source Sans 3', sans-serif",
+        fontFamily: "var(--font-body)",
         fontWeight: 500,
         textAlign: "center",
         textDecoration: "none",

@@ -133,7 +133,7 @@ export default function Footer() {
         <div style={{ flex: "1 1 380px", maxWidth: 560 }}>
           <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(28px, 3.4vw, 38px)",
               fontWeight: 700,
               lineHeight: 1.1,
@@ -213,7 +213,7 @@ export default function Footer() {
                     textDecoration: "none",
                     fontSize: 14,
                     padding: "4px 0",
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                   }}
                 >
                   {t(`nav.${l.key}`)}

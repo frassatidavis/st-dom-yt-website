@@ -99,7 +99,7 @@ export default function BecomingCatholic() {
                 <h3
                   style={{
                     fontSize: 20,
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "var(--font-display)",
                     marginBottom: 10,
                     color: T.softBlack,
                   }}
@@ -148,7 +148,7 @@ export default function BecomingCatholic() {
           <h2
             style={{
               fontSize: "clamp(26px, 4vw, 36px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               marginBottom: 12,
               color: T.softBlack,
             }}

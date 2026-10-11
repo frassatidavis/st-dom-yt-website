@@ -11,7 +11,7 @@ export const errorStyle = {
   fontSize: 12,
   color: T.error,
   marginTop: 4,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 const fieldChrome = (focused, error) => ({
@@ -20,7 +20,7 @@ const fieldChrome = (focused, error) => ({
   fontSize: 15,
   border: `1.5px solid ${error ? T.error : focused ? T.burgundy : T.stone}`,
   borderRadius: "var(--radius-control)",
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   background: "#fff",
   outline: "none",
   transition: "border-color 0.25s, box-shadow 0.25s",
@@ -37,7 +37,7 @@ const floatingLabel = (active, focused) => ({
   pointerEvents: "none",
   transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
   letterSpacing: active ? 0.5 : 0,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 });
 
 export function FloatingInput({
@@ -164,7 +164,7 @@ export function StyledSelect({ label, value, onChange, children, ariaLabel }) {
           pointerEvents: "none",
           transition: "color 0.2s",
           letterSpacing: 0.5,
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         {label}

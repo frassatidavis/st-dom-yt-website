@@ -83,7 +83,7 @@ export default function About() {
             <div
               style={{
                 fontSize: "clamp(80px, 12vw, 120px)",
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 color: T.warmGray,
                 lineHeight: 1,
@@ -126,7 +126,7 @@ export default function About() {
             <h2
               style={{
                 fontSize: "clamp(26px, 4vw, 36px)",
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 600,
                 marginBottom: 24,
                 color: T.softBlack,
@@ -291,7 +291,7 @@ export default function About() {
               <h3
                 style={{
                   fontSize: 20,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   marginBottom: 10,
                 }}
               >
@@ -347,7 +347,7 @@ export default function About() {
           <h3
             style={{
               fontSize: "clamp(26px, 5vw, 40px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               marginBottom: 20,
               color: "#fff",
               fontWeight: 600,

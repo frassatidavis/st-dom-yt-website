@@ -18,7 +18,7 @@ const INPUT_STYLE = {
   width: "100%",
   padding: "10px 14px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 8,
   outline: "none",
@@ -36,7 +36,7 @@ const LABEL_STYLE = {
   textTransform: "uppercase",
   color: T.warmGray,
   marginBottom: 6,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 function Field({ label, children, span = 1, hint }) {
@@ -50,7 +50,7 @@ function Field({ label, children, span = 1, hint }) {
             fontSize: 11,
             color: T.warmGray,
             margin: "4px 0 0",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {hint}
@@ -83,7 +83,7 @@ function BannerPreview({ data }) {
         color: "#fff",
         padding: "8px 48px 8px 16px",
         fontSize: 13,
-        fontFamily: "'Source Sans 3', sans-serif",
+        fontFamily: "var(--font-body)",
         fontWeight: 500,
         textAlign: "center",
         position: "relative",
@@ -165,7 +165,7 @@ function PopupPreview({ data }) {
       </div>
       <h3
         style={{
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           fontSize: 22,
           fontWeight: 600,
           color: T.softBlack,
@@ -185,7 +185,7 @@ function PopupPreview({ data }) {
       />
       <p
         style={{
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
           fontSize: 14,
           lineHeight: 1.6,
           color: T.charcoal,
@@ -204,7 +204,7 @@ function PopupPreview({ data }) {
               borderRadius: 8,
               fontSize: 13,
               fontWeight: 600,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             {data.linkText || "Learn More"}
@@ -217,7 +217,7 @@ function PopupPreview({ data }) {
             borderRadius: 8,
             fontSize: 13,
             color: T.warmGray,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           Dismiss
@@ -264,7 +264,7 @@ function DeleteConfirmModal({ onConfirm, onCancel }) {
         />
         <h3
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 20,
             fontWeight: 600,
             color: T.softBlack,
@@ -275,7 +275,7 @@ function DeleteConfirmModal({ onConfirm, onCancel }) {
         </h3>
         <p
           style={{
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: 14,
             color: T.warmGray,
             margin: "0 0 20px",
@@ -293,7 +293,7 @@ function DeleteConfirmModal({ onConfirm, onCancel }) {
               background: "none",
               fontSize: 14,
               fontWeight: 500,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               color: T.warmGray,
               cursor: "pointer",
             }}
@@ -309,7 +309,7 @@ function DeleteConfirmModal({ onConfirm, onCancel }) {
               background: T.error,
               fontSize: 14,
               fontWeight: 600,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               color: "#fff",
               cursor: "pointer",
             }}
@@ -407,7 +407,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
         </button>
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 26,
             fontWeight: 600,
             color: T.softBlack,
@@ -497,7 +497,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
               border: `1.5px solid ${T.stone}`,
               borderRadius: 8,
               cursor: "pointer",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               fontSize: 14,
               color: T.charcoal,
               background: "#fff",
@@ -617,7 +617,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
                       color: selected ? T.burgundy : T.warmGray,
                       fontWeight: selected ? 600 : 400,
                       fontSize: 13,
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       cursor: "pointer",
                       transition: "all 0.15s",
                     }}
@@ -651,7 +651,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
             color: T.warmGray,
             fontSize: 13,
             fontWeight: 500,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             cursor: "pointer",
             transition: "all 0.15s",
           }}
@@ -678,7 +678,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
                 textTransform: "uppercase",
                 color: T.warmGray,
                 marginBottom: 12,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
               }}
             >
               Preview — {type === "banner" ? "Banner Strip" : "Popup Card"}
@@ -716,7 +716,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
             borderRadius: 8,
             fontSize: 14,
             fontWeight: 600,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             cursor: "pointer",
             transition: "background 0.15s",
           }}
@@ -737,7 +737,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
             borderRadius: 8,
             fontSize: 14,
             fontWeight: 500,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             cursor: "pointer",
           }}
         >
@@ -759,7 +759,7 @@ export default function AnnouncementComposer({ announcement, onSave, onDelete, o
               borderRadius: 8,
               fontSize: 14,
               fontWeight: 500,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               cursor: "pointer",
               transition: "border-color 0.15s",
             }}

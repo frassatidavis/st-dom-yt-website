@@ -116,7 +116,7 @@ export default function AnnouncementPopup() {
         {/* Title */}
         <h2
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontSize: 26,
             fontWeight: 600,
             color: T.softBlack,
@@ -141,7 +141,7 @@ export default function AnnouncementPopup() {
         {/* Body */}
         <p
           style={{
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: 15,
             lineHeight: 1.6,
             color: T.charcoal,
@@ -168,7 +168,7 @@ export default function AnnouncementPopup() {
                 borderRadius: 8,
                 fontSize: 14,
                 fontWeight: 600,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 textDecoration: "none",
                 cursor: "pointer",
                 transition: "background 0.15s",
@@ -189,7 +189,7 @@ export default function AnnouncementPopup() {
               borderRadius: 8,
               fontSize: 14,
               fontWeight: 500,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               cursor: "pointer",
               transition: "border-color 0.15s",
             }}

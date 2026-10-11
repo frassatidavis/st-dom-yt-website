@@ -112,14 +112,14 @@ export default function EventDashboard({ onToast }) {
     <div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
         <div>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Events</h2>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Events</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
             Events appear on the public Events page and — if upcoming — on the home page. {list.length} total · {list.filter((e) => e.date >= today()).length} upcoming.
           </p>
         </div>
         <button
           onClick={() => { setEditing(null); setView("compose"); }}
-          style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 20px", background: T.burgundy, color: "#fff", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "10px 20px", background: T.burgundy, color: "#fff", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "var(--font-body)", cursor: "pointer" }}
           onMouseEnter={(e) => (e.currentTarget.style.background = T.burgundyDark)}
           onMouseLeave={(e) => (e.currentTarget.style.background = T.burgundy)}
         >
@@ -141,7 +141,7 @@ export default function EventDashboard({ onToast }) {
                 color: filter === f.key ? T.burgundy : T.warmGray,
                 fontSize: 13,
                 fontWeight: 500,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 cursor: "pointer",
               }}
             >
@@ -155,13 +155,13 @@ export default function EventDashboard({ onToast }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search…"
-            style={{ width: "100%", padding: "8px 12px 8px 30px", fontSize: 13, fontFamily: "'Source Sans 3', sans-serif", border: `1.5px solid ${T.stone}`, borderRadius: 8, outline: "none", boxSizing: "border-box", background: "#fff", color: T.charcoal }}
+            style={{ width: "100%", padding: "8px 12px 8px 30px", fontSize: 13, fontFamily: "var(--font-body)", border: `1.5px solid ${T.stone}`, borderRadius: 8, outline: "none", boxSizing: "border-box", background: "#fff", color: T.charcoal }}
           />
         </div>
       </div>
 
       {filtered.length === 0 ? (
-        <div style={{ textAlign: "center", padding: "64px 24px", color: T.warmGray, fontFamily: "'Source Sans 3', sans-serif" }}>
+        <div style={{ textAlign: "center", padding: "64px 24px", color: T.warmGray, fontFamily: "var(--font-body)" }}>
           <Calendar size={40} style={{ opacity: 0.3, marginBottom: 16 }} />
           <p style={{ fontSize: 16, margin: "0 0 4px" }}>No events found</p>
           <p style={{ fontSize: 13 }}>Create a new event to get started.</p>
@@ -176,7 +176,7 @@ export default function EventDashboard({ onToast }) {
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = T.gold; e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.06)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = T.stone; e.currentTarget.style.boxShadow = "none"; }}
             >
-              <div style={{ minWidth: 72, textAlign: "center", padding: "6px 8px", background: T.cream, borderRadius: 8, fontFamily: "'Source Sans 3', sans-serif" }}>
+              <div style={{ minWidth: 72, textAlign: "center", padding: "6px 8px", background: T.cream, borderRadius: 8, fontFamily: "var(--font-body)" }}>
                 <div style={{ fontSize: 11, color: T.warmGray, textTransform: "uppercase", letterSpacing: 1 }}>
                   {ev.date ? new Date(ev.date + "T00:00:00").toLocaleDateString("en-US", { month: "short" }) : "—"}
                 </div>
@@ -187,12 +187,12 @@ export default function EventDashboard({ onToast }) {
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
                   <CategoryBadge category={ev.category} />
-                  {ev.time && <span style={{ fontSize: 12, color: T.warmGray, fontFamily: "'Source Sans 3', sans-serif" }}>{ev.time}</span>}
+                  {ev.time && <span style={{ fontSize: 12, color: T.warmGray, fontFamily: "var(--font-body)" }}>{ev.time}</span>}
                 </div>
-                <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 15, fontWeight: 600, color: T.charcoal, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 15, fontWeight: 600, color: T.charcoal, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                   {ev.title || "Untitled"}
                 </div>
-                <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 12, color: T.warmGray, marginTop: 2 }}>
+                <div style={{ fontFamily: "var(--font-body)", fontSize: 12, color: T.warmGray, marginTop: 2 }}>
                   {formatDate(ev.date)}{ev.location ? ` · ${ev.location}` : ""}
                 </div>
               </div>

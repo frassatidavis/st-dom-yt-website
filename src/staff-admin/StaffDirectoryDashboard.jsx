@@ -9,7 +9,7 @@ const INPUT = {
   width: "100%",
   padding: "8px 12px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 6,
   outline: "none",
@@ -26,7 +26,7 @@ const LABEL = {
   color: T.warmGray,
   fontWeight: 600,
   marginBottom: 4,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 // Role keys understood by the public Staff page.
@@ -80,7 +80,7 @@ function GroupEditor({ label, rows, onChange, roles, hint }) {
 
   return (
     <div style={{ background: "#fff", border: `1px solid ${T.stone}`, borderRadius: 10, padding: 20, marginBottom: 16 }}>
-      <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 8px", display: "flex", alignItems: "center", gap: 8 }}>
+      <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 8px", display: "flex", alignItems: "center", gap: 8 }}>
         <Users size={18} color={T.burgundy} /> {label}
       </h3>
 
@@ -143,7 +143,7 @@ function GroupEditor({ label, rows, onChange, roles, hint }) {
 
       <button
         onClick={addRow}
-        style={{ marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+        style={{ marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
       >
         <Plus size={14} /> Add Person
       </button>
@@ -198,22 +198,22 @@ export default function StaffDirectoryDashboard({ onToast }) {
     <div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 16 }}>
         <div>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Staff Directory</h2>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Staff Directory</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
             Who appears on the Priests &amp; Staff page, and in what section.
           </p>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           <button
             onClick={handleReset}
-            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 13, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 13, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
           >
             <RotateCcw size={14} /> Reset
           </button>
           <button
             onClick={handleSave}
             disabled={!dirty}
-            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: dirty ? "pointer" : "default" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "var(--font-body)", cursor: dirty ? "pointer" : "default" }}
           >
             <Save size={16} /> Save Changes
           </button>

@@ -24,7 +24,7 @@ export default function NotFound() {
         <div
           style={{
             fontSize: "clamp(80px, 15vw, 140px)",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
             color: T.stone,
             lineHeight: 1,
@@ -36,7 +36,7 @@ export default function NotFound() {
         <h1
           style={{
             fontSize: "clamp(24px, 4vw, 32px)",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             color: T.softBlack,
             marginBottom: 12,

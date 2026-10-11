@@ -7,7 +7,7 @@ const INPUT = {
   width: "100%",
   padding: "10px 14px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 8,
   outline: "none",
@@ -24,7 +24,7 @@ const LABEL = {
   textTransform: "uppercase",
   color: T.warmGray,
   marginBottom: 6,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 function Field({ label, children, span = 1 }) {
@@ -73,7 +73,7 @@ export default function EventComposer({ event, onSave, onDelete, onCancel }) {
         <button onClick={onCancel} style={{ background: "none", border: "none", color: T.warmGray, cursor: "pointer", display: "flex", padding: 4 }} aria-label="Back">
           <ArrowLeft size={20} />
         </button>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, fontWeight: 600, color: T.softBlack, margin: 0 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 600, color: T.softBlack, margin: 0 }}>
           {isEditing ? "Edit Event" : "New Event"}
         </h2>
       </div>
@@ -122,20 +122,20 @@ export default function EventComposer({ event, onSave, onDelete, onCancel }) {
       <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap", paddingTop: 16, borderTop: `1px solid ${T.stoneLight}` }}>
         <button
           onClick={handleSave}
-          style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 28px", background: T.burgundy, color: "#fff", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 28px", background: T.burgundy, color: "#fff", border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "var(--font-body)", cursor: "pointer" }}
           onMouseEnter={(e) => (e.currentTarget.style.background = T.burgundyDark)}
           onMouseLeave={(e) => (e.currentTarget.style.background = T.burgundy)}
         >
           <Save size={16} />
           {isEditing ? "Save Changes" : "Create Event"}
         </button>
-        <button onClick={onCancel} style={{ padding: "11px 24px", background: "none", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 14, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}>
+        <button onClick={onCancel} style={{ padding: "11px 24px", background: "none", color: T.warmGray, border: `1.5px solid ${T.stone}`, borderRadius: 8, fontSize: 14, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}>
           Cancel
         </button>
         {isEditing && (
           <button
             onClick={() => { if (window.confirm("Delete this event permanently?")) onDelete(event.id); }}
-            style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 6, padding: "11px 20px", background: "none", color: T.error, border: "1.5px solid transparent", borderRadius: 8, fontSize: 14, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+            style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 6, padding: "11px 20px", background: "none", color: T.error, border: "1.5px solid transparent", borderRadius: 8, fontSize: 14, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
             onMouseEnter={(e) => (e.currentTarget.style.borderColor = T.error)}
             onMouseLeave={(e) => (e.currentTarget.style.borderColor = "transparent")}
           >

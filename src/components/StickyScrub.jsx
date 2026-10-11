@@ -167,7 +167,7 @@ export default function StickyScrub({
                 {panel.title && (
                   <h2
                     style={{
-                      fontFamily: "'Cormorant Garamond', Georgia, serif",
+                      fontFamily: "var(--font-display)",
                       fontSize: "clamp(2rem, 5vw, 3.25rem)",
                       fontWeight: 500,
                       lineHeight: 1.1,
@@ -182,7 +182,7 @@ export default function StickyScrub({
                 {panel.body && (
                   <p
                     style={{
-                      fontFamily: "'Source Sans 3', system-ui, sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontSize: "clamp(1rem, 1.6vw, 1.2rem)",
                       lineHeight: 1.6,
                       fontWeight: 300,

@@ -73,7 +73,7 @@ function FormSection({ icon: IconComp, title, children, defaultOpen = true }) {
             fontSize: 18,
             fontWeight: 600,
             color: T.burgundy,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
           }}
         >
           {title}
@@ -114,7 +114,7 @@ function SacramentPill({ label, checked, onChange }) {
         fontSize: 14,
         fontWeight: checked ? 600 : 400,
         color: checked ? T.burgundy : T.charcoal,
-        fontFamily: "'Source Sans 3', sans-serif",
+        fontFamily: "var(--font-body)",
       }}
     >
       <div
@@ -179,7 +179,7 @@ function StepIndicator({ currentStep, labels }) {
               justifyContent: "center",
               fontSize: 13,
               fontWeight: 700,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               transition: "all 0.3s",
             }}
           >
@@ -192,7 +192,7 @@ function StepIndicator({ currentStep, labels }) {
               letterSpacing: 0.5,
               color: currentStep >= s.num ? T.burgundy : T.warmGray,
               marginLeft: 6,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               transition: "color 0.3s",
             }}
           >
@@ -465,7 +465,7 @@ export default function Register() {
                   fontSize: 28,
                   color: "#2e7d32",
                   fontWeight: 600,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   marginBottom: 12,
                 }}
               >
@@ -516,7 +516,7 @@ export default function Register() {
                   color: "#2e7d32",
                   cursor: "pointer",
                   fontWeight: 600,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 {t("register.registerAnother") || "Register Another Family"}
@@ -597,7 +597,7 @@ export default function Register() {
                       fontSize: 14,
                       color: T.burgundy,
                       cursor: "pointer",
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontWeight: 600,
                       transition: "all 0.25s",
                     }}
@@ -740,7 +740,7 @@ export default function Register() {
                         fontVariantCaps: "all-small-caps",
                         color: T.warmGray,
                         marginBottom: 12,
-                        fontFamily: "'Source Sans 3', sans-serif",
+                        fontFamily: "var(--font-body)",
                       }}
                     >
                       {t("register.sacramentsReceived")}
@@ -799,7 +799,7 @@ export default function Register() {
                     textTransform: "uppercase",
                     borderRadius: "var(--radius-card)",
                     cursor: status === "sending" ? "wait" : "pointer",
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                     minHeight: 56,
                     width: "100%",
                     display: "flex",

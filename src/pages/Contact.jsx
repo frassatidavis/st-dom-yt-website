@@ -223,7 +223,7 @@ export default function Contact() {
                   fontSize: 28,
                   color: T.softBlack,
                   marginBottom: 8,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 600,
                 }}
               >
@@ -266,7 +266,7 @@ export default function Contact() {
                     fontSize: 22,
                     color: "#2e7d32",
                     fontWeight: 600,
-                    fontFamily: "'Cormorant Garamond', serif",
+                    fontFamily: "var(--font-display)",
                   }}
                 >
                   {statusMessage || t("contact.success")}
@@ -297,7 +297,7 @@ export default function Contact() {
                     color: "#2e7d32",
                     cursor: "pointer",
                     fontWeight: 600,
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                   }}
                 >
                   {t("contact.sendAnother") || "Send Another Message"}
@@ -402,7 +402,7 @@ export default function Contact() {
                       textTransform: "uppercase",
                       borderRadius: "var(--radius-card)",
                       cursor: status === "sending" ? "wait" : "pointer",
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       minHeight: 52,
                       display: "flex",
                       alignItems: "center",
@@ -466,7 +466,7 @@ export default function Contact() {
                   fontSize: 22,
                   color: T.burgundy,
                   marginBottom: 4,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 600,
                 }}
               >
@@ -563,7 +563,7 @@ export default function Contact() {
                       fontWeight: 700,
                       letterSpacing: 0.5,
                       textTransform: "uppercase",
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       cursor: "pointer",
                     }}
                   >

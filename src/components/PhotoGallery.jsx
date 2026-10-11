@@ -82,7 +82,7 @@ export default function PhotoGallery({ photos = [] }) {
             fontSize: 48,
             color: T.stone,
             marginBottom: 16,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
           }}
         >
           ✦
@@ -90,7 +90,7 @@ export default function PhotoGallery({ photos = [] }) {
         <h3
           style={{
             fontSize: 22,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
             color: T.warmGray,
             marginBottom: 8,

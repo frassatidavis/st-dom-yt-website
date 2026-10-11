@@ -64,7 +64,7 @@ export default function Bulletin() {
           <h1
             style={{
               fontSize: "clamp(36px, 7vw, 58px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 700,
               lineHeight: 1.1,
               marginBottom: 16,
@@ -120,7 +120,7 @@ export default function Bulletin() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 34px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               color: T.softBlack,
               textAlign: "center",
@@ -255,7 +255,7 @@ export default function Bulletin() {
               <h3
                 style={{
                   fontSize: 24,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   fontWeight: 600,
                   color: T.softBlack,
                   marginTop: 20,
@@ -343,7 +343,7 @@ export default function Bulletin() {
                           fontSize: 15,
                           fontWeight: 600,
                           color: T.softBlack,
-                          fontFamily: "'Cormorant Garamond', serif",
+                          fontFamily: "var(--font-display)",
                         }}
                       >
                         {b.label}
@@ -421,7 +421,7 @@ export default function Bulletin() {
             <h3
               style={{
                 fontSize: 18,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 600,
                 color: T.softBlack,
                 marginBottom: 8,
@@ -459,7 +459,7 @@ export default function Bulletin() {
             <h3
               style={{
                 fontSize: 18,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 600,
                 color: T.softBlack,
                 marginBottom: 8,

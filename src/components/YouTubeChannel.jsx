@@ -54,7 +54,7 @@ export default function YouTubeChannel() {
               fontWeight: 700,
               letterSpacing: 0.5,
               textTransform: "uppercase",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               cursor: "pointer",
             }}
           >

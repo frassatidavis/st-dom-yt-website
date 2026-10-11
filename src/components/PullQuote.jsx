@@ -47,7 +47,7 @@ export default function PullQuote({
           style={{
             margin: 0,
             padding: 0,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontStyle: "italic",
             fontSize: "clamp(19px, 2.8vw, 25px)",
             lineHeight: 1.45,
@@ -60,7 +60,7 @@ export default function PullQuote({
           <figcaption
             style={{
               marginTop: 10,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               fontVariantCaps: "all-small-caps",
               letterSpacing: "0.08em",
               fontSize: 14,
@@ -92,7 +92,7 @@ export default function PullQuote({
         style={{
           margin: 0,
           padding: 0,
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           fontStyle: "italic",
           fontSize: "clamp(18px, 2.6vw, 23px)",
           lineHeight: 1.5,
@@ -106,7 +106,7 @@ export default function PullQuote({
           style={{
             marginTop: 12,
             marginInline: edge,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: 12,
             letterSpacing: 0.5,
             fontVariantCaps: "all-small-caps",

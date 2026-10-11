@@ -69,7 +69,7 @@ export default function Connect() {
             color: T.warmGray,
             lineHeight: 1.8,
             margin: "0 0 48px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           Check our Facebook page and Instagram for weekly videos, announcements, and important
@@ -82,7 +82,7 @@ export default function Connect() {
               textAlign: "center",
               padding: "48px 24px",
               color: T.warmGray,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             <p>Social media accounts are being set up. Check back soon.</p>
@@ -138,7 +138,7 @@ export default function Connect() {
                   <div style={{ flex: 1 }}>
                     <h3
                       style={{
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "var(--font-display)",
                         fontSize: 20,
                         fontWeight: 600,
                         color: T.softBlack,
@@ -153,7 +153,7 @@ export default function Connect() {
                           fontSize: 13,
                           color: accent,
                           fontWeight: 600,
-                          fontFamily: "'Source Sans 3', sans-serif",
+                          fontFamily: "var(--font-body)",
                         }}
                       >
                         {acc.handle}
@@ -166,7 +166,7 @@ export default function Connect() {
                           color: T.warmGray,
                           lineHeight: 1.6,
                           margin: "8px 0 0",
-                          fontFamily: "'Source Sans 3', sans-serif",
+                          fontFamily: "var(--font-body)",
                         }}
                       >
                         {acc.description}
@@ -180,7 +180,7 @@ export default function Connect() {
                       gap: 4,
                       fontSize: 12,
                       color: T.warmGray,
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                     }}
                   >
                     Visit <ExternalLink size={12} />
@@ -197,7 +197,7 @@ export default function Connect() {
         <SectionTitle sub="Prefer to Call or Email?">In Person & By Phone</SectionTitle>
         <div
           style={{
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             fontSize: 15,
             color: T.charcoal,
             lineHeight: 1.9,

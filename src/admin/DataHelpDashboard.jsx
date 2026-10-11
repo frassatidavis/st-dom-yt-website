@@ -159,10 +159,10 @@ export default function DataHelpDashboard({ onToast }) {
     <div>
       {/* Header */}
       <div style={{ marginBottom: 32 }}>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>
           Data & Help
         </h2>
-        <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
           Back up your work, move data between computers, and learn how the dashboard works.
         </p>
       </div>
@@ -196,10 +196,10 @@ export default function DataHelpDashboard({ onToast }) {
           <FileDown size={26} color={T.burgundy} />
         </div>
         <div style={{ flex: 1, minWidth: 200 }}>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack }}>
+          <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack }}>
             {populated} of {total} sections have custom data
           </div>
-          <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 13, color: T.warmGray, marginTop: 4 }}>
+          <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: T.warmGray, marginTop: 4 }}>
             {populated === 0
               ? "No custom changes saved yet — you're running on the built-in defaults."
               : "Anything you've edited on this computer is saved locally. Export a backup to keep it safe."}
@@ -233,11 +233,11 @@ export default function DataHelpDashboard({ onToast }) {
             {cloudOn ? <Cloud size={22} color={T.burgundy} /> : <CloudOff size={22} color={T.warmGray} />}
           </div>
           <div style={{ flex: 1, minWidth: 220 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack }}>
               {cloudOn ? "Cloud sync is on" : "Cloud sync is off"}
               {cloudOn && syncStatus.pending?.length === 0 && <CheckCircle2 size={16} color="#2f855a" />}
             </div>
-            <div style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 13, color: T.warmGray, marginTop: 4, lineHeight: 1.5 }}>
+            <div style={{ fontFamily: "var(--font-body)", fontSize: 13, color: T.warmGray, marginTop: 4, lineHeight: 1.5 }}>
               {cloudOn ? (
                 <>
                   Your edits automatically save to the shared Google Sheet so every
@@ -272,7 +272,7 @@ export default function DataHelpDashboard({ onToast }) {
                 borderRadius: 6,
                 fontSize: 13,
                 fontWeight: 600,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 cursor: syncing ? "wait" : "pointer",
                 opacity: syncing ? 0.6 : 1,
               }}
@@ -293,7 +293,7 @@ export default function DataHelpDashboard({ onToast }) {
                   borderRadius: 6,
                   fontSize: 13,
                   fontWeight: 600,
-                  fontFamily: "'Source Sans 3', sans-serif",
+                  fontFamily: "var(--font-body)",
                   cursor: "pointer",
                 }}
               >
@@ -304,13 +304,13 @@ export default function DataHelpDashboard({ onToast }) {
         )}
 
         {syncStatus.error && (
-          <div style={{ marginTop: 10, fontSize: 12, color: T.error, fontFamily: "'Source Sans 3', sans-serif" }}>
+          <div style={{ marginTop: 10, fontSize: 12, color: T.error, fontFamily: "var(--font-body)" }}>
             {syncStatus.error}
           </div>
         )}
 
         {!cloudOn && (
-          <details style={{ marginTop: 8, fontFamily: "'Source Sans 3', sans-serif", fontSize: 13, color: T.charcoal, lineHeight: 1.6 }}>
+          <details style={{ marginTop: 8, fontFamily: "var(--font-body)", fontSize: 13, color: T.charcoal, lineHeight: 1.6 }}>
             <summary style={{ cursor: "pointer", fontWeight: 600, color: T.burgundy }}>
               How to turn on cloud sync (5 minutes — technical setup)
             </summary>
@@ -346,7 +346,7 @@ export default function DataHelpDashboard({ onToast }) {
             borderRadius: 10,
             cursor: "pointer",
             textAlign: "left",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             transition: "background 0.15s",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.background = T.burgundyDark)}
@@ -377,7 +377,7 @@ export default function DataHelpDashboard({ onToast }) {
             borderRadius: 10,
             cursor: "pointer",
             textAlign: "left",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             transition: "background 0.15s",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.background = T.cream)}
@@ -404,7 +404,7 @@ export default function DataHelpDashboard({ onToast }) {
           borderRadius: 10,
           padding: "16px 20px",
           marginBottom: 32,
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: 1.5, textTransform: "uppercase", color: T.warmGray, marginBottom: 10 }}>
@@ -428,7 +428,7 @@ export default function DataHelpDashboard({ onToast }) {
 
       {/* Last action */}
       {lastAction && (
-        <div style={{ fontSize: 13, color: T.warmGray, fontFamily: "'Source Sans 3', sans-serif", marginBottom: 24 }}>
+        <div style={{ fontSize: 13, color: T.warmGray, fontFamily: "var(--font-body)", marginBottom: 24 }}>
           Last {lastAction.kind === "export" ? "exported" : "imported"}: {formatDate(lastAction.at)}
           {lastAction.kind === "import" && lastAction.fromDate && ` (backup from ${formatDate(lastAction.fromDate)})`}
           .
@@ -437,7 +437,7 @@ export default function DataHelpDashboard({ onToast }) {
 
       {/* Help sections */}
       <div style={{ marginBottom: 32 }}>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 22, fontWeight: 600, color: T.softBlack, margin: "0 0 16px" }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 600, color: T.softBlack, margin: "0 0 16px" }}>
           How it works
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12 }}>
@@ -447,9 +447,9 @@ export default function DataHelpDashboard({ onToast }) {
                 <div style={{ width: 32, height: 32, borderRadius: "50%", background: `${T.gold}22`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <s.icon size={16} color={T.burgundy} />
                 </div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 17, fontWeight: 600, color: T.softBlack }}>{s.title}</div>
+                <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 600, color: T.softBlack }}>{s.title}</div>
               </div>
-              <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, lineHeight: 1.7, color: T.charcoal, margin: 0 }}>{s.body}</p>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.7, color: T.charcoal, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -457,10 +457,10 @@ export default function DataHelpDashboard({ onToast }) {
 
       {/* Danger zone */}
       <details style={{ background: "#fff", border: `1px solid ${T.stone}`, borderRadius: 10, padding: "14px 18px" }}>
-        <summary style={{ cursor: "pointer", fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, fontWeight: 600, color: T.warmGray, display: "flex", alignItems: "center", gap: 8 }}>
+        <summary style={{ cursor: "pointer", fontFamily: "var(--font-body)", fontSize: 14, fontWeight: 600, color: T.warmGray, display: "flex", alignItems: "center", gap: 8 }}>
           <RefreshCcw size={14} /> Danger zone — start fresh
         </summary>
-        <div style={{ marginTop: 14, fontFamily: "'Source Sans 3', sans-serif", fontSize: 13, color: T.warmGray, lineHeight: 1.6 }}>
+        <div style={{ marginTop: 14, fontFamily: "var(--font-body)", fontSize: 13, color: T.warmGray, lineHeight: 1.6 }}>
           <p style={{ margin: "0 0 12px" }}>
             Clear every admin-managed section on this computer: announcements,
             bulletins, events, schedule, staff, ministries, and site settings.
@@ -472,7 +472,7 @@ export default function DataHelpDashboard({ onToast }) {
           </p>
           <button
             onClick={handleClearAll}
-            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 16px", background: T.error, color: "#fff", border: "none", borderRadius: 6, fontSize: 13, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 16px", background: T.error, color: "#fff", border: "none", borderRadius: 6, fontSize: 13, fontWeight: 600, fontFamily: "var(--font-body)", cursor: "pointer" }}
           >
             <AlertTriangle size={14} /> Clear all admin data
           </button>

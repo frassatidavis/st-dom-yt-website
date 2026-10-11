@@ -33,4 +33,4 @@ export const T = {
 };
 
 export const fontLink =
-  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=optional";
+  "https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,wght@0,300..800;1,400..700&display=swap";

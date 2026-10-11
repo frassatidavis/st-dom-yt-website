@@ -135,7 +135,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
         <div>
           <h2
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontSize: 28,
               fontWeight: 600,
               color: T.softBlack,
@@ -146,7 +146,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
           </h2>
           <p
             style={{
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               fontSize: 14,
               color: T.warmGray,
               margin: "4px 0 0",
@@ -156,7 +156,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
           </p>
           <p
             style={{
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               fontSize: 13,
               color: T.warmGray,
               margin: "6px 0 0",
@@ -179,7 +179,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
             borderRadius: 8,
             fontSize: 14,
             fontWeight: 600,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
             cursor: "pointer",
             transition: "background 0.15s",
           }}
@@ -215,7 +215,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
                 color: filter === f.key ? T.burgundy : T.warmGray,
                 fontSize: 13,
                 fontWeight: 500,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 cursor: "pointer",
                 transition: "all 0.15s",
               }}
@@ -245,7 +245,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
               width: "100%",
               padding: "8px 12px 8px 30px",
               fontSize: 13,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
               border: `1.5px solid ${T.stone}`,
               borderRadius: 8,
               outline: "none",
@@ -264,7 +264,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
             textAlign: "center",
             padding: "64px 24px",
             color: T.warmGray,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           <Megaphone
@@ -355,7 +355,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
                   </div>
                   <div
                     style={{
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontSize: 15,
                       fontWeight: 600,
                       color: T.charcoal,
@@ -368,7 +368,7 @@ export default function AnnouncementDashboard({ onEdit, onNew }) {
                   </div>
                   <div
                     style={{
-                      fontFamily: "'Source Sans 3', sans-serif",
+                      fontFamily: "var(--font-body)",
                       fontSize: 12,
                       color: T.warmGray,
                       marginTop: 2,

@@ -54,7 +54,7 @@ function ActionCard({ icon, label, value, onClick, href }) {
     textDecoration: "none",
     textAlign: "left",
     cursor: "pointer",
-    fontFamily: "'Source Sans 3', sans-serif",
+    fontFamily: "var(--font-body)",
   };
 
   if (href) {
@@ -136,7 +136,7 @@ export default function Home() {
       <LiturgicalBanner />
 
       <StickyHero
-        image={PHOTOS.homeHero}
+        image={PHOTOS.homeHeroProcession}
         overlay={0.18}
         scrim="corner"
         align="bottom-left"

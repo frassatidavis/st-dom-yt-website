@@ -17,8 +17,8 @@
   /* Form/validation error red, leaned toward the brand burgundy (AA on warm white) */
   --color-error: #A03423;
 
-  --font-display: "Cormorant Garamond", serif;
-  --font-body: "Source Sans 3", sans-serif;
+  --font-display: Georgia, Gelasio, "Times New Roman", serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Display sizes get slight negative tracking — large serif set at metal-type
      tightness reads as designed; default tracking at 40px+ reads as default. */
@@ -328,12 +328,32 @@ body.nav-open .parish-action-bar {
   cursor: pointer;
 }
 
-.parish-action-bar__label,
-.parish-action-bar__value {
+.parish-action-bar__item > svg {
+  flex-shrink: 0;
+}
+
+.parish-action-bar__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.parish-action-bar__label {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Times wrap (between whole times only — see ParishActionBar) rather than
+   clip: on a Sunday the last Mass is the Spanish one. */
+.parish-action-bar__value {
+  display: block;
+}
+
+@media (max-width: 400px) {
+  .parish-action-bar__item > svg {
+    display: none;
+  }
 }
 
 .parish-action-bar__label {
@@ -474,7 +494,7 @@ body.nav-open .parish-action-bar {
 .premium-hero__title {
   max-width: 20ch;
   color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-size: clamp(36px, 5.2vw, 64px);
   font-weight: 700;
   line-height: 1.04;
@@ -1416,8 +1436,16 @@ a.contact-link:hover {
 /* ── Nav responsive ── */
 .nav-desktop { display: flex !important; }
 .nav-mobile-toggle { display: none !important; }
-/* Wordmark + full link row need ~1035px (Spanish is the wider locale). */
-@media (max-width: 1080px) {
+/* Nav wordmark: one line, except on the narrowest phones where the Spanish
+   name ("Iglesia Santo Domingo") would push the menu button off-screen. */
+.nav-brand { font-size: 16px; white-space: nowrap; }
+@media (max-width: 400px) {
+  .nav-brand { font-size: clamp(13px, 4vw, 16px); white-space: normal; }
+}
+
+/* Wordmark + full link row need ~1065px (Spanish, Nunito Sans); switch to
+   the menu button a little earlier so the row never looks crammed. */
+@media (max-width: 1120px) {
   .nav-desktop { display: none !important; }
   .nav-mobile-toggle { display: block !important; }
 }

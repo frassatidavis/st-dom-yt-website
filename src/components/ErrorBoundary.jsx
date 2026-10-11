@@ -44,7 +44,7 @@ export default class ErrorBoundary extends Component {
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 28,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 700,
                 margin: "0 auto 24px",
               }}
@@ -54,7 +54,7 @@ export default class ErrorBoundary extends Component {
             <h1
               style={{
                 fontSize: 28,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 fontWeight: 600,
                 color: T.softBlack,
                 marginBottom: 12,

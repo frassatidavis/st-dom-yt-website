@@ -35,7 +35,7 @@ export function PastoralActionPanel({
       fontWeight: 700,
       letterSpacing: 0.5,
       textTransform: "uppercase",
-      fontFamily: "'Source Sans 3', sans-serif",
+      fontFamily: "var(--font-body)",
       cursor: "pointer",
       ...style,
     };
@@ -187,7 +187,7 @@ export function NextSteps({ eyebrow, title, items }) {
               padding: 20,
               textDecoration: "none",
               cursor: "pointer",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             };
 
             if (item.href) {

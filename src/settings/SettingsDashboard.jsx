@@ -8,7 +8,7 @@ const INPUT = {
   width: "100%",
   padding: "10px 14px",
   fontSize: 14,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   border: `1.5px solid ${T.stone}`,
   borderRadius: 8,
   outline: "none",
@@ -25,7 +25,7 @@ const LABEL = {
   textTransform: "uppercase",
   color: T.warmGray,
   marginBottom: 6,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
 };
 
 const CONTACT_FIELDS = [
@@ -94,15 +94,15 @@ export default function SettingsDashboard({ onToast }) {
     <div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 24 }}>
         <div>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Site Settings</h2>
-          <p style={{ fontFamily: "'Source Sans 3', sans-serif", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 600, color: T.softBlack, margin: 0 }}>Site Settings</h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: T.warmGray, margin: "4px 0 0" }}>
             Parish contact info (shown in the footer and Contact page) and social media links.
           </p>
         </div>
         <button
           onClick={handleSave}
           disabled={!dirty}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "'Source Sans 3', sans-serif", cursor: dirty ? "pointer" : "default" }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "10px 20px", background: dirty ? T.burgundy : T.stone, color: dirty ? "#fff" : T.warmGray, border: "none", borderRadius: 8, fontSize: 14, fontWeight: 600, fontFamily: "var(--font-body)", cursor: dirty ? "pointer" : "default" }}
         >
           <Save size={16} /> Save Changes
         </button>
@@ -110,7 +110,7 @@ export default function SettingsDashboard({ onToast }) {
 
       {/* Contact Info */}
       <div style={{ background: "#fff", border: `1px solid ${T.stone}`, borderRadius: 10, padding: 24, marginBottom: 20 }}>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 16px", display: "flex", alignItems: "center", gap: 8 }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 16px", display: "flex", alignItems: "center", gap: 8 }}>
           <Phone size={18} color={T.burgundy} /> Contact Information
         </h3>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
@@ -130,16 +130,16 @@ export default function SettingsDashboard({ onToast }) {
 
       {/* Social Accounts */}
       <div style={{ background: "#fff", border: `1px solid ${T.stone}`, borderRadius: 10, padding: 24 }}>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 16px", display: "flex", alignItems: "center", gap: 8 }}>
+        <h3 style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color: T.softBlack, margin: "0 0 16px", display: "flex", alignItems: "center", gap: 8 }}>
           <Share2 size={18} color={T.burgundy} /> Social Media Accounts
         </h3>
-        <p style={{ fontSize: 13, color: T.warmGray, marginTop: 0, marginBottom: 16, fontFamily: "'Source Sans 3', sans-serif" }}>
+        <p style={{ fontSize: 13, color: T.warmGray, marginTop: 0, marginBottom: 16, fontFamily: "var(--font-body)" }}>
           These appear on the public <strong>Connect</strong> page (where visitors find ways to follow the parish online) and in the site footer. Toggle the switch to hide an account without deleting it.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {social.length === 0 && (
-            <div style={{ textAlign: "center", padding: "24px", color: T.warmGray, fontSize: 13, fontFamily: "'Source Sans 3', sans-serif" }}>
+            <div style={{ textAlign: "center", padding: "24px", color: T.warmGray, fontSize: 13, fontFamily: "var(--font-body)" }}>
               No social accounts yet. Add one below.
             </div>
           )}
@@ -171,7 +171,7 @@ export default function SettingsDashboard({ onToast }) {
 
         <button
           onClick={addSocial}
-          style={{ marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "'Source Sans 3', sans-serif", cursor: "pointer" }}
+          style={{ marginTop: 12, display: "inline-flex", alignItems: "center", gap: 6, padding: "8px 14px", background: "transparent", color: T.burgundy, border: `1.5px dashed ${T.stone}`, borderRadius: 6, fontSize: 13, fontWeight: 500, fontFamily: "var(--font-body)", cursor: "pointer" }}
         >
           <Plus size={14} /> Add Social Account
         </button>

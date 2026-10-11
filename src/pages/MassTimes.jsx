@@ -33,7 +33,7 @@ function ScheduleCard({ title, rows, accent = T.burgundy, t }) {
         <h3
           style={{
             fontSize: 20,
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             marginBottom: 16,
             color: T.softBlack,
           }}
@@ -92,7 +92,7 @@ function AccordionItem({ title, items, defaultOpen = false }) {
           padding: "18px 24px",
           fontSize: 18,
           fontWeight: 600,
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "var(--font-display)",
           color: T.burgundy,
           background: "none",
           border: "none",
@@ -133,7 +133,7 @@ function AccordionItem({ title, items, defaultOpen = false }) {
                 fontSize: 15,
                 lineHeight: 1.8,
                 color: T.charcoal,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 paddingBottom: 4,
               }}
             >
@@ -169,7 +169,7 @@ function ConfessionStep({ number, text }) {
           justifyContent: "center",
           fontWeight: 700,
           fontSize: 14,
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
           flexShrink: 0,
         }}
       >
@@ -181,7 +181,7 @@ function ConfessionStep({ number, text }) {
           lineHeight: 1.7,
           color: T.charcoal,
           margin: 0,
-          fontFamily: "'Source Sans 3', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         {text}
@@ -276,7 +276,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 700,
             margin: "0 auto 40px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.mass.desc")}
@@ -288,7 +288,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 680,
             margin: "-24px auto 36px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.reviewed")}
@@ -320,7 +320,7 @@ export default function MassTimes() {
         <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
           <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(22px, 3.5vw, 32px)",
               fontStyle: "italic",
               color: "#fff",
@@ -356,7 +356,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 700,
             margin: "0 auto 40px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.confession.desc")}
@@ -386,7 +386,7 @@ export default function MassTimes() {
           <h3
             style={{
               fontSize: 22,
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               color: T.softBlack,
               marginBottom: 8,
               textAlign: "center",
@@ -400,7 +400,7 @@ export default function MassTimes() {
               color: T.warmGray,
               textAlign: "center",
               marginBottom: 28,
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             {t("massTimes.confession.howToDesc")}
@@ -419,7 +419,7 @@ export default function MassTimes() {
             <h4
               style={{
                 fontSize: 13,
-                fontFamily: "'Source Sans 3', sans-serif",
+                fontFamily: "var(--font-body)",
                 fontWeight: 700,
                 letterSpacing: 0.5,
                 fontVariantCaps: "all-small-caps",
@@ -436,7 +436,7 @@ export default function MassTimes() {
                 lineHeight: 1.8,
                 color: T.charcoal,
                 fontStyle: "italic",
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 textAlign: "center",
                 margin: 0,
               }}
@@ -460,7 +460,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 700,
             margin: "0 auto 36px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.examine.desc")}
@@ -494,7 +494,7 @@ export default function MassTimes() {
               textAlign: "center",
               marginTop: 20,
               fontStyle: "italic",
-              fontFamily: "'Source Sans 3', sans-serif",
+              fontFamily: "var(--font-body)",
             }}
           >
             {t("massTimes.examine.source")}
@@ -507,7 +507,7 @@ export default function MassTimes() {
         <div style={{ textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
           <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontSize: "clamp(22px, 3.5vw, 32px)",
               fontStyle: "italic",
               color: "#fff",
@@ -543,7 +543,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 700,
             margin: "0 auto 40px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.adoration.desc")}
@@ -584,7 +584,7 @@ export default function MassTimes() {
               <h3
                 style={{
                   fontSize: 20,
-                  fontFamily: "'Cormorant Garamond', serif",
+                  fontFamily: "var(--font-display)",
                   marginBottom: 16,
                   color: T.softBlack,
                 }}
@@ -622,7 +622,7 @@ export default function MassTimes() {
             textAlign: "center",
             maxWidth: 700,
             margin: "0 auto 12px",
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.holyDays.desc")}
@@ -634,7 +634,7 @@ export default function MassTimes() {
             color: T.burgundy,
             textAlign: "center",
             marginBottom: 32,
-            fontFamily: "'Source Sans 3', sans-serif",
+            fontFamily: "var(--font-body)",
           }}
         >
           {t("massTimes.holyDays.schedule")}
@@ -660,7 +660,7 @@ export default function MassTimes() {
                     borderBottom: i < holyDays.length - 1 ? `1px solid ${T.stone}` : "none",
                     fontSize: 15,
                     color: T.charcoal,
-                    fontFamily: "'Source Sans 3', sans-serif",
+                    fontFamily: "var(--font-body)",
                   }}
                 >
                   {day}

@@ -105,7 +105,7 @@ export default function Breadcrumbs() {
       <nav
         aria-label="Breadcrumb"
         style={{
-          fontFamily: "'Source Sans 3', 'Source Sans Pro', sans-serif",
+          fontFamily: "var(--font-body)",
           fontSize: 13,
           lineHeight: "20px",
           padding: "12px 24px",

@@ -111,7 +111,7 @@ export default function History() {
         .history-era { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
         .history-year {
           font-size: clamp(48px, 8vw, 72px);
-          font-family: 'Cormorant Garamond', serif;
+          font-family: var(--font-display);
           font-weight: 700; color: ${T.warmGray}; line-height: 1; flex-shrink: 0;
           font-variant-numeric: oldstyle-nums;
         }
@@ -138,7 +138,7 @@ export default function History() {
         <h1
           style={{
             fontSize: "clamp(44px, 7vw, 68px)",
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 700,
             lineHeight: 1.05,
             letterSpacing: "var(--tracking-display)",
@@ -220,7 +220,7 @@ export default function History() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -251,7 +251,7 @@ export default function History() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -296,7 +296,7 @@ export default function History() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -340,7 +340,7 @@ export default function History() {
           <blockquote
             style={{
               fontSize: "clamp(24px, 5vw, 36px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontStyle: "italic",
               lineHeight: 1.5,
               color: "#fff",
@@ -374,7 +374,7 @@ export default function History() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,
@@ -407,7 +407,7 @@ export default function History() {
           <h2
             style={{
               fontSize: "clamp(24px, 4vw, 32px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               marginBottom: 20,
               color: T.softBlack,

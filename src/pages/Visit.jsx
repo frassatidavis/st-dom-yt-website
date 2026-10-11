@@ -147,7 +147,7 @@ export default function Visit() {
               style={{
                 fontSize: 20,
                 color: T.goldLight,
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "var(--font-display)",
                 marginBottom: 16,
               }}
             >
@@ -224,7 +224,7 @@ export default function Visit() {
           <h2
             style={{
               fontSize: "clamp(26px, 5vw, 38px)",
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "var(--font-display)",
               fontWeight: 600,
               color: "#fff",
               marginBottom: 16,

@@ -17,7 +17,7 @@ export default function LanguageToggle() {
     fontSize: 12,
     fontWeight: 700,
     letterSpacing: 0.8,
-    fontFamily: "'Source Sans 3', sans-serif",
+    fontFamily: "var(--font-body)",
     padding: "5px 10px",
     lineHeight: 1,
     transition: "background 0.2s, color 0.2s",

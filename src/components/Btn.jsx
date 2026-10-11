@@ -10,7 +10,7 @@ const base = {
   border: "none",
   cursor: "pointer",
   borderRadius: 2,
-  fontFamily: "'Source Sans 3', sans-serif",
+  fontFamily: "var(--font-body)",
   minHeight: 44,
 };
 
