@@ -32,7 +32,8 @@ export default function Seo({ title, description, image, schema }) {
   const { pathname } = useLocation();
   const fullTitle = title ? `${title} — ${SITE_NAME}` : SITE_NAME;
   const desc = description || DEFAULT_DESC;
-  const url = `${SITE_URL}${pathname}`;
+  // /mass-times/ is served too (mass-times/index.html); canonical is always /mass-times
+  const url = `${SITE_URL}${pathname === "/" ? "/" : pathname.replace(/\/+$/, "")}`;
   const ogImage = image ? toAbsoluteSiteUrl(image) : DEFAULT_IMAGE;
 
   useEffect(() => {

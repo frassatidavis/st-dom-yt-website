@@ -8,7 +8,7 @@
  *  - src/App.jsx registers a client-side <Navigate> for each one as a backstop.
  *
  * Paths that already exist on the new site (/staff, /faith-formation,
- * /events, /blog) are intentionally absent.
+ * /events) are intentionally absent.
  */
 export const LEGACY_REDIRECTS = {
   // About
@@ -87,6 +87,7 @@ export const LEGACY_REDIRECTS = {
   "/st-margaret-of-castello": "/architecture",
 
   // News, bulletins, calendar, photos
+  "/blog": "/",
   "/bulletins": "/bulletin",
   "/calendar": "/events",
   "/news": "/",

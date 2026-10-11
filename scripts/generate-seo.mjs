@@ -1,9 +1,13 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { loadEnv } from "vite";
 import { LEGACY_REDIRECTS, LEGACY_CHILD_PATHS, legacyTargetFor } from "../src/data/legacyRedirects.js";
 
 const outDir = process.argv[2] || "dist";
-const siteUrl = (process.env.VITE_SITE_URL || "https://saintdominic.org").replace(/\/$/, "");
+// Same lookup as vite.config.js (process env, then .env files) so the pages
+// written here always match the base path the bundle was built for.
+const env = loadEnv("production", process.cwd(), "");
+const siteUrl = (env.VITE_SITE_URL || "https://saintdominic.org").replace(/\/$/, "");
 // Path prefix the site is served under: "" on saintdominic.org,
 // "/st-dom-yt-website" on the GitHub Pages project URL.
 const basePath = new URL(siteUrl).pathname.replace(/\/$/, "");
@@ -104,7 +108,6 @@ for (const from of legacyPaths) {
 <meta charset="utf-8" />
 <title>St. Dominic Catholic Church</title>
 <link rel="canonical" href="${loc(to)}" />
-<meta name="robots" content="noindex" />
 <meta http-equiv="refresh" content="0; url=${href}" />
 <script>location.replace(${JSON.stringify(href)} + location.search + location.hash);</script>
 </head>
