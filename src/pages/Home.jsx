@@ -6,17 +6,15 @@ import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
 import Btn from "../components/Btn";
 
-import { useAnnouncements, useEvents, useSchedule } from "../cms/hooks";
+import { useAnnouncements, useEvents } from "../cms/hooks";
 import Seo from "../components/Seo";
 import LiturgicalBanner from "../components/LiturgicalBanner";
 import VaticanNews from "../components/VaticanNews";
 import YouTubeChannel from "../components/YouTubeChannel";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
-import ResponsivePicture from "../components/ResponsivePicture";
 import StickyHero from "../components/StickyHero";
 import { PHOTOS } from "../constants/photos";
-import { getTodayScheduleSummary } from "../utils/schedule";
 
 const CATEGORY_COLORS = {
   mass: T.burgundy,
@@ -26,44 +24,6 @@ const CATEGORY_COLORS = {
   prayer: "#7B5EA7",
   other: T.warmGray,
 };
-
-/** One row of the Today / Find us list: icon, label + detail, arrow. */
-function EssentialRow({ icon, label, value, onClick, href }) {
-  const content = (
-    <>
-      <Icon name={icon} size={22} color={T.burgundy} />
-      <span className="essential-row__text">
-        <span className="essential-row__label">{label}</span>
-        <span className="essential-row__value">{value}</span>
-      </span>
-      <Icon name="ChevronRight" size={18} color={T.goldText} className="essential-row__arrow" />
-    </>
-  );
-
-  if (href) {
-    const external = href.startsWith("http");
-    return (
-      <li>
-        <a
-          href={href}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="essential-row"
-        >
-          {content}
-        </a>
-      </li>
-    );
-  }
-
-  return (
-    <li>
-      <button type="button" onClick={onClick} className="essential-row">
-        {content}
-      </button>
-    </li>
-  );
-}
 
 function SundayMassCard({ t }) {
   return (
@@ -104,8 +64,6 @@ export default function Home() {
   const navigate = useNavigate();
   const { data: announcements } = useAnnouncements();
   const { data: events } = useEvents();
-  const { data: schedule } = useSchedule();
-  const { masses: todayMasses, confessions: todayConfessions } = getTodayScheduleSummary(schedule);
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`;
 
   const upcoming = useMemo(() => {
@@ -172,61 +130,6 @@ export default function Home() {
         </a>
       </div>
 
-      <section className="premium-essentials">
-        <div className="section-inner--wide">
-          <div className="premium-essentials__lists">
-          <div className="premium-essentials__group">
-            <div className="kicker">{t("home.essentials.todayGroup")}</div>
-            <ul className="essential-list">
-              <EssentialRow
-                icon="Church"
-                label={t("home.essentials.today")}
-                value={todayMasses || t("home.essentials.noMassToday")}
-                onClick={() => navigate("/mass-times")}
-              />
-              <EssentialRow
-                icon="Cross"
-                label={t("home.essentials.confession")}
-                value={todayConfessions || t("home.essentials.noConfessionToday")}
-                onClick={() => navigate("/mass-times")}
-              />
-            </ul>
-            <p className="premium-essentials__note">{t("home.essentials.reviewed")}</p>
-          </div>
-          <div className="premium-essentials__group">
-            <div className="kicker">{t("home.essentials.findUs")}</div>
-            <ul className="essential-list">
-              <EssentialRow
-                icon="MapPin"
-                label={t("home.essentials.directions")}
-                value={t("home.essentials.directionsDesc")}
-                href={mapsHref}
-              />
-              <EssentialRow
-                icon="Newspaper"
-                label={t("home.essentials.bulletin")}
-                value={t("home.essentials.bulletinDesc")}
-                href={CONFIG.diocesanBulletinUrl}
-              />
-              <EssentialRow
-                icon="Phone"
-                label={t("home.essentials.contact")}
-                value={CONFIG.phone}
-                href={CONFIG.phoneLink}
-              />
-            </ul>
-          </div>
-          </div>
-          <div className="premium-essentials__photo">
-            <ResponsivePicture
-              src={PHOTOS.homeEssentialsPhoto}
-              widths={[480, 1024, 1920]}
-              sizes="(max-width: 899px) 100vw, 460px"
-              alt=""
-            />
-          </div>
-        </div>
-      </section>
 
       <Section>
         <div className="premium-two-column">

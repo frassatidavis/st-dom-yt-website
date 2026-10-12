@@ -728,12 +728,6 @@ body.nav-open .parish-action-bar {
 /* Plain underlined language switch — replaces the former 999px translucent pill */
 
 
-.premium-essentials {
-  position: relative;
-  z-index: 2;
-  margin-top: -32px;
-  padding: 0 24px 46px;
-}
 
 /* Home: the Dominican dog between the hero photo and the Today card */
 .home-dog-divider {
@@ -763,9 +757,6 @@ body.nav-open .parish-action-bar {
   width: clamp(120px, 16vw, 180px);
   height: auto;
 }
-.home-dog-divider + .premium-essentials {
-  margin-top: 0;
-}
 
 /* Home: the VERITAS ribbon under the Find Jesus Here actions */
 .home-veritas {
@@ -781,127 +772,6 @@ body.nav-open .parish-action-bar {
 .home-veritas img {
   width: 100%;
   height: auto;
-}
-
-.premium-essentials .section-inner--wide {
-  padding: clamp(24px, 4vw, 34px);
-  background: rgba(255, 253, 249, 0.96);
-  border: 1px solid rgba(232, 226, 216, 0.9);
-  border-radius: var(--radius-modal);
-  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.06);
-}
-
-/* Today + Find us stacked in one column, a tall photo filling the other.
-   On phones the photo drops below the lists at a shorter height. */
-.premium-essentials .section-inner--wide {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 26px;
-}
-.premium-essentials__lists {
-  display: grid;
-  gap: 26px;
-  align-content: start;
-}
-.premium-essentials__photo {
-  position: relative;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-stone-light);
-  aspect-ratio: 4 / 3;
-  max-height: 420px;
-  width: 100%;
-}
-/* The image fills the box without setting its height, so on desktop the
-   photo matches the lists instead of stretching the section. */
-.premium-essentials__photo picture,
-.premium-essentials__photo img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media (min-width: 900px) {
-  .premium-essentials .section-inner--wide {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-    gap: clamp(32px, 5vw, 56px);
-  }
-  .premium-essentials__photo {
-    aspect-ratio: auto;
-    max-height: none;
-  }
-}
-
-.premium-essentials__group > .kicker {
-  display: flex;
-  margin-bottom: 8px;
-}
-
-/* Today / Find us: a list of rows rather than cards */
-.essential-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--color-stone);
-}
-.essential-list > li {
-  border-bottom: 1px solid var(--color-stone);
-}
-.essential-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 14px 6px;
-  border: 0;
-  background: none;
-  color: inherit;
-  text-align: left;
-  text-decoration: none;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-.essential-row:hover {
-  background: rgba(197, 165, 90, 0.08);
-}
-.essential-row > svg {
-  flex-shrink: 0;
-}
-.essential-row__text {
-  flex: 1;
-  min-width: 0;
-}
-.essential-row__label {
-  display: block;
-  margin-bottom: 2px;
-  color: var(--color-gold-text);
-  font-size: 12px;
-  font-weight: 700;
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.08em;
-}
-.essential-row__value {
-  display: block;
-  color: var(--color-soft-black);
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.35;
-}
-.essential-row__arrow {
-  transition: transform 0.2s ease;
-}
-.essential-row:hover .essential-row__arrow {
-  transform: translateX(3px);
-}
-
-.premium-essentials__note {
-  margin-top: 10px;
-  color: var(--color-warm-gray);
-  font-size: 12px;
-  font-variant-numeric: oldstyle-nums;
 }
 
 .premium-gateway-card,
@@ -1627,15 +1497,6 @@ body.nav-open .parish-action-bar {
 
   .premium-hero__nextline {
     font-size: 14px;
-  }
-
-  .premium-essentials {
-    margin-top: 0;
-    padding: 20px 16px 38px;
-  }
-
-  .premium-essentials .section-inner--wide {
-    padding: 22px 18px;
   }
 
   .premium-gateway-grid,

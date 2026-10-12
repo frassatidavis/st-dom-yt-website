@@ -11,7 +11,6 @@ export const PHOTOS = {
   // ── Hero backgrounds (1920px optimized) ──
   homeHero: `${B}photos/aerial-interior-opt.webp`,       // Dramatic drone interior — nave from above
   homeHeroProcession: `${B}photos/home-procession-opt.webp`, // Home page hero — procession down a full nave
-  homeEssentialsPhoto: `${B}photos/interior-nave-opt.webp`,   // Home: tall photo beside Today / Find us — PLACEHOLDER, swap for the parish's chosen photo
   aboutHero: `${B}photos/interior-nave-opt.webp`,         // Professional interior — nave & altar
   visitHero: `${B}photos/rose-window-opt.webp`,           // Church exterior with sign & rose window
   bulletinHero: `${B}photos/vigil-candles-opt.webp`,      // Moody nave interior — Easter Vigil

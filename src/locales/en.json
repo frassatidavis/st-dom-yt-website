@@ -68,25 +68,15 @@
       "ctaBulletin": "Bulletin",
       "ctaBecoming": "Interested in Becoming Catholic?"
     },
+    "essentials": {
+      "today": "Masses",
+      "contact": "Call the Office"
+    },
     "dog": {
       "label": "The Dominican dog with a torch: read “I'm a Dog” in Dominicana Journal (opens in a new tab)"
     },
     "veritas": {
       "label": "Veritas, the Dominican motto: visit the Order of Preachers (opens in a new tab)"
-    },
-    "essentials": {
-      "todayGroup": "Today",
-      "findUs": "Find us",
-      "today": "Masses",
-      "noMassToday": "No Mass listed for today",
-      "confession": "Confession",
-      "noConfessionToday": "See the weekly schedule",
-      "directions": "Address",
-      "directionsDesc": "77 East Lucius Avenue",
-      "bulletin": "Bulletin",
-      "bulletinDesc": "Announcements and parish notices",
-      "contact": "Call the Office",
-      "reviewed": "Mass & confession times verified July 18, 2026"
     },
     "welcome": {
       "sub": "Welcome",
