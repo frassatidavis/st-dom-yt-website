@@ -8,6 +8,7 @@ import PremiumPageActions from "../components/PremiumPageActions";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
+import DiscoverMassBulletin from "../components/DiscoverMassBulletin";
 import { PHOTOS } from "../constants/photos";
 import { ExternalLink, FileText } from "lucide-react";
 import { useAdminSyncSignal, useBulletins } from "../cms/hooks";
@@ -27,6 +28,8 @@ export default function Bulletin() {
   const { data: cmsBulletins } = useBulletins();
   const adminArchive = useMemo(() => (hasArchive() ? getArchive() : null), [syncVersion]);
   const bulletins = adminArchive || cmsBulletins;
+  // Placeholder entries without links aren't worth showing; past issues live on DiscoverMass.
+  const hasLinkedArchive = bulletins.some((b) => b.url);
 
   return (
     <div style={{ paddingTop: 76 }}>
@@ -102,7 +105,8 @@ export default function Bulletin() {
           {
             title: t("bulletin.archive.title"),
             description: t("bulletin.archive.sub"),
-            href: "#bulletin-archive",
+            href: hasLinkedArchive ? "#bulletin-archive" : CONFIG.diocesanBulletinUrl,
+            external: !hasLinkedArchive,
             icon: "FileText",
           },
           {
@@ -241,68 +245,72 @@ export default function Bulletin() {
               </div>
             </>
           ) : (
-            /* Fallback when no URL configured */
-            <div
-              style={{
-                textAlign: "center",
-                padding: "clamp(48px, 8vw, 80px) 24px",
-                background: T.cream,
-                borderRadius: "var(--radius-card)",
-                border: `1px solid ${T.stone}`,
-              }}
-            >
-              <Icon name="Newspaper" size={64} color={T.stone} />
-              <h3
-                style={{
-                  fontSize: 24,
-                  fontFamily: "var(--font-display)",
-                  fontWeight: 600,
-                  color: T.softBlack,
-                  marginTop: 20,
-                  marginBottom: 12,
-                }}
-              >
-                {t("bulletin.fallback.title")}
-              </h3>
-              <p
-                style={{
-                  fontSize: 15,
-                  color: T.warmGray,
-                  lineHeight: 1.7,
-                  maxWidth: 480,
-                  margin: "0 auto 24px",
-                }}
-              >
-                {t("bulletin.fallback.desc")}
-              </p>
-              <a
-                href={CONFIG.diocesanBulletinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-hover"
-                style={{
-                  display: "inline-block",
-                  padding: "14px 32px",
-                  fontSize: 14,
-                  fontWeight: 600,
-                  letterSpacing: 0.5,
-                  textTransform: "uppercase",
-                  background: T.burgundy,
-                  color: T.cream,
-                  borderRadius: 2,
-                  textDecoration: "none",
-                  transition: "all 0.3s ease",
-                }}
-              >
-                {t("bulletin.fallback.cta")}
-              </a>
-            </div>
+            /* This week's cover from DiscoverMass; the box below if it has nothing to show */
+            <DiscoverMassBulletin
+              fallback={
+                <div
+                  style={{
+                    textAlign: "center",
+                    padding: "clamp(48px, 8vw, 80px) 24px",
+                    background: T.cream,
+                    borderRadius: "var(--radius-card)",
+                    border: `1px solid ${T.stone}`,
+                  }}
+                >
+                  <Icon name="Newspaper" size={64} color={T.stone} />
+                  <h3
+                    style={{
+                      fontSize: 24,
+                      fontFamily: "var(--font-display)",
+                      fontWeight: 600,
+                      color: T.softBlack,
+                      marginTop: 20,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {t("bulletin.fallback.title")}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      color: T.warmGray,
+                      lineHeight: 1.7,
+                      maxWidth: 480,
+                      margin: "0 auto 24px",
+                    }}
+                  >
+                    {t("bulletin.fallback.desc")}
+                  </p>
+                  <a
+                    href={CONFIG.diocesanBulletinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-hover"
+                    style={{
+                      display: "inline-block",
+                      padding: "14px 32px",
+                      fontSize: 14,
+                      fontWeight: 600,
+                      letterSpacing: 0.5,
+                      textTransform: "uppercase",
+                      background: T.burgundy,
+                      color: T.cream,
+                      borderRadius: 2,
+                      textDecoration: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    {t("bulletin.fallback.cta")}
+                  </a>
+                </div>
+              }
+            />
           )}
         </div>
       </Section>
 
-      {/* ════ Bulletin Archive ════ */}
-      {bulletins.length > 0 && (
+      {/* ════ Bulletin Archive ════ (hidden while it only holds placeholders without links) */}
+      {hasLinkedArchive && (
         <Section id="bulletin-archive" bg={T.cream}>
           <SectionTitle sub={t("bulletin.archive.sub")}>{t("bulletin.archive.title")}</SectionTitle>
           <div

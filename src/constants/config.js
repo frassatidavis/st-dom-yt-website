@@ -78,6 +78,15 @@ export const CONFIG = {
   // PDFs are posted there before print, so this is always current.
   diocesanBulletinUrl: "https://discovermass.com/church/st-dominic-youngstown-oh/#bulletins",
 
+  // DiscoverMass (Diocesan) weekly bulletin, shown on /bulletin.
+  // - discoverMassBulletinNumber: the parish's Diocesan bulletin number; the
+  //   page shows that week's cover from bulletins.discovermass.com.
+  // - discoverMassKey: the parish's bulletin-widget key from Diocesan
+  //   (877-212-7335). When set, the page also links the PDF and the last
+  //   four issues. Not a secret — Diocesan's widget puts it in page markup.
+  discoverMassBulletinNumber: "2387",
+  discoverMassKey: import.meta.env.VITE_DISCOVERMASS_KEY || "",
+
   // Site URL for SEO (canonical, OpenGraph, etc.). Also sets the path the
   // build is served under (see vite.config.js).
   siteUrl: (import.meta.env.VITE_SITE_URL || "https://saintdominic.org").replace(/\/$/, ""),

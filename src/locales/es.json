@@ -480,11 +480,20 @@
     },
     "heading": "Boletín de Esta Semana",
     "loading": "Cargando boletín...",
-    "reviewed": "Los boletines actuales se publican cuando se conecte el sistema parroquial. Archivo verificado el 18 de julio de 2026.",
+    "reviewed": "Publicado cada semana por Diocesan en DiscoverMass — muchas veces antes de imprimirse.",
     "fallback": {
       "title": "Boletín Próximamente",
       "desc": "Nuestro boletín semanal es publicado por Diocesan y se sube a nuestra página parroquial en DiscoverMass — muchas veces antes de imprimirse. Vea allí el boletín actual y las ediciones anteriores.",
       "cta": "Ver Boletines en DiscoverMass"
+    },
+    "current": {
+      "label": "Boletín del {{date}}",
+      "coverAlt": "Portada del boletín de Santo Domingo del {{date}}",
+      "read": "Leer el Boletín de Esta Semana",
+      "view": "Ver en DiscoverMass",
+      "desc": "El boletín completo — intenciones de Misa, anuncios y el mensaje del párroco — se abre en DiscoverMass, donde también se guardan los números anteriores.",
+      "previous": "Números Anteriores",
+      "more": "Todos los boletines en DiscoverMass"
     },
     "fullscreen": "Ver Pantalla Completa",
     "info": {

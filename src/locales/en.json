@@ -480,11 +480,20 @@
     },
     "heading": "This Week's Bulletin",
     "loading": "Loading bulletin...",
-    "reviewed": "Current bulletins are posted once the parish feed is connected. Archive verified July 18, 2026.",
+    "reviewed": "Published each week by Diocesan on DiscoverMass — often before it is printed.",
     "fallback": {
       "title": "Bulletin Coming Soon",
       "desc": "Our weekly bulletin is published by Diocesan and posted to our parish page on DiscoverMass — often before it is even printed. View the current bulletin and past issues there.",
       "cta": "View Bulletins on DiscoverMass"
+    },
+    "current": {
+      "label": "Bulletin for {{date}}",
+      "coverAlt": "Cover of the St. Dominic bulletin for {{date}}",
+      "read": "Read This Week's Bulletin",
+      "view": "View on DiscoverMass",
+      "desc": "The full bulletin — Mass intentions, announcements, and the pastor's message — opens on DiscoverMass, where past issues are kept too.",
+      "previous": "Previous Issues",
+      "more": "All bulletins on DiscoverMass"
     },
     "fullscreen": "View Full Screen",
     "info": {

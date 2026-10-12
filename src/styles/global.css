@@ -406,6 +406,99 @@ body.nav-open .parish-action-bar {
   .residence-grid > .flip-card { flex-basis: calc(25% - 18px); max-width: none; }
 }
 
+/* This week's bulletin from DiscoverMass (src/components/DiscoverMassBulletin.jsx):
+   cover beside the details on wide screens, stacked on phones. */
+.dm-bulletin {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.dm-bulletin__cover {
+  display: block;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(26, 23, 20, 0.12);
+  background: var(--color-cream);
+}
+.dm-bulletin__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 447 / 578;
+}
+.dm-bulletin__date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.2;
+  color: var(--color-soft-black);
+  margin-bottom: 12px;
+}
+.dm-bulletin__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-warm-gray);
+  margin-bottom: 24px;
+}
+.dm-bulletin__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: var(--color-burgundy);
+  color: var(--color-cream);
+  border-radius: 2px;
+  text-decoration: none;
+}
+.dm-bulletin__archive {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-stone);
+}
+.dm-bulletin__archive h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--color-soft-black);
+}
+.dm-bulletin__archive ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+.dm-bulletin__archive li + li {
+  margin-top: 8px;
+}
+.dm-bulletin__archive a,
+.dm-bulletin__more {
+  color: var(--color-burgundy);
+  font-weight: 600;
+}
+.dm-bulletin__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .dm-bulletin {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .dm-bulletin__cover {
+    width: min(100%, 340px);
+  }
+}
+
 /* ── Reusable layout classes ── */
 .section-inner {
   max-width: 800px;
