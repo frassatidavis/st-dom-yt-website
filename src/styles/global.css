@@ -707,7 +707,6 @@ body.nav-open .parish-action-bar {
   .premium-hero__title {
     color: rgba(255, 255, 255, 0.12);
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
-    letter-spacing: 0.06em;
   }
 }
 
@@ -734,6 +733,13 @@ body.nav-open .parish-action-bar {
   max-width: none;
   margin: 0;
   text-align: center;
+  font-size: clamp(40px, 6.4vw, 84px);
+  letter-spacing: 0.12em;
+}
+@media (max-width: 700px) {
+  .premium-hero__center .premium-hero__title {
+    font-size: clamp(32px, 10.5vw, 52px);
+  }
 }
 /* Phones turned sideways: keep the one-line title clear of Skip / Replay */
 @media (max-height: 500px) {
