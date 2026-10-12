@@ -641,6 +641,14 @@ body.nav-open .parish-action-bar {
   justify-content: flex-start;
 }
 
+/* Start Here with Bulletin directly beneath it, same width */
+.premium-hero__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
 /* Historical name — action rows now sit on the left text axis. The class
    stays (string-coupled across pages); only the alignment changed. */
 .premium-centered-actions {

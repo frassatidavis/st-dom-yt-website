@@ -150,9 +150,18 @@ export default function Home() {
           <p className="home-hero-location premium-hero__location">{t("home.hero.location")}</p>
 
           <div className="premium-hero__actions">
-            <Btn variant="gold" onClick={() => navigate("/visit")} style={{ minWidth: 168 }}>
-              {t("home.hero.ctaVisit")}
-            </Btn>
+            <div className="premium-hero__buttons">
+              <Btn variant="gold" onClick={() => navigate("/visit")} style={{ minWidth: 168 }}>
+                {t("home.hero.ctaVisit")}
+              </Btn>
+              <Btn
+                variant="primary"
+                onClick={() => navigate("/bulletin")}
+                style={{ minWidth: 168, boxShadow: "inset 0 0 0 1px rgba(232, 213, 163, 0.55)" }}
+              >
+                {t("home.hero.ctaBulletin")}
+              </Btn>
+            </div>
             <button
               type="button"
               className="premium-light-link"
