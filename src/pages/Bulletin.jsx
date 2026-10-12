@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
@@ -438,69 +438,13 @@ export default function Bulletin() {
               {t("bulletin.info.deadline")}
             </h3>
             <p style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7 }}>
-              {t("bulletin.info.deadlineDesc")}
-            </p>
-          </div>
-
-          {/* Contact card */}
-          <div
-            className="glass-card"
-            style={{
-              padding: 32,
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: 3,
-                background: T.gold,
-              }}
-            />
-            <div style={{ marginBottom: 14 }}>
-              <Icon name="Mail" size={28} color={T.gold} />
-            </div>
-            <h3
-              style={{
-                fontSize: 18,
-                fontFamily: "var(--font-display)",
-                fontWeight: 600,
-                color: T.softBlack,
-                marginBottom: 8,
-              }}
-            >
-              {t("bulletin.info.contact")}
-            </h3>
-            <p style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7, marginBottom: 16 }}>
-              {t("bulletin.info.contactDesc")}
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              <a
-                href={CONFIG.phoneLink}
-                style={{
-                  fontSize: 15,
-                  fontWeight: 600,
-                  color: T.burgundy,
-                  textDecoration: "none",
+              <Trans
+                i18nKey="bulletin.info.deadlineDesc"
+                components={{
+                  email: <a href={`mailto:${CONFIG.email}`} style={{ color: T.burgundy, fontWeight: 600 }} />,
                 }}
-              >
-                {CONFIG.phone}
-              </a>
-              <a
-                href={`mailto:${CONFIG.email}`}
-                style={{
-                  fontSize: 14,
-                  color: T.warmGray,
-                  textDecoration: "none",
-                }}
-              >
-                {CONFIG.email}
-              </a>
-            </div>
+              />
+            </p>
           </div>
         </div>
       </Section>
