@@ -655,26 +655,7 @@ body.nav-open .parish-action-bar {
 }
 
 /* Plain underlined language switch — replaces the former 999px translucent pill */
-.premium-hero__lang {
-  margin-top: 10px;
-  min-height: 44px;
-  padding: 0;
-  background: none;
-  border: 0;
-  color: var(--color-gold-light);
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(232, 213, 163, 0.45);
-  cursor: pointer;
-  transition: text-decoration-color 0.2s ease;
-}
 
-.premium-hero__lang:hover {
-  text-decoration-color: var(--color-gold-light);
-}
 
 .premium-essentials {
   position: relative;
@@ -1719,14 +1700,6 @@ a.contact-link:hover {
 @media (max-width: 768px) {
   .glass-card[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
-  }
-}
-
-/* Very short phones (e.g. 320x568): the Español button above Start Here
-   does what the "También disponible" link does, so drop the link for room */
-@media (max-width: 600px) and (max-height: 600px) {
-  .premium-hero__lang {
-    display: none !important;
   }
 }
 

@@ -162,18 +162,6 @@ export default function Home() {
             </div>
           </div>
 
-          {i18n.language !== "es" && (
-            <button
-              type="button"
-              className="premium-hero__lang"
-              onClick={() => {
-                i18n.changeLanguage("es");
-                localStorage.setItem("lang", "es");
-              }}
-            >
-              También disponible en Español
-            </button>
-          )}
         </div>
       </StickyHero>
 
