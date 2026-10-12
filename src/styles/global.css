@@ -337,17 +337,26 @@ body.nav-open .parish-action-bar {
   min-width: 0;
 }
 
+/* Labels wrap rather than truncate ("Confessions Today" on small phones) */
 .parish-action-bar__label {
   display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* Times wrap (between whole times only — see ParishActionBar) rather than
    clip: on a Sunday the last Mass is the Spanish one. */
 .parish-action-bar__value {
   display: block;
+}
+
+/* "Full Mass & Confession Times": one gold label, allowed to wrap */
+.parish-action-bar__full {
+  display: block;
+  color: var(--color-gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 400px) {

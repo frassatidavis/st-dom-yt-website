@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { CONFIG } from "../constants/config";
 import { T } from "../constants/theme";
 import { useSchedule } from "../cms/hooks";
 import { getTodayScheduleSummary } from "../utils/schedule";
@@ -35,10 +34,10 @@ export default function ParishActionBar() {
       onClick: () => navigate("/mass-times"),
     },
     {
-      icon: "Phone",
-      label: t("actionBar.call"),
-      value: CONFIG.phone,
-      href: CONFIG.phoneLink,
+      icon: "CalendarDays",
+      label: t("actionBar.fullTimes"),
+      onClick: () => navigate("/mass-times"),
+      full: true,
     },
   ];
 
@@ -49,8 +48,14 @@ export default function ParishActionBar() {
           <>
             <Icon name={action.icon} size={18} color={T.goldLight} />
             <span className="parish-action-bar__text">
-              <span className="parish-action-bar__label">{action.label}</span>
-              <span className="parish-action-bar__value">{keepTimesTogether(action.value)}</span>
+              {action.full ? (
+                <span className="parish-action-bar__full">{action.label}</span>
+              ) : (
+                <>
+                  <span className="parish-action-bar__label">{action.label}</span>
+                  <span className="parish-action-bar__value">{keepTimesTogether(action.value)}</span>
+                </>
+              )}
             </span>
           </>
         );

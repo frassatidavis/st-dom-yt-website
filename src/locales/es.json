@@ -52,9 +52,9 @@
   },
   "actionBar": {
     "label": "Lo esencial de la parroquia",
-    "mass": "Misa",
-    "confession": "Confesión",
-    "call": "Llamar",
+    "mass": "Misas Hoy",
+    "confession": "Confesiones Hoy",
+    "fullTimes": "Horarios completos de Misa y Confesión",
     "schedule": "Horario"
   },
   "home": {
