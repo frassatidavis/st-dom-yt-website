@@ -4,7 +4,6 @@ import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
 import { useSchedule } from "../cms/hooks";
-import Icon from "./Icon";
 
 function FooterLink({ to, children, style }) {
   const navigate = useNavigate();
@@ -155,21 +154,17 @@ export default function Footer() {
             {[
               {
                 key: "visit",
-                icon: "MapPin",
                 value: `${CONFIG.address}, ${CONFIG.city}, ${CONFIG.state} ${CONFIG.zip}`,
                 href: `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`,
               },
-              { key: "call", icon: "Phone", value: CONFIG.phone, href: CONFIG.phoneLink },
-              { key: "hours", icon: "Clock", value: `${t("footer.cards.hoursDays")} · ${t("footer.cards.hoursTime")}` },
-              { key: "email", icon: "Mail", value: CONFIG.email, href: `mailto:${CONFIG.email}` },
+              { key: "call", value: CONFIG.phone, href: CONFIG.phoneLink },
+              { key: "hours", value: `${t("footer.cards.hoursDays")} · ${t("footer.cards.hoursTime")}` },
+              { key: "email", value: CONFIG.email, href: `mailto:${CONFIG.email}` },
             ].map((item) => {
               const body = (
                 <>
-                  <Icon name={item.icon} size={20} color={T.goldLight} />
-                  <span>
-                    <span className="footer-contact__label">{t(`footer.cards.${item.key}Title`)}</span>
-                    <span className="footer-contact__value">{item.value}</span>
-                  </span>
+                  <span className="footer-contact__label">{t(`footer.cards.${item.key}Title`)}</span>
+                  <span className="footer-contact__value">{item.value}</span>
                 </>
               );
               return item.href ? (

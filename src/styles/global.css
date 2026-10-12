@@ -932,15 +932,9 @@ body.nav-open .parish-action-bar {
   font-style: normal;
 }
 .footer-contact__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  display: block;
   color: #fff;
   text-decoration: none;
-}
-.footer-contact__item > svg {
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 .footer-contact__label {
   display: block;
