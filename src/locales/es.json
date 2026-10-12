@@ -101,7 +101,9 @@
     },
     "formation": {
       "title": "Siga Creciendo Después del Domingo",
-      "desc": "Siga enseñanza católica confiable, noticias parroquiales y recursos para la oración durante la semana."
+      "desc": "Siga enseñanza católica confiable, noticias parroquiales y recursos para la oración durante la semana.",
+      "mediaTitle": "Dominican Friars Media — videos, pódcasts y música de los Frailes Dominicos (en inglés)",
+      "mediaOpen": "Abrir Dominican Friars Media"
     },
     "cards": {
       "visitTitle": "Visítenos",

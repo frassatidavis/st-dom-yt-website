@@ -107,6 +107,22 @@ export default function Home() {
         <div className="premium-charism__inner">
           <h2>{t("home.formation.title")}</h2>
           <p>{t("home.formation.desc")}</p>
+
+          {/* Dominican Friars Media, live. Loads when scrolled near; sandboxed so
+              it can open links in new tabs but never navigate this page. */}
+          <div className="home-media-frame" data-lenis-prevent>
+            <iframe
+              src={CONFIG.dominicanMediaUrl}
+              title={t("home.formation.mediaTitle")}
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"
+            />
+          </div>
+          <a className="home-media-link" href={CONFIG.dominicanMediaUrl} target="_blank" rel="noopener noreferrer">
+            {t("home.formation.mediaOpen")}
+            <Icon name="ExternalLink" size={14} color={T.goldLight} />
+          </a>
         </div>
       </section>
 

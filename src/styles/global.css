@@ -856,6 +856,40 @@ body.nav-open .parish-action-bar {
   font-size: 17px;
 }
 
+/* Dominican Friars Media, embedded live under "Keep Growing After Sunday" */
+.premium-charism__inner > .home-media-frame {
+  max-width: none;
+  margin-top: clamp(26px, 4vw, 40px);
+  height: clamp(520px, 75vh, 760px);
+  border: 1px solid rgba(232, 213, 163, 0.45);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.home-media-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.home-media-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 10px;
+  color: var(--color-gold-light);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.home-media-link:hover {
+  text-decoration: underline;
+}
+
 .premium-member-cta {
   position: relative;
   overflow: hidden;

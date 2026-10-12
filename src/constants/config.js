@@ -69,6 +69,9 @@ export const CONFIG = {
   // Catholic Diocese of Youngstown
   dioceseUrl: "https://doy.org/",
 
+  // Dominican Friars Media (Province of St. Joseph) — shown live on the home page
+  dominicanMediaUrl: "https://media.dominicanfriars.org/",
+
   // Flipbook bulletin embed URL
   // Paste the share/embed URL from your flipbook service (FlipHTML5, Heyzine, Issuu, etc.)
   // Example: "https://online.fliphtml5.com/abcde/fghij/"
