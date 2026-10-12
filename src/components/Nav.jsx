@@ -235,10 +235,10 @@ export default function Nav() {
             }}
           />
           <div style={{ minWidth: 0 }}>
-            <div className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, lineHeight: 1.1, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            <div className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {t("nav.brand")}
             </div>
-            <div style={{ fontSize: 11, letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
+            <div className="nav-subtitle" style={{ letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
               {t("nav.subtitle")}
             </div>
           </div>

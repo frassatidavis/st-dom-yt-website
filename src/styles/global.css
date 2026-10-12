@@ -688,6 +688,60 @@ body.nav-open .parish-action-bar {
   text-align: left;
 }
 
+.premium-hero__title {
+  max-width: 20ch;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5.2vw, 64px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  margin-bottom: 28px;
+}
+
+/* Nearly see-through letters with a thin, translucent white outline that
+   blends into the video and photo (solid white where outlines aren't supported) */
+@supports (-webkit-text-stroke: 1px #fff) {
+  .premium-hero__title {
+    color: rgba(255, 255, 255, 0.12);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.06em;
+  }
+}
+
+/* Home: the title centers over the picture while the buttons stay bottom
+   left. The top spacer's 190px basis offsets the button stack (and the fixed
+   header over the hero's top) so the title lands near the picture's middle;
+   when space runs short the spacer gives way first, so the two never touch. */
+.premium-hero--centered {
+  flex: 1 1 auto;
+}
+.premium-hero--centered::before {
+  content: "";
+  flex: 1 1 190px;
+}
+.premium-hero__center {
+  flex: 1 1 0;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 20px;
+}
+.premium-hero__center .premium-hero__title {
+  max-width: none;
+  margin: 0;
+  text-align: center;
+}
+/* Phones turned sideways: keep the one-line title clear of Skip / Replay */
+@media (max-height: 500px) {
+  .premium-hero__center .premium-hero__title {
+    font-size: 32px;
+  }
+}
+
 .premium-hero__actions,
 .premium-inline-actions,
 .premium-centered-actions {
@@ -1272,6 +1326,11 @@ a.footer-contact__item:hover .footer-contact__value {
 }
 
 @media (max-width: 700px) {
+  .premium-hero__title {
+    font-size: clamp(32px, 9.5vw, 44px);
+    margin-bottom: 22px;
+  }
+
   .premium-hero__actions button {
     width: 100%;
   }
@@ -1339,9 +1398,30 @@ a.contact-link:hover {
 .nav-mobile-toggle { display: none !important; }
 /* Nav wordmark: one line, except on the narrowest phones where the Spanish
    name ("Iglesia Santo Domingo") would push the menu button off-screen. */
-.nav-brand { font-size: 16px; white-space: nowrap; }
-@media (max-width: 400px) {
-  .nav-brand { font-size: clamp(13px, 4vw, 16px); white-space: normal; }
+/* Header wordmark, as large as the row allows. Two lines plus the subtitle
+   must still fit the 64px scrolled header, so wrapping sizes stay at 20px. */
+.nav-brand { font-size: 24px; line-height: 1.05; white-space: nowrap; }
+.nav-subtitle { font-size: 13px; line-height: 1.2; margin-top: 2px; }
+/* Beside the full link row "Parroquia Santo Domingo" may need two lines */
+html[lang="es"] .nav-brand { font-size: 20px; white-space: normal; text-wrap: balance; }
+@media (max-width: 1160px) {
+  /* Menu button instead of links: the whole row is free */
+  .nav-brand,
+  html[lang="es"] .nav-brand { font-size: 30px; white-space: nowrap; }
+}
+@media (max-width: 760px) {
+  .nav-brand,
+  html[lang="es"] .nav-brand { font-size: 23px; }
+  .nav-subtitle { font-size: 12px; }
+}
+@media (max-width: 600px) {
+  /* Phones: up to two balanced lines ("St. Dominic / Church") */
+  .nav-brand,
+  html[lang="es"] .nav-brand {
+    font-size: clamp(16px, calc(10vw - 16px), 20px);
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
 
 /* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",
@@ -1411,6 +1491,12 @@ a.contact-link:hover {
 
 /* Short landscape phones: compress the hero stack so CTAs stay in view */
 @media (max-width: 600px) and (max-height: 720px) {
+  .home-hero-title {
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 16px !important;
+  }
+
   .premium-hero__nextline {
     display: none;
   }

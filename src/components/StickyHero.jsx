@@ -16,6 +16,8 @@ import ResponsivePicture from "./ResponsivePicture";
  *               the bottom-left corner (where the text sits) and lets the
  *               rest of the photograph read
  *   align     — "center" (default) | "bottom-left"
+ *   fillHeight — content spans the hero's full height (a flex column), so
+ *               children can place items anywhere over the picture
  *   height    — total scroll runway (default "180vh")
  *   showScrollHint — whether to show the small scroll cue
  *   children  — hero content (title, subtitle, etc.)
@@ -26,6 +28,7 @@ export default function StickyHero({
   tint,
   scrim = "flat",
   align = "center",
+  fillHeight = false,
   height = "130vh",
   viewportHeight = "100vh",
   showScrollHint = true,
@@ -143,6 +146,7 @@ export default function StickyHero({
               align === "bottom-left"
                 ? "0 24px clamp(40px, 7vh, 76px)"
                 : "0 24px",
+            ...(fillHeight && { alignSelf: "stretch", display: "flex", flexDirection: "column" }),
             opacity: textOpacity,
             transform: `translateY(${textY}px)`,
             willChange: "transform, opacity",
