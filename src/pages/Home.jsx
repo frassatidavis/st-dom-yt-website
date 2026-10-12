@@ -36,7 +36,8 @@ export default function Home() {
         showScrollHint={false}
       >
         <div className="premium-hero">
-          <h1 className="home-hero-title premium-hero__title">{t("home.hero.title")}</h1>
+          {/* Not shown over the photo; kept as the page's main heading for screen readers and search */}
+          <h1 className="sr-only">{t("home.hero.title")}</h1>
 
           <div className="premium-hero__actions">
             <div className="premium-hero__buttons">
