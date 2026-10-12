@@ -75,25 +75,12 @@
     "dog": {
       "label": "El perro dominico con la antorcha: leer «I'm a Dog» en Dominicana Journal (en inglés; se abre en una pestaña nueva)"
     },
-    "veritas": {
-      "label": "Veritas, el lema dominico: visitar la Orden de Predicadores (se abre en una pestaña nueva)"
-    },
     "welcome": {
       "sub": "Bienvenidos",
       "title": "La Verdad que Salva en el Corazón de la Iglesia",
       "p1": "Los Frailes Dominicos de la Provincia de San José han servido al South Side de Youngstown desde 1923, formando generaciones de católicos para celebrar los sagrados misterios de nuestra fe.",
       "p2": "Sea usted un antiguo alumno de St. Dom's o alguien que anhela conocer más la fe católica, es bienvenido aquí.",
       "cta": "Sobre Nosotros"
-    },
-    "massCta": {
-      "sub": "Culto",
-      "title": "Encuentre a Jesús Aquí",
-      "desc": "¡Acompáñenos! Nos encantaría darle la bienvenida a nuestra hermosa iglesia románica. Ya sea que esté visitando Youngstown o buscando un nuevo hogar parroquial, encuentre nuestros horarios de Misa y Confesión a continuación.",
-      "cta": "Ver Horarios de Misa y Confesión",
-      "sundayMass": "Misa de Fin de Semana",
-      "satVigil": "Vigilia del Sábado:",
-      "sun": "Domingo:",
-      "sunEspanol": "Domingo (Español):"
     },
     "priests": {
       "sub": "Nuestro Equipo",

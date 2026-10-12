@@ -75,25 +75,12 @@
     "dog": {
       "label": "The Dominican dog with a torch: read “I'm a Dog” in Dominicana Journal (opens in a new tab)"
     },
-    "veritas": {
-      "label": "Veritas, the Dominican motto: visit the Order of Preachers (opens in a new tab)"
-    },
     "welcome": {
       "sub": "Welcome",
       "title": "Saving Truth in the Heart of the Church",
       "p1": "The Dominican Friars of the Province of St. Joseph have served Youngstown's South Side since 1923, forming generations of Catholics to celebrate the sacred mysteries of our faith.",
       "p2": "Whether you are a classic St. Dom's alum or pining to learn more about the Catholic faith, you are welcome here.",
       "cta": "About Us"
-    },
-    "massCta": {
-      "sub": "Worship",
-      "title": "Find Jesus Here",
-      "desc": "Join us! We'd love to welcome you to our beautiful Romanesque church. Whether you're visiting Youngstown or looking for a new church home, find our Mass and Confession times below.",
-      "cta": "See Mass & Confession Times",
-      "sundayMass": "Weekend Mass",
-      "satVigil": "Saturday Vigil:",
-      "sun": "Sunday:",
-      "sunEspanol": "Sunday (Español):"
     },
     "priests": {
       "sub": "Our Team",

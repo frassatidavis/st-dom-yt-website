@@ -25,25 +25,6 @@ const CATEGORY_COLORS = {
   other: T.warmGray,
 };
 
-function SundayMassCard({ t }) {
-  return (
-    <div className="premium-mass-card">
-      <div className="premium-mass-card__label">{t("home.massCta.sundayMass")}</div>
-      {[
-        [t("home.massCta.satVigil"), "5:00 PM"],
-        [t("home.massCta.sun"), "8:00 AM"],
-        [t("home.massCta.sun"), "10:00 AM"],
-        [t("home.massCta.sunEspanol"), "12:30 PM"],
-      ].map(([label, time]) => (
-        <div key={`${label}-${time}`} className="premium-mass-row">
-          <span>{label}</span>
-          <strong>{time}</strong>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function GatewayCard({ icon, title, body, cta, onClick }) {
   return (
     <button type="button" className="premium-gateway-card" onClick={onClick}>
@@ -131,40 +112,6 @@ export default function Home() {
       </div>
 
 
-      <Section>
-        <div className="premium-two-column">
-          <div>
-            <SectionTitle sub={t("home.massCta.sub")} center={false} divider={false}>
-              {t("home.massCta.title")}
-            </SectionTitle>
-            <div className="premium-inline-actions">
-              <Btn variant="primary" onClick={() => navigate("/mass-times")}>
-                {t("home.massCta.cta")}
-              </Btn>
-              <button
-                type="button"
-                className="premium-text-link"
-                onClick={() => navigate("/visit")}
-              >
-                {t("home.hero.ctaVisit")}
-                <Icon name="ArrowRight" size={15} color={T.burgundy} />
-              </button>
-            </div>
-            {/* Veritas — the Order's motto — breaks the actions from the Mass card */}
-            <a className="home-veritas" href="https://www.op.org/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={PHOTOS.veritasBanner}
-                alt={t("home.veritas.label")}
-                width={280}
-                height={88}
-                loading="lazy"
-                decoding="async"
-              />
-            </a>
-          </div>
-          <SundayMassCard t={t} />
-        </div>
-      </Section>
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("home.welcome.sub")}>{t("home.welcome.title")}</SectionTitle>

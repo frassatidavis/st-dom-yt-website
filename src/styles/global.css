@@ -758,22 +758,6 @@ body.nav-open .parish-action-bar {
   height: auto;
 }
 
-/* Home: the VERITAS ribbon under the Find Jesus Here actions */
-.home-veritas {
-  display: block;
-  width: clamp(210px, 24vw, 280px);
-  margin: clamp(28px, 4vw, 44px) auto 0;
-  line-height: 0;
-  transition: opacity 0.2s;
-}
-.home-veritas:hover {
-  opacity: 0.75;
-}
-.home-veritas img {
-  width: 100%;
-  height: auto;
-}
-
 .premium-gateway-card,
 .premium-news-card,
 .premium-contact-item {
@@ -790,13 +774,6 @@ body.nav-open .parish-action-bar {
   transform: translateY(-3px);
   border-color: rgba(197, 165, 90, 0.75) !important;
   box-shadow: 0 4px 12px rgba(26, 23, 20, 0.08) !important;
-}
-
-.premium-two-column {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
-  gap: clamp(30px, 6vw, 64px);
-  align-items: center;
 }
 
 .premium-welcome p,
@@ -832,56 +809,6 @@ body.nav-open .parish-action-bar {
 
 .premium-light-link {
   color: var(--color-gold-light);
-}
-
-.premium-mass-card {
-  padding: clamp(26px, 4vw, 38px);
-  border-radius: var(--radius-modal);
-  border: 1px solid rgba(197, 165, 90, 0.22); /* fine gold hairline, not white */
-  background:
-    radial-gradient(120% 80% at 50% 0%, rgba(107, 29, 42, 0.55) 0%, transparent 60%),
-    #241015; /* warm burgundy-black, not a flat burgundy→black diagonal */
-  color: #fff;
-  box-shadow:
-    inset 0 1px 0 rgba(197, 165, 90, 0.1), /* gold top catch-light */
-    0 10px 28px rgba(26, 23, 20, 0.22);
-}
-
-.premium-mass-card__label {
-  margin-bottom: 22px;
-  color: var(--color-gold-light);
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.premium-mass-card__label::after {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 2px;
-  margin-top: 10px;
-  background: var(--color-gold);
-}
-
-.premium-mass-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(197, 165, 90, 0.16); /* warm gold hairline divider */
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 15px;
-}
-
-.premium-mass-row:last-child {
-  border-bottom: 0;
-}
-
-.premium-mass-row strong {
-  color: #fff;
-  white-space: nowrap;
-  font-variant-numeric: oldstyle-nums proportional-nums;
 }
 
 .premium-welcome {
@@ -1020,7 +947,7 @@ body.nav-open .parish-action-bar {
   padding: clamp(50px, 10vw, 86px) 24px;
   background:
     radial-gradient(120% 90% at 50% 0%, rgba(107, 29, 42, 0.5) 0%, transparent 60%),
-    #241015; /* matches .premium-mass-card warm-dark surface */
+    #241015; /* warm burgundy-black */
   text-align: left;
 }
 
@@ -1467,7 +1394,6 @@ body.nav-open .parish-action-bar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .premium-two-column,
   .premium-charism__grid {
     grid-template-columns: 1fr;
   }
