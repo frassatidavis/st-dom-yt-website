@@ -1443,9 +1443,10 @@ a.contact-link:hover {
   .nav-brand { font-size: clamp(13px, 4vw, 16px); white-space: normal; }
 }
 
-/* Wordmark + full link row need ~1065px (Spanish, Nunito Sans); switch to
-   the menu button a little earlier so the row never looks crammed. */
-@media (max-width: 1120px) {
+/* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",
+   Nunito Sans); switch to the menu button a little earlier so the row never
+   looks crammed. */
+@media (max-width: 1160px) {
   .nav-desktop { display: none !important; }
   .nav-mobile-toggle { display: block !important; }
 }
