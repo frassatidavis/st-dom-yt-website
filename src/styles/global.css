@@ -1727,6 +1727,14 @@ a.contact-link:hover {
   }
 }
 
+/* Very short phones (e.g. 320x568): the Español button above Start Here
+   does what the "También disponible" link does, so drop the link for room */
+@media (max-width: 600px) and (max-height: 600px) {
+  .premium-hero__lang {
+    display: none !important;
+  }
+}
+
 /* Short landscape phones: compress the hero stack so CTAs stay in view */
 @media (max-width: 600px) and (max-height: 720px) {
   .home-hero-title {

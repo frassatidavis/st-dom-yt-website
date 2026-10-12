@@ -100,6 +100,7 @@ function GatewayCard({ icon, title, body, cta, onClick }) {
 
 export default function Home() {
   const { t, i18n } = useTranslation();
+  const isSpanish = i18n.language === "es";
   const navigate = useNavigate();
   const { data: announcements } = useAnnouncements();
   const { data: events } = useEvents();
@@ -136,6 +137,18 @@ export default function Home() {
 
           <div className="premium-hero__actions">
             <div className="premium-hero__buttons">
+              {/* Language switch: "Español" for English visitors, "English" once in Spanish */}
+              <Btn
+                variant="primary"
+                onClick={() => {
+                  const next = isSpanish ? "en" : "es";
+                  i18n.changeLanguage(next);
+                  localStorage.setItem("lang", next);
+                }}
+                style={{ minWidth: 168, boxShadow: "inset 0 0 0 1px rgba(232, 213, 163, 0.55)" }}
+              >
+                <span lang={isSpanish ? "en" : "es"}>{isSpanish ? "English" : "Español"}</span>
+              </Btn>
               <Btn variant="gold" onClick={() => navigate("/visit")} style={{ minWidth: 168 }}>
                 {t("home.hero.ctaVisit")}
               </Btn>
