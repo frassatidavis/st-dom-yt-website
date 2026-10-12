@@ -296,7 +296,7 @@ body.nav-open {
   bottom: calc(10px + env(safe-area-inset-bottom));
   z-index: 1100;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); /* today's times | full schedule */
   gap: 1px;
   overflow: hidden;
   background: rgba(232, 213, 163, 0.35);
@@ -346,6 +346,77 @@ body.nav-open .parish-action-bar {
    clip: on a Sunday the last Mass is the Spanish one. */
 .parish-action-bar__value {
   display: block;
+}
+
+/* Today cell: the times (a button to the schedule) and, bearing right, the
+   office phone + email as their own links. Wraps under the times when the
+   cell is too narrow for both side by side. */
+.parish-action-bar__today {
+  min-width: 0;
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(74, 16, 25, 0.96);
+}
+.parish-action-bar__today .parish-action-bar__times {
+  flex: 1 1 140px;
+  background: transparent;
+}
+.parish-action-bar__contact {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 6px 12px 6px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.parish-action-bar__contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.parish-action-bar__contact a:hover {
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+.parish-action-bar__contact svg {
+  flex-shrink: 0;
+}
+/* Narrow phones: no room for the full number and address beside the
+   times, so they become two small icon buttons (labels stay for screen
+   readers via aria-label) and the bar keeps its height. */
+@container (max-width: 400px) {
+  .parish-action-bar__contact {
+    gap: 6px;
+    padding: 6px 8px 6px 0;
+  }
+  .parish-action-bar__contact-text {
+    display: none;
+  }
+  .parish-action-bar__contact a {
+    width: 34px;
+    height: 30px;
+    justify-content: center;
+    border: 1px solid rgba(232, 213, 163, 0.45);
+    border-radius: var(--radius-card);
+  }
+  .parish-action-bar__contact svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* "Mass" / "Confession" before each of today's times */
+.parish-action-bar__kind {
+  color: var(--color-gold-light);
+  font-weight: 600;
 }
 
 /* "Full Mass & Confession Times": one gold label, allowed to wrap */

@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
+import { CONFIG } from "../constants/config";
 import { useSchedule } from "../cms/hooks";
 import { getTodayScheduleSummary } from "../utils/schedule";
 import Icon from "./Icon";
@@ -19,61 +20,46 @@ export default function ParishActionBar() {
   const navigate = useNavigate();
   const { data: schedule } = useSchedule();
   const { masses, confessions } = getTodayScheduleSummary(schedule);
+  const toTimes = () => navigate("/mass-times");
 
-  const actions = [
-    {
-      icon: "Church",
-      label: t("actionBar.mass"),
-      value: masses || t("actionBar.schedule"),
-      onClick: () => navigate("/mass-times"),
-    },
-    {
-      icon: "Cross",
-      label: t("actionBar.confession"),
-      value: confessions || t("actionBar.schedule"),
-      onClick: () => navigate("/mass-times"),
-    },
-    {
-      icon: "CalendarDays",
-      label: t("actionBar.fullTimes"),
-      onClick: () => navigate("/mass-times"),
-      full: true,
-    },
+  const lines = [
+    { label: t("actionBar.mass"), value: masses || t("actionBar.noneToday") },
+    { label: t("actionBar.confession"), value: confessions || t("actionBar.byAppointment") },
   ];
 
   return (
     <aside className="parish-action-bar" aria-label={t("actionBar.label")}>
-      {actions.map((action) => {
-        const content = (
-          <>
-            <Icon name={action.icon} size={18} color={T.goldLight} />
-            <span className="parish-action-bar__text">
-              {action.full ? (
-                <span className="parish-action-bar__full">{action.label}</span>
-              ) : (
-                <>
-                  <span className="parish-action-bar__label">{action.label}</span>
-                  <span className="parish-action-bar__value">{keepTimesTogether(action.value)}</span>
-                </>
-              )}
-            </span>
-          </>
-        );
+      {/* Today's times (opens the schedule) with the office phone + email on the right */}
+      <div className="parish-action-bar__today">
+        <button type="button" onClick={toTimes} className="parish-action-bar__item parish-action-bar__times">
+          <Icon name="Church" size={18} color={T.goldLight} />
+          <span className="parish-action-bar__text">
+            <span className="parish-action-bar__label">{t("actionBar.today")}</span>
+            {lines.map((line) => (
+              <span key={line.label} className="parish-action-bar__value">
+                <span className="parish-action-bar__kind">{line.label}</span> {keepTimesTogether(line.value)}
+              </span>
+            ))}
+          </span>
+        </button>
+        <div className="parish-action-bar__contact">
+          <a href={CONFIG.phoneLink} aria-label={`${t("actionBar.call")} ${CONFIG.phone}`}>
+            <Icon name="Phone" size={13} color={T.goldLight} />
+            <span className="parish-action-bar__contact-text">{CONFIG.phone.replace(" ", "\u00a0")}</span>
+          </a>
+          <a href={`mailto:${CONFIG.email}`} aria-label={`${t("actionBar.email")} ${CONFIG.email}`}>
+            <Icon name="Mail" size={13} color={T.goldLight} />
+            <span className="parish-action-bar__contact-text">{CONFIG.email}</span>
+          </a>
+        </div>
+      </div>
 
-        if (action.href) {
-          return (
-            <a key={action.label} href={action.href} className="parish-action-bar__item">
-              {content}
-            </a>
-          );
-        }
-
-        return (
-          <button key={action.label} type="button" onClick={action.onClick} className="parish-action-bar__item">
-            {content}
-          </button>
-        );
-      })}
+      <button type="button" onClick={toTimes} className="parish-action-bar__item">
+        <Icon name="CalendarDays" size={18} color={T.goldLight} />
+        <span className="parish-action-bar__text">
+          <span className="parish-action-bar__full">{t("actionBar.fullTimes")}</span>
+        </span>
+      </button>
     </aside>
   );
 }

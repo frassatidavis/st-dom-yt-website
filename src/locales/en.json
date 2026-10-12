@@ -52,10 +52,14 @@
   },
   "actionBar": {
     "label": "Parish essentials",
-    "mass": "Masses Today",
-    "confession": "Confessions Today",
+    "today": "Masses & Confessions Today",
+    "mass": "Mass",
+    "confession": "Confession",
     "fullTimes": "Full Mass & Confession Times",
-    "schedule": "Schedule"
+    "noneToday": "none today",
+    "byAppointment": "call for appointment",
+    "call": "Call the parish office",
+    "email": "Email the parish office"
   },
   "home": {
     "hero": {
