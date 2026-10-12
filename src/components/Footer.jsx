@@ -151,6 +151,26 @@ export default function Footer() {
 
         {sundayRows.length > 0 && (
           <div style={{ flex: "0 1 280px" }}>
+            <img
+              src={PHOTOS.stDomLogoSmall}
+              alt=""
+              aria-hidden="true"
+              width={84}
+              height={84}
+              loading="lazy"
+              decoding="async"
+              style={{
+                display: "block",
+                width: 84,
+                height: 84,
+                borderRadius: "50%",
+                background: "#fff",
+                border: "1px solid rgba(232,213,163,0.55)",
+                objectFit: "contain",
+                padding: 4,
+                marginBottom: 22,
+              }}
+            />
             <h2 style={groupHeadingStyle}>
               {ruleBefore}
               {t("footer.massTitle")}

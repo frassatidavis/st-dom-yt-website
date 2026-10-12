@@ -224,7 +224,7 @@ export default function Nav() {
         {/* Logo */}
         <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
           <img
-            src={PHOTOS.stDomLogo}
+            src={PHOTOS.stDomLogoSmall}
             alt=""
             width={40}
             height={40}
