@@ -78,6 +78,7 @@ export const PHOTOS = {
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
   psjWordmarkWhite: `${B}photos/branding/psj-wordmark-white.png`, // White wordmark for dark backgrounds
   doyLogoWhite: `${B}photos/branding/doy-logo-white.png`,         // Diocese of Youngstown crest + wordmark (inverted, doy.org)
+  veritasBanner: `${B}photos/branding/veritas-banner.webp`,       // "VERITAS" ribbon (Dominican motto), ink on transparent
   dominicanDog: `${B}photos/branding/dominican-dog.webp`,         // Domini canis: dog with torch (St. Dominic's mother's dream), ink on transparent
 
   // ── Mass Times page ──

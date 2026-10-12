@@ -724,6 +724,14 @@ body.nav-open .parish-action-bar {
   margin-top: 0;
 }
 
+/* Home: the VERITAS ribbon under the Find Jesus Here actions */
+.home-veritas {
+  display: block;
+  width: clamp(180px, 22vw, 240px);
+  height: auto;
+  margin: clamp(28px, 4vw, 44px) auto 0;
+}
+
 .premium-essentials .section-inner--wide {
   padding: clamp(24px, 4vw, 34px);
   background: rgba(255, 253, 249, 0.96);

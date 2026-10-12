@@ -259,6 +259,16 @@ export default function Home() {
                 <Icon name="ArrowRight" size={15} color={T.burgundy} />
               </button>
             </div>
+            {/* Veritas — the Order's motto — breaks the actions from the Mass card */}
+            <img
+              className="home-veritas"
+              src={PHOTOS.veritasBanner}
+              alt="Veritas"
+              width={240}
+              height={130}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <SundayMassCard t={t} />
         </div>
