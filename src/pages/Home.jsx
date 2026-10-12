@@ -13,6 +13,7 @@ import VaticanNews from "../components/VaticanNews";
 import YouTubeChannel from "../components/YouTubeChannel";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
+import ResponsivePicture from "../components/ResponsivePicture";
 import StickyHero from "../components/StickyHero";
 import { PHOTOS } from "../constants/photos";
 import { getTodayScheduleSummary } from "../utils/schedule";
@@ -182,6 +183,7 @@ export default function Home() {
 
       <section className="premium-essentials">
         <div className="section-inner--wide">
+          <div className="premium-essentials__lists">
           <div className="premium-essentials__group">
             <div className="kicker">{t("home.essentials.todayGroup")}</div>
             <ul className="essential-list">
@@ -222,6 +224,15 @@ export default function Home() {
                 href={CONFIG.phoneLink}
               />
             </ul>
+          </div>
+          </div>
+          <div className="premium-essentials__photo">
+            <ResponsivePicture
+              src={PHOTOS.homeEssentialsPhoto}
+              widths={[480, 1024, 1920]}
+              sizes="(max-width: 899px) 100vw, 460px"
+              alt=""
+            />
           </div>
         </div>
       </section>

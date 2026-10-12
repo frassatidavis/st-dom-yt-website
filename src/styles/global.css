@@ -756,15 +756,46 @@ body.nav-open .parish-action-bar {
   box-shadow: 0 1px 2px rgba(26, 23, 20, 0.06);
 }
 
+/* Today + Find us stacked in one column, a tall photo filling the other.
+   On phones the photo drops below the lists at a shorter height. */
 .premium-essentials .section-inner--wide {
   display: grid;
   grid-template-columns: 1fr;
   gap: 26px;
 }
+.premium-essentials__lists {
+  display: grid;
+  gap: 26px;
+  align-content: start;
+}
+.premium-essentials__photo {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-stone-light);
+  aspect-ratio: 4 / 3;
+  max-height: 420px;
+  width: 100%;
+}
+/* The image fills the box without setting its height, so on desktop the
+   photo matches the lists instead of stretching the section. */
+.premium-essentials__photo picture,
+.premium-essentials__photo img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 @media (min-width: 900px) {
   .premium-essentials .section-inner--wide {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 clamp(32px, 5vw, 56px);
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: clamp(32px, 5vw, 56px);
+  }
+  .premium-essentials__photo {
+    aspect-ratio: auto;
+    max-height: none;
   }
 }
 
