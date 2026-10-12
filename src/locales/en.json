@@ -32,9 +32,15 @@
   "footer": {
     "subtitle": "Catholic Church · Youngstown, OH",
     "description": "Served by the Dominican Friars of the Province of St. Joseph. Bringing the riches of Christ to Youngstown since 1923.",
+    "cards": {
+      "visitTitle": "Visit Us",
+      "callTitle": "Call Us",
+      "hoursTitle": "Office Hours",
+      "hoursDays": "Monday – Friday",
+      "hoursTime": "8:30 AM – 1:30 PM",
+      "emailTitle": "Email Us"
+    },
     "quickLinks": "Quick Links",
-    "contactTitle": "Contact",
-    "officeHours": "Office Hours",
     "rights": "All Rights Reserved",
     "groups": {
       "visit": "Visit",
@@ -104,14 +110,6 @@
       "desc": "Follow trusted Catholic teaching, parish updates, and resources for prayer throughout the week.",
       "mediaTitle": "Dominican Friars Media — videos, podcasts and music from the Dominican Friars",
       "mediaOpen": "Open Dominican Friars Media"
-    },
-    "cards": {
-      "visitTitle": "Visit Us",
-      "callTitle": "Call Us",
-      "hoursTitle": "Office Hours",
-      "hoursDays": "Monday – Friday",
-      "hoursTime": "8:30 AM – 1:30 PM",
-      "emailTitle": "Email Us"
     }
   },
   "schedule": {

@@ -4,6 +4,7 @@ import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
 import { useSchedule } from "../cms/hooks";
+import Icon from "./Icon";
 
 function FooterLink({ to, children, style }) {
   const navigate = useNavigate();
@@ -148,6 +149,45 @@ export default function Footer() {
           <p style={{ fontSize: 15, lineHeight: 1.8, maxWidth: "52ch" }}>
             {t("footer.description")}
           </p>
+
+          {/* Visit / call / office hours / email */}
+          <address className="footer-contact">
+            {[
+              {
+                key: "visit",
+                icon: "MapPin",
+                value: `${CONFIG.address}, ${CONFIG.city}, ${CONFIG.state} ${CONFIG.zip}`,
+                href: `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`,
+              },
+              { key: "call", icon: "Phone", value: CONFIG.phone, href: CONFIG.phoneLink },
+              { key: "hours", icon: "Clock", value: `${t("footer.cards.hoursDays")} · ${t("footer.cards.hoursTime")}` },
+              { key: "email", icon: "Mail", value: CONFIG.email, href: `mailto:${CONFIG.email}` },
+            ].map((item) => {
+              const body = (
+                <>
+                  <Icon name={item.icon} size={20} color={T.goldLight} />
+                  <span>
+                    <span className="footer-contact__label">{t(`footer.cards.${item.key}Title`)}</span>
+                    <span className="footer-contact__value">{item.value}</span>
+                  </span>
+                </>
+              );
+              return item.href ? (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className="footer-contact__item"
+                  {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  {body}
+                </a>
+              ) : (
+                <div key={item.key} className="footer-contact__item">
+                  {body}
+                </div>
+              );
+            })}
+          </address>
         </div>
 
         {sundayRows.length > 0 && (
@@ -241,29 +281,6 @@ export default function Footer() {
 
         <div style={{ minWidth: 0 }}>
           <h2 style={groupHeadingStyle}>
-            {ruleBefore}
-            {t("footer.contactTitle")}
-          </h2>
-          <address style={{ fontStyle: "normal", fontSize: 14, lineHeight: 2 }}>
-            {CONFIG.address}
-            <br />
-            <span style={{ fontVariantNumeric: "oldstyle-nums" }}>
-              {CONFIG.city}, {CONFIG.state} {CONFIG.zip}
-            </span>
-            <br />
-            <a href={CONFIG.phoneLink} className="contact-link">
-              {CONFIG.phone}
-            </a>
-            <br />
-            <a href={`mailto:${CONFIG.email}`} className="contact-link">
-              {CONFIG.email}
-            </a>
-          </address>
-          <p style={{ fontSize: 13, marginTop: 8, color: "rgba(255,255,255,0.62)" }}>
-            {t("footer.officeHours")}: {CONFIG.officeHours}
-          </p>
-
-          <h2 style={{ ...groupHeadingStyle, marginTop: 22 }}>
             {ruleBefore}
             {t("footer.trustTitle")}
           </h2>

@@ -32,9 +32,15 @@
   "footer": {
     "subtitle": "Iglesia Católica · Youngstown, OH",
     "description": "Servida por los Frailes Dominicos de la Provincia de San José. Llevando las riquezas de Cristo a Youngstown desde 1923.",
+    "cards": {
+      "visitTitle": "Visítenos",
+      "callTitle": "Llámenos",
+      "hoursTitle": "Horario de Oficina",
+      "hoursDays": "Lunes – Viernes",
+      "hoursTime": "8:30 AM – 1:30 PM",
+      "emailTitle": "Envíenos un Correo"
+    },
     "quickLinks": "Enlaces Rápidos",
-    "contactTitle": "Contacto",
-    "officeHours": "Horario de Oficina",
     "rights": "Todos los Derechos Reservados",
     "groups": {
       "visit": "Visitar",
@@ -104,14 +110,6 @@
       "desc": "Siga enseñanza católica confiable, noticias parroquiales y recursos para la oración durante la semana.",
       "mediaTitle": "Dominican Friars Media — videos, pódcasts y música de los Frailes Dominicos (en inglés)",
       "mediaOpen": "Abrir Dominican Friars Media"
-    },
-    "cards": {
-      "visitTitle": "Visítenos",
-      "callTitle": "Llámenos",
-      "hoursTitle": "Horario de Oficina",
-      "hoursDays": "Lunes – Viernes",
-      "hoursTime": "8:30 AM – 1:30 PM",
-      "emailTitle": "Envíenos un Correo"
     }
   },
   "schedule": {

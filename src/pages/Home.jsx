@@ -16,7 +16,6 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
   const navigate = useNavigate();
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`;
 
   return (
     <div>
@@ -125,44 +124,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      <Section>
-        <div className="premium-contact-strip">
-          {[
-            {
-              key: "visit",
-              iconName: "MapPin",
-              content: `${CONFIG.address}, ${CONFIG.city}, ${CONFIG.state} ${CONFIG.zip}`,
-            },
-            { key: "call", iconName: "Phone", content: CONFIG.phone, href: CONFIG.phoneLink },
-            {
-              key: "hours",
-              iconName: "Clock",
-              content: `${t("home.cards.hoursDays")} · ${t("home.cards.hoursTime")}`,
-            },
-            {
-              key: "email",
-              iconName: "Mail",
-              content: CONFIG.email,
-              href: `mailto:${CONFIG.email}`,
-            },
-          ].map((card) => (
-            <a
-              key={card.key}
-              href={card.href || mapsHref}
-              target={!card.href ? "_blank" : undefined}
-              rel={!card.href ? "noopener noreferrer" : undefined}
-              className="premium-contact-item"
-            >
-              <Icon name={card.iconName} size={23} color={T.burgundy} />
-              <span>
-                <strong>{t(`home.cards.${card.key}Title`)}</strong>
-                <span>{card.content}</span>
-              </span>
-            </a>
-          ))}
-        </div>
-      </Section>
     </div>
   );
 }

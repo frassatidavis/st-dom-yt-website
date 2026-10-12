@@ -758,20 +758,6 @@ body.nav-open .parish-action-bar {
   height: auto;
 }
 
-.premium-contact-item {
-  transition:
-    transform 0.3s var(--ease-out-expo),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.premium-contact-item:hover {
-  transform: translateY(-3px);
-  border-color: rgba(197, 165, 90, 0.75) !important;
-  box-shadow: 0 4px 12px rgba(26, 23, 20, 0.08) !important;
-}
-
 .premium-welcome p {
   color: var(--color-warm-gray);
   font-size: 17px;
@@ -812,11 +798,6 @@ body.nav-open .parish-action-bar {
 
 .premium-welcome p + p {
   margin-top: 14px;
-}
-
-.premium-contact-strip {
-  display: grid;
-  gap: 16px;
 }
 
 .premium-charism {
@@ -906,43 +887,41 @@ body.nav-open .parish-action-bar {
   text-wrap: pretty;
 }
 
-.premium-contact-strip {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+/* Footer: visit / call / office hours / email under the parish description */
+.footer-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px 24px;
+  margin-top: 26px;
+  font-style: normal;
 }
-
-.premium-contact-item {
-  min-width: 0;
+.footer-contact__item {
   display: flex;
   align-items: flex-start;
-  gap: 13px;
-  padding: 22px;
-  border: 1px solid var(--color-stone);
-  border-radius: var(--radius-card);
-  background: #fff;
-  color: var(--color-charcoal);
+  gap: 12px;
+  color: #fff;
   text-decoration: none;
 }
-
-.premium-contact-item strong,
-.premium-contact-item span span {
-  display: block;
+.footer-contact__item > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
-
-.premium-contact-item strong {
-  margin-bottom: 3px;
-  color: var(--color-gold-text);
+.footer-contact__label {
+  display: block;
+  color: var(--color-gold-light);
   font-size: 12px;
   font-weight: 700;
   font-variant-caps: all-small-caps;
   letter-spacing: 0.08em;
 }
-
-.premium-contact-item span span {
-  color: var(--color-soft-black);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.35;
-  overflow-wrap: anywhere;
+.footer-contact__value {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+a.footer-contact__item:hover .footer-contact__value {
+  text-decoration: underline;
 }
 
 .premium-nav-link {
@@ -1265,10 +1244,6 @@ body.nav-open .parish-action-bar {
 }
 
 @media (max-width: 980px) {
-  .premium-contact-strip {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .premium-page-actions__heading {
     align-items: flex-start;
     flex-direction: column;
@@ -1294,10 +1269,6 @@ body.nav-open .parish-action-bar {
 
   .premium-hero__nextline {
     font-size: 14px;
-  }
-
-  .premium-contact-strip {
-    grid-template-columns: 1fr;
   }
 
   .premium-inline-actions {
