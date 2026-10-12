@@ -2,15 +2,6 @@
   "nav": {
     "brand": "Parroquia Santo Domingo",
     "subtitle": "Youngstown, Ohio",
-    "schedule": {
-      "label": "Horarios de Misa y confesión de esta semana",
-      "mass": "Misa",
-      "confession": "Confesión",
-      "days": "Dom,Lun,Mar,Mié,Jue,Vie,Sáb",
-      "and": "y",
-      "spanish": "Español",
-      "vigil": "Vigilia"
-    },
     "home": "Inicio",
     "massTimes": "Misa y Confesión",
     "sacraments": "Sacramentos",

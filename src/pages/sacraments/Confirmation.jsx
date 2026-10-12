@@ -15,7 +15,7 @@ export default function Confirmation() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Confirmation"
         description="Confirmation preparation at St. Dominic Church. Program details for teens and adults seeking the Sacrament of Confirmation."

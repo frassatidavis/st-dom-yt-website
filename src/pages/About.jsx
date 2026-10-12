@@ -22,7 +22,7 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="About Our Church"
         description="Learn about the history of St. Dominic Church, founded by the Dominican Friars in 1923 in Youngstown, Ohio."

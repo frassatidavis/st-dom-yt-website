@@ -16,7 +16,7 @@ export default function Anointing() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Anointing of the Sick"
         description="The Sacrament of Anointing of the Sick at St. Dominic Church. For those who are seriously ill or facing surgery."

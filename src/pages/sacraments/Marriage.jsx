@@ -17,7 +17,7 @@ export default function Marriage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Holy Matrimony"
         description="Planning a Catholic wedding at St. Dominic Church? Learn about marriage preparation, requirements, and scheduling."

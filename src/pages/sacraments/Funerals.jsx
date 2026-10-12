@@ -17,7 +17,7 @@ export default function Funerals() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Catholic Funerals"
         description="Catholic funeral services at St. Dominic Church. Vigil, Funeral Mass, and Rite of Committal information."

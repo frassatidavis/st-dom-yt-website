@@ -16,7 +16,7 @@ export default function Baptism() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Baptism"
         description="Information about the Sacrament of Baptism at St. Dominic Church. Requirements, preparation, and how to schedule."

@@ -25,7 +25,7 @@ export default function Sacraments() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="The Sacraments"
         description="Learn about the seven sacraments celebrated at St. Dominic Church — Baptism, Eucharist, Confirmation, Marriage, and more."

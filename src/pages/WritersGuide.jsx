@@ -65,7 +65,7 @@ function PassphraseGate({ onUnlock }) {
   };
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo title="Staff Area" description="" />
       <div
         style={{
@@ -506,7 +506,7 @@ function StaffDashboard() {
   })();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Staff Dashboard"
         description="Staff management dashboard for St. Dominic Catholic Church."

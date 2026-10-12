@@ -17,7 +17,7 @@ export default function BecomingCatholic() {
   const cards = [{ key: "new" }, { key: "returning" }, { key: "ready" }];
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Becoming Catholic"
         description="Interested in becoming Catholic? Learn about OCIA (formerly RCIA) and the journey of faith at St. Dominic Church, Youngstown OH."

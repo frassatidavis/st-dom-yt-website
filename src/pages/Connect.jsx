@@ -27,7 +27,7 @@ export default function Connect() {
   const accounts = getActiveSocial();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Connect With Us"
         description="Follow St. Dominic Catholic Church on social media for daily updates, homilies, events, and parish life."

@@ -63,7 +63,7 @@ export default function FaithFormation() {
   const { t } = useTranslation();
 
   return (
-    <div style={{ paddingTop: "var(--nav-h)" }}>
+    <div style={{ paddingTop: 76 }}>
       <Seo
         title="Faith Formation"
         description="Deepen your faith with Dominican resources — podcasts, theology, catechesis, and more at St. Dominic Catholic Church."
