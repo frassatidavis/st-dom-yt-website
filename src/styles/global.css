@@ -1569,11 +1569,6 @@ body.nav-open .parish-action-bar {
     margin-bottom: 22px;
   }
 
-  .premium-hero__actions,
-  .premium-hero__actions > * {
-    width: 100%;
-  }
-
   .premium-hero__actions button {
     width: 100%;
   }
