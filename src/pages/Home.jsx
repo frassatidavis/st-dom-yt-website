@@ -188,8 +188,10 @@ export default function Home() {
       </StickyHero>
 
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
-      <div className="home-dog-divider" aria-hidden="true">
-        <img src={PHOTOS.dominicanDog} alt="" width={180} height={109} decoding="async" />
+      <div className="home-dog-divider">
+        <a href="https://dominicanajournal.org/essay/im-a-dog/" target="_blank" rel="noopener noreferrer">
+          <img src={PHOTOS.dominicanDog} alt={t("home.dog.label")} width={180} height={109} decoding="async" />
+        </a>
       </div>
 
       <section className="premium-essentials">

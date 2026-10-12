@@ -708,6 +708,14 @@ body.nav-open .parish-action-bar {
   background: var(--color-gold);
   opacity: 0.7;
 }
+.home-dog-divider a {
+  display: block;
+  line-height: 0;
+  transition: opacity 0.2s;
+}
+.home-dog-divider a:hover {
+  opacity: 0.75;
+}
 .home-dog-divider img {
   width: clamp(120px, 16vw, 180px);
   height: auto;
