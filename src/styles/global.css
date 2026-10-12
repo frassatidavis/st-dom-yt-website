@@ -692,6 +692,30 @@ body.nav-open .parish-action-bar {
   padding: 0 24px 46px;
 }
 
+/* Home: the Dominican dog between the hero photo and the Today card */
+.home-dog-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 28px);
+  padding: clamp(28px, 5vw, 44px) 24px clamp(12px, 2vw, 20px);
+}
+.home-dog-divider::before,
+.home-dog-divider::after {
+  content: "";
+  flex: 0 1 140px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.7;
+}
+.home-dog-divider img {
+  width: clamp(120px, 16vw, 180px);
+  height: auto;
+}
+.home-dog-divider + .premium-essentials {
+  margin-top: 0;
+}
+
 .premium-essentials .section-inner--wide {
   padding: clamp(24px, 4vw, 34px);
   background: rgba(255, 253, 249, 0.96);

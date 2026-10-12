@@ -187,6 +187,11 @@ export default function Home() {
         </div>
       </StickyHero>
 
+      {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
+      <div className="home-dog-divider" aria-hidden="true">
+        <img src={PHOTOS.dominicanDog} alt="" width={180} height={109} decoding="async" />
+      </div>
+
       <section className="premium-essentials">
         <div className="section-inner--wide">
           <div className="premium-essentials__group">
