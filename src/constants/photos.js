@@ -77,6 +77,7 @@ export const PHOTOS = {
   psjShieldBw: `${B}photos/branding/psj-shield-bw.png`,        // B&W shield (watermark use)
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
   psjWordmarkWhite: `${B}photos/branding/psj-wordmark-white.png`, // White wordmark for dark backgrounds
+  doyLogoWhite: `${B}photos/branding/doy-logo-white.png`,         // Diocese of Youngstown crest + wordmark (inverted, doy.org)
 
   // ── Mass Times page ──
   monstrance: `${B}photos/gallery/F69A5507.webp`,               // Monstrance with Blessed Sacrament exposed

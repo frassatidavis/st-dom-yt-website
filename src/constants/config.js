@@ -69,6 +69,9 @@ export const CONFIG = {
   // Dominican Province of St. Joseph
   provinceUrl: "https://dominicanfriars.org/",
 
+  // Catholic Diocese of Youngstown
+  dioceseUrl: "https://doy.org/",
+
   // Flipbook bulletin embed URL
   // Paste the share/embed URL from your flipbook service (FlipHTML5, Heyzine, Issuu, etc.)
   // Example: "https://online.fliphtml5.com/abcde/fghij/"

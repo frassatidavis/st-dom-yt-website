@@ -285,32 +285,50 @@ export default function Footer() {
           flexWrap: "wrap",
         }}
       >
-        <a
-          href={CONFIG.provinceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 16,
-            textDecoration: "none",
-            color: "rgba(255,255,255,0.7)",
-            transition: "opacity 0.3s",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-          onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
-        >
-          <img
-            src={PHOTOS.psjShield}
-            alt="Dominican Province of St. Joseph Shield"
-            style={{ width: 44, height: 44, objectFit: "contain" }}
-          />
-          <img
-            src={PHOTOS.psjWordmarkWhite}
-            alt="Dominican Friars — Province of Saint Joseph"
-            style={{ height: 28, objectFit: "contain", opacity: 0.85 }}
-          />
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px 36px", flexWrap: "wrap" }}>
+          <a
+            href={CONFIG.provinceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              textDecoration: "none",
+              color: "rgba(255,255,255,0.7)",
+              transition: "opacity 0.3s",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
+          >
+            <img
+              src={PHOTOS.psjShield}
+              alt="Dominican Province of St. Joseph Shield"
+              style={{ width: 44, height: 44, objectFit: "contain" }}
+            />
+            <img
+              src={PHOTOS.psjWordmarkWhite}
+              alt="Dominican Friars — Province of Saint Joseph"
+              style={{ height: 28, objectFit: "contain", opacity: 0.85 }}
+            />
+          </a>
+          <a
+            href={CONFIG.dioceseUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "flex", alignItems: "center", opacity: 0.85, transition: "opacity 0.3s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
+          >
+            <img
+              src={PHOTOS.doyLogoWhite}
+              alt="Catholic Diocese of Youngstown"
+              width={115}
+              height={64}
+              style={{ height: 64, width: "auto", objectFit: "contain" }}
+            />
+          </a>
+        </div>
 
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", textAlign: "right" }}>
           © <span style={{ fontVariantNumeric: "oldstyle-nums" }}>{new Date().getFullYear()}</span>{" "}
