@@ -97,12 +97,6 @@
       "ctaRegister": "Regístrese en Línea",
       "ctaBulletin": "Boletines Recientes"
     },
-    "announcements": {
-      "sub": "Vida de la Iglesia",
-      "title": "Noticias y Anuncios",
-      "ctaBulletin": "Ver Boletín Completo",
-      "upcoming": "Próximamente"
-    },
     "liturgical": {
       "advent": "Tiempo de Adviento",
       "christmas": "Tiempo de Navidad",
@@ -130,9 +124,6 @@
       "hoursDays": "Lunes – Viernes",
       "hoursTime": "8:30 AM – 1:30 PM",
       "emailTitle": "Envíenos un Correo"
-    },
-    "events": {
-      "cta": "Ver Todos los Eventos"
     }
   },
   "schedule": {

@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
@@ -6,7 +5,6 @@ import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
 import Btn from "../components/Btn";
 
-import { useAnnouncements, useEvents } from "../cms/hooks";
 import Seo from "../components/Seo";
 import LiturgicalBanner from "../components/LiturgicalBanner";
 import VaticanNews from "../components/VaticanNews";
@@ -16,28 +14,11 @@ import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
 import { PHOTOS } from "../constants/photos";
 
-const CATEGORY_COLORS = {
-  mass: T.burgundy,
-  sacrament: T.gold,
-  education: "#4A7C59",
-  social: "#5B7FA6",
-  prayer: "#7B5EA7",
-  other: T.warmGray,
-};
-
 export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
   const navigate = useNavigate();
-  const { data: announcements } = useAnnouncements();
-  const { data: events } = useEvents();
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`;
-
-  const upcoming = useMemo(() => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return events.filter((event) => new Date(`${event.date}T00:00:00`) >= today).slice(0, 3);
-  }, [events]);
 
   return (
     <div>
@@ -154,64 +135,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {(announcements.length > 0 || upcoming.length > 0) && (
-        <Section>
-          <SectionTitle>{t("home.announcements.title")}</SectionTitle>
-          <div className="premium-news-grid">
-            {announcements.slice(0, 2).map((announcement, index) => (
-              <article key={announcement.title || index} className="premium-news-card">
-                {announcement.date && (
-                  <div className="premium-news-card__date">
-                    {t("home.announcements.upcoming")} ·{" "}
-                    {new Date(`${announcement.date}T00:00:00`).toLocaleDateString(undefined, {
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </div>
-                )}
-                <h3>{announcement.title}</h3>
-                <p>{announcement.body}</p>
-              </article>
-            ))}
-
-            {upcoming.slice(0, 2).map((event) => {
-              const d = new Date(`${event.date}T00:00:00`);
-              const color = CATEGORY_COLORS[event.category] ?? T.warmGray;
-              return (
-                <article
-                  key={`${event.title}-${event.date}`}
-                  className="premium-news-card premium-news-card--event"
-                  style={{ "--event-color": color }}
-                >
-                  <div className="premium-event-date">
-                    <span>{d.toLocaleDateString("en-US", { month: "short" })}</span>
-                    <strong>{d.getDate()}</strong>
-                  </div>
-                  <h3>{event.title}</h3>
-                  <p>
-                    {event.time}
-                    {event.location ? ` · ${event.location}` : ""}
-                  </p>
-                </article>
-              );
-            })}
-          </div>
-          <div className="premium-centered-actions">
-            <Btn variant="primary" onClick={() => navigate("/events")}>
-              {t("home.events.cta")}
-            </Btn>
-            <button
-              type="button"
-              className="premium-text-link"
-              onClick={() => navigate("/bulletin")}
-            >
-              {t("home.announcements.ctaBulletin")}
-              <Icon name="ArrowRight" size={15} color={T.burgundy} />
-            </button>
-          </div>
-        </Section>
-      )}
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("home.formation.sub")}>{t("home.formation.title")}</SectionTitle>

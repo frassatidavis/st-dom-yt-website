@@ -758,7 +758,6 @@ body.nav-open .parish-action-bar {
   height: auto;
 }
 
-.premium-news-card,
 .premium-contact-item {
   transition:
     transform 0.3s var(--ease-out-expo),
@@ -767,7 +766,6 @@ body.nav-open .parish-action-bar {
     background 0.3s ease;
 }
 
-.premium-news-card:hover,
 .premium-contact-item:hover {
   transform: translateY(-3px);
   border-color: rgba(197, 165, 90, 0.75) !important;
@@ -782,7 +780,6 @@ body.nav-open .parish-action-bar {
   line-height: 1.8;
 }
 
-.premium-text-link,
 .premium-light-link {
   min-height: 44px;
   display: inline-flex;
@@ -800,7 +797,6 @@ body.nav-open .parish-action-bar {
   cursor: pointer;
 }
 
-.premium-text-link:hover,
 .premium-light-link:hover {
   text-decoration: underline;
 }
@@ -820,19 +816,9 @@ body.nav-open .parish-action-bar {
   margin-top: 14px;
 }
 
-.premium-news-grid,
 .premium-contact-strip {
   display: grid;
   gap: 16px;
-}
-
-.premium-news-card h3 {
-  display: block;
-  color: var(--color-soft-black);
-  font-family: var(--font-display);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.2;
 }
 
 .premium-charism {
@@ -922,57 +908,6 @@ body.nav-open .parish-action-bar {
   max-width: 64ch;
   margin: 0 0 30px;
   text-wrap: pretty;
-}
-
-.premium-news-grid {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-bottom: 30px;
-}
-
-.premium-news-card {
-  position: relative;
-  min-height: 190px;
-  padding: 26px;
-  border: 1px solid var(--color-stone);
-  border-radius: var(--radius-card);
-  background: #fff;
-}
-
-.premium-news-card--event {
-  border-top: 4px solid var(--event-color);
-}
-
-.premium-news-card__date,
-.premium-event-date span {
-  color: var(--color-gold-text);
-  font-size: 12px;
-  font-weight: 700;
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.08em;
-}
-
-.premium-news-card h3 {
-  margin: 10px 0 8px;
-  font-size: 21px;
-}
-
-.premium-news-card p {
-  color: var(--color-warm-gray);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.premium-event-date {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.premium-event-date strong {
-  color: var(--color-soft-black);
-  font-family: var(--font-display);
-  font-size: 32px;
-  line-height: 1;
 }
 
 .premium-formation-copy {
@@ -1392,8 +1327,7 @@ body.nav-open .parish-action-bar {
   }
 
   .premium-formation-grid,
-  .premium-contact-strip,
-  .premium-news-grid {
+  .premium-contact-strip {
     grid-template-columns: 1fr;
   }
 

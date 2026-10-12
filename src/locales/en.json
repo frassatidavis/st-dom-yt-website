@@ -97,12 +97,6 @@
       "ctaRegister": "Register Online",
       "ctaBulletin": "Recent Bulletins"
     },
-    "announcements": {
-      "sub": "Church Life",
-      "title": "News & Announcements",
-      "ctaBulletin": "View Full Bulletin",
-      "upcoming": "Upcoming"
-    },
     "liturgical": {
       "advent": "Advent Season",
       "christmas": "Christmas Season",
@@ -130,9 +124,6 @@
       "hoursDays": "Monday – Friday",
       "hoursTime": "8:30 AM – 1:30 PM",
       "emailTitle": "Email Us"
-    },
-    "events": {
-      "cta": "View All Events"
     }
   },
   "schedule": {
