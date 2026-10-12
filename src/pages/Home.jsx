@@ -147,14 +147,6 @@ export default function Home() {
                 {t("home.hero.ctaBulletin")}
               </Btn>
             </div>
-            <button
-              type="button"
-              className="premium-light-link"
-              onClick={() => navigate("/mass-times")}
-            >
-              {t("home.hero.ctaMass")}
-              <Icon name="ArrowRight" size={15} color={T.goldLight} />
-            </button>
           </div>
 
           {i18n.language !== "es" && (
