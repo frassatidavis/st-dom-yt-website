@@ -26,55 +26,41 @@ const CATEGORY_COLORS = {
   other: T.warmGray,
 };
 
-const cardBase = {
-  background: "#fff",
-  border: `1px solid ${T.stone}`,
-  borderRadius: "var(--radius-card)",
-  boxShadow: "0 1px 10px rgba(26,23,20,0.055)",
-};
-
-function ActionCard({ icon, label, value, onClick, href }) {
+/** One row of the Today / Find us list: icon, label + detail, arrow. */
+function EssentialRow({ icon, label, value, onClick, href }) {
   const content = (
     <>
-      <Icon name={icon} size={23} color={T.burgundy} />
-      <span>
-        <span className="premium-card-label">{label}</span>
-        <span className="premium-card-value">{value}</span>
+      <Icon name={icon} size={22} color={T.burgundy} />
+      <span className="essential-row__text">
+        <span className="essential-row__label">{label}</span>
+        <span className="essential-row__value">{value}</span>
       </span>
+      <Icon name="ChevronRight" size={18} color={T.goldText} className="essential-row__arrow" />
     </>
   );
 
-  const sharedStyle = {
-    ...cardBase,
-    minHeight: 112,
-    display: "flex",
-    alignItems: "flex-start",
-    gap: 14,
-    padding: "18px",
-    textDecoration: "none",
-    textAlign: "left",
-    cursor: "pointer",
-    fontFamily: "var(--font-body)",
-  };
-
   if (href) {
+    const external = href.startsWith("http");
     return (
-      <a
-        href={href}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-        className="premium-action-card"
-        style={sharedStyle}
-      >
-        {content}
-      </a>
+      <li>
+        <a
+          href={href}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          className="essential-row"
+        >
+          {content}
+        </a>
+      </li>
     );
   }
 
   return (
-    <button type="button" onClick={onClick} className="premium-action-card" style={sharedStyle}>
-      {content}
-    </button>
+    <li>
+      <button type="button" onClick={onClick} className="essential-row">
+        {content}
+      </button>
+    </li>
   );
 }
 
@@ -198,44 +184,44 @@ export default function Home() {
         <div className="section-inner--wide">
           <div className="premium-essentials__group">
             <div className="kicker">{t("home.essentials.todayGroup")}</div>
-            <div className="premium-essentials__grid premium-essentials__grid--today">
-              <ActionCard
+            <ul className="essential-list">
+              <EssentialRow
                 icon="Church"
                 label={t("home.essentials.today")}
                 value={todayMasses || t("home.essentials.noMassToday")}
                 onClick={() => navigate("/mass-times")}
               />
-              <ActionCard
+              <EssentialRow
                 icon="Cross"
                 label={t("home.essentials.confession")}
                 value={todayConfessions || t("home.essentials.noConfessionToday")}
                 onClick={() => navigate("/mass-times")}
               />
-            </div>
+            </ul>
             <p className="premium-essentials__note">{t("home.essentials.reviewed")}</p>
           </div>
           <div className="premium-essentials__group">
             <div className="kicker">{t("home.essentials.findUs")}</div>
-            <div className="premium-essentials__grid premium-essentials__grid--find">
-              <ActionCard
+            <ul className="essential-list">
+              <EssentialRow
                 icon="MapPin"
                 label={t("home.essentials.directions")}
                 value={t("home.essentials.directionsDesc")}
                 href={mapsHref}
               />
-              <ActionCard
+              <EssentialRow
                 icon="Newspaper"
                 label={t("home.essentials.bulletin")}
                 value={t("home.essentials.bulletinDesc")}
                 href={CONFIG.diocesanBulletinUrl}
               />
-              <ActionCard
+              <EssentialRow
                 icon="Phone"
                 label={t("home.essentials.contact")}
                 value={CONFIG.phone}
                 href={CONFIG.phoneLink}
               />
-            </div>
+            </ul>
           </div>
         </div>
       </section>
