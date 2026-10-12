@@ -15,7 +15,7 @@ export default function FirstCommunion() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="First Holy Communion"
         description="First Holy Communion preparation at St. Dominic Church. Program details, requirements, and registration information."

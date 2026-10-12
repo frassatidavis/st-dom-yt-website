@@ -32,7 +32,7 @@ export default function Bulletin() {
   const hasLinkedArchive = bulletins.some((b) => b.url);
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Weekly Bulletin"
         description="Read the weekly church bulletin from St. Dominic Catholic Church with announcements, Mass intentions, and ministry news."

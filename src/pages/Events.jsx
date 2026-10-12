@@ -49,7 +49,7 @@ export default function Events() {
   const filtered = (list) => (filter === "all" ? list : list.filter((e) => e.category === filter));
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Church Events"
         description="Upcoming events at St. Dominic Catholic Church — Masses, sacraments, education, and community gatherings in Youngstown, Ohio."

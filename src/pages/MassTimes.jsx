@@ -219,7 +219,7 @@ export default function MassTimes() {
       />
 
       {/* ════ Section 1: Schedule-forward opener — today's Masses in the header ════ */}
-      <div style={{ paddingTop: 76 }}>
+      <div style={{ paddingTop: "var(--nav-h)" }}>
         <PageHeader
           variant="text"
           title={t("massTimes.title")}

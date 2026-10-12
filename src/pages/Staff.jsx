@@ -327,7 +327,7 @@ export default function Staff() {
   );
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Priests & Staff"
         description="Meet the Dominican Friars and church staff serving the community at St. Dominic Catholic Church in Youngstown, Ohio."

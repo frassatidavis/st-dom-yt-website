@@ -152,7 +152,7 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Contact Us"
         description="Contact St. Dominic Catholic Church in Youngstown, Ohio. Phone, email, office hours, and directions to 77 East Lucius Avenue."

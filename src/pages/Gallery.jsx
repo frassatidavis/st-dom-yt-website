@@ -31,7 +31,7 @@ export default function Gallery() {
   }, [lightboxIndex, closeLightbox]);
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Photo Gallery"
         description="Browse photos of St. Dominic Catholic Church in Youngstown, Ohio — aerial views, interior architecture, sacred art, and liturgical celebrations."

@@ -53,7 +53,7 @@ export default function GetInvolved() {
   }, [selected, close]);
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Get Involved"
         description="Explore ministries and volunteer opportunities at St. Dominic Church — Hispanic Ministry, music, religious education, and more."

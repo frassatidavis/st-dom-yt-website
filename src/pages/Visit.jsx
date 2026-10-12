@@ -16,7 +16,7 @@ export default function Visit() {
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`;
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Start Here"
         description="Visiting St. Dominic Church? Everything you need to know — what to expect, Mass times, parking, and a warm welcome."

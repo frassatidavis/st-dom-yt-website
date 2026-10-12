@@ -17,6 +17,10 @@
   /* Form/validation error red, leaned toward the brand burgundy (AA on warm white) */
   --color-error: #A03423;
 
+  /* Height of the fixed header; pages pad their top by it. Desktop adds the
+     menu-links row (see .nav-links-row). */
+  --nav-h: 76px;
+
   --font-display: Georgia, Gelasio, "Times New Roman", serif;
   --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -77,7 +81,7 @@
 html {
   /* Lenis overrides scroll-behavior, but keep as fallback */
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: calc(var(--nav-h) + 20px);
 }
 
 :where(section[id], article[id], div[id]) {
@@ -1681,6 +1685,29 @@ a.contact-link:hover {
 .nav-brand { font-size: 16px; white-space: nowrap; }
 @media (max-width: 400px) {
   .nav-brand { font-size: clamp(13px, 4vw, 16px); white-space: normal; }
+}
+
+/* Desktop: menu links on their own slim row under the name + times */
+@media (min-width: 1161px) {
+  :root {
+    --nav-h: 119px; /* 76px top row + 1px rule + 42px links row */
+  }
+}
+.nav-links-row {
+  border-top: 1px solid rgba(232, 226, 216, 0.75);
+}
+.nav-links-row__inner {
+  width: 100%;
+  max-width: 1200px;
+  height: 42px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav-links-row__inner > :first-child {
+  margin-left: -11px; /* line the first link's text up with the crest */
 }
 
 /* Week's Mass + confession times between the parish name and the menu.

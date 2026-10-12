@@ -288,128 +288,8 @@ export default function Nav() {
 
         <NavSchedule />
 
-        {/* Desktop links */}
-        <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">
-          {NAV_ITEMS.map((item) =>
-            item.children ? (
-              <div
-                key={item.key}
-                style={{ position: "relative" }}
-                onMouseEnter={() => handleMouseEnter(item.key)}
-                onMouseLeave={handleMouseLeave}
-                onFocus={() => {
-                  clearTimeout(hoverTimeout.current);
-                  setOpenDropdown(item.key);
-                }}
-                onBlur={(e) => {
-                  if (!e.currentTarget.contains(e.relatedTarget)) {
-                    setOpenDropdown(null);
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "Escape") {
-                    setOpenDropdown(null);
-                    e.currentTarget.querySelector("a, button")?.focus();
-                  }
-                }}
-              >
-                {item.linkless ? (
-                  <button
-                    type="button"
-                    className="premium-nav-link"
-                    style={linkStyle(isGroupActive(item))}
-                    aria-haspopup="menu"
-                    aria-expanded={openDropdown === item.key}
-                    onClick={() =>
-                      setOpenDropdown(openDropdown === item.key ? null : item.key)
-                    }
-                  >
-                    {t(`nav.${item.key}`)}
-                    <ChevronDown
-                      size={13}
-                      style={{
-                        transition: "transform 0.2s",
-                        transform: openDropdown === item.key ? "rotate(180deg)" : "rotate(0)",
-                        opacity: 0.5,
-                      }}
-                    />
-                  </button>
-                ) : (
-                  <NavLink
-                    to={item.children[0].to}
-                    className="premium-nav-link"
-                    style={linkStyle(isGroupActive(item))}
-                    aria-haspopup="menu"
-                    aria-expanded={openDropdown === item.key}
-                  >
-                    {t(`nav.${item.key}`)}
-                    <ChevronDown
-                      size={13}
-                      style={{
-                        transition: "transform 0.2s",
-                        transform: openDropdown === item.key ? "rotate(180deg)" : "rotate(0)",
-                        opacity: 0.5,
-                      }}
-                    />
-                  </NavLink>
-                )}
-
-                {/* Dropdown panel */}
-                {openDropdown === item.key && (
-                  <div
-                    role="menu"
-                    style={{
-                      position: "absolute",
-                      top: "100%",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      minWidth: 200,
-                      background: "rgba(255,253,249,0.98)",
-                      backdropFilter: "blur(12px)",
-                      borderTop: `2px solid ${T.gold}`,
-                      boxShadow: "0 6px 20px rgba(0,0,0,0.10)",
-                      borderRadius: "0 0 var(--radius-modal) var(--radius-modal)",
-                      padding: "8px 0",
-                      animation: "dropdownFadeIn 0.2s ease",
-                    }}
-                  >
-                    {item.children.map((child) => (
-                      <NavLink
-                        key={child.to}
-                        to={child.to}
-                        role="menuitem"
-                        className="premium-dropdown-link"
-                        style={{
-                          display: "block",
-                          padding: "10px 20px",
-                          fontSize: 13.5,
-                          fontWeight: isActive(child.to) ? 600 : 400,
-                          color: isActive(child.to) ? T.burgundy : T.charcoal,
-                          textDecoration: "none",
-                          fontFamily: "var(--font-body)",
-                          transition: "background 0.2s",
-                          whiteSpace: "nowrap",
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.background = T.cream)}
-                        onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
-                      >
-                        {t(`nav.${child.key}`)}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <NavLink
-                key={item.key}
-                to={item.to}
-                className="premium-nav-link"
-                style={linkStyle(isActive(item.to))}
-              >
-                {t(`nav.${item.key}`)}
-              </NavLink>
-            )
-          )}
+        {/* Desktop: Give, search, language (menu links are on the row below) */}
+        <div style={{ display: "flex", gap: 2, alignItems: "center", flexShrink: 0 }} className="nav-desktop">
           {/* Give goes straight to the parish's Flocknote giving form (it can't be embedded) */}
           <a
             href={CONFIG.flocknoteGivingUrl}
@@ -445,14 +325,140 @@ export default function Nav() {
         </button>
       </div>
 
+      {/* Desktop: menu links on their own row */}
+      <div className="nav-desktop nav-links-row">
+        <div className="nav-links-row__inner">
+              {NAV_ITEMS.map((item) =>
+                item.children ? (
+                  <div
+                    key={item.key}
+                    style={{ position: "relative" }}
+                    onMouseEnter={() => handleMouseEnter(item.key)}
+                    onMouseLeave={handleMouseLeave}
+                    onFocus={() => {
+                      clearTimeout(hoverTimeout.current);
+                      setOpenDropdown(item.key);
+                    }}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget)) {
+                        setOpenDropdown(null);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Escape") {
+                        setOpenDropdown(null);
+                        e.currentTarget.querySelector("a, button")?.focus();
+                      }
+                    }}
+                  >
+                    {item.linkless ? (
+                      <button
+                        type="button"
+                        className="premium-nav-link"
+                        style={linkStyle(isGroupActive(item))}
+                        aria-haspopup="menu"
+                        aria-expanded={openDropdown === item.key}
+                        onClick={() =>
+                          setOpenDropdown(openDropdown === item.key ? null : item.key)
+                        }
+                      >
+                        {t(`nav.${item.key}`)}
+                        <ChevronDown
+                          size={13}
+                          style={{
+                            transition: "transform 0.2s",
+                            transform: openDropdown === item.key ? "rotate(180deg)" : "rotate(0)",
+                            opacity: 0.5,
+                          }}
+                        />
+                      </button>
+                    ) : (
+                      <NavLink
+                        to={item.children[0].to}
+                        className="premium-nav-link"
+                        style={linkStyle(isGroupActive(item))}
+                        aria-haspopup="menu"
+                        aria-expanded={openDropdown === item.key}
+                      >
+                        {t(`nav.${item.key}`)}
+                        <ChevronDown
+                          size={13}
+                          style={{
+                            transition: "transform 0.2s",
+                            transform: openDropdown === item.key ? "rotate(180deg)" : "rotate(0)",
+                            opacity: 0.5,
+                          }}
+                        />
+                      </NavLink>
+                    )}
+
+                    {/* Dropdown panel */}
+                    {openDropdown === item.key && (
+                      <div
+                        role="menu"
+                        style={{
+                          position: "absolute",
+                          top: "100%",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          minWidth: 200,
+                          background: "rgba(255,253,249,0.98)",
+                          backdropFilter: "blur(12px)",
+                          borderTop: `2px solid ${T.gold}`,
+                          boxShadow: "0 6px 20px rgba(0,0,0,0.10)",
+                          borderRadius: "0 0 var(--radius-modal) var(--radius-modal)",
+                          padding: "8px 0",
+                          animation: "dropdownFadeIn 0.2s ease",
+                        }}
+                      >
+                        {item.children.map((child) => (
+                          <NavLink
+                            key={child.to}
+                            to={child.to}
+                            role="menuitem"
+                            className="premium-dropdown-link"
+                            style={{
+                              display: "block",
+                              padding: "10px 20px",
+                              fontSize: 13.5,
+                              fontWeight: isActive(child.to) ? 600 : 400,
+                              color: isActive(child.to) ? T.burgundy : T.charcoal,
+                              textDecoration: "none",
+                              fontFamily: "var(--font-body)",
+                              transition: "background 0.2s",
+                              whiteSpace: "nowrap",
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.background = T.cream)}
+                            onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
+                          >
+                            {t(`nav.${child.key}`)}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <NavLink
+                    key={item.key}
+                    to={item.to}
+                    className="premium-nav-link"
+                    style={linkStyle(isActive(item.to))}
+                  >
+                    {t(`nav.${item.key}`)}
+                  </NavLink>
+                )
+              )}
+        </div>
+      </div>
+
       {/* Mobile menu */}
       {mobileOpen && (
         <div
           style={{
             background: T.warmWhite, borderTop: `1px solid ${T.stone}`,
             padding: "8px 24px 20px", animation: "slideDown 0.3s ease",
-            minHeight: "calc(100vh - 76px)",
-            maxHeight: "calc(100vh - 76px)",
+            minHeight: "calc(100vh - var(--nav-h))",
+            maxHeight: "calc(100vh - var(--nav-h))",
             overflowY: "auto",
           }}
         >

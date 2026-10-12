@@ -25,7 +25,7 @@ export default function Give() {
   const donationSectionStyle = { contentVisibility: "visible" };
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Online Giving"
         description="Support St. Dominic Catholic Church through online giving. Your generosity sustains our ministries and community outreach."

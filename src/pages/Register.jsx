@@ -385,7 +385,7 @@ export default function Register() {
   const SACRAMENT_OPTIONS = ["baptism", "firstCommunion", "confirmation", "marriage"];
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div style={{ paddingTop: "var(--nav-h)" }}>
       <Seo
         title="Church Registration"
         description="Register as a member at St. Dominic Catholic Church in Youngstown, Ohio."
