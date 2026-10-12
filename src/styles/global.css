@@ -597,25 +597,6 @@ body.nav-open .parish-action-bar {
   text-align: left;
 }
 
-.premium-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  color: var(--color-gold-light);
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.08em;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.premium-hero__eyebrow::before {
-  content: "";
-  width: 26px;
-  height: 1px;
-  background: var(--color-gold);
-}
-
 .premium-hero__title {
   max-width: 20ch;
   color: #fff;
@@ -626,14 +607,7 @@ body.nav-open .parish-action-bar {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-wrap: balance;
-}
-
-.premium-hero__location {
-  margin-top: 12px;
   margin-bottom: 28px;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-  font-weight: 500;
 }
 
 .premium-hero__actions,
@@ -1582,9 +1556,8 @@ body.nav-open .parish-action-bar {
     font-size: clamp(32px, 9.5vw, 44px);
   }
 
-  .premium-hero__location {
+  .premium-hero__title {
     margin-bottom: 22px;
-    font-size: 14px;
   }
 
   .premium-hero__actions > * {
@@ -1750,19 +1723,10 @@ a.contact-link:hover {
 
 /* Short landscape phones: compress the hero stack so CTAs stay in view */
 @media (max-width: 600px) and (max-height: 720px) {
-  .home-hero-subtitle {
-    margin-bottom: 6px !important;
-    font-size: 13px !important;
-  }
-
   .home-hero-title {
     font-size: 34px !important;
     line-height: 1.05 !important;
-  }
-
-  .home-hero-location {
-    margin: 8px 0 16px !important;
-    font-size: 13px !important;
+    margin-bottom: 16px !important;
   }
 
   .premium-hero__nextline {
