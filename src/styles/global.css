@@ -499,6 +499,14 @@ body.nav-open .parish-action-bar {
   }
 }
 
+/* Footer: once the identity block and Sunday Mass stack (narrow screens),
+   the Mass column spans the width so the crest above it centers on screen. */
+@media (max-width: 800px) {
+  .footer-mass {
+    flex-basis: 100% !important;
+  }
+}
+
 /* ── Reusable layout classes ── */
 .section-inner {
   max-width: 800px;

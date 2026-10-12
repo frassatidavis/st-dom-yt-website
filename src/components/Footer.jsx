@@ -150,25 +150,20 @@ export default function Footer() {
         </div>
 
         {sundayRows.length > 0 && (
-          <div style={{ flex: "0 1 280px" }}>
+          <div className="footer-mass" style={{ flex: "0 1 280px" }}>
             <img
-              src={PHOTOS.stDomLogoSmall}
+              src={PHOTOS.stDomCrestLight}
               alt=""
               aria-hidden="true"
-              width={84}
-              height={84}
+              width={130}
+              height={180}
               loading="lazy"
               decoding="async"
               style={{
                 display: "block",
-                width: 84,
-                height: 84,
-                borderRadius: "50%",
-                background: "#fff",
-                border: "1px solid rgba(232,213,163,0.55)",
-                objectFit: "contain",
-                padding: 4,
-                marginBottom: 22,
+                height: "clamp(150px, 15vw, 180px)",
+                width: "auto",
+                margin: "0 auto 26px",
               }}
             />
             <h2 style={groupHeadingStyle}>

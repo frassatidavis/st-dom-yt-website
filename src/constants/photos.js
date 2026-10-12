@@ -73,7 +73,8 @@ export const PHOTOS = {
 
   // ── Provincial branding (Dominican Province of St. Joseph) ──
   stDomLogo: `${B}photos/branding/st-dom-logo.webp`,           // Parish crest — Dominican shield with VERITAS (full size)
-  stDomLogoSmall: `${B}photos/branding/st-dom-logo-480.webp`,  // Same crest, 480px — for small badges (nav, footer)
+  stDomLogoSmall: `${B}photos/branding/st-dom-logo-480.webp`,  // Same crest, 480px — for small badges (nav)
+  stDomCrestLight: `${B}photos/branding/st-dom-crest-light.webp`, // Same crest as light-gold ink on transparent, for dark grounds (footer)
   psjShield: `${B}photos/branding/psj-shield.png`,             // Official PSJ shield with VERITAS
   psjShieldBw: `${B}photos/branding/psj-shield-bw.png`,        // B&W shield (watermark use)
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
