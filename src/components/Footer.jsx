@@ -41,6 +41,7 @@ const FOOTER_GROUPS = [
       { to: "/mass-times", key: "massTimes" },
       { to: "/bulletin", key: "bulletin" },
       { to: "/contact", key: "contact" },
+      { to: "/give", key: "waysToGive" },
     ],
   },
   {

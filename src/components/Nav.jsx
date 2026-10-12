@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown, MapPin, Church, Gift } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
 import SiteSearch from "./SiteSearch";
 import { PHOTOS } from "../constants/photos";
+import { CONFIG } from "../constants/config";
 
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
@@ -365,8 +366,11 @@ export default function Nav() {
               </NavLink>
             )
           )}
-          <NavLink
-            to="/give"
+          {/* Give goes straight to the parish's Flocknote giving form (it can't be embedded) */}
+          <a
+            href={CONFIG.flocknoteGivingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="premium-give-link"
             style={{
               textDecoration: "none", padding: "8px 16px", fontSize: 13, fontWeight: 600,
@@ -375,7 +379,7 @@ export default function Nav() {
             }}
           >
             {t("nav.give")}
-          </NavLink>
+          </a>
           <SiteSearch />
           <div style={{ marginLeft: 6 }}>
             <LanguageToggle />
@@ -419,11 +423,16 @@ export default function Nav() {
             {[
               { to: "/visit", label: t("nav.visit"), icon: MapPin },
               { to: "/mass-times", label: t("nav.massTimes"), icon: Church },
-              { to: "/give", label: t("nav.give"), icon: Gift },
-            ].map(({ to, label, icon: IconComp }) => (
-              <NavLink
-                key={to}
-                to={to}
+              { href: CONFIG.flocknoteGivingUrl, label: t("nav.give"), icon: Gift },
+            ].map(({ to, href, label, icon: IconComp }) => {
+              const Tile = href ? "a" : NavLink;
+              const linkProps = href
+                ? { href, target: "_blank", rel: "noopener noreferrer", onClick: () => setMobileOpen(false) }
+                : { to };
+              return (
+              <Tile
+                key={to || href}
+                {...linkProps}
                 style={{
                   minHeight: 76,
                   display: "flex",
@@ -446,8 +455,9 @@ export default function Nav() {
               >
                 <IconComp size={18} color={isActive(to) ? T.burgundy : T.goldText} />
                 {label}
-              </NavLink>
-            ))}
+              </Tile>
+              );
+            })}
           </div>
 
           {NAV_ITEMS.map((item) =>
@@ -535,21 +545,24 @@ export default function Nav() {
               </NavLink>
             )
           )}
-          <NavLink
-            to="/give"
+          <a
+            href={CONFIG.flocknoteGivingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
             style={{
               display: "block",
               textDecoration: "none",
               padding: "14px 0",
               fontSize: 16,
-              fontWeight: isActive("/give") ? 600 : 400,
+              fontWeight: 400,
               color: T.goldText,
               borderBottom: `1px solid ${T.stoneLight}`,
               fontFamily: "var(--font-body)",
             }}
           >
             {t("nav.give")}
-          </NavLink>
+          </a>
           <div style={{ paddingTop: 16, display: "flex", alignItems: "center", gap: 12 }}>
             <SiteSearch />
             <LanguageToggle />
