@@ -773,7 +773,6 @@ body.nav-open .parish-action-bar {
 }
 
 .premium-welcome p,
-.premium-formation-copy,
 .premium-widget-copy {
   color: var(--color-warm-gray);
   font-size: 17px;
@@ -836,51 +835,14 @@ body.nav-open .parish-action-bar {
   margin: 0 auto;
 }
 
-.premium-charism__grid {
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: clamp(32px, 6vw, 68px);
-  align-items: center;
-}
-
-.premium-charism .kicker::before {
-  display: none;
-}
-
-.premium-charism blockquote {
-  margin: 18px 0 14px;
-  padding: 0;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: clamp(29px, 4vw, 46px);
-  font-style: italic;
-  line-height: 1.22;
-}
-.premium-charism blockquote::before {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  margin-bottom: 20px;
-  background: var(--color-gold);
-  border-radius: 1px;
-}
-
-.premium-charism cite {
-  display: block;
-  padding-left: 0;
-  color: var(--color-gold-light);
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.08em;
+.premium-charism__inner > * {
+  max-width: 640px;
 }
 
 .premium-charism h2 {
-  margin-bottom: 18px;
+  margin: 0 0 18px;
   color: #fff;
-  font-size: clamp(28px, 4vw, 38px);
+  font-size: clamp(28px, 4.5vw, 40px);
 }
 
 .premium-charism p,
@@ -891,7 +853,8 @@ body.nav-open .parish-action-bar {
 }
 
 .premium-charism p {
-  margin-bottom: 26px;
+  margin-bottom: 0;
+  font-size: 17px;
 }
 
 .premium-member-cta {
@@ -907,13 +870,6 @@ body.nav-open .parish-action-bar {
 .premium-member-cta p {
   max-width: 64ch;
   margin: 0 0 30px;
-  text-wrap: pretty;
-}
-
-.premium-formation-copy {
-  max-width: 62ch;
-  margin: -18px 0 34px;
-  text-align: left;
   text-wrap: pretty;
 }
 
@@ -1293,10 +1249,6 @@ body.nav-open .parish-action-bar {
   .premium-formation-grid,
   .premium-contact-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .premium-charism__grid {
-    grid-template-columns: 1fr;
   }
 
   .premium-page-actions__heading {

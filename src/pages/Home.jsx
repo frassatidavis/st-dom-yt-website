@@ -86,39 +86,6 @@ export default function Home() {
         </div>
       </Section>
 
-      <section className="premium-charism">
-        <HeroImage src={PHOTOS.dominicanCharism} overlay={0.7} position="center top" />
-        <div className="premium-charism__inner">
-          <div className="premium-charism__grid">
-            <div>
-              <div className="kicker kicker--light">
-                {t("home.priests.sub")}
-              </div>
-              <blockquote>{t("home.priests.quote")}</blockquote>
-              <cite>{t("home.priests.quoteSrc")}</cite>
-            </div>
-            <div>
-              <h2>{t("home.priests.title")}</h2>
-              <p>{t("home.priests.desc")}</p>
-              <div className="premium-inline-actions">
-                <Btn variant="gold" onClick={() => navigate("/staff")}>
-                  {t("home.priests.cta")}
-                </Btn>
-                <a
-                  href={CONFIG.provinceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="premium-light-link"
-                >
-                  {t("home.priests.province")}
-                  <Icon name="ExternalLink" size={14} color={T.goldLight} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="premium-member-cta">
         <div className="section-inner">
           <SectionTitle sub={t("home.involved.sub")} light divider={false}>
@@ -136,9 +103,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Faith formation: introduced over the preaching photo, widgets below */}
+      <section className="premium-charism">
+        <HeroImage src={PHOTOS.dominicanCharism} overlay={0.7} position="center top" />
+        <div className="premium-charism__inner">
+          <h2>{t("home.formation.title")}</h2>
+          <p>{t("home.formation.desc")}</p>
+        </div>
+      </section>
+
       <Section bg={T.cream}>
-        <SectionTitle sub={t("home.formation.sub")}>{t("home.formation.title")}</SectionTitle>
-        <p className="premium-formation-copy">{t("home.formation.desc")}</p>
         <div className="premium-formation-grid">
           <div>
             <SectionTitle divider={false}>{t("home.vatican.title")}</SectionTitle>
