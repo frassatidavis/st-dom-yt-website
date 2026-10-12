@@ -2,6 +2,15 @@
   "nav": {
     "brand": "St. Dominic Church",
     "subtitle": "Youngstown, Ohio",
+    "schedule": {
+      "label": "Mass and confession times this week",
+      "mass": "Mass",
+      "confession": "Confession",
+      "days": "Sun,Mon,Tue,Wed,Thu,Fri,Sat",
+      "and": "&",
+      "spanish": "Español",
+      "vigil": "Vigil"
+    },
     "home": "Home",
     "massTimes": "Mass & Confession",
     "sacraments": "Sacraments",

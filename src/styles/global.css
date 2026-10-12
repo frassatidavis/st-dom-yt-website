@@ -1683,6 +1683,61 @@ a.contact-link:hover {
   .nav-brand { font-size: clamp(13px, 4vw, 16px); white-space: normal; }
 }
 
+/* Week's Mass + confession times between the parish name and the menu.
+   Same type as "Youngstown, Ohio" (11px small caps), in the accessible gold.
+   The slot gets whatever width is left; under ~330px it would need more lines
+   than the bar is tall, so it hides (phones have the bottom times bar). */
+.nav-schedule {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0 clamp(16px, 2.5vw, 32px);
+  container-type: inline-size;
+}
+.nav-schedule__link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+  color: var(--color-gold-text);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-variant-caps: all-small-caps;
+  line-height: 1.3;
+}
+.nav-schedule__link:hover .nav-schedule__seg {
+  color: var(--color-burgundy);
+}
+/* Label, then the times; wrapped times line up under the first time */
+.nav-schedule__line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.nav-schedule__label {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.nav-schedule__segs {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.nav-schedule__seg {
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-schedule__seg:not(:last-child)::after {
+  content: "·";
+  margin: 0 6px;
+}
+@container (max-width: 330px) {
+  .nav-schedule__link {
+    display: none;
+  }
+}
+
 /* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",
    Nunito Sans); switch to the menu button a little earlier so the row never
    looks crammed. */

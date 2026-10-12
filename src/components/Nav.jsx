@@ -7,6 +7,8 @@ import LanguageToggle from "./LanguageToggle";
 import SiteSearch from "./SiteSearch";
 import { PHOTOS } from "../constants/photos";
 import { CONFIG } from "../constants/config";
+import { useSchedule } from "../cms/hooks";
+import { formatWeeklySchedule } from "../utils/schedule";
 
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
@@ -80,6 +82,46 @@ const NAV_ITEMS = [
     ],
   },
 ];
+
+/**
+ * The week's Mass and confession times, Sunday through Saturday, set small in
+ * gold beside the parish name. It takes whatever room is left between the name
+ * and the menu and hides itself (CSS container query) when that room is too
+ * narrow to read — phones show today's times in the bottom bar instead.
+ */
+function NavSchedule() {
+  const { t } = useTranslation();
+  const { data: schedule } = useSchedule();
+  const { mass, confession } = formatWeeklySchedule(schedule, {
+    days: t("nav.schedule.days").split(","),
+    and: t("nav.schedule.and"),
+    notes: { spanish: t("nav.schedule.spanish"), vigil: t("nav.schedule.vigil") },
+  });
+  if (!mass.length && !confession.length) return null;
+
+  const line = (label, segments) =>
+    segments.length > 0 && (
+      <span className="nav-schedule__line">
+        <span className="nav-schedule__label">{label}</span>
+        <span className="nav-schedule__segs">
+          {segments.map((s, i) => (
+            <span key={i} className="nav-schedule__seg">
+              {s.days} {s.times}
+            </span>
+          ))}
+        </span>
+      </span>
+    );
+
+  return (
+    <div className="nav-schedule">
+      <NavLink to="/mass-times" className="nav-schedule__link" aria-label={t("nav.schedule.label")}>
+        {line(t("nav.schedule.mass"), mass)}
+        {line(t("nav.schedule.confession"), confession)}
+      </NavLink>
+    </div>
+  );
+}
 
 export default function Nav() {
   const { t } = useTranslation();
@@ -243,6 +285,8 @@ export default function Nav() {
             </div>
           </div>
         </NavLink>
+
+        <NavSchedule />
 
         {/* Desktop links */}
         <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">
