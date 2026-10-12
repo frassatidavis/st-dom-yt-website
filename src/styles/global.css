@@ -92,9 +92,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Room under the page for the fixed Mass & Confession bar, at every size */
+body {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
 @media (max-width: 760px) {
   body {
-    padding-bottom: 78px;
+    padding-bottom: calc(110px + env(safe-area-inset-bottom));
   }
 }
 
@@ -452,9 +456,16 @@ body.nav-open .parish-action-bar {
   margin-top: 3px;
 }
 
+/* Wider screens: the bar stays (always visible), centered at a readable width */
 @media (min-width: 761px) {
   .parish-action-bar {
-    display: none;
+    left: 50%;
+    right: auto;
+    width: min(880px, calc(100% - 20px));
+    transform: translateX(-50%);
+  }
+  body.nav-open .parish-action-bar {
+    transform: translate(-50%, calc(100% + 24px));
   }
 }
 
@@ -701,6 +712,13 @@ body.nav-open .parish-action-bar {
 
 .premium-hero__actions {
   justify-content: flex-start;
+}
+
+/* Phones: keep the hero buttons clear of the fixed Mass & Confession bar */
+@media (max-width: 760px) {
+  .premium-hero {
+    padding-bottom: 24px;
+  }
 }
 
 /* Start Here with Bulletin directly beneath it, same width */
