@@ -71,6 +71,8 @@
       "title": "Esto es Santo Domingo",
       "ctaVisit": "Empiece Aquí",
       "ctaBulletin": "Boletín",
+      "skipIntro": "Omitir intro",
+      "replayIntro": "Repetir intro",
       "ctaBecoming": "¿Interesado en Hacerse Católico?"
     },
     "essentials": {

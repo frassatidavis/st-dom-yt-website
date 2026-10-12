@@ -60,6 +60,10 @@ self.addEventListener("fetch", (event) => {
 
   if (url.origin !== self.location.origin) return;
 
+  // Video and audio stream in byte ranges, which the cache can't store;
+  // let the browser fetch them directly
+  if (request.headers.has("range") || /\.(mp4|webm|mov|m4v|mp3|m4a)$/i.test(url.pathname)) return;
+
   // ── Navigation requests: network-first ──
   if (request.mode === "navigate") {
     event.respondWith(

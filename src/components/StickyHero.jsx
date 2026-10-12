@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { T } from "../constants/theme";
 import ResponsivePicture from "./ResponsivePicture";
+import HeroIntroVideo from "./HeroIntroVideo";
 
 /**
  * StickyHero — Apple-style hero that stays pinned while content scrolls.
@@ -10,6 +11,8 @@ import ResponsivePicture from "./ResponsivePicture";
  *
  * Props:
  *   image     — background image URL
+ *   introVideo — optional { src, poster, skipLabel, replayLabel }: plays
+ *               once over the image, then dissolves into it
  *   overlay   — dark overlay opacity (default 0.5)
  *   tint      — optional CSS color tint
  *   scrim     — "flat" (default) | "corner": directional gradient that holds
@@ -24,6 +27,7 @@ import ResponsivePicture from "./ResponsivePicture";
  */
 export default function StickyHero({
   image,
+  introVideo,
   overlay = 0.5,
   tint,
   scrim = "flat",
@@ -37,6 +41,7 @@ export default function StickyHero({
   const wrapperRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [introActive, setIntroActive] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -72,6 +77,7 @@ export default function StickyHero({
   const textOpacity = reducedMotion ? 1 : Math.max(0, 1 - progress * 2.5);
   const textY = reducedMotion ? 0 : progress * -40;
   const bgScale = reducedMotion ? 1 : 1 + progress * 0.1;
+  const bgVisible = loaded || introActive;
 
   return (
     <div ref={wrapperRef} style={{ height, position: "relative" }}>
@@ -118,6 +124,18 @@ export default function StickyHero({
           </div>
         )}
 
+        {/* Intro video over the photo; dissolves into it when it ends */}
+        {introVideo && (
+          <HeroIntroVideo
+            src={introVideo.src}
+            poster={introVideo.poster}
+            skipLabel={introVideo.skipLabel}
+            replayLabel={introVideo.replayLabel}
+            transform={reducedMotion ? "none" : `scale(${bgScale})`}
+            onActiveChange={setIntroActive}
+          />
+        )}
+
         {/* Overlay */}
         <div
           aria-hidden="true"
@@ -130,8 +148,8 @@ export default function StickyHero({
                 : tint
                   ? `linear-gradient(160deg, ${tint}, rgba(0,0,0,${overlay}))`
                   : `rgba(0,0,0,${overlay})`,
-            opacity: loaded ? 1 : 0,
-            transition: loaded ? "none" : "opacity 0.8s ease",
+            opacity: bgVisible ? 1 : 0,
+            transition: bgVisible ? "none" : "opacity 0.8s ease",
           }}
         />
 

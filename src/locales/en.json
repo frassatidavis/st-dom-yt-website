@@ -71,6 +71,8 @@
       "title": "This is St. Dom’s",
       "ctaVisit": "Start Here",
       "ctaBulletin": "Bulletin",
+      "skipIntro": "Skip intro",
+      "replayIntro": "Replay intro",
       "ctaBecoming": "Interested in Becoming Catholic?"
     },
     "essentials": {

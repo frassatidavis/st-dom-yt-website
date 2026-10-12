@@ -10,7 +10,12 @@ import LiturgicalBanner from "../components/LiturgicalBanner";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
-import { PHOTOS } from "../constants/photos";
+import { PHOTOS, VIDEOS } from "../constants/photos";
+
+// Small-viewport units keep the hero's bottom edge (buttons, Skip / Replay)
+// above phone browser toolbars, where 100vh reaches behind them
+const HERO_HEIGHT =
+  typeof CSS !== "undefined" && CSS.supports?.("height", "100svh") ? "calc(100svh - 88px)" : "calc(100vh - 88px)";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -28,12 +33,18 @@ export default function Home() {
 
       <StickyHero
         image={PHOTOS.homeHeroProcession}
+        introVideo={{
+          src: VIDEOS.homeIntro,
+          poster: VIDEOS.homeIntroPoster,
+          skipLabel: t("home.hero.skipIntro"),
+          replayLabel: t("home.hero.replayIntro"),
+        }}
         overlay={0.18}
         scrim="corner"
         align="bottom-left"
         fillHeight
-        height="calc(100vh - 88px)"
-        viewportHeight="calc(100vh - 88px)"
+        height={HERO_HEIGHT}
+        viewportHeight={HERO_HEIGHT}
         showScrollHint={false}
       >
         <div className="premium-hero premium-hero--centered">

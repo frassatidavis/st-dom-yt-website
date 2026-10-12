@@ -105,3 +105,9 @@ export const PHOTOS = {
     { src: `${B}photos/gallery/crucifix.webp`, alt: "gallery.crucifix" },
   ],
 };
+
+// ── Videos (public/videos/) ──
+export const VIDEOS = {
+  homeIntro: `${B}videos/home-intro.mp4`,              // Home hero intro — parish life montage, plays once then dissolves to the photo
+  homeIntroPoster: `${B}videos/home-intro-poster.webp`, // First frame, shown while the intro loads
+};

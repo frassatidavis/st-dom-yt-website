@@ -776,6 +776,78 @@ body.nav-open .parish-action-bar {
   gap: 10px;
 }
 
+/* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
+.hero-intro-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-soft-black);
+}
+
+.hero-intro-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  display: block;
+}
+
+/* Skip / Replay: small hairline control, bottom right, level with the last hero
+   button (the fixed nav covers the top of the hero); a dark fill keeps it legible */
+.hero-intro-control {
+  position: absolute;
+  right: 24px;
+  bottom: clamp(40px, 7vh, 76px);
+  z-index: 2;
+  min-height: 30px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-control);
+  background: rgba(20, 12, 13, 0.5);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-intro-control:hover {
+  background: var(--color-burgundy);
+  border-color: rgba(232, 213, 163, 0.75);
+}
+
+.hero-intro-control:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 3px;
+}
+
+/* Phones: match the hero's extra bottom room for the Mass & Confession bar */
+@media (max-width: 760px) {
+  .hero-intro-control {
+    right: 16px;
+    bottom: calc(clamp(40px, 7vh, 76px) + 24px);
+  }
+}
+
+/* Smallest phones: "Repetir intro" must clear the 168px hero buttons */
+@media (max-width: 360px) {
+  .hero-intro-control {
+    right: 10px;
+  }
+}
+
+/* Phones turned sideways: the hero is too short for the title and buttons
+   plus this, so it moves to the top right, just under the fixed header */
+@media (max-height: 500px) {
+  .hero-intro-control {
+    top: 92px;
+    bottom: auto;
+  }
+}
+
 /* Historical name — action rows now sit on the left text axis. The class
    stays (string-coupled across pages); only the alignment changed. */
 .premium-centered-actions {
