@@ -223,7 +223,7 @@ export default function Footer() {
           </div>
         ))}
 
-        <div style={{ minWidth: 200 }}>
+        <div style={{ minWidth: 0 }}>
           <h2 style={groupHeadingStyle}>
             {ruleBefore}
             {t("footer.contactTitle")}

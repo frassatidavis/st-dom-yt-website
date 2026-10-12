@@ -6,6 +6,7 @@ export const friars = [
   { id: "john-kozlowski", name: "Fr. John Chrysostom Kozlowski, O.P.", role: "inResidence" },
   { id: "bernard-confer", name: "Fr. Bernard Confer, O.P.", role: "inResidence" },
   { id: "gregory-salomone", name: "Fr. Gregory Salomone, O.P.", role: "inResidence" },
+  { id: "stephen-hayes", name: "Fr. Stephen Dominic Hayes, O.P.", role: "inResidence" },
 ];
 
 export const staff = [

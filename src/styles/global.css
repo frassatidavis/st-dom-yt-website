@@ -382,6 +382,30 @@ body.nav-open .parish-action-bar {
 @media (min-width: 768px) {
 }
 
+/* Friars in Residence: four across on desktop, two by two on tablets and
+   large phones, one per row on small phones. Rows are centered, so a count
+   that doesn't fill the last row (3, 5…) still looks deliberate. */
+.residence-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 624px; /* two 300px cards + gap: never three in a row below 1000px */
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  .residence-grid { max-width: 1000px; }
+}
+.residence-grid > .flip-card {
+  flex: 0 1 280px;
+}
+@media (min-width: 520px) {
+  .residence-grid > .flip-card { flex-basis: calc(50% - 12px); max-width: 300px; }
+}
+@media (min-width: 1000px) {
+  .residence-grid > .flip-card { flex-basis: calc(25% - 18px); max-width: none; }
+}
+
 /* ── Reusable layout classes ── */
 .section-inner {
   max-width: 800px;

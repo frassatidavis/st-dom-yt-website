@@ -447,15 +447,7 @@ export default function Staff() {
           <SectionTitle sub={t("staff.residence.sub")} light>
             {t("staff.residence.title")}
           </SectionTitle>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: 24,
-              maxWidth: 800,
-              margin: "0 auto",
-            }}
-          >
+          <div className="residence-grid">
             {inResidence.map((s) => (
               <ResidenceCard key={s.id} person={s} />
             ))}
