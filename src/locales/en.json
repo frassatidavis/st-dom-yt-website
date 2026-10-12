@@ -108,7 +108,14 @@
     "formation": {
       "title": "Keep Growing After Sunday",
       "desc": "Follow trusted Catholic teaching, parish updates, and resources for prayer throughout the week.",
-      "mediaTitle": "Dominican Friars Media — videos, podcasts and music from the Dominican Friars",
+      "media": {
+        "videos": "Videos",
+        "podcasts": "Podcasts",
+        "music": "Music",
+        "rosary": "Rosary",
+        "books": "Books",
+        "academic": "Academic"
+      },
       "mediaOpen": "Open Dominican Friars Media"
     }
   },

@@ -107,16 +107,27 @@ export default function Home() {
           <h2>{t("home.formation.title")}</h2>
           <p>{t("home.formation.desc")}</p>
 
-          {/* Dominican Friars Media, live. Loads when scrolled near; sandboxed so
-              it can open links in new tabs but never navigate this page. */}
-          <div className="home-media-frame" data-lenis-prevent>
-            <iframe
-              src={CONFIG.dominicanMediaUrl}
-              title={t("home.formation.mediaTitle")}
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms"
-            />
+          {/* Dominican Friars Media: one button per section of their site */}
+          <div className="home-media-buttons">
+            {[
+              { key: "videos", icon: "Video", anchor: "videos" },
+              { key: "podcasts", icon: "Mic", anchor: "podcasts" },
+              { key: "music", icon: "Music", anchor: "music" },
+              { key: "rosary", icon: "Cross", anchor: "rosary" },
+              { key: "books", icon: "BookOpen", anchor: "books" },
+              { key: "academic", icon: "GraduationCap", anchor: "academic1" },
+            ].map((s) => (
+              <a
+                key={s.key}
+                href={`${CONFIG.dominicanMediaUrl}#${s.anchor}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-media-button"
+              >
+                <Icon name={s.icon} size={20} color={T.goldLight} />
+                {t(`home.formation.media.${s.key}`)}
+              </a>
+            ))}
           </div>
           <a className="home-media-link" href={CONFIG.dominicanMediaUrl} target="_blank" rel="noopener noreferrer">
             {t("home.formation.mediaOpen")}
