@@ -79,8 +79,7 @@
       "sub": "Welcome",
       "title": "Saving Truth in the Heart of the Church",
       "p1": "The Dominican Friars of the Province of St. Joseph have served Youngstown's South Side since 1923, forming generations of Catholics to celebrate the sacred mysteries of our faith.",
-      "p2": "Whether you are a classic St. Dom's alum or pining to learn more about the Catholic faith, you are welcome here.",
-      "cta": "About Us"
+      "p2": "Whether you are a classic St. Dom's alum or pining to learn more about the Catholic faith, you are welcome here."
     },
     "priests": {
       "sub": "Our Team",
@@ -103,22 +102,6 @@
       "title": "News & Announcements",
       "ctaBulletin": "View Full Bulletin",
       "upcoming": "Upcoming"
-    },
-    "pillars": {
-      "sub": "Our Mission",
-      "title": "Word, Sacrament & Service",
-      "word": {
-        "title": "Word",
-        "desc": "Rooted in the Dominican intellectual tradition and guided by the writings of St. Thomas Aquinas, we preach the Gospel with clarity and depth through homilies, weekly catechesis, and faith formation."
-      },
-      "sacrament": {
-        "title": "Sacrament",
-        "desc": "We aim to celebrate the liturgy with reverence and beauty — daily Mass, convenient Confession times, Eucharistic Adoration, and frequent opportunities to deepen an awareness of God's grace."
-      },
-      "service": {
-        "title": "Service",
-        "desc": "Our location on the city's South Side makes the very location of St. Dom's an evangelical outlet to never lose hope in the richness of sacred tradition. Outreach programs to our neighbors and our own parishioners bring Christ's love to those in most need."
-      }
     },
     "liturgical": {
       "advent": "Advent Season",

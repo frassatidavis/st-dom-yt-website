@@ -79,8 +79,7 @@
       "sub": "Bienvenidos",
       "title": "La Verdad que Salva en el Corazón de la Iglesia",
       "p1": "Los Frailes Dominicos de la Provincia de San José han servido al South Side de Youngstown desde 1923, formando generaciones de católicos para celebrar los sagrados misterios de nuestra fe.",
-      "p2": "Sea usted un antiguo alumno de St. Dom's o alguien que anhela conocer más la fe católica, es bienvenido aquí.",
-      "cta": "Sobre Nosotros"
+      "p2": "Sea usted un antiguo alumno de St. Dom's o alguien que anhela conocer más la fe católica, es bienvenido aquí."
     },
     "priests": {
       "sub": "Nuestro Equipo",
@@ -103,22 +102,6 @@
       "title": "Noticias y Anuncios",
       "ctaBulletin": "Ver Boletín Completo",
       "upcoming": "Próximamente"
-    },
-    "pillars": {
-      "sub": "Nuestra Misión",
-      "title": "Palabra, Sacramento y Servicio",
-      "word": {
-        "title": "Palabra",
-        "desc": "Arraigados en la tradición intelectual dominicana y guiados por los escritos de Santo Tomás de Aquino, predicamos el Evangelio con claridad y profundidad a través de homilías, catequesis semanal y formación en la fe."
-      },
-      "sacrament": {
-        "title": "Sacramento",
-        "desc": "Buscamos celebrar la liturgia con reverencia y belleza — Misa diaria, horarios convenientes de Confesión, Adoración Eucarística y frecuentes oportunidades para profundizar la conciencia de la gracia de Dios."
-      },
-      "service": {
-        "title": "Servicio",
-        "desc": "Nuestra ubicación en el South Side de la ciudad hace del propio lugar de St. Dom's un medio evangelizador para nunca perder la esperanza en la riqueza de la tradición sagrada. Programas de ayuda a nuestros vecinos y a nuestros propios feligreses llevan el amor de Cristo a los más necesitados."
-      }
     },
     "liturgical": {
       "advent": "Tiempo de Adviento",

@@ -25,20 +25,6 @@ const CATEGORY_COLORS = {
   other: T.warmGray,
 };
 
-function GatewayCard({ icon, title, body, cta, onClick }) {
-  return (
-    <button type="button" className="premium-gateway-card" onClick={onClick}>
-      <Icon name={icon} size={34} color={T.gold} />
-      <span>
-        <strong>{title}</strong>
-        <span>{body}</span>
-      </span>
-      <Icon name="ArrowRight" size={18} color={T.burgundy} />
-      <span className="sr-only">{cta}</span>
-    </button>
-  );
-}
-
 export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
@@ -111,36 +97,11 @@ export default function Home() {
         </a>
       </div>
 
-
-
       <Section bg={T.cream}>
         <SectionTitle sub={t("home.welcome.sub")}>{t("home.welcome.title")}</SectionTitle>
         <div className="premium-welcome">
           <p>{t("home.welcome.p1")}</p>
           <p>{t("home.welcome.p2")}</p>
-        </div>
-        <div className="premium-gateway-grid">
-          <GatewayCard
-            icon="BookOpenText"
-            title={t("home.pillars.word.title")}
-            body={t("home.pillars.word.desc")}
-            cta={t("home.welcome.cta")}
-            onClick={() => navigate("/about")}
-          />
-          <GatewayCard
-            icon="Church"
-            title={t("home.pillars.sacrament.title")}
-            body={t("home.pillars.sacrament.desc")}
-            cta={t("nav.sacraments")}
-            onClick={() => navigate("/sacraments")}
-          />
-          <GatewayCard
-            icon="Handshake"
-            title={t("home.pillars.service.title")}
-            body={t("home.pillars.service.desc")}
-            cta={t("home.involved.ctaRegister")}
-            onClick={() => navigate("/get-involved")}
-          />
         </div>
       </Section>
 
