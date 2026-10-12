@@ -260,15 +260,16 @@ export default function Home() {
               </button>
             </div>
             {/* Veritas — the Order's motto — breaks the actions from the Mass card */}
-            <img
-              className="home-veritas"
-              src={PHOTOS.veritasBanner}
-              alt="Veritas"
-              width={280}
-              height={88}
-              loading="lazy"
-              decoding="async"
-            />
+            <a className="home-veritas" href="https://www.op.org/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={PHOTOS.veritasBanner}
+                alt={t("home.veritas.label")}
+                width={280}
+                height={88}
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
           </div>
           <SundayMassCard t={t} />
         </div>

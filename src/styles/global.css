@@ -728,8 +728,16 @@ body.nav-open .parish-action-bar {
 .home-veritas {
   display: block;
   width: clamp(210px, 24vw, 280px);
-  height: auto;
   margin: clamp(28px, 4vw, 44px) auto 0;
+  line-height: 0;
+  transition: opacity 0.2s;
+}
+.home-veritas:hover {
+  opacity: 0.75;
+}
+.home-veritas img {
+  width: 100%;
+  height: auto;
 }
 
 .premium-essentials .section-inner--wide {
