@@ -264,8 +264,8 @@ export default function Home() {
               className="home-veritas"
               src={PHOTOS.veritasBanner}
               alt="Veritas"
-              width={240}
-              height={130}
+              width={280}
+              height={88}
               loading="lazy"
               decoding="async"
             />
