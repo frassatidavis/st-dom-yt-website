@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
-import { useSchedule } from "../cms/hooks";
 
 function FooterLink({ to, children, style }) {
   const navigate = useNavigate();
@@ -100,14 +99,12 @@ const ruleBefore = (
 
 /**
  * Footer — editorial colophon. Three bands on the soft-black ground:
- *   1. Parish identity set large, with the live Sunday Mass summary opposite
+ *   1. Parish identity set large, with the Dominican crest opposite
  *   2. Link groups + contact address
  *   3. Province mark left, legal line right
  */
 export default function Footer() {
   const { t } = useTranslation();
-  const { data: schedule } = useSchedule();
-  const sundayRows = schedule?.sundayMass || [];
 
   return (
     <footer
@@ -117,7 +114,7 @@ export default function Footer() {
         padding: "clamp(52px, 8vw, 76px) 24px 32px",
       }}
     >
-      {/* ── Band 1: identity + Sunday Mass ── */}
+      {/* ── Band 1: identity + crest ── */}
       <div
         style={{
           maxWidth: 1140,
@@ -185,56 +182,24 @@ export default function Footer() {
           </address>
         </div>
 
-        {sundayRows.length > 0 && (
-          <div className="footer-mass" style={{ flex: "0 1 280px" }}>
-            <img
-              src={PHOTOS.stDomCrestLight}
-              alt=""
-              aria-hidden="true"
-              width={130}
-              height={180}
-              loading="lazy"
-              decoding="async"
-              style={{
-                display: "block",
-                height: "clamp(150px, 15vw, 180px)",
-                width: "auto",
-                margin: "0 auto 26px",
-              }}
-            />
-            <h2 style={groupHeadingStyle}>
-              {ruleBefore}
-              {t("footer.massTitle")}
-            </h2>
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
-              {sundayRows.map(([dayKey, time], i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    gap: 18,
-                    padding: "8px 0",
-                    borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    fontSize: 14,
-                  }}
-                >
-                  <span>{t(`schedule.${dayKey}`)}</span>
-                  <span
-                    style={{
-                      color: "#fff",
-                      fontWeight: 600,
-                      whiteSpace: "nowrap",
-                      fontVariantNumeric: "oldstyle-nums proportional-nums",
-                    }}
-                  >
-                    {time}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Dominican crest opposite the parish identity */}
+        <div className="footer-mass" style={{ flex: "0 1 280px" }}>
+          <img
+            src={PHOTOS.stDomCrestLight}
+            alt=""
+            aria-hidden="true"
+            width={130}
+            height={180}
+            loading="lazy"
+            decoding="async"
+            style={{
+              display: "block",
+              height: "clamp(150px, 15vw, 180px)",
+              width: "auto",
+              margin: "0 auto",
+            }}
+          />
+        </div>
       </div>
 
       {/* ── Band 2: link groups + contact ── */}
