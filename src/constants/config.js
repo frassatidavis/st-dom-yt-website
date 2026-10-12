@@ -62,9 +62,6 @@ export const CONFIG = {
   // Google Sheets CMS — paste your published Sheet ID here
   cmsSheetId: import.meta.env.VITE_CMS_SHEET_ID || "",
 
-  // YouTube channel embed (Fray Nelson)
-  youtubeChannelUrl: import.meta.env.VITE_YOUTUBE_CHANNEL_ID || "https://www.youtube.com/fraynelson",
-  youtubeEmbedUrl: import.meta.env.VITE_YOUTUBE_EMBED_URL || "https://www.youtube.com/embed?listType=user_uploads&list=fraynelson",
 
   // Dominican Province of St. Joseph
   provinceUrl: "https://dominicanfriars.org/",

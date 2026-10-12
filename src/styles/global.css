@@ -772,8 +772,7 @@ body.nav-open .parish-action-bar {
   box-shadow: 0 4px 12px rgba(26, 23, 20, 0.08) !important;
 }
 
-.premium-welcome p,
-.premium-widget-copy {
+.premium-welcome p {
   color: var(--color-warm-gray);
   font-size: 17px;
   line-height: 1.8;
@@ -870,20 +869,6 @@ body.nav-open .parish-action-bar {
 .premium-member-cta p {
   max-width: 64ch;
   margin: 0 0 30px;
-  text-wrap: pretty;
-}
-
-.premium-formation-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.premium-widget-copy {
-  margin: -24px 0 22px;
-  max-width: 56ch;
-  text-align: left;
   text-wrap: pretty;
 }
 
@@ -1246,7 +1231,6 @@ body.nav-open .parish-action-bar {
 }
 
 @media (max-width: 980px) {
-  .premium-formation-grid,
   .premium-contact-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1278,7 +1262,6 @@ body.nav-open .parish-action-bar {
     font-size: 14px;
   }
 
-  .premium-formation-grid,
   .premium-contact-strip {
     grid-template-columns: 1fr;
   }

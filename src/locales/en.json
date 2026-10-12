@@ -99,13 +99,6 @@
       "easter": "Easter Season",
       "ordinary": "Ordinary Time"
     },
-    "vatican": {
-      "sub": "The Universal Church",
-      "title": "News from the Vatican",
-      "load": "Load Vatican News",
-      "loading": "Loading Vatican News...",
-      "privacy": "This loads a Vatican News widget from vaticannews.va."
-    },
     "formation": {
       "title": "Keep Growing After Sunday",
       "desc": "Follow trusted Catholic teaching, parish updates, and resources for prayer throughout the week."
@@ -1047,15 +1040,6 @@
     "madonna": "Statue of the Madonna and Child",
     "alcove": "Prayer alcove with votive candles",
     "crucifix": "Wooden crucifix on oak paneling"
-  },
-  "youtube": {
-    "title": "Dominican Preaching",
-    "sub": "Fray Nelson Medina, O.P.",
-    "desc": "Explore the teachings and reflections of Fray Nelson Medina, O.P. — a Dominican friar whose video ministry reaches hundreds of thousands of faithful across the Spanish-speaking world.",
-    "loading": "Loading video…",
-    "loadVideo": "Load YouTube Videos",
-    "privacy": "This loads an embedded YouTube player.",
-    "visitChannel": "Visit Full Channel on YouTube"
   },
   "history": {
     "sub": "Est. 1923",

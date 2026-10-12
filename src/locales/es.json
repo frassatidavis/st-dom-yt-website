@@ -99,13 +99,6 @@
       "easter": "Tiempo de Pascua",
       "ordinary": "Tiempo Ordinario"
     },
-    "vatican": {
-      "sub": "La Iglesia Universal",
-      "title": "Noticias del Vaticano",
-      "load": "Cargar Noticias del Vaticano",
-      "loading": "Cargando Noticias del Vaticano...",
-      "privacy": "Esto carga un widget de Vatican News desde vaticannews.va."
-    },
     "formation": {
       "title": "Siga Creciendo Después del Domingo",
       "desc": "Siga enseñanza católica confiable, noticias parroquiales y recursos para la oración durante la semana."
@@ -1047,15 +1040,6 @@
     "madonna": "Estatua de la Virgen con el Niño",
     "alcove": "Capilla de oración con velas votivas",
     "crucifix": "Crucifijo de madera sobre panel de roble"
-  },
-  "youtube": {
-    "title": "Predicación Dominicana",
-    "sub": "Fray Nelson Medina, O.P.",
-    "desc": "Explore las enseñanzas y reflexiones de Fray Nelson Medina, O.P. — un fraile dominico cuyo ministerio en video llega a cientos de miles de fieles en todo el mundo hispanohablante.",
-    "loading": "Cargando video…",
-    "loadVideo": "Cargar Videos de YouTube",
-    "privacy": "Esto carga un reproductor integrado de YouTube.",
-    "visitChannel": "Visitar Canal Completo en YouTube"
   },
   "history": {
     "sub": "Est. 1923",

@@ -7,8 +7,6 @@ import Btn from "../components/Btn";
 
 import Seo from "../components/Seo";
 import LiturgicalBanner from "../components/LiturgicalBanner";
-import VaticanNews from "../components/VaticanNews";
-import YouTubeChannel from "../components/YouTubeChannel";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
@@ -111,20 +109,6 @@ export default function Home() {
           <p>{t("home.formation.desc")}</p>
         </div>
       </section>
-
-      <Section bg={T.cream}>
-        <div className="premium-formation-grid">
-          <div>
-            <SectionTitle divider={false}>{t("home.vatican.title")}</SectionTitle>
-            <VaticanNews />
-          </div>
-          <div>
-            <SectionTitle divider={false}>{t("youtube.title")}</SectionTitle>
-            <p className="premium-widget-copy">{t("youtube.desc")}</p>
-            <YouTubeChannel />
-          </div>
-        </div>
-      </Section>
 
       <Section>
         <div className="premium-contact-strip">
