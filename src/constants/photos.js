@@ -18,6 +18,8 @@ export const PHOTOS = {
   baptismHero: `${B}photos/baptism-opt.webp`,              // Easter Vigil baptism — water pouring
   marriageHero: `${B}photos/marriage-opt.webp`,            // Order of Celebrating Matrimony ritual book
 
+  sacredHeart: `${B}photos/sacred-heart-opt.webp`,         // Sacred Heart shrine — statue, red votive candles and roses (not placed on a page yet)
+
   // ── Section backgrounds ──
   aboutArchitecture: `${B}photos/exterior-facade-opt.webp`,  // Church façade with rose window
   dominicanCharism: `${B}photos/IMG_4583-opt.webp`,          // Friar preaching from ambo
