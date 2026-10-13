@@ -1,17 +1,19 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 /**
  * BrandFlight — as the page scrolls, carries a piece of hero lettering up
  * into the fixed header, where it takes the place of the header's text name
- * (.nav-brand-text). Scrolling back up returns it to the hero.
+ * (.nav-brand-text, which stays hidden while this is mounted: at the top of
+ * the page the header shows only its crest). Scrolling back up returns it.
  *
  * A fixed copy does the flying, between the hero image's own box (measured
  * live, so the intro zoom and the page's layout are respected) and a slot
- * beside the header crest. The light hero version fades into a dark one as it
- * arrives, so it reads on the light header. Once docked it simply stays there
- * (the header link underneath still takes clicks). With reduced motion it
- * swaps at the same point without flying.
+ * beside the header crest (the header's own, hidden copy of the lettering).
+ * The light hero version fades into a dark one as it arrives, so it reads on
+ * the light header. Once docked it simply stays there (the header link
+ * underneath still takes clicks). With reduced motion it swaps at the same
+ * point without flying.
  *
  * Props:
  *   sourceRef  — the hero <img> to carry (hidden while its copy flies)
@@ -26,7 +28,8 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
   const lightRef = useRef(null);
   const darkRef = useRef(null);
 
-  useEffect(() => {
+  // Layout effect: the header copy must be hidden before the first paint
+  useLayoutEffect(() => {
     const fly = flyRef.current;
     const source = sourceRef.current;
     if (!fly || !source) return undefined;
@@ -35,18 +38,16 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
     const smooth = (t) => t * t * (3 - 2 * t);
     const between = (t, a, b) => Math.min(1, Math.max(0, (t - a) / (b - a)));
 
+    root.style.setProperty("--brand-text-opacity", "0");
+
     let frame = 0;
     const update = () => {
       frame = 0;
-      const text = document.querySelector(".nav-brand-text");
-      if (!text) return;
-      const row = text.closest("a")?.parentElement || text;
+      const slot = document.querySelector(".nav-brand-text img");
+      if (!slot) return;
 
-      // Where it lands: beside the crest, vertically centered in the header row
-      const rowBox = row.getBoundingClientRect();
-      const textBox = text.getBoundingClientRect();
-      const endH = Math.min(54, rowBox.height - 20);
-      const end = { left: textBox.left, top: rowBox.top + (rowBox.height - endH) / 2, width: endH * aspect, height: endH };
+      // Where it lands: exactly on the header's own (hidden) copy
+      const end = slot.getBoundingClientRect();
 
       // Where it starts: the hero image as currently laid out (and zoomed);
       // the copy uses the same file the hero picked, so nothing loads twice
@@ -63,8 +64,6 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
       const flying = p > 0;
       source.style.visibility = flying ? "hidden" : "";
       fly.style.display = flying ? "block" : "none";
-      // The header's text name fades out as the lettering arrives
-      root.style.setProperty("--brand-text-opacity", (1 - between(p, 0.55, 0.9)).toFixed(3));
       if (!flying) return;
 
       const e = smooth(p);
@@ -89,8 +88,8 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
     // during the intro; keep following both
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(request) : null;
     ro?.observe(source);
-    const text = document.querySelector(".nav-brand-text");
-    if (text) ro?.observe(text.closest("a")?.parentElement || text);
+    const slot = document.querySelector(".nav-brand-text img");
+    if (slot) ro?.observe(slot);
     const tick = window.setInterval(request, 250); // catches the intro zoom between scrolls
 
     return () => {

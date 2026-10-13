@@ -225,27 +225,31 @@ export default function Nav() {
           height: scrolled ? 64 : 76, transition: "height 0.4s ease",
         }}
       >
-        {/* Logo */}
-        <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
+        {/* Black crest and the "St·Dom's" lettering (the link's name is the
+            church's name). On Home the lettering arrives from the hero as the
+            page scrolls (BrandFlight), so .nav-brand-text is hidden there. */}
+        <NavLink
+          to="/"
+          aria-label={t("nav.brand")}
+          style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}
+        >
           <img
-            src={PHOTOS.stDomLogoSmall}
+            src={PHOTOS.stDomCrestDark}
             alt=""
-            width={40}
-            height={40}
-            style={{
-              width: 40, height: 40, borderRadius: "50%", background: "#fff",
-              border: `1px solid ${T.stone}`, objectFit: "contain", padding: 2, display: "block",
-            }}
+            width={121}
+            height={168}
+            style={{ height: scrolled ? 40 : 48, width: "auto", display: "block", transition: "height 0.4s ease" }}
           />
-          {/* .nav-brand-text: on Home, the hero's "St·Dom's" takes its place on scroll (BrandFlight) */}
-          <div className="nav-brand-text" style={{ minWidth: 0 }}>
-            <div ref={brandRef} className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-              {t("nav.brand")}
-            </div>
-            <div className="nav-subtitle" style={{ letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
-              {t("nav.subtitle")}
-            </div>
-          </div>
+          <span className="nav-brand-text">
+            <img
+              ref={brandRef}
+              src={PHOTOS.heroStDomsBurgundy}
+              alt=""
+              width={600}
+              height={191}
+              style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
+            />
+          </span>
         </NavLink>
 
         {/* Today's Masses and confessions, when the row has room for them */}

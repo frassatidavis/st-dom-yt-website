@@ -1511,33 +1511,7 @@ a.contact-link:hover {
 .nav-mobile-toggle { display: none !important; }
 /* Nav wordmark: one line, except on the narrowest phones where the Spanish
    name ("Iglesia Santo Domingo") would push the menu button off-screen. */
-/* Header wordmark, as large as the row allows. Two lines plus the subtitle
-   must still fit the 64px scrolled header, so wrapping sizes stay at 20px. */
-.nav-brand { font-size: 24px; line-height: 1.05; white-space: nowrap; }
-.nav-subtitle { font-size: 13px; line-height: 1.2; margin-top: 2px; }
-/* Beside the full link row "Parroquia Santo Domingo" may need two lines */
-html[lang="es"] .nav-brand { font-size: 20px; white-space: normal; text-wrap: balance; }
-@media (max-width: 1160px) {
-  /* Menu button instead of links: the whole row is free */
-  .nav-brand,
-  html[lang="es"] .nav-brand { font-size: 30px; white-space: nowrap; }
-}
-@media (max-width: 760px) {
-  .nav-brand,
-  html[lang="es"] .nav-brand { font-size: 23px; }
-  .nav-subtitle { font-size: 12px; }
-}
-@media (max-width: 600px) {
-  /* Phones: up to two balanced lines ("St. Dominic / Church") */
-  .nav-brand,
-  html[lang="es"] .nav-brand {
-    font-size: clamp(16px, calc(10vw - 16px), 20px);
-    white-space: normal;
-    text-wrap: balance;
-  }
-}
-
-/* Header: today's Masses and confessions beside the church name (NavToday
+/* Header: today's Masses and confessions beside the crest and lettering (NavToday
    hides it when the row has no room). Free space goes after it, so the menu
    stays on the right. */
 .nav-today {
