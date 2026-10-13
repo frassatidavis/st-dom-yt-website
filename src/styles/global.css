@@ -835,8 +835,11 @@ body.nav-open .parish-action-bar {
   opacity: var(--brand-text-opacity, 1);
 }
 /* Header crest, with the dog drawn over it. Only the home page sets
-   --dog-to-crest (0 = dog, 1 = crest); elsewhere it's the crest alone. The
-   dog shrinks toward the crest's middle as it fades. */
+   --dog-to-crest (0 = dog, 1 = crest); elsewhere it's the crest alone.
+   Both are --crest-h tall: the crest is 0.7202 heights wide, the dog 1.6529.
+   The dog starts flush with the crest's left edge, then slides left and
+   shrinks until its middle sits on the crest's middle at ~90% of the crest's
+   width, fading as the crest grows in behind it. */
 .nav-crest-wrap {
   position: relative;
   display: block;
@@ -844,6 +847,7 @@ body.nav-open .parish-action-bar {
 }
 .nav-crest {
   opacity: var(--dog-to-crest, 1);
+  transform: scale(calc(0.88 + 0.12 * var(--dog-to-crest, 1)));
 }
 .nav-dog {
   position: absolute;
@@ -854,8 +858,10 @@ body.nav-open .parish-action-bar {
   display: block;
   pointer-events: none;
   opacity: calc(1 - var(--dog-to-crest, 1));
-  transform: translateY(-50%) scale(calc(1 - 0.45 * var(--dog-to-crest, 1)));
-  transform-origin: 17px 50%;
+  transform:
+    translate(calc(var(--dog-to-crest, 1) * (0.7202 - 1.6529) / 2 * var(--crest-h, 48px)), -50%)
+    scale(calc(1 - 0.608 * var(--dog-to-crest, 1)));
+  transform-origin: 50% 50%;
 }
 body.nav-open .nav-crest {
   opacity: 1;

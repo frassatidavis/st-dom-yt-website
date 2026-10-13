@@ -234,7 +234,7 @@ export default function Nav() {
           aria-label={t("nav.brand")}
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}
         >
-          <span className="nav-crest-wrap">
+          <span className="nav-crest-wrap" style={{ "--crest-h": `${scrolled ? 40 : 48}px` }}>
             <img
               className="nav-crest"
               src={PHOTOS.stDomCrestDark}
