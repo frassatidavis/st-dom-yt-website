@@ -9,9 +9,9 @@ import { getTodayScheduleSummary, keepTimesTogether } from "../utils/schedule";
  * header, linking to the full schedule.
  *
  * The header stays one row, so this shows only when it fits there without
- * squeezing the name onto more lines or crowding the menu; otherwise it hides
- * and the bottom bar (ParishActionBar), which always carries the same
- * information, covers it.
+ * squeezing the name onto more lines or crowding the menu; otherwise it
+ * hides (the bottom bar's "Full Mass & Confession Times" still leads to the
+ * schedule).
  *
  * Props:
  *   brandRef — ref to the church-name element, to notice if it would wrap
