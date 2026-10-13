@@ -5,6 +5,7 @@ import { T } from "../constants/theme";
 import { Menu, X, ChevronDown, MapPin, Church, Gift } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
 import SiteSearch from "./SiteSearch";
+import NavToday from "./NavToday";
 import { PHOTOS } from "../constants/photos";
 import { CONFIG } from "../constants/config";
 
@@ -89,6 +90,7 @@ export default function Nav() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileAccordion, setMobileAccordion] = useState(null);
   const menuRef = useRef(null);
+  const brandRef = useRef(null);
   const hoverTimeout = useRef(null);
 
   useEffect(() => {
@@ -217,7 +219,8 @@ export default function Nav() {
     >
       <div
         style={{
-          maxWidth: 1200, margin: "0 auto", padding: "0 24px",
+          // 1440px fits the name, today's times and the full link row on one line
+          maxWidth: 1440, margin: "0 auto", padding: "0 24px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
           height: scrolled ? 64 : 76, transition: "height 0.4s ease",
         }}
@@ -235,7 +238,7 @@ export default function Nav() {
             }}
           />
           <div style={{ minWidth: 0 }}>
-            <div className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+            <div ref={brandRef} className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {t("nav.brand")}
             </div>
             <div className="nav-subtitle" style={{ letterSpacing: 0.5, fontVariantCaps: "all-small-caps", color: T.warmGray, fontWeight: 500 }}>
@@ -243,6 +246,9 @@ export default function Nav() {
             </div>
           </div>
         </NavLink>
+
+        {/* Today's Masses and confessions, when the row has room for them */}
+        <NavToday brandRef={brandRef} />
 
         {/* Desktop links */}
         <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">

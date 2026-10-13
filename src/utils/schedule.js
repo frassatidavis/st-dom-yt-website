@@ -106,6 +106,15 @@ export function joinScheduleTimes(rows = []) {
   return rows.map(([, time]) => time).filter(Boolean).join(" · ");
 }
 
+// Let a value wrap only between whole times: "8:00 AM, 10:00 AM" may break
+// after the comma, "11:15 AM – 12:00 PM" after the dash, never inside a time.
+export function keepTimesTogether(value) {
+  return String(value)
+    .replace(/ (AM|PM)\b/g, "\u00a0$1")
+    .replace(/ – /g, "\u00a0– ")
+    .replace(/\) /g, ")\u00a0");
+}
+
 export function getTodayScheduleSummary(schedule, now = new Date()) {
   const todayKey = getTodayKey(now);
   return {

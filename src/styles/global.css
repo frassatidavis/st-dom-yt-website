@@ -1537,6 +1537,42 @@ html[lang="es"] .nav-brand { font-size: 20px; white-space: normal; text-wrap: ba
   }
 }
 
+/* Header: today's Masses and confessions beside the church name (NavToday
+   hides it when the row has no room). Free space goes after it, so the menu
+   stays on the right. */
+.nav-today {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  margin: 0 auto 0 20px;
+  padding-left: 20px;
+  border-left: 1px solid var(--color-stone);
+  color: var(--color-charcoal);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-today__label {
+  color: var(--color-gold-text);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.nav-today__value {
+  font-size: 12.5px;
+  line-height: 1.25;
+}
+.nav-today__kind {
+  color: var(--color-burgundy);
+  font-weight: 600;
+}
+.nav-today:hover .nav-today__label {
+  text-decoration: underline;
+}
+
 /* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",
    Nunito Sans); switch to the menu button a little earlier so the row never
    looks crammed. */
