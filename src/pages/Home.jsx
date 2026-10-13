@@ -15,6 +15,16 @@ import { PHOTOS, VIDEOS } from "../constants/photos";
 import useScrollVar from "../hooks/useScrollVar";
 import BrandFlight from "../components/BrandFlight";
 
+// The header lettering, cut from the 1960x420 "St·Dominic's" artwork: "St·Dom"
+// ends at x=1179 and "'s" starts at x=1716, so the middle "inic" is 537 wide
+const HEADER_NAME = {
+  parts: PHOTOS.dominicsParts,
+  closedAspect: (1960 - 537) / 420,
+  midStart: 1179 / 1960,
+  midFrac: 537 / 1960,
+  midShift: 537 / 420,
+};
+
 // Small-viewport units keep the hero's bottom edge (buttons, Skip / Replay)
 // above phone browser toolbars, where 100vh reaches behind them
 const HERO_HEIGHT =
@@ -115,12 +125,13 @@ export default function Home() {
         </div>
       </StickyHero>
 
+      {/* St·Dom's rises into the header; as the dog passes it opens into St·Dominic's */}
       <BrandFlight
         sourceRef={stDomsRef}
         lightSrc={PHOTOS.heroStDoms}
         lightOpacity={0.85}
-        darkSrc={PHOTOS.heroStDomsBurgundy}
-        aspect={1600 / 511}
+        dark={HEADER_NAME}
+        expandRef={dogRef}
       />
 
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}

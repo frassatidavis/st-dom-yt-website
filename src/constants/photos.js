@@ -79,7 +79,13 @@ export const PHOTOS = {
   heroThisIsSmall: `${B}photos/branding/this-is-800.webp`,
   heroStDoms: `${B}photos/branding/st-doms-1600.webp`, // "St·Dom's"
   heroStDomsSmall: `${B}photos/branding/st-doms-800.webp`,
-  heroStDomsBurgundy: `${B}photos/branding/st-doms-burgundy-600.webp`, // solid burgundy "St·Dom's" for the header
+  heroStDomsBurgundy: `${B}photos/branding/st-doms-burgundy-v2.webp`, // solid burgundy "St·Dom's" for the header
+  // "St·Dominic's" in three layers, each the full name's size: "St·Dom", "inic", "'s" (BrandFlight opens the name)
+  dominicsParts: [
+    `${B}photos/branding/dominics-part1.webp`,
+    `${B}photos/branding/dominics-part2.webp`,
+    `${B}photos/branding/dominics-part3.webp`,
+  ],
   stDomCrestDark: `${B}photos/branding/st-dom-crest-black-168.webp`, // Same crest in near-black, for the light header
   stDomCrestLight: `${B}photos/branding/st-dom-crest-light.webp`, // Same crest as light-gold ink on transparent, for dark grounds (footer)
   psjShield: `${B}photos/branding/psj-shield.png`,             // Official PSJ shield with VERITAS

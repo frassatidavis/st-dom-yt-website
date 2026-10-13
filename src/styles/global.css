@@ -798,12 +798,38 @@ body.nav-open .parish-action-bar {
   pointer-events: none;
   will-change: transform;
 }
-.brand-flight img {
+/* The hero lettering, kept in proportion while the box changes shape */
+.brand-flight__light {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: contain;
+  object-position: left center;
+}
+/* The header lettering: three layers of the full "St·Dominic's", sized by
+   the box's height (1em). Closed, the "'s" sits over the gap left by the
+   hidden "inic"; as --open goes 0 → 1 it slides right and "inic" is
+   uncovered behind it, letters spilling out past the box's right edge. */
+.brand-flight__dark {
+  position: absolute;
+  inset: 0;
+}
+.brand-flight__dark img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1em;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+.brand-flight__middle {
+  clip-path: inset(0 calc(100% - (var(--mid-start) + var(--open, 0) * var(--mid-frac)) * 100%) 0 0);
+}
+.brand-flight__end {
+  transform: translateX(calc(var(--mid-shift) * -1em * (1 - var(--open, 0))));
 }
 .nav-brand-text {
   opacity: var(--brand-text-opacity, 1);
@@ -1542,6 +1568,10 @@ a.contact-link:hover {
 .nav-today__kind {
   color: var(--color-burgundy);
   font-weight: 600;
+}
+/* Slides right as the home page's header name opens (BrandFlight) */
+.nav-today {
+  margin-left: calc(20px + var(--brand-extra, 0px));
 }
 .nav-today:hover .nav-today__label {
   text-decoration: underline;

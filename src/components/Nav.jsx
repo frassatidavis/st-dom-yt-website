@@ -245,8 +245,8 @@ export default function Nav() {
               ref={brandRef}
               src={PHOTOS.heroStDomsBurgundy}
               alt=""
-              width={600}
-              height={191}
+              width={651}
+              height={192}
               style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
             />
           </span>
