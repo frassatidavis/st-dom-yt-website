@@ -112,6 +112,9 @@ export const CONFIG = {
   emergencyPhoneLink: "tel:+12343674312",
   fax: "(330) 783-2396",
   email: "office@saintdominic.org",
+  // Religious Education (CCD): enrollment form and coordinator
+  ccdRegistrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfE4imDyJe-j1-HHAd6blwgKr71CuQswMp2Zivj-I5vyrjLQQ/viewform",
+  religiousEdEmail: "religion@saintdominic.org",
   address: "77 East Lucius Avenue",
   city: "Youngstown",
   state: "OH",

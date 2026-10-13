@@ -34,7 +34,8 @@ export default function ParallaxSection({
     const windowH = window.innerHeight;
     if (rect.bottom < -100 || rect.top > windowH + 100) return;
     const center = rect.top + rect.height / 2 - windowH / 2;
-    setOffset(center * speed);
+    // the photo extends 80px past each edge; moving it further would show a gap
+    setOffset(Math.max(-80, Math.min(80, center * speed)));
   }, [speed]);
 
   useEffect(() => {

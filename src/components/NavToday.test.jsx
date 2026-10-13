@@ -47,12 +47,14 @@ afterEach(() => {
 });
 
 describe("NavToday", () => {
-  it("shows today's Masses and confessions, linking to the schedule, when it fits", () => {
+  it("shows today's date, Masses and confessions, linking to the schedule, when it fits", () => {
     React.act(() => root.render(<Row />));
     const link = container.querySelector(".nav-today");
     expect(link.style.display).toBe("");
     expect(link.getAttribute("href")).toBe("/mass-times");
-    expect(link.textContent).toContain("Masses & Confessions Today");
+    // labelled with today's date, so it's plain the times are current
+    const today = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric" }).format(new Date());
+    expect(link.textContent).toContain(today);
     expect(link.textContent).toContain("call for appointment");
   });
 

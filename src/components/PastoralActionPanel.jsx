@@ -13,7 +13,11 @@ export function PastoralActionPanel({
   secondaryHref,
   secondaryTo,
   urgent = false,
+  // "eyebrow": the eyebrow becomes the large headline and the title sits
+  // under it, smaller (Anointing: "Emergency? A Priest Is On Call" over the number)
+  emphasis = "title",
 }) {
+  const eyebrowLeads = emphasis === "eyebrow";
   const navigate = useNavigate();
   const primaryStyle = urgent
     ? { background: T.gold, color: T.softBlack }
@@ -77,7 +81,19 @@ export function PastoralActionPanel({
           style={{ flex: "0 0 auto", marginTop: 4 }}
         />
         <div style={{ flex: "1 1 280px" }}>
-          {eyebrow && (
+          {eyebrow && eyebrowLeads && (
+            <h2
+              style={{
+                fontSize: "clamp(30px, 4.8vw, 44px)",
+                lineHeight: 1.12,
+                color: urgent ? "#fff" : T.softBlack,
+                marginBottom: 8,
+              }}
+            >
+              {eyebrow}
+            </h2>
+          )}
+          {eyebrow && !eyebrowLeads && (
             <div
               style={{
                 fontSize: 12,
@@ -91,15 +107,29 @@ export function PastoralActionPanel({
               {eyebrow}
             </div>
           )}
-          <h2
-            style={{
-              fontSize: "clamp(25px, 4vw, 36px)",
-              color: urgent ? "#fff" : T.softBlack,
-              marginBottom: 10,
-            }}
-          >
-            {title}
-          </h2>
+          {eyebrowLeads ? (
+            <p
+              style={{
+                fontSize: "clamp(20px, 3vw, 26px)",
+                fontFamily: "var(--font-display)",
+                fontWeight: 700,
+                color: urgent ? T.goldLight : T.burgundy,
+                margin: "0 0 10px",
+              }}
+            >
+              {title}
+            </p>
+          ) : (
+            <h2
+              style={{
+                fontSize: "clamp(25px, 4vw, 36px)",
+                color: urgent ? "#fff" : T.softBlack,
+                marginBottom: 10,
+              }}
+            >
+              {title}
+            </h2>
+          )}
           <p
             style={{
               fontSize: 16,

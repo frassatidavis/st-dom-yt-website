@@ -12,7 +12,7 @@
     "becomingCatholic": "Hacerse Católico",
     "getInvolved": "Participe",
     "contact": "Contacto",
-    "give": "Donar",
+    "give": "Donar en Línea",
     "waysToGive": "Formas de Donar",
     "visit": "Empiece Aquí",
     "baptism": "Bautismo",
@@ -21,6 +21,8 @@
     "marriage": "Santo Matrimonio",
     "anointing": "Unción de los Enfermos",
     "funerals": "Funerales",
+    "gettingMarried": "Casarse en Santo Domingo",
+    "planningFuneral": "Planear un Funeral en Santo Domingo",
     "register": "Registrarse",
     "events": "Eventos",
     "architecture": "Arquitectura y Arte",
@@ -83,7 +85,6 @@
       "label": "El perro dominico con la antorcha: leer «I'm a Dog» en Dominicana Journal (en inglés; se abre en una pestaña nueva)"
     },
     "welcome": {
-      "sub": "Bienvenidos",
       "title": "La Verdad que Salva en el Corazón de la Iglesia",
       "p1": "Los Frailes Dominicos de la Provincia de San José han servido al South Side de Youngstown desde 1923, formando generaciones de católicos para celebrar los sagrados misterios de nuestra fe.",
       "p2": "Sea usted un antiguo alumno de St. Dom's o alguien que anhela conocer más la fe católica, es bienvenido aquí."
@@ -92,9 +93,8 @@
       "province": "Nuestra Provincia"
     },
     "involved": {
-      "sub": "Participe",
       "title": "Hágalo Oficial",
-      "desc": "Hay muchas maneras de participar. Registre a su familia para que nunca se pierda los anuncios importantes, los eventos y los ministerios que lo mantienen unido a esta comunidad parroquial.",
+      "desc": "Regístrese en línea para recibir información actualizada y sobres para la ofrenda. El registro parroquial permite que el párroco y sus colaboradores conozcan a su rebaño. ¡No sea un feligrés anónimo!",
       "ctaRegister": "Regístrese en Línea",
       "ctaBulletin": "Boletines Recientes"
     },
@@ -109,15 +109,7 @@
     "formation": {
       "title": "Siga Creciendo Después del Domingo",
       "desc": "Siga enseñanza católica confiable, noticias parroquiales y recursos para la oración durante la semana.",
-      "media": {
-        "videos": "Videos",
-        "podcasts": "Pódcasts",
-        "music": "Música",
-        "rosary": "Rosario",
-        "books": "Libros",
-        "academic": "Académico"
-      },
-      "mediaOpen": "Abrir Dominican Friars Media"
+      "mediaOpen": "Dominican Friars Media"
     }
   },
   "schedule": {
@@ -303,14 +295,14 @@
     },
     "visitor": {
       "sub": "¿Primera Vez Aquí?",
-      "title": "Comience con la Misa; luego le ayudamos",
+      "title": "Comience con la Misa.",
       "desc": "Si está visitando, regresando a la Iglesia o trayendo a su familia por primera vez, venga como está. La oficina parroquial puede ayudar con direcciones, accesibilidad, Confesión o los próximos pasos después de la Misa.",
       "visit": "Empiece Aquí",
       "contact": "Llame a la Oficina"
     },
     "cta": {
-      "title": "Venga a Orar con Nosotros",
-      "desc": "Ya sea que nos acompañe a Misa, pase tiempo en oración ante el Santísimo Sacramento, o busque la gracia sanadora de la Confesión — siempre es bienvenido en Santo Domingo.",
+      "title": "Oremos",
+      "desc": "La vida es demasiado corta para descuidar su alma inmortal. Venga a Misa. Valore el don de la confesión. Haga de la Eucaristía parte de su vida. Ame a su parroquia y rece por su sacerdote.",
       "visit": "Empiece Aquí",
       "contact": "Contáctenos"
     },
@@ -498,7 +490,8 @@
     "reachOutDesc": "Contacte la oficina parroquial y le conectaremos con uno de nuestros sacerdotes o personal que puede responder sus preguntas y ayudarle a dar el siguiente paso.",
     "contact": {
       "title": "Comuníquese con Nosotros",
-      "desc": "Contacte la oficina parroquial y le conectaremos con uno de nuestros sacerdotes o personal que puede responder sus preguntas y ayudarle a dar el siguiente paso hacia el Bautismo o la plena recepción en la Iglesia."
+      "desc": "Contacte la oficina parroquial y le conectaremos con uno de nuestros sacerdotes o personal que puede responder sus preguntas y ayudarle a dar el siguiente paso hacia el Bautismo o la plena recepción en la Iglesia.",
+      "heading": "Es Su Alma. Haga Algo al Respecto."
     }
   },
   "faithFormation": {
@@ -558,12 +551,13 @@
     "cta": {
       "title": "Comience Su Camino Hoy",
       "desc": "Elija un recurso, reproduzca un podcast o abra el Catecismo. Cada paso que da hacia la comprensión de su fe es un paso más cerca de Cristo."
-    }
+    },
+    "actionsTitle": "Crezca en Conocimiento y Amor"
   },
   "getInvolved": {
     "title": "Participe",
     "sub": "Únase a Nuestra Familia",
-    "heading": "Hay un Lugar para Usted",
+    "heading": "Hay una Banca para Usted",
     "desc": "La Iglesia Santo Domingo ofrece muchas maneras de que las familias participen en la comunidad parroquial. Ya sea que busque profundizar su vida de oración, ofrecerse como voluntario o servir a los más humildes entre nosotros, aquí hay un lugar para usted.",
     "clickHint": "Haga clic para conocer más",
     "ministries": {
@@ -637,7 +631,8 @@
       "contact": "Información de Contacto",
       "reachVia": "Contactar a través de la oficina parroquial",
       "joinCta": "¿Interesado? Contacte la oficina parroquial para comenzar."
-    }
+    },
+    "actionsTitle": "Únase a Santo Domingo"
   },
   "contact": {
     "title": "Contáctenos",
@@ -763,7 +758,7 @@
       "sub": "El Sacramento del",
       "heading": "Nueva Vida en Cristo",
       "p1": "El Bautismo es el primer y fundamental sacramento de la iniciación cristiana. A través de las aguas del Bautismo, somos purificados del pecado original, renacidos como hijos de Dios y acogidos en la Iglesia Católica. Es la puerta a través de la cual entramos a la vida con Cristo.",
-      "p2": "En la Iglesia Santo Domingo, los Bautismos se celebran regularmente el 4.º domingo del mes, a las 9:00 AM (inglés) o a la 1:30 PM (español). La preparación bautismal solo se requiere para padres primerizos. Comuníquese con la oficina parroquial para registrarse.",
+      "p2": "En la Iglesia Santo Domingo, los Bautismos se celebran regularmente el 4.º domingo del mes, a las 9:00 AM (inglés) o a las 2:00 PM (español). Los Bautismos privados se programan a discreción del párroco. La preparación bautismal solo se requiere para padres primerizos. Comuníquese con la oficina parroquial para registrarse.",
       "reqSub": "Lo Que Necesita",
       "reqTitle": "Requisitos para el Bautismo",
       "req1": {
@@ -776,10 +771,13 @@
       },
       "req3": {
         "title": "Inscripción",
-        "desc": "Comuníquese con la oficina parroquial para registrarse y elegir una fecha — los Bautismos se celebran regularmente el 4.º domingo del mes a las 9:00 AM (inglés) o a la 1:30 PM (español)."
+        "desc": "Comuníquese con la oficina parroquial para registrarse y elegir una fecha — los Bautismos se celebran regularmente el 4.º domingo del mes a las 9:00 AM (inglés) o a las 2:00 PM (español)."
       },
       "cta": "Programar un Bautismo",
-      "ctaDesc": "Contáctenos para comenzar el proceso. Estaremos encantados de responder cualquier pregunta que pueda tener."
+      "ctaDesc": "Comuníquese con la oficina parroquial para comenzar el proceso. A los padres primerizos se les pide reunirse con un sacerdote antes de programar el bautismo de su hijo.",
+      "cardQuote": "“Por el Bautismo el hombre es regenerado a la vida espiritual.”",
+      "cardQuoteSrc": "ST III, q. 66, a. 1",
+      "cardCta": "Cómo Nacer de Nuevo"
     },
     "firstCommunion": {
       "title": "Primera Comunión",
@@ -805,7 +803,10 @@
         "desc": "Los padres son socios en la formación de fe de su hijo. Las familias asisten juntas a una sesión de preparación antes de la celebración."
       },
       "cta": "Inscriba a Su Hijo",
-      "ctaDesc": "Contacte la oficina parroquial o nuestra Coordinadora de Educación Religiosa para inscribir a su hijo en el programa."
+      "ctaDesc": "Contacte la oficina parroquial o nuestra Coordinadora de Educación Religiosa para inscribir a su hijo en el programa.",
+      "cardQuote": "“La Eucaristía es el sacramento de la perfección de la vida espiritual.”",
+      "cardQuoteSrc": "ST III, q. 73, a. 1",
+      "cardCta": "Reciba Más Información"
     },
     "confirmation": {
       "title": "Confirmación",
@@ -831,7 +832,10 @@
         "desc": "Los candidatos completan horas de servicio y reflexionan sobre cómo están llamados a vivir su fe en el mundo."
       },
       "cta": "Conozca Sobre la Confirmación",
-      "ctaDesc": "Contáctenos para obtener información sobre nuestro programa de preparación para la Confirmación para adolescentes y adultos."
+      "ctaDesc": "Contáctenos para obtener información sobre nuestro programa de preparación para la Confirmación para adolescentes y adultos.",
+      "cardQuote": "“En la Confirmación el hombre recibe poder para hacer lo que pertenece al combate espiritual.”",
+      "cardQuoteSrc": "ST III, q. 72, a. 5",
+      "cardCta": "Confírmese Aquí"
     },
     "marriage": {
       "title": "Santo Matrimonio",
@@ -864,7 +868,10 @@
       "convalidationCta": "Inicie la Conversación",
       "ccc": "\"El sacramento del Matrimonio significa la unión de Cristo con la Iglesia. Da a los esposos la gracia de amarse con el amor con que Cristo amó a su Iglesia; la gracia del sacramento perfecciona así el amor humano de los esposos, fortalece su unidad indisoluble y los santifica en el camino de la vida eterna.\"",
       "cccSrc": "— Catecismo de la Iglesia Católica, 1661",
-      "guidelines": "Guía para Bodas (PDF)"
+      "guidelines": "Guía para Bodas (PDF)",
+      "cardQuote": "“El Matrimonio se ordena a la propagación de la especie y a la unión de los corazones.”",
+      "cardQuoteSrc": "ST III, q. 65, a. 1",
+      "cardCta": "Prepárese para el Matrimonio"
     },
     "anointing": {
       "title": "Unción de los Enfermos",
@@ -903,7 +910,10 @@
           "title": "Contacto",
           "desc": "Comuníquese con la oficina para visitas a enfermos en casa u hospital."
         }
-      }
+      },
+      "cardQuote": "“La Extremaunción se da como curación espiritual, en cuanto quita los restos del pecado.”",
+      "cardQuoteSrc": "ST III, q. 84, a. 1, ad 1",
+      "cardCta": "Contacte a un Sacerdote"
     },
     "funerals": {
       "title": "Funerales Católicos",
@@ -951,7 +961,10 @@
           "desc": "Pregunte sobre planificación funeraria, registros y cuidado pastoral."
         }
       },
-      "directives": "Directivas Funerarias (PDF)"
+      "directives": "Directivas Funerarias (PDF)",
+      "cardQuote": "“Las almas de los difuntos son aliviadas por las oraciones de los vivos.”",
+      "cardQuoteSrc": "ST Supl., q. 71, a. 1",
+      "cardCta": "Planee un Funeral"
     },
     "pathways": {
       "infantBaptism": {
@@ -966,7 +979,9 @@
         "title": "Catequesis de Adultos",
         "desc": "Hombres y mujeres que deseen conocer más la fe católica y recibir los sacramentos pueden inscribirse en nuestras clases de OCIA (RICA)."
       }
-    }
+    },
+    "ccdRegistration": "Inscripción al Catecismo (CCD)",
+    "ccdCoordinator": "Sra. Adamaris Cortes"
   },
   "visit": {
     "quote": "\"No se olviden de la hospitalidad, pues gracias a ella algunos, sin saberlo, hospedaron ángeles.\"",
@@ -986,7 +1001,7 @@
       "title": "Antes de Venir",
       "dress": {
         "title": "¿Qué Debo Usar?",
-        "desc": "St. Dom's es un lugar sagrado, y la mayoría viste su mejor ropa dominguera, a la vez sencilla y modesta. Caballeros: por favor absténganse de ropa deportiva y camisetas sin mangas. Damas: eviten escotes pronunciados y ropa reveladora que pueda suscitar admiratio. ¡Nuestra atención debe estar siempre en el Señor!"
+        "desc": "St. Dom's es un lugar sagrado, y la mayoría viste su mejor ropa dominguera, a la vez sencilla y modesta. Caballeros: por favor absténganse de ropa deportiva y camisetas sin mangas. Damas: eviten escotes pronunciados y ropa reveladora que pueda suscitar <modesty>admiratio</modesty>. ¡Nuestra atención debe estar siempre en el Señor!"
       },
       "children": {
         "title": "¿Puedo Traer a Mis Hijos?",
@@ -1019,14 +1034,14 @@
       "parking": "St. Dom's cuenta con dos estacionamientos — uno entre Lucius y Auburndale y otro frente a las puertas principales de la iglesia sobre Lucius Avenue — además de estacionamiento en la calle. La iglesia es accesible con una rampa de entrada al costado del edificio."
     },
     "cta": {
-      "title": "Estamos Deseosos de Conocerle",
+      "title": "El Hogar Está Donde Está el Sagrado Corazón",
       "desc": "Ya sea que haya sido católico toda su vida o nunca haya entrado a una iglesia, nuestras puertas están abiertas. Los Frailes Dominicos y el pueblo de Santo Domingo le dan la bienvenida.",
       "contact": "Contáctenos",
       "becoming": "¿Ser Católico?"
     }
   },
   "gallery": {
-    "title": "Nuestra Iglesia en Fotos",
+    "title": "Su Parroquia en Fotos",
     "sub": "Un Vistazo al Interior",
     "placeholder": {
       "title": "Fotos Próximamente",
@@ -1154,7 +1169,8 @@
       "personal": "Personal",
       "contact": "Contacto",
       "church": "Iglesia"
-    }
+    },
+    "cardDesc": "¡Le damos la bienvenida a la Iglesia Santo Domingo! Por favor complete el formulario a continuación para registrarse como feligrés."
   },
   "events": {
     "title": "Eventos de la Iglesia",

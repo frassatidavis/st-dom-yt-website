@@ -28,6 +28,7 @@ export default function Anointing() {
       <Section bg={T.cream} style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
         <PastoralActionPanel
           urgent
+          emphasis="eyebrow"
           eyebrow={t("sacraments.anointing.emergencyTitle")}
           title={CONFIG.emergencyPhone}
           description={t("sacraments.anointing.emergencyDesc")}

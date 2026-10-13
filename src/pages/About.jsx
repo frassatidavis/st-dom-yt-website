@@ -1,20 +1,17 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
-import { CONFIG } from "../constants/config";
 import PullQuote from "../components/PullQuote";
 import { Section, SectionTitle } from "../components/Section";
 import Btn from "../components/Btn";
 
 import Seo from "../components/Seo";
-import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
 import PageHeader from "../components/PageHeader";
 import PremiumPageActions from "../components/PremiumPageActions";
 import PhotoGallery from "../components/PhotoGallery";
 import ResponsivePicture from "../components/ResponsivePicture";
 import TextReveal from "../components/TextReveal";
-import SaintOfTheDay from "../components/SaintOfTheDay";
 import { PHOTOS } from "../constants/photos";
 
 export default function About() {
@@ -31,30 +28,25 @@ export default function About() {
       <PageHeader
         title={t("about.title")}
         heroSrc={PHOTOS.aboutHero}
-        kicker={t("about.history.sub")}
         tint="rgba(26,23,20,0.5)"
       />
 
       <PremiumPageActions
         overlap
-        eyebrow={t("about.history.sub")}
         items={[
           {
             title: t("about.actions.history.title"),
-            description: t("about.actions.history.desc"),
             to: "/history",
             icon: "BookOpenText",
             primary: true,
           },
           {
             title: t("about.actions.staff.title"),
-            description: t("about.actions.staff.desc"),
             to: "/staff",
             icon: "Users",
           },
           {
             title: t("about.actions.visit.title"),
-            description: t("about.actions.visit.desc"),
             to: "/visit",
             icon: "MapPin",
           },
@@ -264,51 +256,10 @@ export default function About() {
         </div>
       </Section>
 
-      {/* ════ Saint of the Day ════ */}
-      <Section bg={T.cream}>
-        <SaintOfTheDay />
-      </Section>
-
-      {/* ════ Mission — Glassmorphic Cards ════ */}
-      <Section bg={T.cream}>
-        <SectionTitle sub={t("about.mission.sub")}>{t("about.mission.title")}</SectionTitle>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 28,
-          }}
-        >
-          {[
-            { key: "word", icon: "BookOpenText" },
-            { key: "sacrament", icon: "Cross" },
-            { key: "service", icon: "Handshake" },
-          ].map(({ key, icon }) => (
-            <div key={key} className="glass-card" style={{ padding: 32, textAlign: "center" }}>
-              <div aria-hidden="true" style={{ marginBottom: 12 }}>
-                <Icon name={icon} size={36} color={T.burgundy} />
-              </div>
-              <h3
-                style={{
-                  fontSize: 20,
-                  fontFamily: "var(--font-display)",
-                  marginBottom: 10,
-                }}
-              >
-                {t(`about.mission.${key}.title`)}
-              </h3>
-              <p style={{ fontSize: 15, color: T.warmGray, lineHeight: 1.7 }}>
-                {t(`about.mission.${key}.desc`)}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* ════ Photo Gallery ════ */}
       {PHOTOS.gallery.length > 0 && (
         <Section>
-          <SectionTitle sub={t("gallery.sub")}>{t("gallery.title")}</SectionTitle>
+          <SectionTitle>{t("gallery.title")}</SectionTitle>
           <PhotoGallery photos={PHOTOS.gallery} />
         </Section>
       )}

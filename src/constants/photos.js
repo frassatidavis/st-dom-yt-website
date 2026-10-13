@@ -18,7 +18,7 @@ export const PHOTOS = {
   baptismHero: `${B}photos/baptism-opt.webp`,              // Easter Vigil baptism — water pouring
   marriageHero: `${B}photos/marriage-opt.webp`,            // Order of Celebrating Matrimony ritual book
 
-  sacredHeart: `${B}photos/sacred-heart-opt.webp`,         // Sacred Heart shrine — statue, red votive candles and roses (not placed on a page yet)
+  sacredHeart: `${B}photos/sacred-heart-opt.webp`,         // Sacred Heart shrine — statue, red votive candles and roses (Start Here closing section)
 
   // ── Section backgrounds ──
   aboutArchitecture: `${B}photos/exterior-facade-opt.webp`,  // Church façade with rose window
@@ -71,6 +71,8 @@ export const PHOTOS = {
   stockBibleGolden: `${B}photos/faith-formation-opt.jpg`,        // Bible with rosary — faith formation
   stockSacraments: `${B}photos/interior-nave-opt.webp`,          // Nave & altar — sacramental life
   stockCandles: `${B}photos/stock/candles.webp`,                 // Votive candles (Unsplash)
+  sanctuaryAltar: `${B}photos/F69A5428-opt-1024.webp`,           // St. Dominic sanctuary: altar, tabernacle and monstrance (band size)
+  dominicanMural: `${B}photos/F69A5475-opt-1024.webp`,           // St. Dominic mural: Our Lady with Dominican saints (band size)
   stockGiving: `${B}photos/stock/giving.webp`,                   // Charity / generosity (Unsplash)
 
   // ── Provincial branding (Dominican Province of St. Joseph) ──
@@ -123,6 +125,9 @@ export const PHOTOS = {
 
 // ── Videos (public/videos/) ──
 export const VIDEOS = {
-  homeIntro: `${B}videos/home-intro.mp4`,              // Home hero intro — parish life montage, plays once then dissolves to the photo
-  homeIntroPoster: `${B}videos/home-intro-poster.webp`, // First frame, shown while the intro loads
+  // Home hero intros (parish life montages, ~26 s, silent). One plays per day,
+  // taking turns (see Home.jsx); add each new intro here with its first frame.
+  homeIntros: [
+    { src: `${B}videos/home-intro.mp4`, poster: `${B}videos/home-intro-poster.webp` },
+  ],
 };

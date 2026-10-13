@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
@@ -7,6 +7,7 @@ import Btn from "../components/Btn";
 
 import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
+import HeroImage from "../components/HeroImage";
 import { PHOTOS } from "../constants/photos";
 import PremiumPageActions from "../components/PremiumPageActions";
 
@@ -27,7 +28,6 @@ export default function Visit() {
       <PageHeader
         variant="split"
         title={t("visit.hero.title")}
-        kicker={t("visit.hero.sub")}
         lede={t("visit.hero.desc")}
         heroSrc={PHOTOS.visitHero}
       />
@@ -59,7 +59,7 @@ export default function Visit() {
 
       {/* ════ Sunday at St. Dominic ════ */}
       <Section>
-        <SectionTitle sub={t("visit.steps.sub")}>{t("visit.steps.title")}</SectionTitle>
+        <SectionTitle>{t("visit.steps.title")}</SectionTitle>
         <p
           className="u-lede"
           style={{
@@ -110,7 +110,24 @@ export default function Visit() {
                   maxWidth: "58ch",
                 }}
               >
-                {t(`visit.know.${key}.desc`)}
+                {key === "dress" ? (
+                  // "admiratio" links to an article on modesty in dress
+                  <Trans
+                    i18nKey="visit.know.dress.desc"
+                    components={{
+                      modesty: (
+                        <a
+                          href="https://www.ncregister.com/blog/3-doctors-of-the-church-on-the-virtue-of-modesty-in-dress"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: T.burgundy, textDecoration: "underline" }}
+                        />
+                      ),
+                    }}
+                  />
+                ) : (
+                  t(`visit.know.${key}.desc`)
+                )}
               </dd>
             </div>
           ))}
@@ -128,7 +145,7 @@ export default function Visit() {
           }}
         >
           <div>
-            <SectionTitle sub={t("visit.schedule.sub")} center={false}>
+            <SectionTitle center={false}>
               {t("visit.schedule.title")}
             </SectionTitle>
             <Btn variant="primary" onClick={() => navigate("/mass-times")}>
@@ -218,8 +235,9 @@ export default function Visit() {
         </p>
       </Section>
 
-      {/* ════ Pastor Welcome CTA — warm-dark band, left-set ════ */}
-      <section className="premium-member-cta">
+      {/* ════ Closing welcome over the Sacred Heart shrine ════ */}
+      <section className="premium-member-cta premium-member-cta--photo">
+        <HeroImage src={PHOTOS.sacredHeart} overlay={0.62} position="center 15%" lazy />
         <div className="section-inner">
           <h2
             style={{

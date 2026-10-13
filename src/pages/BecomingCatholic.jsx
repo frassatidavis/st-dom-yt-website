@@ -7,7 +7,6 @@ import { Section, SectionTitle } from "../components/Section";
 import Btn from "../components/Btn";
 import PageHeader from "../components/PageHeader";
 import ParallaxSection from "../components/ParallaxSection";
-import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
 import PremiumPageActions from "../components/PremiumPageActions";
 
@@ -26,7 +25,6 @@ export default function BecomingCatholic() {
       <PageHeader
         title={t("becomingCatholic.title")}
         variant="text"
-        kicker={t("becomingCatholic.sub")}
       />
 
       <PremiumPageActions
@@ -138,9 +136,7 @@ export default function BecomingCatholic() {
       </Section>
 
       {/* Parallax visual break */}
-      <ParallaxSection image={PHOTOS.stockCandles} height="30vh" overlay={0.5}>
-        <DominicanDivider color="#fff" width={160} />
-      </ParallaxSection>
+      <ParallaxSection image={PHOTOS.sanctuaryAltar} height="30vh" overlay={0.45} />
 
       {/* ════ Contact CTA ════ */}
       <Section>
@@ -153,7 +149,7 @@ export default function BecomingCatholic() {
               color: T.softBlack,
             }}
           >
-            {t("becomingCatholic.contact.title")}
+            {t("becomingCatholic.contact.heading")}
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: T.warmGray, marginBottom: 24 }}>
             {t("becomingCatholic.contact.desc")}

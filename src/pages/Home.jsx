@@ -25,6 +25,15 @@ const HEADER_NAME = {
   midShift: 537 / 420,
 };
 
+// Today's intro video: the intros take turns, a different one each day (by
+// the visitor's date), so the same one plays all day and returning visitors
+// see the next one tomorrow
+function introForToday(intros) {
+  const now = new Date();
+  const day = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+  return intros[day % intros.length];
+}
+
 // Small-viewport units keep the hero's bottom edge (buttons, Skip / Replay)
 // above phone browser toolbars, where 100vh reaches behind them
 const HERO_HEIGHT =
@@ -33,6 +42,7 @@ const HERO_HEIGHT =
 export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
+  const intro = introForToday(VIDEOS.homeIntros);
   const navigate = useNavigate();
   // Photos that pop out as they scroll into view (styles: .pop-in, .pop-photo)
   const dogRef = useRef(null);
@@ -53,8 +63,8 @@ export default function Home() {
       <StickyHero
         image={PHOTOS.homeHeroProcession}
         introVideo={{
-          src: VIDEOS.homeIntro,
-          poster: VIDEOS.homeIntroPoster,
+          src: intro.src,
+          poster: intro.poster,
           skipLabel: t("home.hero.skipIntro"),
           replayLabel: t("home.hero.replayIntro"),
         }}
@@ -150,7 +160,7 @@ export default function Home() {
       </div>
 
       <Section bg={T.cream}>
-        <SectionTitle sub={t("home.welcome.sub")}>{t("home.welcome.title")}</SectionTitle>
+        <SectionTitle>{t("home.welcome.title")}</SectionTitle>
         <div className="premium-welcome">
           <p>{t("home.welcome.p1")}</p>
           <p>{t("home.welcome.p2")}</p>
@@ -159,7 +169,7 @@ export default function Home() {
 
       <section className="premium-member-cta">
         <div className="section-inner">
-          <SectionTitle sub={t("home.involved.sub")} light divider={false}>
+          <SectionTitle light divider={false}>
             {t("home.involved.title")}
           </SectionTitle>
           <p>{t("home.involved.desc")}</p>
@@ -182,34 +192,19 @@ export default function Home() {
         <div className="premium-charism__inner">
           <h2>{t("home.formation.title")}</h2>
           <p>{t("home.formation.desc")}</p>
-
-          {/* Dominican Friars Media: one button per section of their site */}
-          <div className="home-media-buttons">
-            {[
-              { key: "videos", icon: "Video", anchor: "videos" },
-              { key: "podcasts", icon: "Mic", anchor: "podcasts" },
-              { key: "music", icon: "Music", anchor: "music" },
-              { key: "rosary", icon: "Cross", anchor: "rosary" },
-              { key: "books", icon: "BookOpen", anchor: "books" },
-              { key: "academic", icon: "GraduationCap", anchor: "academic1" },
-            ].map((s) => (
-              <a
-                key={s.key}
-                href={`${CONFIG.dominicanMediaUrl}#${s.anchor}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-media-button"
-              >
-                <Icon name={s.icon} size={20} color={T.goldLight} />
-                {t(`home.formation.media.${s.key}`)}
-              </a>
-            ))}
-          </div>
-          <a className="home-media-link" href={CONFIG.dominicanMediaUrl} target="_blank" rel="noopener noreferrer">
+          <span className="home-media-cue" aria-hidden="true">
             {t("home.formation.mediaOpen")}
             <Icon name="ExternalLink" size={14} color={T.goldLight} />
-          </a>
+          </span>
         </div>
+        {/* The whole picture is one link to Dominican Friars Media (no buttons) */}
+        <a
+          className="home-media-card-link"
+          href={CONFIG.dominicanMediaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${t("home.formation.title")}: ${t("home.formation.mediaOpen")}`}
+        />
       </section>
     </div>
   );

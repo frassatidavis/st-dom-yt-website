@@ -223,7 +223,6 @@ export default function MassTimes() {
         <PageHeader
           variant="text"
           title={t("massTimes.title")}
-          kicker={t("massTimes.hero.sub")}
           aside={
             todaySummary.masses ? (
               <>
@@ -237,7 +236,6 @@ export default function MassTimes() {
       </div>
 
       <PremiumPageActions
-        eyebrow={t("massTimes.visitor.sub")}
         title={t("massTimes.visitor.title")}
         items={[
           {
@@ -264,7 +262,7 @@ export default function MassTimes() {
 
       {/* ════ Section 2: Mass Schedule ════ */}
       <Section>
-        <SectionTitle sub={t("massTimes.mass.sub")} index="01">
+        <SectionTitle>
           {t("massTimes.mass.title")}
         </SectionTitle>
         <Quote text={t("massTimes.mass.quote")} src={t("massTimes.mass.quoteSrc")} />
@@ -345,7 +343,7 @@ export default function MassTimes() {
 
       {/* ════ Section 4: Confession ════ */}
       <Section id="confession" bg={T.cream}>
-        <SectionTitle sub={t("massTimes.confession.sub")} index="02">
+        <SectionTitle>
           {t("massTimes.confession.title")}
         </SectionTitle>
         <p
@@ -449,7 +447,7 @@ export default function MassTimes() {
 
       {/* ════ Section 5: Examination of Conscience ════ */}
       <Section>
-        <SectionTitle sub={t("massTimes.examine.sub")} index="03">
+        <SectionTitle>
           {t("massTimes.examine.title")}
         </SectionTitle>
         <p
@@ -532,7 +530,7 @@ export default function MassTimes() {
 
       {/* ════ Section 7: Adoration & Devotions ════ */}
       <Section bg={T.cream}>
-        <SectionTitle sub={t("massTimes.adoration.sub")} index="04">
+        <SectionTitle>
           {t("massTimes.adoration.title")}
         </SectionTitle>
         <p
@@ -611,7 +609,7 @@ export default function MassTimes() {
 
       {/* ════ Section 8: Holy Days of Obligation ════ */}
       <Section>
-        <SectionTitle sub={t("massTimes.holyDays.sub")} index="05">
+        <SectionTitle>
           {t("massTimes.holyDays.title")}
         </SectionTitle>
         <p
@@ -681,7 +679,7 @@ export default function MassTimes() {
         }}
       >
         <div style={{ position: "relative", zIndex: 1, maxWidth: 700, margin: "0 auto" }}>
-          <SectionTitle sub={t("massTimes.hero.sub")} light divider={false}>
+          <SectionTitle light divider={false}>
             {t("massTimes.cta.title")}
           </SectionTitle>
           <p

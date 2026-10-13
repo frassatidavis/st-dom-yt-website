@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import Icon from "./Icon";
 
-export default function PremiumPageActions({ eyebrow, title, items = [], overlap = false }) {
+// fullText: show each card's whole description instead of two lines
+export default function PremiumPageActions({ eyebrow, title, items = [], overlap = false, fullText = false }) {
   const navigate = useNavigate();
 
   const renderItem = (item) => {
@@ -13,13 +14,13 @@ export default function PremiumPageActions({ eyebrow, title, items = [], overlap
         </span>
         <span className="premium-page-actions__copy">
           <strong>{item.title}</strong>
-          <span>{item.description}</span>
+          {item.description && <span>{item.description}</span>}
         </span>
         <Icon name={item.external ? "ExternalLink" : "ArrowRight"} size={16} color={item.primary ? T.softBlack : T.burgundy} />
       </>
     );
 
-    const className = `premium-page-actions__item${item.primary ? " premium-page-actions__item--primary" : ""}`;
+    const className = `premium-page-actions__item${item.primary ? " premium-page-actions__item--primary" : ""}${item.description ? "" : " premium-page-actions__item--title-only"}`;
 
     if (item.href) {
       return (
@@ -48,7 +49,7 @@ export default function PremiumPageActions({ eyebrow, title, items = [], overlap
   };
 
   return (
-    <section className={`premium-page-actions${overlap ? " premium-page-actions--overlap" : ""}`}>
+    <section className={`premium-page-actions${overlap ? " premium-page-actions--overlap" : ""}${fullText ? " premium-page-actions--full" : ""}`}>
       <div className="premium-page-actions__inner">
         {(eyebrow || title) && (
           <div className="premium-page-actions__heading">

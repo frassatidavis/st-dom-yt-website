@@ -71,8 +71,7 @@ export default function FaithFormation() {
       />
       <PageHeader title={t("faithFormation.title")} variant="text" />
       <PremiumPageActions
-        eyebrow={t("faithFormation.intro.sub")}
-        title={t("faithFormation.intro.title")}
+        title={t("faithFormation.actionsTitle")}
         items={[
           {
             title: t("faithFormation.resources.title"),
@@ -93,7 +92,7 @@ export default function FaithFormation() {
       {/* ════ Intro ════ */}
       <Section bg={T.warmWhite}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("faithFormation.intro.sub")}>
+          <SectionTitle>
             {t("faithFormation.intro.title")}
           </SectionTitle>
           <p
@@ -132,10 +131,10 @@ export default function FaithFormation() {
 
       {/* Parallax visual break */}
       <ParallaxSection
-        image={PHOTOS.stockBibleGolden}
+        image={PHOTOS.dominicanMural}
         height="30vh"
         overlay={0.45}
-        position="center 80%"
+        position="center 35%"
       >
         <DominicanDivider color="#fff" width={160} />
       </ParallaxSection>

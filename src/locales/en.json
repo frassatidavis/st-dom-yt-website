@@ -12,7 +12,7 @@
     "becomingCatholic": "Becoming Catholic",
     "getInvolved": "Get Involved",
     "contact": "Contact",
-    "give": "Give",
+    "give": "Donate Online",
     "waysToGive": "Ways to Give",
     "visit": "Start Here",
     "baptism": "Baptism",
@@ -21,6 +21,8 @@
     "marriage": "Holy Matrimony",
     "anointing": "Anointing of the Sick",
     "funerals": "Funerals",
+    "gettingMarried": "Getting Married at St. Dom's",
+    "planningFuneral": "Planning a Funeral at St. Dom's",
     "register": "Register",
     "events": "Events",
     "architecture": "Architecture & Art",
@@ -83,7 +85,6 @@
       "label": "The Dominican dog with a torch: read “I'm a Dog” in Dominicana Journal (opens in a new tab)"
     },
     "welcome": {
-      "sub": "Welcome",
       "title": "Saving Truth in the Heart of the Church",
       "p1": "The Dominican Friars of the Province of St. Joseph have served Youngstown's South Side since 1923, forming generations of Catholics to celebrate the sacred mysteries of our faith.",
       "p2": "Whether you are a classic St. Dom's alum or pining to learn more about the Catholic faith, you are welcome here."
@@ -92,9 +93,8 @@
       "province": "Our Province"
     },
     "involved": {
-      "sub": "Get Involved",
       "title": "Make It Official",
-      "desc": "There are many ways to get involved. Register your family so that you never miss out on important announcements, events, and ministries that keep you part of this parish community.",
+      "desc": "Register online to receive up-to-date information and offertory envelopes. A parish registry is used so that the pastor and his associates can keep track of his flock. Don't stay an anonymous parishioner!",
       "ctaRegister": "Register Online",
       "ctaBulletin": "Recent Bulletins"
     },
@@ -109,15 +109,7 @@
     "formation": {
       "title": "Keep Growing After Sunday",
       "desc": "Follow trusted Catholic teaching, parish updates, and resources for prayer throughout the week.",
-      "media": {
-        "videos": "Videos",
-        "podcasts": "Podcasts",
-        "music": "Music",
-        "rosary": "Rosary",
-        "books": "Books",
-        "academic": "Academic"
-      },
-      "mediaOpen": "Open Dominican Friars Media"
+      "mediaOpen": "Dominican Friars Media"
     }
   },
   "schedule": {
@@ -303,14 +295,14 @@
     },
     "visitor": {
       "sub": "First Time Here?",
-      "title": "Start with Mass, then let us help",
+      "title": "Start with Mass.",
       "desc": "If you are visiting, returning to the Church, or bringing family for the first time, come as you are. The parish office can help with directions, accessibility, Confession, or next steps after Mass.",
       "visit": "Start Here",
       "contact": "Call the Office"
     },
     "cta": {
-      "title": "Come Pray with Us",
-      "desc": "Whether you're joining us for Mass, spending time in prayer before the Blessed Sacrament, or seeking the healing grace of Confession — you are always welcome at St. Dominic.",
+      "title": "Let Us Pray",
+      "desc": "Life is too short to ignore your immortal soul. Get to Mass. Value the gift of confession. Weave the Eucharist into your life. Love your parish and pray for your priest.",
       "visit": "Start Here",
       "contact": "Contact Us"
     },
@@ -498,7 +490,8 @@
     "reachOutDesc": "Contact the church office and we'll connect you with one of our priests or staff who can answer your questions and help you take the next step.",
     "contact": {
       "title": "Reach Out to Us",
-      "desc": "Contact the church office and we'll connect you with one of our priests or staff who can answer your questions and help you take the next step toward Baptism or full reception into the Church."
+      "desc": "Contact the church office and we'll connect you with one of our priests or staff who can answer your questions and help you take the next step toward Baptism or full reception into the Church.",
+      "heading": "It's Your Soul. Do Something About It."
     }
   },
   "faithFormation": {
@@ -558,12 +551,13 @@
     "cta": {
       "title": "Start Your Journey Today",
       "desc": "Pick a resource, press play on a podcast, or open the Catechism. Every step you take toward understanding your faith is a step closer to Christ."
-    }
+    },
+    "actionsTitle": "Grow in Knowledge and Love"
   },
   "getInvolved": {
     "title": "Get Involved",
     "sub": "Join Our Family",
-    "heading": "There's a Place for You",
+    "heading": "There's a Pew for You",
     "desc": "St. Dominic Church offers many ways for families to get involved in the parish community. Whether you are looking to deepen your prayer life, volunteer for service, or reach out to the humblest among us, there's a place for you here.",
     "clickHint": "Click to learn more",
     "ministries": {
@@ -637,7 +631,8 @@
       "contact": "Contact Information",
       "reachVia": "Reach via church office",
       "joinCta": "Interested? Contact the church office to get started."
-    }
+    },
+    "actionsTitle": "Join St. Dom's"
   },
   "contact": {
     "title": "Contact Us",
@@ -763,7 +758,7 @@
       "sub": "The Sacrament of",
       "heading": "New Life in Christ",
       "p1": "Baptism is the first and fundamental sacrament of Christian initiation. Through the waters of Baptism, we are cleansed of original sin, reborn as children of God, and welcomed into the Catholic Church. It is the doorway through which we enter into life with Christ.",
-      "p2": "At St. Dominic Church, Baptisms are regularly scheduled on the 4th Sunday of the month, at 9:00 AM (English) or 1:30 PM (Spanish). Baptism preparation is only required for first-time parents. Contact the church office to register.",
+      "p2": "At St. Dominic Church, Baptisms are regularly scheduled on the 4th Sunday of the month, at 9:00 AM (English) or 2:00 PM (Spanish). Private Baptisms are scheduled at the discretion of the pastor. Baptism preparation is only required for first-time parents. Contact the church office to register.",
       "reqSub": "What You Need",
       "reqTitle": "Requirements for Baptism",
       "req1": {
@@ -776,10 +771,13 @@
       },
       "req3": {
         "title": "Registration",
-        "desc": "Contact the church office to register and choose a date — Baptisms are regularly scheduled on the 4th Sunday of the month at 9:00 AM (English) or 1:30 PM (Spanish)."
+        "desc": "Contact the church office to register and choose a date — Baptisms are regularly scheduled on the 4th Sunday of the month at 9:00 AM (English) or 2:00 PM (Spanish)."
       },
       "cta": "Schedule a Baptism",
-      "ctaDesc": "Contact us to begin the process. We're happy to answer any questions you may have."
+      "ctaDesc": "Contact the parish office to begin the process. First time parents are asked to meet with a priest before scheduling the baptism of their child.",
+      "cardQuote": "“By Baptism a man is regenerated unto the spiritual life.”",
+      "cardQuoteSrc": "ST III, Q. 66, A. 1",
+      "cardCta": "How to Be Reborn"
     },
     "firstCommunion": {
       "title": "First Holy Communion",
@@ -805,7 +803,10 @@
         "desc": "Parents are partners in their child's faith formation. Families attend a preparation session together before the celebration."
       },
       "cta": "Enroll Your Child",
-      "ctaDesc": "Contact the church office or our Coordinator of Religious Education to enroll your child in the program."
+      "ctaDesc": "Contact the church office or our Coordinator of Religious Education to enroll your child in the program.",
+      "cardQuote": "“The Eucharist is the sacrament of the perfection of the spiritual life.”",
+      "cardQuoteSrc": "ST III, Q. 73, A. 1",
+      "cardCta": "Receive More Info"
     },
     "confirmation": {
       "title": "Confirmation",
@@ -831,7 +832,10 @@
         "desc": "Candidates complete service hours and reflect on how they are called to live out their faith in the world."
       },
       "cta": "Learn About Confirmation",
-      "ctaDesc": "Contact us for information about our Confirmation preparation program for teens and adults."
+      "ctaDesc": "Contact us for information about our Confirmation preparation program for teens and adults.",
+      "cardQuote": "“In Confirmation man receives power to do those things which pertain to the spiritual combat.”",
+      "cardQuoteSrc": "ST III, Q. 72, A. 5",
+      "cardCta": "Click to Confirm"
     },
     "marriage": {
       "title": "Holy Matrimony",
@@ -864,7 +868,10 @@
       "convalidationCta": "Start the Conversation",
       "ccc": "\"The sacrament of Matrimony signifies the union of Christ and the Church. It gives spouses the grace to love each other with the love with which Christ has loved his Church; the grace of the sacrament thus perfects the human love of the spouses, strengthens their indissoluble unity, and sanctifies them on the way to eternal life.\"",
       "cccSrc": "— Catechism of the Catholic Church, 1661",
-      "guidelines": "Wedding Guidelines (PDF)"
+      "guidelines": "Wedding Guidelines (PDF)",
+      "cardQuote": "“Matrimony is directed to the propagation of the species and the union of hearts.”",
+      "cardQuoteSrc": "ST III, Q. 65, A. 1",
+      "cardCta": "Sign Up for Marriage Prep"
     },
     "anointing": {
       "title": "Anointing of the Sick",
@@ -903,7 +910,10 @@
           "title": "Contact",
           "desc": "Reach the parish office for homebound or hospital visits."
         }
-      }
+      },
+      "cardQuote": "“Extreme Unction is given for a spiritual healing, in so far as it removes the remnants of sin.”",
+      "cardQuoteSrc": "ST III, Q. 84, A. 1, ad 1",
+      "cardCta": "Contact a Priest"
     },
     "funerals": {
       "title": "Catholic Funerals",
@@ -951,7 +961,10 @@
           "desc": "Ask about funeral planning, records, and pastoral care."
         }
       },
-      "directives": "Funeral Directives (PDF)"
+      "directives": "Funeral Directives (PDF)",
+      "cardQuote": "“The souls of the departed are relieved by the prayers of the living.”",
+      "cardQuoteSrc": "ST Supp., Q. 71, A. 1",
+      "cardCta": "Plan a Funeral"
     },
     "pathways": {
       "infantBaptism": {
@@ -966,7 +979,9 @@
         "title": "Adult Catechesis",
         "desc": "Men and women seeking to learn more about the Catholic Faith and to receive the sacraments should enroll in our OCIA classes."
       }
-    }
+    },
+    "ccdRegistration": "CCD Registration",
+    "ccdCoordinator": "Ms. Adamaris Cortes"
   },
   "visit": {
     "quote": "\"Do not neglect hospitality, for through it some have unknowingly entertained angels.\"",
@@ -986,7 +1001,7 @@
       "title": "Before You Come",
       "dress": {
         "title": "What Should I Wear?",
-        "desc": "St. Dom's is a sacred place, and most people dress in Sunday Best that is both casual and chaste. Gentlemen, please refrain from athletic wear and tank tops. Ladies, avoid low necklines and revealing clothing that may elicit admiratio. Our focus should always be on the Lord!"
+        "desc": "St. Dom's is a sacred place, and most people dress in Sunday Best that is both casual and chaste. Gentlemen, please refrain from athletic wear and tank tops. Ladies, avoid low necklines and revealing clothing that may elicit <modesty>admiratio</modesty>. Our focus should always be on the Lord!"
       },
       "children": {
         "title": "Can I Bring My Kids?",
@@ -1019,14 +1034,14 @@
       "parking": "St. Dom's has two parking lots — one between Lucius and Auburndale and another across from the main doors of the church on Lucius Avenue — plus street parking. The church is accessible with a ramp entrance on the side of the building."
     },
     "cta": {
-      "title": "We Can't Wait to Meet You",
+      "title": "Home is Where the Sacred Heart Is",
       "desc": "Whether you've been Catholic your whole life or have never stepped foot in a church, our doors are open. The Dominican Friars and the people of St. Dominic Church are here to welcome you home.",
       "contact": "Contact Us",
       "becoming": "Becoming Catholic?"
     }
   },
   "gallery": {
-    "title": "Our Church in Photos",
+    "title": "Your Parish in Photos",
     "sub": "A Glimpse Inside",
     "placeholder": {
       "title": "Photos Coming Soon",
@@ -1154,7 +1169,8 @@
       "personal": "Personal",
       "contact": "Contact",
       "church": "Church"
-    }
+    },
+    "cardDesc": "Welcome to St. Dominic Church! Please complete the form below to register as a member."
   },
   "events": {
     "title": "Church Events",

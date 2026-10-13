@@ -5,6 +5,7 @@ import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
+import LinkBtn from "../../components/LinkBtn";
 import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
@@ -104,27 +105,17 @@ export default function Marriage() {
           <p style={{ fontSize: 15, color: T.warmGray, marginBottom: 24, lineHeight: 1.7 }}>
             {t("sacraments.marriage.ctaDesc")}
           </p>
-          <Btn onClick={() => navigate("/contact")}>{t("sacraments.contactUs")}</Btn>
+          {/* The wedding guidelines lead: a large gold button */}
+          <LinkBtn href={`${import.meta.env.BASE_URL}docs/wedding-guidelines.pdf`} variant="gold" size="lg">
+            <Icon name="FileText" size={22} color={T.softBlack} />
+            {t("sacraments.marriage.guidelines")}
+          </LinkBtn>
+          <div style={{ marginTop: 20 }}>
+            <Btn onClick={() => navigate("/contact")}>{t("sacraments.contactUs")}</Btn>
+          </div>
           <p style={{ fontSize: 14, color: T.warmGray, marginTop: 16 }}>
             <a href={CONFIG.phoneLink} className="contact-link" style={{ color: T.burgundy }}>
               {CONFIG.phone}
-            </a>
-          </p>
-          <p style={{ fontSize: 14, marginTop: 12 }}>
-            <a
-              href={`${import.meta.env.BASE_URL}docs/wedding-guidelines.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              style={{
-                color: T.burgundy,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              <Icon name="FileText" size={16} color={T.burgundy} />
-              {t("sacraments.marriage.guidelines")}
             </a>
           </p>
         </div>

@@ -8,6 +8,7 @@ export default function SacramentPageActions({ sacramentKey, icon }) {
   return (
     <PremiumPageActions
       overlap
+      fullText
       eyebrow={t("sacraments.sub")}
       items={[
         {
@@ -25,7 +26,7 @@ export default function SacramentPageActions({ sacramentKey, icon }) {
         },
         {
           title: t("nav.register"),
-          description: t("register.desc"),
+          description: t("register.cardDesc"),
           to: "/register",
           icon: "ClipboardList",
         },

@@ -60,7 +60,10 @@ export default function NavToday({ brandRef }) {
 
   return (
     <NavLink ref={ref} to="/mass-times" className="nav-today">
-      <span className="nav-today__label">{t("actionBar.today")}</span>
+      {/* Today's date, so it's plain the times are for the day being viewed */}
+      <span className="nav-today__label">
+        {new Intl.DateTimeFormat(i18n.language === "es" ? "es-US" : "en-US", { weekday: "long", month: "long", day: "numeric" }).format(new Date())}
+      </span>
       {lines.map((line) => (
         <span key={line.label} className="nav-today__value">
           <span className="nav-today__kind">{line.label}</span> {keepTimesTogether(line.value)}

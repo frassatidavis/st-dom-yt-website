@@ -14,8 +14,9 @@ import ResponsivePicture from "./ResponsivePicture";
  *   tint      — optional CSS color for a tinted gradient overlay
  *               e.g. "rgba(107,29,42,0.5)" for a burgundy tint
  *   position  — backgroundPosition, default "center"
+ *   lazy      — for photos further down a page: load when near, at normal priority
  */
-export default function HeroImage({ src, overlay = 0.55, tint, position = "center" }) {
+export default function HeroImage({ src, overlay = 0.55, tint, position = "center", lazy = false }) {
   const [loaded, setLoaded] = useState(false);
 
   if (!src) return null;
@@ -28,8 +29,8 @@ export default function HeroImage({ src, overlay = 0.55, tint, position = "cente
         widths={[480, 1024, 1920]}
         sizes="100vw"
         alt=""
-        loading="eager"
-        fetchPriority="high"
+        loading={lazy ? "lazy" : "eager"}
+        fetchPriority={lazy ? undefined : "high"}
         onLoad={() => setLoaded(true)}
         style={{
           position: "absolute",

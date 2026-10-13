@@ -125,9 +125,24 @@ export default function Sacraments() {
               >
                 {t(`sacraments.${s.key}.title`)}
               </h3>
-              <p style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7 }}>
-                {t(`sacraments.${s.key}.brief`)}
-              </p>
+              {/* St. Thomas Aquinas on the sacrament (Summa Theologiae) */}
+              <blockquote style={{ margin: 0 }}>
+                <p
+                  style={{
+                    fontSize: 16,
+                    fontFamily: "var(--font-display)",
+                    fontStyle: "italic",
+                    color: T.charcoal,
+                    lineHeight: 1.55,
+                    margin: 0,
+                  }}
+                >
+                  {t(`sacraments.${s.key}.cardQuote`)}
+                </p>
+                <cite style={{ display: "block", marginTop: 8, fontSize: 13, fontStyle: "normal", color: T.warmGray }}>
+                  ({t(`sacraments.${s.key}.cardQuoteSrc`)})
+                </cite>
+              </blockquote>
               <div
                 style={{
                   fontSize: 13,
@@ -138,7 +153,7 @@ export default function Sacraments() {
                   marginTop: 16,
                 }}
               >
-                {t("sacraments.learnMore")} →
+                {t(`sacraments.${s.key}.cardCta`)} →
               </div>
             </Link>
           ))}

@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
-import Btn from "../../components/Btn";
+import LinkBtn from "../../components/LinkBtn";
 import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
@@ -12,7 +11,6 @@ import SacramentPageActions from "../../components/SacramentPageActions";
 
 export default function Confirmation() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   return (
     <div style={{ paddingTop: 76 }}>
@@ -88,10 +86,12 @@ export default function Confirmation() {
           <p style={{ fontSize: 15, color: T.warmGray, marginBottom: 24, lineHeight: 1.7 }}>
             {t("sacraments.confirmation.ctaDesc")}
           </p>
-          <Btn onClick={() => navigate("/contact")}>{t("sacraments.contactUs")}</Btn>
+          {/* Enrollment is through the CCD form; questions go to the coordinator */}
+          <LinkBtn href={CONFIG.ccdRegistrationUrl}>{t("sacraments.ccdRegistration")}</LinkBtn>
           <p style={{ fontSize: 14, color: T.warmGray, marginTop: 16 }}>
-            <a href={CONFIG.phoneLink} className="contact-link" style={{ color: T.burgundy }}>
-              {CONFIG.phone}
+            {t("sacraments.ccdCoordinator")},{" "}
+            <a href={`mailto:${CONFIG.religiousEdEmail}`} className="contact-link" style={{ color: T.burgundy }}>
+              {CONFIG.religiousEdEmail}
             </a>
           </p>
         </div>

@@ -2,12 +2,21 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useHref, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
-import { Menu, X, ChevronDown, MapPin, Church, Gift } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin, DollarSign } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
 import SiteSearch from "./SiteSearch";
 import NavToday from "./NavToday";
 import { PHOTOS } from "../constants/photos";
 import { CONFIG } from "../constants/config";
+
+/** A plain Latin cross, drawn like the lucide icons around it */
+function LatinCross({ size = 24, color = "currentColor" }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      <path d="M12 2v20M6 8h12" />
+    </svg>
+  );
+}
 
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
@@ -445,8 +454,8 @@ export default function Nav() {
           >
             {[
               { to: "/visit", label: t("nav.visit"), icon: MapPin },
-              { to: "/mass-times", label: t("nav.massTimes"), icon: Church },
-              { href: CONFIG.flocknoteGivingUrl, label: t("nav.give"), icon: Gift },
+              { to: "/mass-times", label: t("nav.massTimes"), icon: LatinCross },
+              { href: CONFIG.flocknoteGivingUrl, label: t("nav.give"), icon: DollarSign },
             ].map(({ to, href, label, icon: IconComp }) => {
               const Tile = href ? "a" : NavLink;
               const linkProps = href

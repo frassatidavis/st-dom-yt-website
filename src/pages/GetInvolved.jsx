@@ -63,13 +63,11 @@ export default function GetInvolved() {
       <PageHeader
         title={t("getInvolved.heading")}
         heroSrc={PHOTOS.getInvolvedHero}
-        kicker={t("getInvolved.sub")}
       />
 
       <PremiumPageActions
         overlap
-        eyebrow={t("getInvolved.sub")}
-        title={t("getInvolved.heading")}
+        title={t("getInvolved.actionsTitle")}
         items={[
           {
             title: t("getInvolved.register.title"),
@@ -95,7 +93,7 @@ export default function GetInvolved() {
 
       {/* ════ Ministries ════ */}
       <Section bg={T.cream}>
-        <SectionTitle sub={t("getInvolved.sub")}>{t("getInvolved.title")}</SectionTitle>
+        <SectionTitle>{t("getInvolved.title")}</SectionTitle>
         <p
           className="u-lede"
           style={{ fontSize: 17, lineHeight: 1.8, color: T.warmGray, margin: "0 0 36px" }}
@@ -270,18 +268,6 @@ export default function GetInvolved() {
         }}
       >
         <div style={{ position: "relative", zIndex: 1, maxWidth: 600, margin: "0 auto" }}>
-          <h2
-            style={{
-              fontSize: "clamp(26px, 5vw, 38px)",
-              fontFamily: "var(--font-display)",
-              fontWeight: 600,
-              color: "#fff",
-              marginBottom: 16,
-              lineHeight: 1.3,
-            }}
-          >
-            {t("getInvolved.register.title")}
-          </h2>
           <p
             style={{
               fontSize: 16,

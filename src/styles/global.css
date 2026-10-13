@@ -1075,56 +1075,32 @@ body.nav-open .nav-brand-text {
   font-size: 17px;
 }
 
-/* Dominican Friars Media: section buttons under "Keep Growing After Sunday" */
-.home-media-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: clamp(24px, 4vw, 34px);
-}
-.home-media-button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 12px 16px;
-  border: 1px solid rgba(232, 213, 163, 0.55);
-  border-radius: 2px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-.home-media-button:hover {
-  background: rgba(107, 29, 42, 0.85);
-  border-color: var(--color-gold-light);
-}
-.home-media-button > svg {
-  flex-shrink: 0;
-}
-@media (max-width: 520px) {
-  .home-media-buttons {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-.home-media-link {
+/* Dominican Friars Media: the whole "Keep Growing After Sunday" picture is
+   one link (a transparent layer over it); the gold line underneath the text
+   says where it goes */
+.home-media-cue {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 44px;
-  margin-top: 10px;
+  margin-top: clamp(22px, 3.5vw, 30px);
   color: var(--color-gold-light);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  text-decoration: none;
 }
-.home-media-link:hover {
+.home-media-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.premium-charism:hover .home-media-cue,
+.premium-charism:has(.home-media-card-link:focus-visible) .home-media-cue {
   text-decoration: underline;
+}
+.home-media-card-link:focus-visible {
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: -6px;
 }
 
 .premium-member-cta {
@@ -1135,6 +1111,12 @@ body.nav-open .nav-brand-text {
     radial-gradient(120% 90% at 50% 0%, rgba(107, 29, 42, 0.5) 0%, transparent 60%),
     #241015; /* warm burgundy-black */
   text-align: left;
+}
+
+/* With a photo behind it (HeroImage), the text sits above the photo */
+.premium-member-cta--photo .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .premium-member-cta p {
@@ -1185,6 +1167,25 @@ a.footer-contact__item:hover .footer-contact__value {
 
 .premium-give-link {
   transition: transform 0.22s var(--ease-out-expo), box-shadow 0.22s ease;
+}
+
+/* Laptop widths with the full menu: tighter spacing so today's date and
+   times still fit beside the name with "Donate Online" (the menu sets its
+   padding inline, hence !important) */
+@media (min-width: 1161px) and (max-width: 1360px) {
+  .premium-nav-link {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .premium-give-link {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* Icons in link-buttons keep their shape when the label wraps */
+.link-btn > svg {
+  flex-shrink: 0;
 }
 
 .premium-give-link:hover {
@@ -1328,6 +1329,18 @@ a.footer-contact__item:hover .footer-contact__value {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+/* Cards whose whole description matters (sacrament pages) */
+.premium-page-actions--full .premium-page-actions__copy span {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+/* Title-only cards (About) don't need room for a description */
+.premium-page-actions__item--title-only {
+  min-height: 68px;
 }
 
 .premium-page-actions__item--primary .premium-page-actions__copy span {
@@ -1610,6 +1623,13 @@ a.contact-link:hover {
 }
 .nav-today:hover .nav-today__label {
   text-decoration: underline;
+}
+/* Laptop widths: a little less space around it (see .premium-nav-link above) */
+@media (min-width: 1161px) and (max-width: 1360px) {
+  .nav-today {
+    margin-left: calc(12px + var(--brand-extra, 0px));
+    padding-left: 12px;
+  }
 }
 
 /* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",

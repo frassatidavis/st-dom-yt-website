@@ -49,7 +49,8 @@ const FOOTER_GROUPS = [
       { to: "/sacraments", key: "sacraments" },
       { to: "/becoming-catholic", key: "becomingCatholic" },
       { to: "/sacraments/anointing", key: "anointing" },
-      { to: "/sacraments/funerals", key: "funerals" },
+      { to: "/sacraments/marriage", key: "gettingMarried" },
+      { to: "/sacraments/funerals", key: "planningFuneral" },
     ],
   },
   {
