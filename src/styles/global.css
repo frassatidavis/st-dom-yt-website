@@ -834,6 +834,35 @@ body.nav-open .parish-action-bar {
 .nav-brand-text {
   opacity: var(--brand-text-opacity, 1);
 }
+/* Header crest, with the dog drawn over it. Only the home page sets
+   --dog-to-crest (0 = dog, 1 = crest); elsewhere it's the crest alone. The
+   dog shrinks toward the crest's middle as it fades. */
+.nav-crest-wrap {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+}
+.nav-crest {
+  opacity: var(--dog-to-crest, 1);
+}
+.nav-dog {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: auto;
+  max-width: none;
+  display: block;
+  pointer-events: none;
+  opacity: calc(1 - var(--dog-to-crest, 1));
+  transform: translateY(-50%) scale(calc(1 - 0.45 * var(--dog-to-crest, 1)));
+  transform-origin: 17px 50%;
+}
+body.nav-open .nav-crest {
+  opacity: 1;
+}
+body.nav-open .nav-dog {
+  opacity: 0;
+}
 /* With the phone menu open the header shows its usual name */
 body.nav-open .brand-flight {
   visibility: hidden;

@@ -227,19 +227,31 @@ export default function Nav() {
       >
         {/* Black crest and the "St·Dom's" lettering (the link's name is the
             church's name). On Home the lettering arrives from the hero as the
-            page scrolls (BrandFlight), so .nav-brand-text is hidden there. */}
+            page scrolls (BrandFlight), so .nav-brand-text is hidden there, and
+            the dog stands in the crest's place until then, fading into it. */}
         <NavLink
           to="/"
           aria-label={t("nav.brand")}
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}
         >
-          <img
-            src={PHOTOS.stDomCrestDark}
-            alt=""
-            width={121}
-            height={168}
-            style={{ height: scrolled ? 40 : 48, width: "auto", display: "block", transition: "height 0.4s ease" }}
-          />
+          <span className="nav-crest-wrap">
+            <img
+              className="nav-crest"
+              src={PHOTOS.stDomCrestDark}
+              alt=""
+              width={121}
+              height={168}
+              style={{ height: scrolled ? 40 : 48, width: "auto", display: "block", transition: "height 0.4s ease" }}
+            />
+            <img
+              className="nav-dog"
+              src={PHOTOS.dominicanDog}
+              alt=""
+              width={400}
+              height={242}
+              style={{ height: scrolled ? 40 : 48, transition: "height 0.4s ease" }}
+            />
+          </span>
           <span className="nav-brand-text">
             <img
               ref={brandRef}

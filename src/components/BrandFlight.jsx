@@ -8,7 +8,8 @@ import { createPortal } from "react-dom";
  * the page the header shows only its crest). Further down, as a marker
  * element (the dog) passes under the header, the docked "St·Dom's" opens into
  * "St·Dominic's": the "'s" slides right while "inic" unrolls behind it.
- * Scrolling back up reverses both.
+ * The header's dog (shown in the crest's place on Home) fades and shrinks
+ * into the crest as the lettering arrives. Scrolling back up reverses it all.
  *
  * A fixed copy does the flying, between the hero image's own box (measured
  * live, so the intro zoom and the page's layout are respected) and the
@@ -108,6 +109,10 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
       }
       root.style.setProperty("--brand-extra", `${(q * dark.midShift * h).toFixed(1)}px`);
 
+      // The dog in the header gives way to the crest while the lettering
+      // travels, finishing just before it lands
+      root.style.setProperty("--dog-to-crest", smooth(between(p, 0.25, 0.85)).toFixed(4));
+
       const flying = p > 0;
       source.style.visibility = flying ? "hidden" : "";
       fly.style.display = flying ? "block" : "none";
@@ -151,6 +156,7 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
       source.style.visibility = "";
       root.style.removeProperty("--brand-text-opacity");
       root.style.removeProperty("--brand-extra");
+      root.style.removeProperty("--dog-to-crest");
     };
   }, [sourceRef, expandRef, lightOpacity, dark]);
 
