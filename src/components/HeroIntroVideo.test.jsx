@@ -33,6 +33,7 @@ beforeEach(async () => {
   vi.resetModules();
   ({ default: HeroIntroVideo } = await import("./HeroIntroVideo"));
   playSpy = vi.spyOn(window.HTMLMediaElement.prototype, "play").mockResolvedValue(undefined);
+  vi.spyOn(window.HTMLMediaElement.prototype, "load").mockImplementation(() => {}); // jsdom has no media loading
   container = document.createElement("div");
   document.body.appendChild(container);
   root = createRoot(container);
