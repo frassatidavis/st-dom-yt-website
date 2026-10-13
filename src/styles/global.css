@@ -776,6 +776,41 @@ body.nav-open .parish-action-bar {
   gap: 10px;
 }
 
+/* ── Photos that pop out as you scroll (values written by useScrollVar) ──
+   Without the values (reduced motion, no JS yet) everything rests settled. */
+
+/* Home hero: as it scrolls away the picture drifts down slower than the page
+   and zooms toward the viewer; the uncovered top is always above the screen */
+.hero-pop .hero-pop-layer,
+.hero-pop .hero-intro-video {
+  transform: translate3d(0, calc(var(--hero-exit, 0) * 30%), 0) scale(calc(1 + var(--hero-exit, 0) * 0.14));
+  will-change: transform;
+}
+
+/* A framed photo that grows to fill its section as it scrolls in, while the
+   picture inside settles back from a slight zoom */
+.pop-photo {
+  --enter: clamp(0, calc(var(--scroll, 1) * 2.4), 1);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(
+    calc((1 - var(--enter)) * 8%) calc((1 - var(--enter)) * 7%)
+    round calc((1 - var(--enter)) * 24px)
+  );
+}
+.pop-photo img {
+  transform: scale(calc(1.16 - var(--enter) * 0.16));
+}
+
+/* A small picture that springs up into place (a slight overshoot) */
+.pop-in {
+  --enter: clamp(0, calc(var(--scroll, 1) * 3), 1);
+  transform: translateY(calc((1 - var(--enter)) * 28px))
+    scale(calc(0.72 + var(--enter) * 0.28 + sin(calc(var(--enter) * 3.1416)) * 0.08));
+  opacity: calc(0.2 + var(--enter) * 0.8);
+}
+
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
   position: absolute;

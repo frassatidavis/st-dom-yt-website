@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
@@ -11,6 +12,7 @@ import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
 import { PHOTOS, VIDEOS } from "../constants/photos";
+import useScrollVar from "../hooks/useScrollVar";
 
 // Small-viewport units keep the hero's bottom edge (buttons, Skip / Replay)
 // above phone browser toolbars, where 100vh reaches behind them
@@ -21,6 +23,11 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
   const navigate = useNavigate();
+  // Photos that pop out as they scroll into view (styles: .pop-in, .pop-photo)
+  const dogRef = useRef(null);
+  const charismPhotoRef = useRef(null);
+  useScrollVar(dogRef);
+  useScrollVar(charismPhotoRef);
 
   return (
     <div>
@@ -43,6 +50,7 @@ export default function Home() {
         scrim="corner"
         align="bottom-left"
         fillHeight
+        popOnScroll
         height={HERO_HEIGHT}
         viewportHeight={HERO_HEIGHT}
         showScrollHint={false}
@@ -86,7 +94,15 @@ export default function Home() {
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
       <div className="home-dog-divider">
         <a href="https://dominicanajournal.org/essay/im-a-dog/" target="_blank" rel="noopener noreferrer">
-          <img src={PHOTOS.dominicanDog} alt={t("home.dog.label")} width={180} height={109} decoding="async" />
+          <img
+            ref={dogRef}
+            className="pop-in"
+            src={PHOTOS.dominicanDog}
+            alt={t("home.dog.label")}
+            width={180}
+            height={109}
+            decoding="async"
+          />
         </a>
       </div>
 
@@ -117,7 +133,9 @@ export default function Home() {
 
       {/* Faith formation: introduced over the preaching photo, widgets below */}
       <section className="premium-charism">
-        <HeroImage src={PHOTOS.dominicanCharism} overlay={0.7} position="center top" />
+        <div ref={charismPhotoRef} className="pop-photo">
+          <HeroImage src={PHOTOS.dominicanCharism} overlay={0.7} position="center top" />
+        </div>
         <div className="premium-charism__inner">
           <h2>{t("home.formation.title")}</h2>
           <p>{t("home.formation.desc")}</p>

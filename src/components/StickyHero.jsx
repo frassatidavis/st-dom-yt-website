@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { T } from "../constants/theme";
 import ResponsivePicture from "./ResponsivePicture";
 import HeroIntroVideo from "./HeroIntroVideo";
+import useScrollVar from "../hooks/useScrollVar";
 
 /**
  * StickyHero — Apple-style hero that stays pinned while content scrolls.
@@ -21,6 +22,9 @@ import HeroIntroVideo from "./HeroIntroVideo";
  *   align     — "center" (default) | "bottom-left"
  *   fillHeight — content spans the hero's full height (a flex column), so
  *               children can place items anywhere over the picture
+ *   popOnScroll — for a hero without scroll runway (height equal to its
+ *               viewport height): as it scrolls away, the picture drifts
+ *               slower than the page and zooms toward the viewer
  *   height    — total scroll runway (default "180vh")
  *   showScrollHint — whether to show the small scroll cue
  *   children  — hero content (title, subtitle, etc.)
@@ -33,6 +37,7 @@ export default function StickyHero({
   scrim = "flat",
   align = "center",
   fillHeight = false,
+  popOnScroll = false,
   height = "130vh",
   viewportHeight = "100vh",
   showScrollHint = true,
@@ -43,6 +48,8 @@ export default function StickyHero({
   const [loaded, setLoaded] = useState(false);
   const [introActive, setIntroActive] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  // --hero-exit drives the picture's drift and zoom in CSS (.hero-pop)
+  useScrollVar(wrapperRef, { name: "--hero-exit", mode: "exit", enabled: popOnScroll });
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -91,16 +98,18 @@ export default function StickyHero({
           alignItems: align === "bottom-left" ? "flex-end" : "center",
           justifyContent: "center",
         }}
+        className={popOnScroll ? "hero-pop" : undefined}
       >
         {/* Background with zoom */}
         {image && (
           <div
             aria-hidden="true"
+            className={popOnScroll ? "hero-pop-layer" : undefined}
             style={{
               position: "absolute",
               inset: 0,
               overflow: "hidden",
-              transform: reducedMotion ? "none" : `scale(${bgScale})`,
+              transform: popOnScroll ? undefined : reducedMotion ? "none" : `scale(${bgScale})`,
               opacity: loaded ? 1 : 0,
               transition: loaded ? "none" : "opacity 0.8s ease",
               willChange: "transform",
@@ -131,7 +140,7 @@ export default function StickyHero({
             poster={introVideo.poster}
             skipLabel={introVideo.skipLabel}
             replayLabel={introVideo.replayLabel}
-            transform={reducedMotion ? "none" : `scale(${bgScale})`}
+            transform={popOnScroll ? undefined : reducedMotion ? "none" : `scale(${bgScale})`}
             onActiveChange={setIntroActive}
           />
         )}
