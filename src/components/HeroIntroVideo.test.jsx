@@ -211,6 +211,17 @@ describe("HeroIntroVideo", () => {
     expect(button.textContent).toBe("Skip intro");
   });
 
+  it("reports intro progress for content over the hero, ending at 1", async () => {
+    const target = document.createElement("div");
+    const progressTarget = { current: target };
+    await render(<HeroIntroVideo {...props} progressTarget={progressTarget} />);
+    expect(target.style.getPropertyValue("--intro-progress")).toBe("0.0000");
+    expect(target.dataset.intro).toBe("playing");
+    React.act(() => container.querySelector("button").click()); // skip
+    expect(target.style.getPropertyValue("--intro-progress")).toBe("1.0000");
+    expect(target.dataset.intro).toBe("done");
+  });
+
   it("a double tap on Skip doesn't restart the intro", async () => {
     await render(<HeroIntroVideo {...props} />);
     const button = container.querySelector("button");

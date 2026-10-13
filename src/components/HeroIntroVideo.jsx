@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 
 /**
@@ -20,6 +20,10 @@ import { flushSync } from "react-dom";
  *   replayLabel — button text once it has gone
  *   transform   — CSS transform shared with the photo layer (scroll zoom)
  *   onActiveChange(active) — true while the video covers the photo
+ *   progressTarget — optional ref; gets --intro-progress (0 → 1 with the
+ *                 video's playback, 1 once it is gone) so content over the
+ *                 hero can move in step with the intro. Not driven for
+ *                 reduced motion.
  */
 
 const FADE_MS = 1500; // dissolve into the photo over the last 1.5 s
@@ -37,7 +41,7 @@ function shouldAutoplay() {
   return true;
 }
 
-export default function HeroIntroVideo({ src, poster, skipLabel, replayLabel, transform, onActiveChange }) {
+export default function HeroIntroVideo({ src, poster, skipLabel, replayLabel, transform, onActiveChange, progressTarget }) {
   const videoRef = useRef(null);
   // "playing" → "fading" → "done" (video removed); Replay goes back to "playing"
   const [phase, setPhase] = useState(() => (shouldAutoplay() ? "playing" : "done"));
@@ -69,6 +73,30 @@ export default function HeroIntroVideo({ src, poster, skipLabel, replayLabel, tr
   useEffect(() => {
     onActiveChange?.(mounted);
   }, [mounted, onActiveChange]);
+
+  // Intro progress for content over the hero: 0 before the first frame paints
+  // (so nothing visibly jumps), the playback position while it runs, and 1
+  // as soon as the video starts dissolving or is skipped
+  useLayoutEffect(() => {
+    const target = progressTarget?.current;
+    if (!target || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return undefined;
+    const set = (p) => target.style.setProperty("--intro-progress", p.toFixed(4));
+    // data-intro lets styles follow playback exactly and ease only the final step
+    target.dataset.intro = phase === "playing" ? "playing" : "done";
+    if (phase !== "playing") {
+      set(1);
+      return undefined;
+    }
+    set(0);
+    let frame = 0;
+    const tick = () => {
+      const v = videoRef.current;
+      if (v?.duration) set(Math.min(1, v.currentTime / v.duration));
+      frame = window.requestAnimationFrame(tick);
+    };
+    frame = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(frame);
+  }, [phase, progressTarget]);
 
   // Start playback and watch for the end, errors and stalls, for as long as
   // the video is mounted

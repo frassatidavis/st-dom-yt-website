@@ -58,7 +58,28 @@ export default function Home() {
         <div className="premium-hero premium-hero--centered">
           {/* Centered over the picture, in the open space above the buttons */}
           <div className="premium-hero__center">
-            <h1 className="home-hero-title premium-hero__title">{t("home.hero.title")}</h1>
+            {/* "THIS IS / St·Dom's" lettering: two images stacked edge to edge */}
+            <h1 className="premium-hero__logo">
+              <span className="sr-only">{t("home.hero.title")}</span>
+              <img
+                className="premium-hero__logo-this-is"
+                src={PHOTOS.heroThisIs}
+                srcSet={`${PHOTOS.heroThisIsSmall} 800w, ${PHOTOS.heroThisIs} 1600w`}
+                sizes="(max-width: 700px) 86vw, 760px"
+                width={1600}
+                height={136}
+                alt=""
+              />
+              <img
+                className="premium-hero__logo-st-doms"
+                src={PHOTOS.heroStDoms}
+                srcSet={`${PHOTOS.heroStDomsSmall} 800w, ${PHOTOS.heroStDoms} 1600w`}
+                sizes="(max-width: 700px) 86vw, 760px"
+                width={1600}
+                height={511}
+                alt=""
+              />
+            </h1>
           </div>
 
           <div className="premium-hero__actions">

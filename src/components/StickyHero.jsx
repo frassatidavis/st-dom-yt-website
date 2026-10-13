@@ -44,6 +44,7 @@ export default function StickyHero({
   children,
 }) {
   const wrapperRef = useRef(null);
+  const stickyRef = useRef(null); // receives the intro's --intro-progress
   const [progress, setProgress] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [introActive, setIntroActive] = useState(false);
@@ -98,6 +99,7 @@ export default function StickyHero({
           alignItems: align === "bottom-left" ? "flex-end" : "center",
           justifyContent: "center",
         }}
+        ref={stickyRef}
         className={popOnScroll ? "hero-pop" : undefined}
       >
         {/* Background with zoom */}
@@ -142,6 +144,7 @@ export default function StickyHero({
             replayLabel={introVideo.replayLabel}
             transform={popOnScroll ? undefined : reducedMotion ? "none" : `scale(${bgScale})`}
             onActiveChange={setIntroActive}
+            progressTarget={stickyRef}
           />
         )}
 

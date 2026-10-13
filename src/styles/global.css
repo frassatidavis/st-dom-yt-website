@@ -688,28 +688,6 @@ body.nav-open .parish-action-bar {
   text-align: left;
 }
 
-.premium-hero__title {
-  max-width: 20ch;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5.2vw, 64px);
-  font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-wrap: balance;
-  margin-bottom: 28px;
-}
-
-/* Nearly see-through letters with a thin, translucent white outline that
-   blends into the video and photo (solid white where outlines aren't supported) */
-@supports (-webkit-text-stroke: 1px #fff) {
-  .premium-hero__title {
-    color: rgba(255, 255, 255, 0.12);
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
-  }
-}
-
 /* Home: the title centers over the picture while the buttons stay bottom
    left. The top spacer's 190px basis offsets the button stack (and the fixed
    header over the hero's top) so the title lands near the picture's middle;
@@ -729,23 +707,35 @@ body.nav-open .parish-action-bar {
   align-items: flex-start;
   padding-bottom: 20px;
 }
-.premium-hero__center .premium-hero__title {
-  max-width: none;
+
+/* Home title: the "THIS IS / St·Dom's" lettering, see-through like the
+   outlined text it replaced so the video and photo show through it. Its width
+   is whichever runs out first: 760px, the screen's width, or a third of the
+   screen's height (2.47 is the lettering's width-to-height ratio). */
+.premium-hero__logo {
   margin: 0;
-  text-align: center;
-  font-size: clamp(40px, 6.4vw, 84px);
-  letter-spacing: 0.12em;
+  line-height: 0;
+  /* Zooms in throughout the intro video (--intro-progress from
+     HeroIntroVideo) and rests at full size over the photo; a skip glides */
+  transform: scale(calc(0.62 + var(--intro-progress, 1) * 0.38));
+  transition: transform 0.6s ease-out;
+  width: min(760px, 86vw, calc(34vh * 2.47));
+  width: min(760px, 86vw, calc(34svh * 2.47));
 }
-@media (max-width: 700px) {
-  .premium-hero__center .premium-hero__title {
-    font-size: clamp(32px, 10.5vw, 52px);
-  }
+[data-intro="playing"] .premium-hero__logo {
+  transition: none;
 }
-/* Phones turned sideways: keep the one-line title clear of Skip / Replay */
-@media (max-height: 500px) {
-  .premium-hero__center .premium-hero__title {
-    font-size: 32px;
-  }
+.premium-hero__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.premium-hero__logo-this-is {
+  opacity: 0.5;
+}
+/* The big letters are already ~40% opaque in the artwork itself */
+.premium-hero__logo-st-doms {
+  opacity: 0.85;
 }
 
 .premium-hero__actions,
@@ -1439,11 +1429,6 @@ a.footer-contact__item:hover .footer-contact__value {
 }
 
 @media (max-width: 700px) {
-  .premium-hero__title {
-    font-size: clamp(32px, 9.5vw, 44px);
-    margin-bottom: 22px;
-  }
-
   .premium-hero__actions button {
     width: 100%;
   }
@@ -1640,12 +1625,6 @@ html[lang="es"] .nav-brand { font-size: 20px; white-space: normal; text-wrap: ba
 
 /* Short landscape phones: compress the hero stack so CTAs stay in view */
 @media (max-width: 600px) and (max-height: 720px) {
-  .home-hero-title {
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-    margin-bottom: 16px !important;
-  }
-
   .premium-hero__nextline {
     display: none;
   }
