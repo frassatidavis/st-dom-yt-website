@@ -13,6 +13,7 @@ import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
 import { PHOTOS, VIDEOS } from "../constants/photos";
 import useScrollVar from "../hooks/useScrollVar";
+import BrandFlight from "../components/BrandFlight";
 
 // Small-viewport units keep the hero's bottom edge (buttons, Skip / Replay)
 // above phone browser toolbars, where 100vh reaches behind them
@@ -25,6 +26,7 @@ export default function Home() {
   const navigate = useNavigate();
   // Photos that pop out as they scroll into view (styles: .pop-in, .pop-photo)
   const dogRef = useRef(null);
+  const stDomsRef = useRef(null); // flies into the header on scroll (BrandFlight)
   const charismPhotoRef = useRef(null);
   useScrollVar(dogRef);
   useScrollVar(charismPhotoRef);
@@ -71,6 +73,7 @@ export default function Home() {
                 alt=""
               />
               <img
+                ref={stDomsRef}
                 className="premium-hero__logo-st-doms"
                 src={PHOTOS.heroStDoms}
                 srcSet={`${PHOTOS.heroStDomsSmall} 800w, ${PHOTOS.heroStDoms} 1600w`}
@@ -111,6 +114,14 @@ export default function Home() {
 
         </div>
       </StickyHero>
+
+      <BrandFlight
+        sourceRef={stDomsRef}
+        lightSrc={PHOTOS.heroStDoms}
+        lightOpacity={0.85}
+        darkSrc={PHOTOS.heroStDomsBurgundy}
+        aspect={1600 / 511}
+      />
 
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
       <div className="home-dog-divider">

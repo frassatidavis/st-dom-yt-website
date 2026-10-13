@@ -787,6 +787,35 @@ body.nav-open .parish-action-bar {
   opacity: calc(0.2 + var(--enter) * 0.8);
 }
 
+/* BrandFlight: the hero's "St·Dom's" rising into the header on scroll. Above
+   the header (z-index 1000); clicks pass through to the header link. */
+.brand-flight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  display: none;
+  pointer-events: none;
+  will-change: transform;
+}
+.brand-flight img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nav-brand-text {
+  opacity: var(--brand-text-opacity, 1);
+}
+/* With the phone menu open the header shows its usual name */
+body.nav-open .brand-flight {
+  visibility: hidden;
+}
+body.nav-open .nav-brand-text {
+  opacity: 1;
+}
+
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
   position: absolute;

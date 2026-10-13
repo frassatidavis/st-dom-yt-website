@@ -79,6 +79,7 @@ export const PHOTOS = {
   heroThisIsSmall: `${B}photos/branding/this-is-800.webp`,
   heroStDoms: `${B}photos/branding/st-doms-1600.webp`, // "St·Dom's"
   heroStDomsSmall: `${B}photos/branding/st-doms-800.webp`,
+  heroStDomsBurgundy: `${B}photos/branding/st-doms-burgundy-600.webp`, // solid burgundy "St·Dom's" for the header
   stDomCrestLight: `${B}photos/branding/st-dom-crest-light.webp`, // Same crest as light-gold ink on transparent, for dark grounds (footer)
   psjShield: `${B}photos/branding/psj-shield.png`,             // Official PSJ shield with VERITAS
   psjShieldBw: `${B}photos/branding/psj-shield-bw.png`,        // B&W shield (watermark use)

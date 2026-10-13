@@ -237,7 +237,8 @@ export default function Nav() {
               border: `1px solid ${T.stone}`, objectFit: "contain", padding: 2, display: "block",
             }}
           />
-          <div style={{ minWidth: 0 }}>
+          {/* .nav-brand-text: on Home, the hero's "St·Dom's" takes its place on scroll (BrandFlight) */}
+          <div className="nav-brand-text" style={{ minWidth: 0 }}>
             <div ref={brandRef} className="nav-brand" style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: T.burgundy, letterSpacing: "0.04em", textTransform: "uppercase" }}>
               {t("nav.brand")}
             </div>
