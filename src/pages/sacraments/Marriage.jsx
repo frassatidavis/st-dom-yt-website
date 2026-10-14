@@ -6,7 +6,7 @@ import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
 import LinkBtn from "../../components/LinkBtn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 import PullQuote from "../../components/PullQuote";
@@ -22,21 +22,31 @@ export default function Marriage() {
       <Seo
         title="Holy Matrimony"
         description="Planning a Catholic wedding at St. Dominic Church? Learn about marriage preparation, requirements, and scheduling."
-        image={PHOTOS.marriageHero}
+        image={PHOTOS.marriageWide}
       />
-      <PageHeader title={t("sacraments.marriage.title")} heroSrc={PHOTOS.marriageHero} tall />
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.marriage.sub")}>
-            {t("sacraments.marriage.heading")}
-          </SectionTitle>
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.marriage.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.marriage.p2")}</p>
+      {/* The wide shot of the aisle opens out of the header and settles behind
+          the opening text, slowly zooming in on the couple */}
+      <PhotoBackdrop
+        title={t("sacraments.marriage.title")}
+        src={PHOTOS.marriageWide}
+        alt={t("sacraments.marriage.photoAlt")}
+        subject={[0.47, 0.34]}
+        subjectAt={0.4}
+        zoom={[1, 1.5]}
+        position="50% 35%"
+      >
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.marriage.sub")}>
+              {t("sacraments.marriage.heading")}
+            </SectionTitle>
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.marriage.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.marriage.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("sacraments.marriage.stepsSub")}>
