@@ -5,7 +5,7 @@ import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import PullQuote from "../../components/PullQuote";
 import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
@@ -22,38 +22,48 @@ export default function Anointing() {
         description="The Sacrament of Anointing of the Sick at St. Dominic Church. For those who are seriously ill or facing surgery."
         image={PHOTOS.stockAnointing}
       />
-      <PageHeader title={t("sacraments.anointing.title")} heroSrc={PHOTOS.stockAnointing} tall />
-
-      <Section bg={T.cream} style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
-        <PastoralActionPanel
-          urgent
-          emphasis="eyebrow"
-          eyebrow={t("sacraments.anointing.emergencyTitle")}
-          title={CONFIG.emergencyPhone}
-          description={t("sacraments.anointing.emergencyDesc")}
-          primaryLabel={t("sacraments.anointing.callNow")}
-          primaryHref={CONFIG.emergencyPhoneLink}
-          secondaryLabel={t("sacraments.anointing.office")}
-          secondaryTo="/contact"
-        />
-      </Section>
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.anointing.sub")}>
-            {t("sacraments.anointing.heading")}
-          </SectionTitle>
-          <PullQuote
-            variant="margin"
-            text={t("sacraments.anointing.quote")}
-            src={t("sacraments.anointing.quoteSrc")}
+      {/* The nave opens out of the header; then darkness closes in and falls,
+          the altar drawing nearer, behind the opening text */}
+      <PhotoBackdrop
+        title={t("sacraments.anointing.title")}
+        src={PHOTOS.stockAnointing}
+        alt=""
+        subject={[0.5, 0.66]}
+        subjectAt={0.5}
+        zoom={[1, 1.6]}
+        tone="dark"
+      >
+        <Section bg="transparent" style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
+          <PastoralActionPanel
+            urgent
+            emphasis="eyebrow"
+            eyebrow={t("sacraments.anointing.emergencyTitle")}
+            title={CONFIG.emergencyPhone}
+            description={t("sacraments.anointing.emergencyDesc")}
+            primaryLabel={t("sacraments.anointing.callNow")}
+            primaryHref={CONFIG.emergencyPhoneLink}
+            secondaryLabel={t("sacraments.anointing.office")}
+            secondaryTo="/contact"
           />
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.anointing.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.anointing.p2")}</p>
+        </Section>
+
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.anointing.sub")}>
+              {t("sacraments.anointing.heading")}
+            </SectionTitle>
+            <PullQuote
+              variant="margin"
+              text={t("sacraments.anointing.quote")}
+              src={t("sacraments.anointing.quoteSrc")}
+            />
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.anointing.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.anointing.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.cream}>
         <div

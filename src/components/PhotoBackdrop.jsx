@@ -31,9 +31,11 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   subjectAt — how far down the header's box the subject sits before
  *              scrolling (0 = top, 1 = bottom; the title is near the bottom)
  *   position — which part of the photo to keep in view, as "x% y%"
+ *   tone     — "light" (a cream wash; dark text) | "dark" (darkness closes in
+ *              from the edges and falls to near-black; the text turns light)
  *   children — the content it becomes the background of (transparent sections)
  */
-export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", children }) {
+export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", tone = "light", children }) {
   const [zoomFrom, zoomTo] = zoom;
   const [subjectX, subjectY] = subject;
   const wrapRef = useRef(null);
@@ -95,7 +97,9 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
       layer.style.setProperty("--shift", `${(shift * (1 - open)).toFixed(1)}px`);
       layer.style.clipPath = `inset(0 0 ${((H - b) * (1 - open)).toFixed(1)}px 0)`;
       wrap.style.setProperty("--scrim", (1 - open).toFixed(3));
-      layer.style.setProperty("--wash", (0.8 * fade).toFixed(3));
+      layer.style.setProperty("--wash", ((tone === "dark" ? 0.88 : 0.8) * fade).toFixed(3));
+      // Dark: the edges close in first, then the rest falls away
+      layer.style.setProperty("--vignette", smooth(clamp01((offset - b * 0.05) / (b * 0.45))).toFixed(3));
       // A small jump as it opens, then a slow zoom from `from` to `to`
       layer.style.setProperty("--zoom", (zoomFrom + (zoomTo - zoomFrom) * run + 0.05 * Math.sin(open * Math.PI)).toFixed(4));
     };
@@ -115,10 +119,10 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
       window.removeEventListener("resize", request);
       ro?.disconnect();
     };
-  }, [subjectX, subjectY, subjectAt, zoomFrom, zoomTo, position, loaded]);
+  }, [subjectX, subjectY, subjectAt, zoomFrom, zoomTo, position, tone, loaded]);
 
   return (
-    <div ref={wrapRef} className="photo-backdrop">
+    <div ref={wrapRef} className={`photo-backdrop photo-backdrop--${tone}`}>
       <div ref={layerRef} className="photo-backdrop__layer">
         <ResponsivePicture
           src={src}
@@ -132,6 +136,7 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
           style={{ opacity: loaded ? 1 : 0, objectPosition: position }}
         />
         <div className="photo-backdrop__scrim" aria-hidden="true" />
+        {tone === "dark" && <div className="photo-backdrop__vignette" aria-hidden="true" />}
         <div className="photo-backdrop__wash" aria-hidden="true" />
       </div>
 

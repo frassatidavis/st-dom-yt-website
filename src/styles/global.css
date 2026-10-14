@@ -1166,6 +1166,38 @@ html:not(.brand-docked) body.nav-open .nav-brand-text {
 .photo-backdrop__band::after {
   opacity: var(--scrim, 1);
 }
+/* Dark tone: the darkness closes in from the edges, then falls over all */
+.photo-backdrop--dark {
+  background: var(--color-soft-black);
+}
+.photo-backdrop--dark .photo-backdrop__wash {
+  background: #0b0908;
+}
+.photo-backdrop__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 55%, transparent 18%, rgba(11, 9, 8, 0.75) 55%, #0b0908 85%);
+  opacity: var(--vignette, 0);
+  transform: scale(calc(1.6 - 0.6 * var(--vignette, 0)));
+}
+.photo-backdrop--dark .photo-backdrop__img {
+  filter: saturate(calc(1 - 0.5 * var(--vignette, 0)));
+}
+/* Text over the dark tone (sections set their colours inline) */
+.photo-backdrop--dark .photo-backdrop__content h2,
+.photo-backdrop--dark .photo-backdrop__content h3 {
+  color: var(--color-cream) !important;
+}
+.photo-backdrop--dark .photo-backdrop__content p,
+.photo-backdrop--dark .photo-backdrop__content blockquote,
+.photo-backdrop--dark .photo-backdrop__content div {
+  color: rgba(250, 246, 240, 0.86) !important;
+}
+.photo-backdrop--dark .photo-backdrop__content .kicker,
+.photo-backdrop--dark .photo-backdrop__content figcaption {
+  color: var(--color-gold-light) !important;
+}
+
 .photo-backdrop__content {
   position: relative;
   z-index: 1;
