@@ -27,32 +27,6 @@ export default function BecomingCatholic() {
         variant="text"
       />
 
-      <PremiumPageActions
-        eyebrow={t("becomingCatholic.intro.sub")}
-        title={t("becomingCatholic.contact.title")}
-        items={[
-          {
-            icon: "Phone",
-            title: t("becomingCatholic.contact.title"),
-            description: CONFIG.phone,
-            href: CONFIG.phoneLink,
-            primary: true,
-          },
-          {
-            icon: "ClipboardList",
-            title: t("register.title"),
-            description: t("register.desc"),
-            to: "/register",
-          },
-          {
-            icon: "Church",
-            title: t("nav.massTimes"),
-            description: t("massTimes.hero.desc"),
-            to: "/mass-times",
-          },
-        ]}
-      />
-
       {/* ════ Intro ════ */}
       <Section>
         <SectionTitle sub={t("becomingCatholic.intro.sub")}>
