@@ -14,8 +14,10 @@ const smooth = (v) => v * v * (3 - 2 * v);
  * Props:
  *   targetRef — the <img> on the page where the name lands
  *   src       — the lettering
+ *   behind    — optional selector of an element (a photo) the name passes
+ *               behind on its way: the part of it over that element is cut away
  */
-export default function NameLeap({ targetRef, src }) {
+export default function NameLeap({ targetRef, src, behind }) {
   const flyRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -34,10 +36,11 @@ export default function NameLeap({ targetRef, src }) {
       const a = slot.getBoundingClientRect();
       const b = target.getBoundingClientRect();
       const H = window.innerHeight;
-      // Down as the spot rises from 85% to 55% of the screen; back up as it
-      // rises from 30% to 8%
+      // Down as the spot rises from 85% to 55% of the screen; back up only
+      // once the heading has passed under the header, over the next 140px
+      const navBottom = slot.closest("nav")?.getBoundingClientRect().bottom ?? a.bottom;
       const down = clamp01((H * 0.85 - b.top) / (H * 0.3));
-      const up = clamp01((H * 0.3 - b.top) / (H * 0.22));
+      const up = clamp01((navBottom - b.bottom) / 140);
       let p = Math.min(down, 1 - up);
       if (reduced) p = p >= 0.5 ? 1 : 0;
       const e = smooth(p);
@@ -53,6 +56,16 @@ export default function NameLeap({ targetRef, src }) {
       fly.style.transform = `translate3d(${a.left + (b.left - a.left) * e}px, ${a.top + (b.top - a.top) * e - arc}px, 0)`;
       fly.style.width = `${w}px`;
       fly.style.height = `${h}px`;
+      // Passing behind the photo: cut away the part over it
+      const cover = behind && document.querySelector(behind)?.getBoundingClientRect();
+      const y = a.top + (b.top - a.top) * e - arc;
+      if (cover && cover.bottom > y && cover.top < y + h) {
+        const top = Math.max(0, cover.bottom - y);
+        const bottom = Math.max(0, y + h - cover.top);
+        fly.style.clipPath = cover.top <= y ? `inset(${top}px 0 0 0)` : `inset(0 0 ${bottom}px 0)`;
+      } else {
+        fly.style.clipPath = "";
+      }
     };
     const request = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -68,7 +81,7 @@ export default function NameLeap({ targetRef, src }) {
       root.style.removeProperty("--brand-text-opacity");
       target.style.visibility = "";
     };
-  }, [targetRef]);
+  }, [targetRef, behind]);
 
   return createPortal(
     <img ref={flyRef} src={src} alt="" aria-hidden="true" className="name-leap" />,

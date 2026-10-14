@@ -115,7 +115,7 @@ export default function Visit() {
       </FadeInPortrait>
 
       {/* ════ Quick Mass Schedule, over the altar servers' procession ════ */}
-      <Section bg={T.softBlack} style={{ position: "relative", overflow: "hidden" }}>
+      <Section id="join-us" bg={T.softBlack} style={{ position: "relative", overflow: "hidden" }}>
         <HeroImage src={PHOTOS.altarServers} overlay={0.5} position="50% 45%" lazy />
         <div
           style={{
@@ -211,7 +211,7 @@ export default function Visit() {
           <span className="sr-only">{t("visit.directions.title")}</span>
         </SectionTitle>
         {/* The header's St·Dominic's leaps down into the heading, then back */}
-        <NameLeap targetRef={nameSpotRef} src={PHOTOS.stDominicsBurgundy} />
+        <NameLeap targetRef={nameSpotRef} src={PHOTOS.stDominicsBurgundy} behind="#join-us" />
         <div className="glass-card" style={{ padding: 32, marginBottom: 20, maxWidth: 520 }}>
           <address style={{ fontStyle: "normal", marginBottom: 20 }}>
             <p style={{ fontSize: 18, fontWeight: 600, color: T.softBlack, marginBottom: 4 }}>
