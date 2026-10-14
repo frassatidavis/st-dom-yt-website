@@ -29,7 +29,7 @@ export default function Visit() {
         variant="split"
         title={t("visit.hero.title")}
         lede={t("visit.hero.desc")}
-        heroSrc={PHOTOS.visitHero}
+        heroSrc={PHOTOS.marianShrine}
       />
 
       <PremiumPageActions

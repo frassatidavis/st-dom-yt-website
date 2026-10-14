@@ -89,6 +89,7 @@ export const PHOTOS = {
   dominicanBurialOutline: `${B}photos/dominican-burial-outline.webp`, // Gold outline of the stone, same size
   cornerstone: `${B}photos/cornerstone-opt.webp`,                 // The cornerstone carved "St·Dominic's anno domini 1954" (top of /register)
   stDominicsOutline: `${B}photos/branding/st-dominics-outline.webp`, // Gold outline of the St·Dominic's lettering (1792x384)
+  marianShrine: `${B}photos/marian-shrine-opt.webp`,             // Evening prayer at the Marian shrine: a friar in gold cope before the statue of Our Lady, parishioners gathered (top of /visit)
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)
