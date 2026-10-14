@@ -9,7 +9,7 @@ import LinkBtn from "../../components/LinkBtn";
 import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
-import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
+import { PastoralActionPanel } from "../../components/PastoralActionPanel";
 import Icon from "../../components/Icon";
 import BackToSacraments from "../../components/BackToSacraments";
 
@@ -96,31 +96,6 @@ export default function Funerals() {
           <BackToSacraments />
         </div>
       </Section>
-
-      <NextSteps
-        eyebrow={t("sacraments.funerals.nextSub")}
-        title={t("sacraments.funerals.nextTitle")}
-        items={[
-          {
-            icon: "HeartPulse",
-            title: t("sacraments.funerals.next.anointing.title"),
-            description: t("sacraments.funerals.next.anointing.desc"),
-            to: "/sacraments/anointing",
-          },
-          {
-            icon: "Church",
-            title: t("sacraments.funerals.next.mass.title"),
-            description: t("sacraments.funerals.next.mass.desc"),
-            to: "/mass-times",
-          },
-          {
-            icon: "Phone",
-            title: t("sacraments.funerals.next.contact.title"),
-            description: t("sacraments.funerals.next.contact.desc"),
-            to: "/contact",
-          },
-        ]}
-      />
     </div>
   );
 }

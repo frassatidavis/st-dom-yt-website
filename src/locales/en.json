@@ -937,22 +937,6 @@
       "urgentDesc": "A Catholic funeral is coordinated with the family, funeral home, and parish. Please call us early so a priest or staff member can help with dates, liturgy, music, and next steps.",
       "callOffice": "Call the Office",
       "contact": "Contact Us",
-      "nextSub": "Care for the Family",
-      "nextTitle": "Funeral next steps",
-      "next": {
-        "anointing": {
-          "title": "Anointing of the Sick",
-          "desc": "If someone is gravely ill or near death, call for a priest."
-        },
-        "mass": {
-          "title": "Mass & Confession",
-          "desc": "Find regular parish prayer and sacramental times."
-        },
-        "contact": {
-          "title": "Parish Office",
-          "desc": "Ask about funeral planning, records, and pastoral care."
-        }
-      },
       "directives": "Funeral Directives (PDF)",
       "cardQuote": "“The souls of the departed are relieved by the prayers of the living.”",
       "cardQuoteSrc": "ST Supp., Q. 71, A. 1",

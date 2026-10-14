@@ -937,22 +937,6 @@
       "urgentDesc": "Un funeral católico se coordina con la familia, la funeraria y la parroquia. Por favor llámenos temprano para que un sacerdote o miembro del personal ayude con fechas, liturgia, música y próximos pasos.",
       "callOffice": "Llame a la Oficina",
       "contact": "Contáctenos",
-      "nextSub": "Cuidado para la Familia",
-      "nextTitle": "Próximos pasos funerales",
-      "next": {
-        "anointing": {
-          "title": "Unción de los Enfermos",
-          "desc": "Si alguien está gravemente enfermo o cerca de la muerte, llame por un sacerdote."
-        },
-        "mass": {
-          "title": "Misa y Confesión",
-          "desc": "Encuentre horarios regulares de oración y sacramentos."
-        },
-        "contact": {
-          "title": "Oficina Parroquial",
-          "desc": "Pregunte sobre planificación funeraria, registros y cuidado pastoral."
-        }
-      },
       "directives": "Directivas Funerarias (PDF)",
       "cardQuote": "“Las almas de los difuntos son aliviadas por las oraciones de los vivos.”",
       "cardQuoteSrc": "ST Supl., q. 71, a. 1",
