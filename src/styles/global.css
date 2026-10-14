@@ -1218,6 +1218,49 @@ html:not(.brand-docked) body.nav-open .nav-brand-text {
   z-index: 1;
 }
 
+/* StoneFinale: a photo that stays while the footer scrolls over it */
+.stone-finale {
+  --stage-h: calc(100vh - 64px);
+  position: relative;
+  height: calc(var(--stage-h) + var(--footer-h, 0px));
+  margin-bottom: calc(-1 * var(--footer-h, 0px));
+  background: var(--color-soft-black);
+}
+@supports (height: 100svh) {
+  .stone-finale {
+    --stage-h: calc(100svh - 64px);
+  }
+}
+.stone-finale__stage {
+  position: sticky;
+  top: 64px;
+  height: var(--stage-h);
+  overflow: hidden;
+}
+.stone-finale__stage picture,
+.stone-finale__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.stone-finale__black {
+  position: absolute;
+  inset: 0;
+  background: var(--color-soft-black);
+  opacity: var(--black, 0);
+}
+.stone-finale__outline {
+  opacity: var(--black, 0);
+}
+body.has-stone-finale footer {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
+
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
   position: absolute;

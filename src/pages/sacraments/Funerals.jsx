@@ -12,6 +12,7 @@ import DominicanDivider from "../../components/DominicanDivider";
 import { PastoralActionPanel } from "../../components/PastoralActionPanel";
 import Icon from "../../components/Icon";
 import BackToSacraments from "../../components/BackToSacraments";
+import StoneFinale from "../../components/StoneFinale";
 
 export default function Funerals() {
   const { t } = useTranslation();
@@ -96,6 +97,16 @@ export default function Funerals() {
           <BackToSacraments />
         </div>
       </Section>
+
+      {/* The friars' own resting place stays as the footer rises over it,
+          fading to black but for the memorial stone */}
+      <StoneFinale
+        src={PHOTOS.dominicanBurial}
+        keep={PHOTOS.dominicanBurialStone}
+        outline={PHOTOS.dominicanBurialOutline}
+        alt={t("sacraments.funerals.burialAlt")}
+        position="18% 60%"
+      />
     </div>
   );
 }

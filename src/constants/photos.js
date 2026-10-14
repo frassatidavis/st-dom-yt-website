@@ -84,6 +84,9 @@ export const PHOTOS = {
   confirmationFire: `${B}photos/confirmation-fire-opt.webp`,     // The new fire blazing outside the church, a friar kneeling beside it with the servers (header of /sacraments/confirmation)
   marriageWide: `${B}photos/marriage-wide-opt.webp`,             // A bride and groom walking down the aisle, family filming (IMG_4413; header of /sacraments/marriage)
   funeralCommittal: `${B}photos/funeral-committal-opt.webp`,     // A friar reads the Order of Christian Funerals at the graveside, mourners gathered (header of /sacraments/funerals)
+  dominicanBurial: `${B}photos/dominican-burial-opt.webp`,       // The Dominican Fathers & Brothers burial ground among the trees (IMG_3849; foot of /sacraments/funerals)
+  dominicanBurialStone: `${B}photos/dominican-burial-stone.webp`,   // Just the memorial stone from that photo (1920x1440, transparent elsewhere)
+  dominicanBurialOutline: `${B}photos/dominican-burial-outline.webp`, // Gold outline of the stone, same size
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)
