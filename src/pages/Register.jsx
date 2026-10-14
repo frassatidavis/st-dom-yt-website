@@ -393,32 +393,6 @@ export default function Register() {
       />
       <PageHeader title={t("register.title")} variant="text" />
 
-      <PremiumPageActions
-        eyebrow={t("register.contactInfo")}
-        title={t("register.title")}
-        items={[
-          {
-            icon: "ClipboardList",
-            title: t("register.submit"),
-            description: t("register.desc"),
-            href: "#registration-form",
-            primary: true,
-          },
-          {
-            icon: "Phone",
-            title: t("contact.phoneLabel"),
-            description: CONFIG.phone,
-            href: CONFIG.phoneLink,
-          },
-          {
-            icon: "Church",
-            title: t("nav.massTimes"),
-            description: t("visit.schedule.confessionNote"),
-            to: "/mass-times",
-          },
-        ]}
-      />
-
       <Section bg={T.cream} id="registration-form">
         <div style={{ maxWidth: 680, margin: "0 auto" }}>
           <p
