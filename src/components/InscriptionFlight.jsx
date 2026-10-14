@@ -24,8 +24,10 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   outline  — the name drawn as a gold outline (same proportions as `fill`)
  *   fill     — the header's burgundy name
  *   aspect   — the name's width / height
+ *   href     — optional: the photo links here (opens in a new tab)
+ *   linkLabel — what that link is, for screen readers
  */
-export default function InscriptionFlight({ src, alt, box, position = "50% 50%", outline, fill, aspect }) {
+export default function InscriptionFlight({ src, alt, box, position = "50% 50%", outline, fill, aspect, href, linkLabel }) {
   const photoRef = useRef(null);
   const flyRef = useRef(null);
   const outlineRef = useRef(null);
@@ -104,16 +106,31 @@ export default function InscriptionFlight({ src, alt, box, position = "50% 50%",
   return (
     <>
       <div ref={photoRef} className="inscription-flight">
-        <ResponsivePicture
-          src={src}
-          widths={[480, 1024, 1920]}
-          sizes="100vw"
-          alt={alt}
-          loading="eager"
-          fetchPriority="high"
-          onLoad={(e) => setNatural({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
-          style={{ objectPosition: position }}
-        />
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={linkLabel} className="inscription-flight__link">
+            <ResponsivePicture
+              src={src}
+              widths={[480, 1024, 1920]}
+              sizes="100vw"
+              alt={alt}
+              loading="eager"
+              fetchPriority="high"
+              onLoad={(e) => setNatural({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+              style={{ objectPosition: position }}
+            />
+          </a>
+        ) : (
+          <ResponsivePicture
+            src={src}
+            widths={[480, 1024, 1920]}
+            sizes="100vw"
+            alt={alt}
+            loading="eager"
+            fetchPriority="high"
+            onLoad={(e) => setNatural({ w: e.currentTarget.naturalWidth, h: e.currentTarget.naturalHeight })}
+            style={{ objectPosition: position }}
+          />
+        )}
       </div>
       {createPortal(
         <div ref={flyRef} className="inscription-flight__fly" aria-hidden="true">

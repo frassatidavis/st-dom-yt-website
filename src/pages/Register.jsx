@@ -326,6 +326,8 @@ export default function Register() {
         outline={PHOTOS.stDominicsOutline}
         fill={PHOTOS.stDominicsBurgundy}
         aspect={896 / 192}
+        href="https://dominicanajournal.org/essay/the-cornerstone/"
+        linkLabel={t("register.cornerstoneLink")}
       />
       <PageHeader title={t("register.title")} variant="text" />
 

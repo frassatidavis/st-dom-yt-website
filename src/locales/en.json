@@ -1118,7 +1118,8 @@
       "contact": "Contact"
     },
     "cardDesc": "Welcome to St. Dominic Church! Please complete the form below to register as a member.",
-    "cornerstoneAlt": "The cornerstone of St. Dominic Church, carved St. Dominic's, anno domini 1954, with flower planters on the steps."
+    "cornerstoneAlt": "The cornerstone of St. Dominic Church, carved St. Dominic's, anno domini 1954, with flower planters on the steps.",
+    "cornerstoneLink": "The Cornerstone: an essay in Dominicana Journal (opens in a new tab)"
   },
   "events": {
     "title": "Church Events",
