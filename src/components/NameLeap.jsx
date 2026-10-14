@@ -15,10 +15,13 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   targetRef — the <img> on the page where the name lands
  *   src       — the lettering
  *   behind    — optional selector of an element (a photo) the name passes
- *               behind on its way: the part of it over that element is cut away
+ *               behind on its way: over it, only an outline of the name shows
+ *   outline   — that outline (same proportions as `src`)
  */
-export default function NameLeap({ targetRef, src, behind }) {
+export default function NameLeap({ targetRef, src, behind, outline }) {
   const flyRef = useRef(null);
+  const fillRef = useRef(null);
+  const lineRef = useRef(null);
 
   useLayoutEffect(() => {
     const fly = flyRef.current;
@@ -56,16 +59,20 @@ export default function NameLeap({ targetRef, src, behind }) {
       fly.style.transform = `translate3d(${a.left + (b.left - a.left) * e}px, ${a.top + (b.top - a.top) * e - arc}px, 0)`;
       fly.style.width = `${w}px`;
       fly.style.height = `${h}px`;
-      // Passing behind the photo: cut away the part over it
+      // Over the photo only the outline shows; the filled name takes over
+      // where it comes out from under it
       const cover = behind && document.querySelector(behind)?.getBoundingClientRect();
       const y = a.top + (b.top - a.top) * e - arc;
+      let fillClip = "";
+      let lineClip = "inset(0 0 100% 0)";
       if (cover && cover.bottom > y && cover.top < y + h) {
-        const top = Math.max(0, cover.bottom - y);
-        const bottom = Math.max(0, y + h - cover.top);
-        fly.style.clipPath = cover.top <= y ? `inset(${top}px 0 0 0)` : `inset(0 0 ${bottom}px 0)`;
-      } else {
-        fly.style.clipPath = "";
+        const overTop = cover.top <= y; // the photo covers the name's upper part
+        const cut = overTop ? Math.min(h, cover.bottom - y) : Math.max(0, y + h - cover.top);
+        fillClip = overTop ? `inset(${cut}px 0 0 0)` : `inset(0 0 ${cut}px 0)`;
+        lineClip = overTop ? `inset(0 0 ${h - cut}px 0)` : `inset(${h - cut}px 0 0 0)`;
       }
+      fillRef.current.style.clipPath = fillClip;
+      lineRef.current.style.clipPath = lineClip;
     };
     const request = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -84,7 +91,11 @@ export default function NameLeap({ targetRef, src, behind }) {
   }, [targetRef, behind]);
 
   return createPortal(
-    <img ref={flyRef} src={src} alt="" aria-hidden="true" className="name-leap" />,
+    <div ref={flyRef} className="name-leap" aria-hidden="true">
+      <img ref={fillRef} src={src} alt="" />
+      {outline && <img ref={lineRef} src={outline} alt="" />}
+      {!outline && <span ref={lineRef} />}
+    </div>,
     document.body,
   );
 }
