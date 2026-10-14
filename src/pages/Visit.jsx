@@ -111,10 +111,13 @@ export default function Visit() {
         </Section>
       </FadeInPortrait>
 
-      {/* ════ Quick Mass Schedule ════ */}
-      <Section>
+      {/* ════ Quick Mass Schedule, over the altar servers' procession ════ */}
+      <Section bg={T.softBlack} style={{ position: "relative", overflow: "hidden" }}>
+        <HeroImage src={PHOTOS.altarServers} overlay={0.5} position="50% 45%" lazy />
         <div
           style={{
+            position: "relative",
+            zIndex: 1,
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: 36,
@@ -122,7 +125,7 @@ export default function Visit() {
           }}
         >
           <div>
-            <SectionTitle center={false}>
+            <SectionTitle center={false} light>
               {t("visit.schedule.title")}
             </SectionTitle>
             <Btn variant="primary" onClick={() => navigate("/mass-times")}>
@@ -135,6 +138,10 @@ export default function Visit() {
             style={{
               color: "#fff",
               padding: 32,
+              // a little see-through over the procession photo
+              background: "rgba(74, 16, 25, 0.78)",
+              backdropFilter: "blur(4px)",
+              WebkitBackdropFilter: "blur(4px)",
             }}
           >
             <h3

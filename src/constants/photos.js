@@ -92,6 +92,7 @@ export const PHOTOS = {
   marianShrine: `${B}photos/marian-shrine-opt.webp`,             // Evening prayer at the Marian shrine: a friar in gold cope before the statue of Our Lady, parishioners gathered (top of /visit)
   stDominicStatue: `${B}photos/st-dominic-statue-opt.webp`,       // The statue of St. Dominic (lilies, book, dog with torch) before the sanctuary mural (behind Before You Come on /visit)
   stDominicStrip: `${B}photos/st-dominic-statue-strip.webp`,      // Just the statue of St. Dominic, a tall strip of that photo (600x1700)
+  altarServers: `${B}photos/altar-servers-procession-opt.webp`,  // Altar servers in red cassocks and surplices walking in procession (behind Join Us This Weekend on /visit)
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)
