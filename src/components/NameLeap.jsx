@@ -52,17 +52,31 @@ export default function NameLeap({ targetRef, src, behind, outline }) {
       root.style.setProperty("--brand-text-opacity", away ? "0" : "1");
       fly.style.display = away ? "block" : "none";
       if (!away) return;
-      const h = a.height + (b.height - a.height) * e;
+      let h;
+      let x;
+      let y;
+      if (up > 0 && !reduced) {
+        // Going home: settle level with the crest first, then slide
+        // straight across to the left (no hop)
+        const level = smooth(clamp01(up * 2.5));
+        const across = smooth(up);
+        h = b.height + (a.height - b.height) * level;
+        y = b.top + (a.top - b.top) * level;
+        x = b.left + (a.left - b.left) * across;
+      } else {
+        // Coming down: a little hop above the straight line, like a leap
+        const arc = Math.sin(e * Math.PI) * Math.min(80, Math.abs(b.top - a.top) * 0.15);
+        h = a.height + (b.height - a.height) * e;
+        y = a.top + (b.top - a.top) * e - arc;
+        x = a.left + (b.left - a.left) * e;
+      }
       const w = h * (b.width / b.height);
-      // A little hop above the straight line, like a leap
-      const arc = Math.sin(e * Math.PI) * Math.min(80, Math.abs(b.top - a.top) * 0.15);
-      fly.style.transform = `translate3d(${a.left + (b.left - a.left) * e}px, ${a.top + (b.top - a.top) * e - arc}px, 0)`;
+      fly.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       fly.style.width = `${w}px`;
       fly.style.height = `${h}px`;
       // Over the photo only the outline shows; the filled name takes over
       // where it comes out from under it
       const cover = behind && document.querySelector(behind)?.getBoundingClientRect();
-      const y = a.top + (b.top - a.top) * e - arc;
       let fillClip = "";
       let lineClip = "inset(0 0 100% 0)";
       if (cover && cover.bottom > y && cover.top < y + h) {
