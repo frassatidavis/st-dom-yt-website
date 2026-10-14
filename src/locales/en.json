@@ -1263,6 +1263,11 @@
         "name": "St. Catherine of Siena",
         "bio": "St. Catherine of Siena (1347–1380), a lay Dominican, was a mystic who nursed the sick and persuaded Pope Gregory XI to return from Avignon to Rome. A Doctor of the Church and a patron saint of Italy and Europe, she holds lilies and wears a crown of thorns. Feast: April 29."
       }
+    },
+    "priests": {
+      "title": "Meet Your Priests",
+      "desc": "Our parish is cared for by Dominican friars of the Province of St. Joseph. To reach a priest, call or email the parish office.",
+      "all": "Meet all our friars and staff"
     }
   }
 }

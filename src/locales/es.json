@@ -1263,6 +1263,11 @@
         "name": "Santa Catalina de Siena",
         "bio": "Santa Catalina de Siena (1347–1380), dominica seglar, fue una mística que cuidó a los enfermos y convenció al Papa Gregorio XI de volver de Aviñón a Roma. Doctora de la Iglesia y patrona de Italia y de Europa, sostiene lirios y lleva una corona de espinas. Fiesta: 29 de abril."
       }
+    },
+    "priests": {
+      "title": "Conozca a Sus Sacerdotes",
+      "desc": "Nuestra parroquia está al cuidado de los frailes dominicos de la Provincia de San José. Para comunicarse con un sacerdote, llame o escriba a la oficina parroquial.",
+      "all": "Conozca a todos nuestros frailes y personal"
     }
   }
 }
