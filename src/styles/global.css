@@ -1296,10 +1296,10 @@ body.has-stone-finale footer {
     border-color: #f3cf6b !important;
     box-shadow: 0 0 0 2px #f3cf6b, 0 0 30px rgba(243, 207, 107, 0.55), 0 40px 60px rgba(26, 23, 20, 0.28);
   }
-  /* Funerals: it stays where it is, outlined in black */
+  /* Funerals: it sinks, slowly and only slightly, straight down, outlined in black */
   .sacrament-card--still:hover,
   .sacrament-card--still:focus-visible {
-    translate: none;
+    translate: 0 6px;
     rotate: none;
     animation: none;
     border-color: var(--color-soft-black) !important;
