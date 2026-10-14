@@ -192,7 +192,20 @@ export default function Visit() {
 
       {/* ════ Directions ════ */}
       <Section bg={T.cream} width="narrow">
-        <SectionTitle>{t("visit.directions.title")}</SectionTitle>
+        {/* "Getting to" + the St·Dominic's lettering; the full title stays for screen readers */}
+        <SectionTitle>
+          <span aria-hidden="true" style={{ display: "inline-flex", alignItems: "baseline", flexWrap: "wrap", gap: "0 0.35em" }}>
+            {t("visit.directions.titleLead")}
+            <img
+              src={PHOTOS.stDominicsBurgundy}
+              alt=""
+              width={896}
+              height={192}
+              style={{ height: "1.15em", width: "auto", transform: "translateY(0.2em)" }}
+            />
+          </span>
+          <span className="sr-only">{t("visit.directions.title")}</span>
+        </SectionTitle>
         <div className="glass-card" style={{ padding: 32, marginBottom: 20, maxWidth: 520 }}>
           <address style={{ fontStyle: "normal", marginBottom: 20 }}>
             <p style={{ fontSize: 18, fontWeight: 600, color: T.softBlack, marginBottom: 4 }}>
