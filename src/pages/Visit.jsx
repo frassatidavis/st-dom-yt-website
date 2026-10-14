@@ -211,7 +211,7 @@ export default function Visit() {
           <span className="sr-only">{t("visit.directions.title")}</span>
         </SectionTitle>
         {/* The header's St·Dominic's leaps down into the heading, then back */}
-        <NameLeap targetRef={nameSpotRef} src={PHOTOS.stDominicsBurgundy} behind="#join-us" outline={PHOTOS.stDominicsOutline} />
+        <NameLeap targetRef={nameSpotRef} src={PHOTOS.stDominicsBurgundy} behind="#join-us" outline={PHOTOS.stDominicsOutlineWhite} />
         <div className="glass-card" style={{ padding: 32, marginBottom: 20, maxWidth: 520 }}>
           <address style={{ fontStyle: "normal", marginBottom: 20 }}>
             <p style={{ fontSize: 18, fontWeight: 600, color: T.softBlack, marginBottom: 4 }}>

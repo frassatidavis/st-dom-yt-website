@@ -88,6 +88,7 @@ export const PHOTOS = {
   dominicanBurialStone: `${B}photos/dominican-burial-stone.webp`,   // Just the memorial stone from that photo (1920x1440, transparent elsewhere)
   dominicanBurialOutline: `${B}photos/dominican-burial-outline.webp`, // Gold outline of the stone, same size
   cornerstone: `${B}photos/cornerstone-opt.webp`,                 // The cornerstone carved "St·Dominic's anno domini 1954" (top of /register)
+  stDominicsOutlineWhite: `${B}photos/branding/st-dominics-outline-white.webp`, // The same outline in white (over dark photos)
   stDominicsOutline: `${B}photos/branding/st-dominics-outline.webp`, // Gold outline of the St·Dominic's lettering (1792x384)
   marianShrine: `${B}photos/marian-shrine-opt.webp`,             // Evening prayer at the Marian shrine: a friar in gold cope before the statue of Our Lady, parishioners gathered (top of /visit)
   stDominicStatue: `${B}photos/st-dominic-statue-opt.webp`,       // The statue of St. Dominic (lilies, book, dog with torch) before the sanctuary mural (behind Before You Come on /visit)
