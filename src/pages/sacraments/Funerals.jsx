@@ -51,38 +51,6 @@ export default function Funerals() {
         </div>
       </Section>
 
-      <Section bg={T.cream}>
-        <SectionTitle>
-          {t("sacraments.funerals.ritesTitle")}
-        </SectionTitle>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
-          }}
-        >
-          {["rite1", "rite2", "rite3"].map((key) => (
-            <div
-              key={key}
-              style={{
-                background: T.warmWhite,
-                padding: 28,
-                borderRadius: 4,
-                border: `1px solid ${T.stone}`,
-              }}
-            >
-              <h3 style={{ fontSize: 18, color: T.burgundy, marginBottom: 8 }}>
-                {t(`sacraments.funerals.${key}.title`)}
-              </h3>
-              <p style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7 }}>
-                {t(`sacraments.funerals.${key}.desc`)}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       <Section bg={T.warmWhite}>
         <DominicanDivider style={{ marginBottom: 16 }} />
         <div style={{ textAlign: "center", maxWidth: 500, margin: "0 auto" }}>
