@@ -139,7 +139,7 @@ export default function Visit() {
               color: "#fff",
               padding: 32,
               // a little see-through over the procession photo
-              background: "rgba(74, 16, 25, 0.78)",
+              background: "rgba(74, 16, 25, 0.6)",
               backdropFilter: "blur(4px)",
               WebkitBackdropFilter: "blur(4px)",
             }}
