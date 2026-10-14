@@ -1261,6 +1261,35 @@ body.has-stone-finale footer {
   background: transparent !important;
 }
 
+/* Sacraments: the card under the pointer floats up in a bright gold border
+   while the rest of the page fades back */
+.sacrament-card {
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
+}
+.sacraments-page > * {
+  transition: opacity 0.4s ease;
+}
+@media (hover: hover) {
+  .sacrament-card:hover,
+  .sacrament-card:focus-visible {
+    transform: translateY(-12px);
+    border-color: #f3cf6b !important;
+    box-shadow: 0 0 0 2px #f3cf6b, 0 0 28px rgba(243, 207, 107, 0.55), 0 22px 44px rgba(26, 23, 20, 0.3);
+  }
+  #sacrament-cards:has(.sacrament-card:hover) .sacrament-card:not(:hover) {
+    opacity: 0.45;
+  }
+  .sacraments-page:has(.sacrament-card:hover) > *:not(#sacrament-cards) {
+    opacity: 0.3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sacrament-card:hover,
+  .sacrament-card:focus-visible {
+    transform: none;
+  }
+}
+
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
   position: absolute;

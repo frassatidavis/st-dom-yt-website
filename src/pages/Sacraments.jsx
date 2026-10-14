@@ -24,7 +24,7 @@ export default function Sacraments() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ paddingTop: 76 }}>
+    <div className="sacraments-page" style={{ paddingTop: 76 }}>
       <Seo
         title="The Sacraments"
         description="Learn about the seven sacraments celebrated at St. Dominic Church — Baptism, Eucharist, Confirmation, Marriage, and more."
@@ -57,7 +57,7 @@ export default function Sacraments() {
         </a>
       </div>
 
-      <Section bg={T.cream}>
+      <Section bg={T.cream} id="sacrament-cards">
         <div
           style={{
             display: "grid",
@@ -80,7 +80,7 @@ export default function Sacraments() {
                   document.startViewTransition(() => navigate(s.to));
                 }
               }}
-              className="hover-lift"
+              className="sacrament-card"
               style={{
                 textDecoration: "none",
                 background: s.photo
