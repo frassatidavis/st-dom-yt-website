@@ -9,12 +9,10 @@ import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import HeroImage from "../components/HeroImage";
 import { PHOTOS } from "../constants/photos";
-import PremiumPageActions from "../components/PremiumPageActions";
 
 export default function Visit() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`;
 
   return (
     <div style={{ paddingTop: 76 }}>
@@ -30,31 +28,6 @@ export default function Visit() {
         title={t("visit.hero.title")}
         lede={t("visit.hero.desc")}
         heroSrc={PHOTOS.marianShrine}
-      />
-
-      <PremiumPageActions
-        items={[
-          {
-            icon: "Church",
-            title: t("visit.schedule.cta"),
-            description: t("visit.schedule.confessionNote"),
-            to: "/mass-times",
-            primary: true,
-          },
-          {
-            icon: "MapPin",
-            title: t("visit.directions.cta"),
-            description: `${CONFIG.address}, ${CONFIG.city}`,
-            href: mapsHref,
-            external: true,
-          },
-          {
-            icon: "Phone",
-            title: t("visit.cta.contact"),
-            description: CONFIG.phone,
-            to: "/contact",
-          },
-        ]}
       />
 
       {/* ════ Sunday at St. Dominic ════ */}
