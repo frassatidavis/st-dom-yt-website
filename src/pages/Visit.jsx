@@ -8,6 +8,7 @@ import Btn from "../components/Btn";
 import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import HeroImage from "../components/HeroImage";
+import FadeInPortrait from "../components/FadeInPortrait";
 import { PHOTOS } from "../constants/photos";
 
 export default function Visit() {
@@ -47,65 +48,68 @@ export default function Visit() {
       </Section>
 
       {/* ════ What to Know — editorial list, hairline rules ════ */}
-      <Section bg={T.cream} width="narrow">
-        <SectionTitle>{t("visit.know.title")}</SectionTitle>
-        <dl style={{ margin: 0 }}>
-          {["dress", "children", "language", "parking"].map((key, i) => (
-            <div
-              key={key}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "minmax(120px, 200px) 1fr",
-                gap: "12px 28px",
-                padding: "20px 0",
-                borderTop: i === 0 ? `1px solid ${T.stone}` : undefined,
-                borderBottom: `1px solid ${T.stone}`,
-                marginTop: i === 0 ? 0 : -1,
-              }}
-            >
-              <dt
-                className="u-smallcaps"
+      {/* St. Dominic comes into view behind the text as it scrolls up */}
+      <FadeInPortrait src={PHOTOS.stDominicStatue} bg={T.cream} strength={0.2} position="50% 25%">
+        <Section bg="transparent" width="narrow">
+          <SectionTitle>{t("visit.know.title")}</SectionTitle>
+          <dl style={{ margin: 0 }}>
+            {["dress", "children", "language", "parking"].map((key, i) => (
+              <div
+                key={key}
                 style={{
-                  color: T.burgundy,
-                  fontWeight: 600,
-                  fontSize: 16,
-                  lineHeight: 1.5,
+                  display: "grid",
+                  gridTemplateColumns: "minmax(120px, 200px) 1fr",
+                  gap: "12px 28px",
+                  padding: "20px 0",
+                  borderTop: i === 0 ? `1px solid ${T.stone}` : undefined,
+                  borderBottom: `1px solid ${T.stone}`,
+                  marginTop: i === 0 ? 0 : -1,
                 }}
               >
-                {t(`visit.know.${key}.title`)}
-              </dt>
-              <dd
-                style={{
-                  margin: 0,
-                  fontSize: 15,
-                  color: T.warmGray,
-                  lineHeight: 1.75,
-                  maxWidth: "58ch",
-                }}
-              >
-                {key === "dress" ? (
-                  // "admiratio" links to an article on modesty in dress
-                  <Trans
-                    i18nKey="visit.know.dress.desc"
-                    components={{
-                      modesty: (
-                        <a
-                          href="https://www.ncregister.com/blog/3-doctors-of-the-church-on-the-virtue-of-modesty-in-dress"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: T.burgundy, textDecoration: "underline" }}
-                        />
-                      ),
-                    }}
-                  />
-                ) : (
-                  t(`visit.know.${key}.desc`)
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </Section>
+                <dt
+                  className="u-smallcaps"
+                  style={{
+                    color: T.burgundy,
+                    fontWeight: 600,
+                    fontSize: 16,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {t(`visit.know.${key}.title`)}
+                </dt>
+                <dd
+                  style={{
+                    margin: 0,
+                    fontSize: 15,
+                    color: T.warmGray,
+                    lineHeight: 1.75,
+                    maxWidth: "58ch",
+                  }}
+                >
+                  {key === "dress" ? (
+                    // "admiratio" links to an article on modesty in dress
+                    <Trans
+                      i18nKey="visit.know.dress.desc"
+                      components={{
+                        modesty: (
+                          <a
+                            href="https://www.ncregister.com/blog/3-doctors-of-the-church-on-the-virtue-of-modesty-in-dress"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: T.burgundy, textDecoration: "underline" }}
+                          />
+                        ),
+                      }}
+                    />
+                  ) : (
+                    t(`visit.know.${key}.desc`)
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Section>
+      </FadeInPortrait>
 
       {/* ════ Quick Mass Schedule ════ */}
       <Section>
