@@ -83,6 +83,7 @@ export const PHOTOS = {
   firstCommunionRail: `${B}photos/first-communion-rail-opt.webp`, // A girl receiving her First Communion at the altar rail (header of /sacraments/first-communion)
   confirmationFire: `${B}photos/confirmation-fire-opt.webp`,     // The new fire blazing outside the church, a friar kneeling beside it with the servers (header of /sacraments/confirmation)
   marriageWide: `${B}photos/marriage-wide-opt.webp`,             // A bride and groom walking down the aisle, family filming (IMG_4413; header of /sacraments/marriage)
+  funeralCommittal: `${B}photos/funeral-committal-opt.webp`,     // A friar reads the Order of Christian Funerals at the graveside, mourners gathered (header of /sacraments/funerals)
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)

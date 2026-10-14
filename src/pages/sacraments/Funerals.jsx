@@ -6,7 +6,7 @@ import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
 import LinkBtn from "../../components/LinkBtn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
@@ -22,34 +22,44 @@ export default function Funerals() {
       <Seo
         title="Catholic Funerals"
         description="Catholic funeral services at St. Dominic Church. Vigil, Funeral Mass, and Rite of Committal information."
-        image={PHOTOS.stockFunerals}
+        image={PHOTOS.funeralCommittal}
       />
-      <PageHeader title={t("sacraments.funerals.title")} heroSrc={PHOTOS.stockFunerals} tall />
+      {/* The graveside opens out of the header; then darkness falls behind
+          the opening text, drawing in on the book of the rite */}
+      <PhotoBackdrop
+        title={t("sacraments.funerals.title")}
+        src={PHOTOS.funeralCommittal}
+        alt={t("sacraments.funerals.photoAlt")}
+        subject={[0.66, 0.24]}
+        subjectAt={0.45}
+        zoom={[1, 1.6]}
+        tone="dark"
+      >
+        <Section bg="transparent" style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
+          <PastoralActionPanel
+            urgent
+            eyebrow={t("sacraments.funerals.urgentSub")}
+            title={t("sacraments.funerals.urgentTitle")}
+            description={t("sacraments.funerals.urgentDesc")}
+            primaryLabel={t("sacraments.funerals.callOffice")}
+            primaryHref={CONFIG.phoneLink}
+            secondaryLabel={t("sacraments.funerals.contact")}
+            secondaryTo="/contact"
+          />
+        </Section>
 
-      <Section bg={T.cream} style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
-        <PastoralActionPanel
-          urgent
-          eyebrow={t("sacraments.funerals.urgentSub")}
-          title={t("sacraments.funerals.urgentTitle")}
-          description={t("sacraments.funerals.urgentDesc")}
-          primaryLabel={t("sacraments.funerals.callOffice")}
-          primaryHref={CONFIG.phoneLink}
-          secondaryLabel={t("sacraments.funerals.contact")}
-          secondaryTo="/contact"
-        />
-      </Section>
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.funerals.sub")}>
-            {t("sacraments.funerals.heading")}
-          </SectionTitle>
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p2")}</p>
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.funerals.sub")}>
+              {t("sacraments.funerals.heading")}
+            </SectionTitle>
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.warmWhite}>
         <DominicanDivider style={{ marginBottom: 16 }} />
