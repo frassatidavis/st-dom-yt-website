@@ -32,7 +32,10 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *              scrolling (0 = top, 1 = bottom; the title is near the bottom)
  *   position — which part of the photo to keep in view, as "x% y%"
  *   tone     — "light" (a cream wash; dark text) | "dark" (darkness closes in
- *              from the edges and falls to near-black; the text turns light)
+ *              from the edges and falls to near-black; the text turns light).
+ *              With "dark", a child marked data-dawn brings the light back:
+ *              as it rises up the screen the black lifts to white and the
+ *              text turns dark again.
  *   children — the content it becomes the background of (transparent sections)
  */
 export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", tone = "light", children }) {
@@ -98,6 +101,15 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
       layer.style.clipPath = `inset(0 0 ${((H - b) * (1 - open)).toFixed(1)}px 0)`;
       wrap.style.setProperty("--scrim", (1 - open).toFixed(3));
       layer.style.setProperty("--wash", ((tone === "dark" ? 0.88 : 0.8) * fade).toFixed(3));
+      // Dark: dawn as the marked child rises from 85% to 35% of the screen
+      const marker = wrap.querySelector("[data-dawn]");
+      let dawn = 0;
+      if (tone === "dark" && marker) {
+        const top = marker.getBoundingClientRect().top;
+        dawn = smooth(clamp01((window.innerHeight * 0.85 - top) / (window.innerHeight * 0.5)));
+      }
+      wrap.style.setProperty("--dawn", dawn.toFixed(3));
+      wrap.classList.toggle("is-dawn", dawn > 0.5);
       // Dark: the edges close in first, then the rest falls away
       layer.style.setProperty("--vignette", smooth(clamp01((offset - b * 0.05) / (b * 0.45))).toFixed(3));
       // A small jump as it opens, then a slow zoom from `from` to `to`
@@ -138,6 +150,7 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
         <div className="photo-backdrop__scrim" aria-hidden="true" />
         {tone === "dark" && <div className="photo-backdrop__vignette" aria-hidden="true" />}
         <div className="photo-backdrop__wash" aria-hidden="true" />
+        {tone === "dark" && <div className="photo-backdrop__dawn" aria-hidden="true" />}
       </div>
 
       {/* The header: same box and title as PageHeader, over the photo */}

@@ -48,17 +48,20 @@ export default function Funerals() {
           />
         </Section>
 
-        <Section bg="transparent">
-          <div style={{ maxWidth: 760, margin: "0 auto" }}>
-            <SectionTitle sub={t("sacraments.funerals.sub")}>
-              {t("sacraments.funerals.heading")}
-            </SectionTitle>
-            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-              <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p1")}</p>
-              <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p2")}</p>
+        {/* Here the light returns, and stays to the end of the page */}
+        <div data-dawn>
+          <Section bg="transparent">
+            <div style={{ maxWidth: 760, margin: "0 auto" }}>
+              <SectionTitle sub={t("sacraments.funerals.sub")}>
+                {t("sacraments.funerals.heading")}
+              </SectionTitle>
+              <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+                <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p1")}</p>
+                <p style={{ marginBottom: 20 }}>{t("sacraments.funerals.p2")}</p>
+              </div>
             </div>
-          </div>
-        </Section>
+          </Section>
+        </div>
       </PhotoBackdrop>
 
       <Section bg={T.warmWhite}>
