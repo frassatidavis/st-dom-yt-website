@@ -1139,7 +1139,7 @@ html:not(.brand-docked) body.nav-open .nav-brand-text {
 .photo-backdrop__img {
   display: block;
   object-fit: cover;
-  transform: translateY(var(--lift, 0px)) scale(var(--zoom, 1));
+  transform: translate(var(--shift, 0px), var(--lift, 0px)) scale(var(--zoom, 1));
   transition: opacity 0.8s ease;
   will-change: transform;
 }

@@ -9,7 +9,6 @@ import LinkBtn from "../../components/LinkBtn";
 import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
-import SacramentPageActions from "../../components/SacramentPageActions";
 import PullQuote from "../../components/PullQuote";
 import Icon from "../../components/Icon";
 
@@ -25,7 +24,6 @@ export default function Marriage() {
         image={PHOTOS.marriageHero}
       />
       <PageHeader title={t("sacraments.marriage.title")} heroSrc={PHOTOS.marriageHero} tall />
-      <SacramentPageActions sacramentKey="marriage" icon="Gem" />
 
       <Section bg={T.warmWhite}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>

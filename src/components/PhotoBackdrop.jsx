@@ -22,13 +22,20 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   title    — the page's h1
  *   src      — the photo; needs -480/-1024/-1920 files (ResponsivePicture)
  *   alt      — description of the photo
- *   focus    — the spot it zooms in on, as "x% y%" of the screen-filling photo
+ *   subject  — [x, y], the spot (fractions of the photo) it zooms around and
+ *              shows in the header's box before scrolling; the photo slides
+ *              back into place as it opens
+ *   zoom     — [from, to]: the scale at the top and at the end of the stretch
+ *              ([1, 1.45] pushes in on the subject; [1.7, 1] starts close on
+ *              it and pulls back)
+ *   subjectAt — how far down the header's box the subject sits before
+ *              scrolling (0 = top, 1 = bottom; the title is near the bottom)
  *   position — which part of the photo to keep in view, as "x% y%"
- *   start    — the height (fraction of the photo) to show in the header's box
- *              before scrolling; the photo slides back into place as it opens
  *   children — the content it becomes the background of (transparent sections)
  */
-export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", position = "50% 50%", start, children }) {
+export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", children }) {
+  const [zoomFrom, zoomTo] = zoom;
+  const [subjectX, subjectY] = subject;
   const wrapRef = useRef(null);
   const layerRef = useRef(null);
   const bandRef = useRef(null);
@@ -53,28 +60,44 @@ export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", posi
       // sits on the full-strength photo
       const fade = reduced ? 1 : smooth(clamp01((offset - b * 0.1) / (b * 0.6)));
       // Zoom: across the whole stretch
-      const run = Math.max(1, wrap.offsetHeight - H);
-      const zoom = reduced ? 0 : clamp01(offset / run);
+      const stretch = Math.max(1, wrap.offsetHeight - H);
+      const run = reduced ? 1 : clamp01(offset / stretch);
 
-      // Before scrolling, lift the photo so the `start` height sits in the
-      // header's box (just above its middle); it settles as the photo opens
+      // Where the subject is on the screen-filling photo (object-fit: cover)
       let lift = 0;
+      let shift = 0;
       const img = layer.querySelector("img");
-      if (start != null && img?.naturalWidth) {
+      if (img?.naturalWidth) {
         const W = layer.clientWidth;
         const s = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+        const cw = img.naturalWidth * s;
         const ch = img.naturalHeight * s;
-        const posY = parseFloat(position.split(" ")[1] ?? "50") / 100;
+        const [posX, posY] = position.split(" ").map((v) => parseFloat(v) / 100);
+        const left = (W - cw) * posX;
         const top = (H - ch) * posY;
-        // never so far that the photo's bottom edge rises into the box
-        lift = Math.min(0, Math.max(b - (top + ch), b * 0.55 - (top + start * ch)));
+        // The zoom is around the subject
+        img.style.transformOrigin = `${(left + subjectX * cw).toFixed(1)}px ${(top + subjectY * ch).toFixed(1)}px`;
+        // Before scrolling, lift the photo so the subject sits in the header's
+        // box (just above its middle), never so far that the photo's bottom
+        // edge rises into the box; it settles as the photo opens
+        // (the drawn photo is clipped to the screen-sized frame, so it is
+        // the frame's edges, scaled around the subject, that must cover)
+        const oy = top + subjectY * ch;
+        lift = Math.min(0, Math.max(b - oy - zoomFrom * (H - oy), b * subjectAt - oy));
+        // ...and across, so it sits right of the title (at 62% of the width),
+        // as far as the (zoomed) photo still covers the screen
+        const ox = left + subjectX * cw;
+        const lo = W - ox - zoomFrom * (W - ox);
+        const hi = -ox - zoomFrom * (0 - ox);
+        shift = Math.min(hi, Math.max(lo, W * 0.62 - ox));
       }
       layer.style.setProperty("--lift", `${(lift * (1 - open)).toFixed(1)}px`);
+      layer.style.setProperty("--shift", `${(shift * (1 - open)).toFixed(1)}px`);
       layer.style.clipPath = `inset(0 0 ${((H - b) * (1 - open)).toFixed(1)}px 0)`;
       wrap.style.setProperty("--scrim", (1 - open).toFixed(3));
       layer.style.setProperty("--wash", (0.8 * fade).toFixed(3));
-      // A small jump as it opens, then a slow push in
-      layer.style.setProperty("--zoom", (1 + 0.05 * Math.sin(open * Math.PI) + 0.45 * zoom).toFixed(4));
+      // A small jump as it opens, then a slow zoom from `from` to `to`
+      layer.style.setProperty("--zoom", (zoomFrom + (zoomTo - zoomFrom) * run + 0.05 * Math.sin(open * Math.PI)).toFixed(4));
     };
     const request = () => {
       if (!frame) frame = window.requestAnimationFrame(update);
@@ -92,7 +115,7 @@ export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", posi
       window.removeEventListener("resize", request);
       ro?.disconnect();
     };
-  }, [start, position, loaded]);
+  }, [subjectX, subjectY, subjectAt, zoomFrom, zoomTo, position, loaded]);
 
   return (
     <div ref={wrapRef} className="photo-backdrop">
@@ -106,7 +129,7 @@ export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", posi
           fetchPriority="high"
           onLoad={() => setLoaded(true)}
           className="photo-backdrop__img"
-          style={{ opacity: loaded ? 1 : 0, objectPosition: position, transformOrigin: focus }}
+          style={{ opacity: loaded ? 1 : 0, objectPosition: position }}
         />
         <div className="photo-backdrop__scrim" aria-hidden="true" />
         <div className="photo-backdrop__wash" aria-hidden="true" />

@@ -4,10 +4,9 @@ import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import LinkBtn from "../../components/LinkBtn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
-import SacramentPageActions from "../../components/SacramentPageActions";
 
 export default function Confirmation() {
   const { t } = useTranslation();
@@ -17,26 +16,31 @@ export default function Confirmation() {
       <Seo
         title="Confirmation"
         description="Confirmation preparation at St. Dominic Church. Program details for teens and adults seeking the Sacrament of Confirmation."
-        image={PHOTOS.stockConfirmation}
+        image={PHOTOS.confirmationFire}
       />
-      <PageHeader
+      {/* The photo starts close on the fire, opens out of the header and
+          settles behind the opening text, pulling back */}
+      <PhotoBackdrop
         title={t("sacraments.confirmation.title")}
-        heroSrc={PHOTOS.stockConfirmation}
-        tall
-      />
-      <SacramentPageActions sacramentKey="confirmation" icon="Flame" />
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.confirmation.sub")}>
-            {t("sacraments.confirmation.heading")}
-          </SectionTitle>
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.confirmation.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.confirmation.p2")}</p>
+        src={PHOTOS.confirmationFire}
+        alt={t("sacraments.confirmation.photoAlt")}
+        subject={[0.33, 0.58]}
+        subjectAt={0.42}
+        zoom={[1.45, 1]}
+        position="30% 50%"
+      >
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.confirmation.sub")}>
+              {t("sacraments.confirmation.heading")}
+            </SectionTitle>
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.confirmation.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.confirmation.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("sacraments.confirmation.prepSub")}>

@@ -28,8 +28,7 @@ export default function Baptism() {
         src={PHOTOS.baptismFont}
         alt={t("sacraments.baptism.photoAlt")}
         position="50% 40%"
-        focus="60% 68%"
-        start={0.62}
+        subject={[0.58, 0.64]}
       >
         <Section bg="transparent">
           <div style={{ maxWidth: 760, margin: "0 auto" }}>

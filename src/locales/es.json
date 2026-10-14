@@ -808,7 +808,8 @@
       "ctaDesc": "Contacte la oficina parroquial o nuestra Coordinadora de Educación Religiosa para inscribir a su hijo en el programa.",
       "cardQuote": "“La Eucaristía es el sacramento de la perfección de la vida espiritual.”",
       "cardQuoteSrc": "ST III, q. 73, a. 1",
-      "cardCta": "Reciba Más Información"
+      "cardCta": "Reciba Más Información",
+      "photoAlt": "Una niña con su vestido blanco de Primera Comunión recibe la Eucaristía de un fraile dominico en el comulgatorio."
     },
     "confirmation": {
       "title": "Confirmación",
@@ -837,7 +838,8 @@
       "ctaDesc": "Contáctenos para obtener información sobre nuestro programa de preparación para la Confirmación para adolescentes y adultos.",
       "cardQuote": "“En la Confirmación el hombre recibe poder para hacer lo que pertenece al combate espiritual.”",
       "cardQuoteSrc": "ST III, q. 72, a. 5",
-      "cardCta": "Confírmese Aquí"
+      "cardCta": "Confírmese Aquí",
+      "photoAlt": "Un fuego arde en un brasero frente a la iglesia mientras un fraile dominico se arrodilla junto a él, rodeado de monaguillos y feligreses."
     },
     "marriage": {
       "title": "Santo Matrimonio",

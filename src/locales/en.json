@@ -808,7 +808,8 @@
       "ctaDesc": "Contact the church office or our Coordinator of Religious Education to enroll your child in the program.",
       "cardQuote": "“The Eucharist is the sacrament of the perfection of the spiritual life.”",
       "cardQuoteSrc": "ST III, Q. 73, A. 1",
-      "cardCta": "Receive More Info"
+      "cardCta": "Receive More Info",
+      "photoAlt": "A girl in her white First Communion dress receives the Eucharist from a Dominican friar at the altar rail."
     },
     "confirmation": {
       "title": "Confirmation",
@@ -837,7 +838,8 @@
       "ctaDesc": "Contact us for information about our Confirmation preparation program for teens and adults.",
       "cardQuote": "“In Confirmation man receives power to do those things which pertain to the spiritual combat.”",
       "cardQuoteSrc": "ST III, Q. 72, A. 5",
-      "cardCta": "Click to Confirm"
+      "cardCta": "Click to Confirm",
+      "photoAlt": "A fire blazes in a brazier outside the church as a Dominican friar kneels beside it, servers and parishioners gathered around."
     },
     "marriage": {
       "title": "Holy Matrimony",

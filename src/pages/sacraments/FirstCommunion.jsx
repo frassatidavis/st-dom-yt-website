@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import LinkBtn from "../../components/LinkBtn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 
@@ -16,25 +17,31 @@ export default function FirstCommunion() {
       <Seo
         title="First Holy Communion"
         description="First Holy Communion preparation at St. Dominic Church. Program details, requirements, and registration information."
-        image={PHOTOS.stockEucharist}
+        image={PHOTOS.firstCommunionRail}
       />
-      <PageHeader
+      {/* The photo starts close on the girl receiving Communion, opens out of
+          the header and settles behind the opening text, pulling back */}
+      <PhotoBackdrop
         title={t("sacraments.firstCommunion.title")}
-        heroSrc={PHOTOS.stockEucharist}
-        tall
-      />
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.firstCommunion.sub")}>
-            {t("sacraments.firstCommunion.heading")}
-          </SectionTitle>
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.firstCommunion.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.firstCommunion.p2")}</p>
+        src={PHOTOS.firstCommunionRail}
+        alt={t("sacraments.firstCommunion.photoAlt")}
+        subject={[0.33, 0.6]}
+        subjectAt={0.4}
+        position="32% 50%"
+        zoom={[1.7, 1]}
+      >
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.firstCommunion.sub")}>
+              {t("sacraments.firstCommunion.heading")}
+            </SectionTitle>
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.firstCommunion.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.firstCommunion.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("sacraments.firstCommunion.prepSub")}>
@@ -91,6 +98,18 @@ export default function FirstCommunion() {
             <a href={`mailto:${CONFIG.religiousEdEmail}`} className="contact-link" style={{ color: T.burgundy }}>
               {CONFIG.religiousEdEmail}
             </a>
+          </p>
+          {/* Back to all the sacraments */}
+          <p style={{ marginTop: 28 }}>
+            <Link
+              to="/sacraments"
+              style={{
+                color: T.goldText, fontSize: 13, fontWeight: 600, letterSpacing: 0.5,
+                textTransform: "uppercase", textDecoration: "none",
+              }}
+            >
+              ← {t("sacraments.allSacraments")}
+            </Link>
           </p>
         </div>
       </Section>

@@ -9,7 +9,6 @@ import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import PullQuote from "../../components/PullQuote";
 import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
-import SacramentPageActions from "../../components/SacramentPageActions";
 
 export default function Anointing() {
   const { t } = useTranslation();
@@ -23,7 +22,6 @@ export default function Anointing() {
         image={PHOTOS.stockAnointing}
       />
       <PageHeader title={t("sacraments.anointing.title")} heroSrc={PHOTOS.stockAnointing} tall />
-      <SacramentPageActions sacramentKey="anointing" icon="HeartPulse" />
 
       <Section bg={T.cream} style={{ padding: "clamp(32px, 6vw, 52px) 24px" }}>
         <PastoralActionPanel

@@ -80,6 +80,8 @@ export const PHOTOS = {
   anointingCard: `${B}photos/anointing-card-1024.webp`,           // A priest anointing a sick parishioner at home
   funeralCard: `${B}photos/funeral-card-1024.webp`,               // The Dominican Fathers & Brothers burial ground (IMG_3849)
   baptismFont: `${B}photos/baptism-font-opt.webp`,                // A baby baptized at our font by a friar, family gathered round (header of /sacraments/baptism)
+  firstCommunionRail: `${B}photos/first-communion-rail-opt.webp`, // A girl receiving her First Communion at the altar rail (header of /sacraments/first-communion)
+  confirmationFire: `${B}photos/confirmation-fire-opt.webp`,     // The new fire blazing outside the church, a friar kneeling beside it with the servers (header of /sacraments/confirmation)
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)
