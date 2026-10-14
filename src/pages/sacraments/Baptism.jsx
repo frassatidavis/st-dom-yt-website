@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import PullQuote from "../../components/PullQuote";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
@@ -9,6 +9,7 @@ import Btn from "../../components/Btn";
 import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function Baptism() {
   const { t } = useTranslation();
@@ -98,18 +99,7 @@ export default function Baptism() {
               {CONFIG.phone}
             </a>
           </p>
-          {/* Back to all the sacraments */}
-          <p style={{ marginTop: 28 }}>
-            <Link
-              to="/sacraments"
-              style={{
-                color: T.goldText, fontSize: 13, fontWeight: 600, letterSpacing: 0.5,
-                textTransform: "uppercase", textDecoration: "none",
-              }}
-            >
-              ← {t("sacraments.allSacraments")}
-            </Link>
-          </p>
+          <BackToSacraments />
         </div>
       </Section>
     </div>

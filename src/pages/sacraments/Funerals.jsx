@@ -11,6 +11,7 @@ import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
 import Icon from "../../components/Icon";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function Funerals() {
   const { t } = useTranslation();
@@ -111,6 +112,7 @@ export default function Funerals() {
               {CONFIG.phone}
             </a>
           </p>
+          <BackToSacraments />
         </div>
       </Section>
 

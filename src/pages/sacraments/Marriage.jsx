@@ -11,6 +11,7 @@ import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 import PullQuote from "../../components/PullQuote";
 import Icon from "../../components/Icon";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function Marriage() {
   const { t } = useTranslation();
@@ -116,6 +117,7 @@ export default function Marriage() {
               {CONFIG.phone}
             </a>
           </p>
+          <BackToSacraments />
         </div>
       </Section>
     </div>

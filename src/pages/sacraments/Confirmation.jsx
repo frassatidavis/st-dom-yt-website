@@ -7,6 +7,7 @@ import LinkBtn from "../../components/LinkBtn";
 import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function Confirmation() {
   const { t } = useTranslation();
@@ -98,6 +99,7 @@ export default function Confirmation() {
               {CONFIG.religiousEdEmail}
             </a>
           </p>
+          <BackToSacraments />
         </div>
       </Section>
     </div>

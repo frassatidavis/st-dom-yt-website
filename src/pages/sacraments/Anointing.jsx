@@ -9,6 +9,7 @@ import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import PullQuote from "../../components/PullQuote";
 import { NextSteps, PastoralActionPanel } from "../../components/PastoralActionPanel";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function Anointing() {
   const { t } = useTranslation();
@@ -103,6 +104,7 @@ export default function Anointing() {
             {t("sacraments.anointing.ctaDesc")}
           </p>
           <Btn onClick={() => navigate("/contact")}>{t("sacraments.contactUs")}</Btn>
+          <BackToSacraments />
         </div>
       </Section>
 

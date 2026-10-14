@@ -8,6 +8,7 @@ import LinkBtn from "../../components/LinkBtn";
 import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
+import BackToSacraments from "../../components/BackToSacraments";
 
 export default function FirstCommunion() {
   const { t } = useTranslation();
@@ -99,18 +100,7 @@ export default function FirstCommunion() {
               {CONFIG.religiousEdEmail}
             </a>
           </p>
-          {/* Back to all the sacraments */}
-          <p style={{ marginTop: 28 }}>
-            <Link
-              to="/sacraments"
-              style={{
-                color: T.goldText, fontSize: 13, fontWeight: 600, letterSpacing: 0.5,
-                textTransform: "uppercase", textDecoration: "none",
-              }}
-            >
-              ← {t("sacraments.allSacraments")}
-            </Link>
-          </p>
+          <BackToSacraments />
         </div>
       </Section>
     </div>
