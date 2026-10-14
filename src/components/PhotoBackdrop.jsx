@@ -24,9 +24,11 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   alt      — description of the photo
  *   focus    — the spot it zooms in on, as "x% y%" of the screen-filling photo
  *   position — which part of the photo to keep in view, as "x% y%"
+ *   start    — the height (fraction of the photo) to show in the header's box
+ *              before scrolling; the photo slides back into place as it opens
  *   children — the content it becomes the background of (transparent sections)
  */
-export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", position = "50% 50%", children }) {
+export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", position = "50% 50%", start, children }) {
   const wrapRef = useRef(null);
   const layerRef = useRef(null);
   const bandRef = useRef(null);
@@ -54,6 +56,20 @@ export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", posi
       const run = Math.max(1, wrap.offsetHeight - H);
       const zoom = reduced ? 0 : clamp01(offset / run);
 
+      // Before scrolling, lift the photo so the `start` height sits in the
+      // header's box (just above its middle); it settles as the photo opens
+      let lift = 0;
+      const img = layer.querySelector("img");
+      if (start != null && img?.naturalWidth) {
+        const W = layer.clientWidth;
+        const s = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+        const ch = img.naturalHeight * s;
+        const posY = parseFloat(position.split(" ")[1] ?? "50") / 100;
+        const top = (H - ch) * posY;
+        // never so far that the photo's bottom edge rises into the box
+        lift = Math.min(0, Math.max(b - (top + ch), b * 0.55 - (top + start * ch)));
+      }
+      layer.style.setProperty("--lift", `${(lift * (1 - open)).toFixed(1)}px`);
       layer.style.clipPath = `inset(0 0 ${((H - b) * (1 - open)).toFixed(1)}px 0)`;
       wrap.style.setProperty("--scrim", (1 - open).toFixed(3));
       layer.style.setProperty("--wash", (0.8 * fade).toFixed(3));
@@ -76,7 +92,7 @@ export default function PhotoBackdrop({ title, src, alt, focus = "50% 50%", posi
       window.removeEventListener("resize", request);
       ro?.disconnect();
     };
-  }, []);
+  }, [start, position, loaded]);
 
   return (
     <div ref={wrapRef} className="photo-backdrop">
