@@ -3,7 +3,6 @@ import { T } from "../constants/theme";
 import { PHOTOS } from "../constants/photos";
 import { Section, SectionTitle } from "../components/Section";
 import PageHeader from "../components/PageHeader";
-import PremiumPageActions from "../components/PremiumPageActions";
 import ParallaxSection from "../components/ParallaxSection";
 import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
@@ -70,25 +69,6 @@ export default function FaithFormation() {
         image={PHOTOS.faithFormationHero}
       />
       <PageHeader title={t("faithFormation.title")} variant="text" />
-      <PremiumPageActions
-        title={t("faithFormation.actionsTitle")}
-        items={[
-          {
-            title: t("faithFormation.resources.title"),
-            description: t("faithFormation.resources.desc"),
-            href: "#faith-resources",
-            icon: "BookOpenText",
-            primary: true,
-          },
-          {
-            title: t("nav.becomingCatholic"),
-            description: t("becomingCatholic.intro.desc"),
-            to: "/becoming-catholic",
-            icon: "Church",
-          },
-        ]}
-      />
-
       {/* ════ Intro ════ */}
       <Section bg={T.warmWhite}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
