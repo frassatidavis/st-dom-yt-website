@@ -1135,7 +1135,8 @@
       "contact": "Contacto",
       "church": "Iglesia"
     },
-    "cardDesc": "¡Le damos la bienvenida a la Iglesia Santo Domingo! Por favor complete el formulario a continuación para registrarse como feligrés."
+    "cardDesc": "¡Le damos la bienvenida a la Iglesia Santo Domingo! Por favor complete el formulario a continuación para registrarse como feligrés.",
+    "cornerstoneAlt": "La piedra angular de la Iglesia Santo Domingo, tallada con St. Dominic's, anno domini 1954, con macetas de flores en los escalones."
   },
   "events": {
     "title": "Eventos de la Iglesia",

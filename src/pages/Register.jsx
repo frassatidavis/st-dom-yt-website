@@ -5,6 +5,7 @@ import { FloatingInput, FloatingTextarea, StyledSelect } from "../components/for
 import { CONFIG } from "../constants/config";
 import { Section } from "../components/Section";
 import PageHeader from "../components/PageHeader";
+import InscriptionFlight from "../components/InscriptionFlight";
 import Seo from "../components/Seo";
 import { PHOTOS } from "../constants/photos";
 import PremiumPageActions from "../components/PremiumPageActions";
@@ -389,7 +390,17 @@ export default function Register() {
       <Seo
         title="Church Registration"
         description="Register as a member at St. Dominic Catholic Church in Youngstown, Ohio."
-        image={PHOTOS.homeHero}
+        image={PHOTOS.cornerstone}
+      />
+      {/* The cornerstone; its carved name lifts off and flies to the header */}
+      <InscriptionFlight
+        src={PHOTOS.cornerstone}
+        alt={t("register.cornerstoneAlt")}
+        box={[0.297, 0.4067, 0.285, 0.0333]}
+        position="50% 42%"
+        outline={PHOTOS.stDominicsOutline}
+        fill={PHOTOS.stDominicsBurgundy}
+        aspect={896 / 192}
       />
       <PageHeader title={t("register.title")} variant="text" />
 
