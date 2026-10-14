@@ -7,10 +7,11 @@ const between = (v, a, b) => clamp01((v - a) / (b - a));
 const smooth = (v) => v * v * (3 - 2 * v);
 
 /**
- * InscriptionFlight — a photo with a carved "St·Dominic's" in it. A gold
- * outline of the name traces the carving; as the page scrolls it lifts off
- * the stone and glides up into the header's own lettering (upper left),
- * filling in burgundy as it lands. The header's lettering is hidden until
+ * InscriptionFlight — a photo with a carved "St·Dominic's" in it. For the
+ * first part of the scroll the carving simply moves up with the photo; then a
+ * gold outline of the name lifts off the stone (appearing only as it leaves)
+ * and glides up into the header's own lettering (upper left), filling in
+ * burgundy as it lands. The header's lettering is hidden until
  * then; scrolling back reverses it all. With reduced motion it simply
  * appears in place.
  *
@@ -61,8 +62,10 @@ export default function InscriptionFlight({ src, alt, box, position = "50% 50%",
       const end = slot.getBoundingClientRect();
       const start = startRect();
       // Lands once the page has scrolled as far as the carving is below the slot
+      // (it stays in the stone for the first third of that)
       const distance = start.top + window.scrollY - end.top;
-      let p = distance > 0 ? clamp01(window.scrollY / distance) : 1;
+      const hold = distance * 0.35;
+      let p = distance > 0 ? clamp01((window.scrollY - hold) / (distance - hold)) : 1;
       if (reduced) p = p >= 0.5 ? 1 : 0;
       const e = smooth(p);
 
@@ -72,11 +75,12 @@ export default function InscriptionFlight({ src, alt, box, position = "50% 50%",
       fly.style.transform = `translate3d(${left}px, ${top}px, 0)`;
       fly.style.width = `${width}px`;
       fly.style.height = `${width / aspect}px`;
-      // The outline glows on the stone, then gives way to the burgundy name
+      // Gold only once it leaves the stone; then it gives way to the burgundy name
+      const leaving = between(p, 0, 0.12);
       const landing = between(p, 0.6, 0.95);
-      outlineRef.current.style.opacity = (1 - landing).toFixed(3);
+      outlineRef.current.style.opacity = (leaving * (1 - landing)).toFixed(3);
       fillRef.current.style.opacity = landing.toFixed(3);
-      fly.style.display = p >= 1 ? "none" : "block";
+      fly.style.display = p > 0 && p < 1 ? "block" : "none";
       root.style.setProperty("--brand-text-opacity", p >= 1 ? "1" : "0");
     };
     const request = () => {
