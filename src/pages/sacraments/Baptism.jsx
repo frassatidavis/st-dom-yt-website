@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import PullQuote from "../../components/PullQuote";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
@@ -98,6 +98,18 @@ export default function Baptism() {
             <a href={CONFIG.phoneLink} className="contact-link" style={{ color: T.burgundy }}>
               {CONFIG.phone}
             </a>
+          </p>
+          {/* Back to all the sacraments */}
+          <p style={{ marginTop: 28 }}>
+            <Link
+              to="/sacraments"
+              style={{
+                color: T.goldText, fontSize: 13, fontWeight: 600, letterSpacing: 0.5,
+                textTransform: "uppercase", textDecoration: "none",
+              }}
+            >
+              ← {t("sacraments.allSacraments")}
+            </Link>
           </p>
         </div>
       </Section>
