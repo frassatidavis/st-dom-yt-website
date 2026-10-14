@@ -1324,7 +1324,9 @@ body.has-stone-finale footer {
 /* InscriptionFlight (Register): the photo, and the name that flies from it */
 .inscription-flight {
   position: relative;
-  height: clamp(360px, 72vh, 780px);
+  aspect-ratio: 16 / 10;
+  max-height: 78vh;
+  width: 100%;
   overflow: hidden;
   background: var(--color-stone-light);
 }

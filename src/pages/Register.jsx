@@ -396,8 +396,8 @@ export default function Register() {
       <InscriptionFlight
         src={PHOTOS.cornerstone}
         alt={t("register.cornerstoneAlt")}
-        box={[0.297, 0.4067, 0.285, 0.0333]}
-        position="50% 42%"
+        box={[0.359, 0.496, 0.432, 0.122]}
+        position="50% 50%"
         outline={PHOTOS.stDominicsOutline}
         fill={PHOTOS.stDominicsBurgundy}
         aspect={896 / 192}
