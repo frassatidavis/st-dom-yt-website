@@ -7,7 +7,6 @@ import LinkBtn from "../../components/LinkBtn";
 import PageHeader from "../../components/PageHeader";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
-import SacramentPageActions from "../../components/SacramentPageActions";
 
 export default function FirstCommunion() {
   const { t } = useTranslation();
@@ -24,7 +23,6 @@ export default function FirstCommunion() {
         heroSrc={PHOTOS.stockEucharist}
         tall
       />
-      <SacramentPageActions sacramentKey="firstCommunion" icon="Wheat" />
 
       <Section bg={T.warmWhite}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
