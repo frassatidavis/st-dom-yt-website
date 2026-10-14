@@ -14,7 +14,6 @@ import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import { buildMassTimesSchema } from "../utils/seoSchema";
 import { ChevronDown } from "lucide-react";
-import PremiumPageActions from "../components/PremiumPageActions";
 import PullQuote from "../components/PullQuote";
 
 /* ── Schedule Card ── */
@@ -205,8 +204,6 @@ export default function MassTimes() {
   );
 
   const holyDays = t("massTimes.holyDays.days", { returnObjects: true });
-  const scheduleSummary = (rows) =>
-    rows.map(([dayKey, time]) => `${t(`schedule.${dayKey}`)} ${time}`).join(" · ");
   const todaySummary = getTodayScheduleSummary(schedule);
 
   return (
@@ -234,31 +231,6 @@ export default function MassTimes() {
           }
         />
       </div>
-
-      <PremiumPageActions
-        title={t("massTimes.visitor.title")}
-        items={[
-          {
-            icon: "Church",
-            title: t("massTimes.visitor.visit"),
-            description: scheduleSummary(sundayMass),
-            to: "/visit",
-            primary: true,
-          },
-          {
-            icon: "Cross",
-            title: t("massTimes.confession.title"),
-            description: scheduleSummary(confession),
-            href: "#confession",
-          },
-          {
-            icon: "Phone",
-            title: t("massTimes.visitor.contact"),
-            description: CONFIG.phone,
-            href: CONFIG.phoneLink,
-          },
-        ]}
-      />
 
       {/* ════ Section 2: Mass Schedule ════ */}
       <Section>
