@@ -2,21 +2,12 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useHref, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
-import { Menu, X, ChevronDown, MapPin, DollarSign } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
 import SiteSearch from "./SiteSearch";
 import NavToday from "./NavToday";
 import { PHOTOS } from "../constants/photos";
 import { CONFIG } from "../constants/config";
-
-/** A plain Latin cross, drawn like the lucide icons around it */
-function LatinCross({ size = 24, color = "currentColor" }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" aria-hidden="true">
-      <path d="M12 2v20M6 8h12" />
-    </svg>
-  );
-}
 
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
@@ -466,54 +457,6 @@ export default function Nav() {
             overflowY: "auto",
           }}
         >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: 8,
-              padding: "8px 0 10px",
-            }}
-          >
-            {[
-              { to: "/visit", label: t("nav.visit"), icon: MapPin },
-              { to: "/mass-times", label: t("nav.massTimes"), icon: LatinCross },
-              { href: CONFIG.flocknoteGivingUrl, label: t("nav.give"), icon: DollarSign },
-            ].map(({ to, href, label, icon: IconComp }) => {
-              const Tile = href ? "a" : NavLink;
-              const linkProps = href
-                ? { href, target: "_blank", rel: "noopener noreferrer", onClick: () => setMobileOpen(false) }
-                : { to };
-              return (
-              <Tile
-                key={to || href}
-                {...linkProps}
-                style={{
-                  minHeight: 76,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 6,
-                  padding: "10px 8px",
-                  borderRadius: "var(--radius-card)",
-                  border: `1px solid ${isActive(to) ? T.gold : T.stone}`,
-                  background: isActive(to) ? "rgba(197,165,90,0.14)" : "#fff",
-                  color: isActive(to) ? T.burgundy : T.charcoal,
-                  textDecoration: "none",
-                  textAlign: "center",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  lineHeight: 1.15,
-                  fontFamily: "var(--font-body)",
-                }}
-              >
-                <IconComp size={18} color={isActive(to) ? T.burgundy : T.goldText} />
-                {label}
-              </Tile>
-              );
-            })}
-          </div>
-
           {NAV_ITEMS.map((item) =>
             item.children ? (
               <div key={item.key}>
