@@ -4,18 +4,22 @@ import ResponsivePicture from "./ResponsivePicture";
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 
 /**
- * FadeInPortrait — a section whose background picture slowly comes into
- * view as the section scrolls up the screen: it starts invisible and a
- * little large and settles, faint, behind the text (`children`).
+ * FadeInPortrait — a section whose picture slowly comes into view as the
+ * section scrolls up the screen, settling, faint, behind the text
+ * (`children`). With side="left" it is a tall portrait that slides in from
+ * the left edge to sit behind the section's first column only; otherwise it
+ * covers the whole section, starting a little large.
  *
  * Props:
  *   src      — the picture (-480/-1024/-1920 files, ResponsivePicture)
  *   bg       — the section's ground colour, which the picture fades over
  *   strength — how visible it ends up (0–1)
  *   position — the picture's focal point (object-position)
+ *   side     — "left" (a portrait strip behind the first column) | undefined
+ *   column   — with side="left": how far into the content the strip reaches (px)
  *   children — the section's content
  */
-export default function FadeInPortrait({ src, bg, strength = 0.22, position = "50% 30%", children }) {
+export default function FadeInPortrait({ src, bg, strength = 0.22, position = "50% 30%", side, column = 230, children }) {
   const wrapRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -44,9 +48,17 @@ export default function FadeInPortrait({ src, bg, strength = 0.22, position = "5
   }, []);
 
   return (
-    <div ref={wrapRef} className="fade-portrait" style={{ background: bg, "--portrait-strength": strength }}>
+    <div
+      ref={wrapRef}
+      className={`fade-portrait${side ? ` fade-portrait--${side}` : ""}`}
+      style={{ background: bg, "--portrait-strength": strength, "--portrait-column": `${column}px` }}
+    >
       <div className="fade-portrait__picture" aria-hidden="true">
-        <ResponsivePicture src={src} widths={[480, 1024, 1920]} sizes="100vw" alt="" style={{ objectPosition: position }} />
+        {side ? (
+          <img src={src} alt="" loading="lazy" style={{ objectPosition: position }} />
+        ) : (
+          <ResponsivePicture src={src} widths={[480, 1024, 1920]} sizes="100vw" alt="" style={{ objectPosition: position }} />
+        )}
       </div>
       <div className="fade-portrait__content">{children}</div>
     </div>

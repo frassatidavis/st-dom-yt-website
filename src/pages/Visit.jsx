@@ -48,8 +48,8 @@ export default function Visit() {
       </Section>
 
       {/* ════ What to Know — editorial list, hairline rules ════ */}
-      {/* St. Dominic comes into view behind the text as it scrolls up */}
-      <FadeInPortrait src={PHOTOS.stDominicStatue} bg={T.cream} strength={0.2} position="50% 25%">
+      {/* St. Dominic slides in from the left, behind the questions, as it scrolls up */}
+      <FadeInPortrait src={PHOTOS.stDominicStrip} bg={T.cream} strength={0.35} position="50% 15%" side="left">
         <Section bg="transparent" width="narrow">
           <SectionTitle>{t("visit.know.title")}</SectionTitle>
           <dl style={{ margin: 0 }}>

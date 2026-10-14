@@ -1376,6 +1376,17 @@ body.nav-open .inscription-flight__fly {
 .fade-portrait__content {
   position: relative;
 }
+/* Left: a portrait strip from the page edge to the end of the first column
+   of the (800px, centred) content, sliding in from the left */
+.fade-portrait--left .fade-portrait__picture {
+  right: auto;
+  width: calc(max(24px, (100% - 800px) / 2) + var(--portrait-column, 230px));
+  max-width: 48%;
+  opacity: calc(var(--portrait, 0) * var(--portrait-strength, 0.35));
+  transform: translateX(calc(-100% * (1 - var(--portrait, 0))));
+  -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent);
+  mask-image: linear-gradient(90deg, #000 70%, transparent);
+}
 
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
