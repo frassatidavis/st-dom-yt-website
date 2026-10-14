@@ -1296,6 +1296,15 @@ body.has-stone-finale footer {
     border-color: #f3cf6b !important;
     box-shadow: 0 0 0 2px #f3cf6b, 0 0 30px rgba(243, 207, 107, 0.55), 0 40px 60px rgba(26, 23, 20, 0.28);
   }
+  /* Funerals: it stays where it is, outlined in black */
+  .sacrament-card--still:hover,
+  .sacrament-card--still:focus-visible {
+    translate: none;
+    rotate: none;
+    animation: none;
+    border-color: var(--color-soft-black) !important;
+    box-shadow: 0 0 0 2px var(--color-soft-black), 0 10px 30px rgba(26, 23, 20, 0.25);
+  }
   #sacrament-cards:has(.sacrament-card:hover) .sacrament-card:not(:hover) {
     opacity: 0.45;
   }

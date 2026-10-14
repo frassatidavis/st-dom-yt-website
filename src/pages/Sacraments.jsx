@@ -80,7 +80,7 @@ export default function Sacraments() {
                   document.startViewTransition(() => navigate(s.to));
                 }
               }}
-              className="sacrament-card"
+              className={`sacrament-card${s.key === "funerals" ? " sacrament-card--still" : ""}`}
               style={{
                 textDecoration: "none",
                 background: s.photo
