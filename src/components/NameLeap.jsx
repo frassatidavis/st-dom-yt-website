@@ -39,11 +39,11 @@ export default function NameLeap({ targetRef, src, behind, outline }) {
       const a = slot.getBoundingClientRect();
       const b = target.getBoundingClientRect();
       const H = window.innerHeight;
-      // Down as the spot rises from 85% to 55% of the screen; back up only
-      // once the heading has passed under the header, over the next 140px
-      const navBottom = slot.closest("nav")?.getBoundingClientRect().bottom ?? a.bottom;
+      // Down as the spot rises from 85% to 55% of the screen. Home again
+      // once the spot has risen level with the header's name: from there it
+      // stays level and slides across over the next 160px of scrolling
       const down = clamp01((H * 0.85 - b.top) / (H * 0.3));
-      const up = clamp01((navBottom - b.bottom) / 140);
+      const up = clamp01((a.top - b.top) / 160);
       let p = Math.min(down, 1 - up);
       if (reduced) p = p >= 0.5 ? 1 : 0;
       const e = smooth(p);
@@ -56,12 +56,10 @@ export default function NameLeap({ targetRef, src, behind, outline }) {
       let x;
       let y;
       if (up > 0 && !reduced) {
-        // Going home: settle level with the crest first, then slide
-        // straight across to the left (no hop)
-        const level = smooth(clamp01(up * 2.5));
+        // Going home: level with the crest, straight across to the left
         const across = smooth(up);
-        h = b.height + (a.height - b.height) * level;
-        y = b.top + (a.top - b.top) * level;
+        h = b.height + (a.height - b.height) * across;
+        y = a.top + (a.height - h) / 2;
         x = b.left + (a.left - b.left) * across;
       } else {
         // Coming down: a little hop above the straight line, like a leap
