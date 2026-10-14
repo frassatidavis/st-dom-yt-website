@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";

@@ -5,8 +5,6 @@ import { T } from "../constants/theme";
 import { PHOTOS } from "../constants/photos";
 import { Section, SectionTitle } from "../components/Section";
 import PageHeader from "../components/PageHeader";
-import ParallaxSection from "../components/ParallaxSection";
-import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 

@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
-import { FloatingInput, FloatingTextarea, StyledSelect } from "../components/forms/Fields";
+import { FloatingInput } from "../components/forms/Fields";
 import { CONFIG } from "../constants/config";
 import { Section } from "../components/Section";
 import PageHeader from "../components/PageHeader";
 import InscriptionFlight from "../components/InscriptionFlight";
 import Seo from "../components/Seo";
 import { PHOTOS } from "../constants/photos";
-import PremiumPageActions from "../components/PremiumPageActions";
 import {
   CheckCircle,
   AlertCircle,
@@ -19,7 +18,6 @@ import {
   Heart,
   Users,
   Home as HomeIcon,
-  Church,
 } from "lucide-react";
 
 import { validateEmail, validatePhone } from "../utils/formValidation";
@@ -98,63 +96,11 @@ function FormSection({ icon: IconComp, title, children, defaultOpen = true }) {
   );
 }
 
-/* ── Pill-style sacrament checkbox ── */
-function SacramentPill({ label, checked, onChange }) {
-  return (
-    <label
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 8,
-        padding: "10px 18px",
-        borderRadius: "var(--radius-control)",
-        cursor: "pointer",
-        border: `1.5px solid ${checked ? T.burgundy : T.stone}`,
-        background: checked ? T.chipBurgundyBg : "#fff",
-        transition: "all 0.25s ease",
-        fontSize: 14,
-        fontWeight: checked ? 600 : 400,
-        color: checked ? T.burgundy : T.charcoal,
-        fontFamily: "var(--font-body)",
-      }}
-    >
-      <div
-        style={{
-          width: 20,
-          height: 20,
-          borderRadius: "var(--radius-control)",
-          border: `2px solid ${checked ? T.burgundy : T.stone}`,
-          background: checked ? T.burgundy : "transparent",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          transition: "all 0.2s",
-        }}
-      >
-        {checked && (
-          <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-            <path
-              d="M1 5L4.5 8.5L11 1.5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
-      </div>
-      <input type="checkbox" checked={checked} onChange={onChange} style={{ display: "none" }} />
-      {label}
-    </label>
-  );
-}
-
 /* ── Step indicator ── */
 function StepIndicator({ currentStep, labels }) {
   const steps = [
     { num: 1, label: labels.personal },
     { num: 2, label: labels.contact },
-    { num: 3, label: labels.church },
   ];
   return (
     <div
@@ -228,11 +174,6 @@ const INITIAL = {
   city: "",
   state: "",
   zip: "",
-  previousParish: "",
-  children: "",
-  sacraments: [],
-  heardAbout: "",
-  notes: "",
 };
 
 const REQUIRED_FIELDS = [
@@ -289,15 +230,6 @@ export default function Register() {
     return Object.keys(next).length === 0;
   };
 
-  const toggleSacrament = (sac) => {
-    setForm((f) => ({
-      ...f,
-      sacraments: f.sacraments.includes(sac)
-        ? f.sacraments.filter((s) => s !== sac)
-        : [...f.sacraments, sac],
-    }));
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateAll()) return;
@@ -305,7 +237,6 @@ export default function Register() {
     const payload = {
       ...form,
       formType: "registration",
-      sacraments: form.sacraments.join(", "),
       spouse: showSpouse ? `${form.spouseFirst} ${form.spouseLast}`.trim() : "",
       timestamp: new Date().toISOString(),
     };
@@ -317,11 +248,6 @@ export default function Register() {
         `Email: ${form.email}`,
         `Phone: ${form.phone}`,
         `Address: ${form.address}, ${form.city}, ${form.state} ${form.zip}`,
-        form.previousParish ? `Previous Parish: ${form.previousParish}` : "",
-        form.children ? `Children: ${form.children}` : "",
-        form.sacraments.length ? `Sacraments: ${form.sacraments.join(", ")}` : "",
-        form.heardAbout ? `Heard About Us: ${form.heardAbout}` : "",
-        form.notes ? `Notes: ${form.notes}` : "",
       ]
         .filter(Boolean)
         .join("\n");
@@ -380,10 +306,9 @@ export default function Register() {
   };
 
   /* rough step tracker based on which fields are filled */
-  const step = form.address ? 3 : form.firstName ? 2 : 1;
+  const step = form.firstName ? 2 : 1;
   const hasErrors = Object.keys(errors).length > 0;
 
-  const SACRAMENT_OPTIONS = ["baptism", "firstCommunion", "confirmation", "marriage"];
 
   return (
     <div style={{ paddingTop: 76 }}>
@@ -478,7 +403,7 @@ export default function Register() {
               >
                 {t("register.successFallback") || (
                   <>
-                    If you don't hear back within 2 business days, please call{" "}
+                    If you don&apos;t hear back within 2 business days, please call{" "}
                     <a href={CONFIG.phoneLink} style={{ color: T.burgundy, fontWeight: 600 }}>
                       {CONFIG.phone}
                     </a>
@@ -514,7 +439,6 @@ export default function Register() {
                 labels={{
                   personal: t("register.steps.personal"),
                   contact: t("register.steps.contact"),
-                  church: t("register.steps.church"),
                 }}
               />
 
@@ -697,72 +621,6 @@ export default function Register() {
                       ariaDescribedBy={errors.zip ? "register-zip-error" : undefined}
                     />
                   </div>
-                </FormSection>
-
-                {/* ── Parish Details ── */}
-                <FormSection icon={Church} title={t("register.parishDetails")} defaultOpen={false}>
-                  <FloatingInput
-                    label={t("register.previousParish")}
-                    value={form.previousParish}
-                    onChange={set("previousParish")}
-                    ariaLabel={t("register.previousParish")}
-                  />
-                  <FloatingInput
-                    label={t("register.children")}
-                    type="number"
-                    value={form.children}
-                    onChange={set("children")}
-                    ariaLabel={t("register.children")}
-                  />
-
-                  {/* Sacraments */}
-                  <div>
-                    <div
-                      style={{
-                        fontSize: 12,
-                        fontWeight: 600,
-                        letterSpacing: 0.5,
-                        fontVariantCaps: "all-small-caps",
-                        color: T.warmGray,
-                        marginBottom: 12,
-                        fontFamily: "var(--font-body)",
-                      }}
-                    >
-                      {t("register.sacramentsReceived")}
-                    </div>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-                      {SACRAMENT_OPTIONS.map((sac) => (
-                        <SacramentPill
-                          key={sac}
-                          label={t(`register.sac_${sac}`)}
-                          checked={form.sacraments.includes(sac)}
-                          onChange={() => toggleSacrament(sac)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <StyledSelect
-                    label={t("register.heardAbout")}
-                    value={form.heardAbout}
-                    onChange={set("heardAbout")}
-                    ariaLabel={t("register.heardAbout")}
-                  >
-                    <option value="">{t("register.selectOne")}</option>
-                    <option value="word-of-mouth">{t("register.heard_word")}</option>
-                    <option value="website">{t("register.heard_website")}</option>
-                    <option value="social-media">{t("register.heard_social")}</option>
-                    <option value="drove-by">{t("register.heard_drove")}</option>
-                    <option value="other">{t("register.heard_other")}</option>
-                  </StyledSelect>
-
-                  <FloatingTextarea
-                    label={t("register.notes")}
-                    value={form.notes}
-                    onChange={set("notes")}
-                    placeholder={t("register.notesHint")}
-                    ariaLabel={t("register.notes")}
-                  />
                 </FormSection>
 
                 {/* ── Submit ── */}

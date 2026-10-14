@@ -4,11 +4,9 @@ import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
 import { Section, SectionTitle } from "../components/Section";
-import Btn from "../components/Btn";
 import PageHeader from "../components/PageHeader";
 import ParallaxSection from "../components/ParallaxSection";
 import Seo from "../components/Seo";
-import PremiumPageActions from "../components/PremiumPageActions";
 
 export default function BecomingCatholic() {
   const { t } = useTranslation();
