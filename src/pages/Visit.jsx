@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
@@ -9,11 +10,13 @@ import Seo from "../components/Seo";
 import PageHeader from "../components/PageHeader";
 import HeroImage from "../components/HeroImage";
 import FadeInPortrait from "../components/FadeInPortrait";
+import NameLeap from "../components/NameLeap";
 import { PHOTOS } from "../constants/photos";
 
 export default function Visit() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const nameSpotRef = useRef(null);
 
   return (
     <div style={{ paddingTop: 76 }}>
@@ -197,6 +200,7 @@ export default function Visit() {
           <span aria-hidden="true" style={{ display: "inline-flex", alignItems: "baseline", flexWrap: "wrap", gap: "0 0.35em" }}>
             {t("visit.directions.titleLead")}
             <img
+              ref={nameSpotRef}
               src={PHOTOS.stDominicsBurgundy}
               alt=""
               width={896}
@@ -206,6 +210,8 @@ export default function Visit() {
           </span>
           <span className="sr-only">{t("visit.directions.title")}</span>
         </SectionTitle>
+        {/* The header's St·Dominic's leaps down into the heading, then back */}
+        <NameLeap targetRef={nameSpotRef} src={PHOTOS.stDominicsBurgundy} />
         <div className="glass-card" style={{ padding: 32, marginBottom: 20, maxWidth: 520 }}>
           <address style={{ fontStyle: "normal", marginBottom: 20 }}>
             <p style={{ fontSize: 18, fontWeight: 600, color: T.softBlack, marginBottom: 4 }}>
