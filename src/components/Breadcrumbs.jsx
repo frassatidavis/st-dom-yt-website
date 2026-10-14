@@ -22,6 +22,7 @@ const SEGMENT_I18N_KEY = {
   "get-involved": "nav.getInvolved",
   about: "nav.about",
   history: "nav.history",
+  "dominican-friars": "nav.dominicanFriars",
   staff: "nav.staff",
   bulletin: "nav.bulletin",
   contact: "nav.contact",

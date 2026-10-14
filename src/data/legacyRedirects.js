@@ -15,8 +15,8 @@ export const LEGACY_REDIRECTS = {
   "/about-us": "/about",
   "/contact-us": "/contact",
   "/architectural-description-of-the-church": "/architecture",
-  "/dominican-order": "/about",
-  "/domincan-saints": "/about",
+  "/dominican-order": "/dominican-friars",
+  "/domincan-saints": "/dominican-friars",
   "/join": "/register",
 
   // Giving

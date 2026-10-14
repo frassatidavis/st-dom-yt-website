@@ -17,6 +17,8 @@ import { PHOTOS } from "../constants/photos";
  *   title     — heading text
  *   variant   — "photo" | "text"
  *   heroSrc   — photo variant: custom hero image (falls back to PHOTOS.pageHeader)
+ *   position  — photo variant: which part of the photo stays in view (CSS
+ *               object-position, default "center")
  *   overlay   — photo variant: scrim opacity (default 0.38 — let the photo read)
  *   tint      — photo variant: scrim tint color
  *   tall      — photo variant: taller padding
@@ -31,6 +33,7 @@ export default function PageHeader({
   title,
   variant = "photo",
   heroSrc,
+  position,
   overlay = 0.38,
   tint = "rgba(74,16,25,0.55)",
   tall = false,
@@ -91,7 +94,7 @@ export default function PageHeader({
       }`}
       style={vtStyle}
     >
-      <HeroImage src={heroSrc || PHOTOS.pageHeader} overlay={overlay} tint={tint} />
+      <HeroImage src={heroSrc || PHOTOS.pageHeader} position={position} overlay={overlay} tint={tint} />
       <div className="premium-page-header__content">
         {kicker && <p className="kicker kicker--light">{kicker}</p>}
         <h1>{title}</h1>

@@ -29,7 +29,8 @@
     "gallery": "Galería",
     "faithFormation": "Formación en la Fe",
     "connect": "Conectar",
-    "more": "Más"
+    "more": "Más",
+    "dominicanFriars": "Los Frailes Dominicos"
   },
   "footer": {
     "subtitle": "Iglesia Católica · Youngstown, OH",
@@ -86,7 +87,7 @@
     },
     "welcome": {
       "title": "La Verdad que Salva en el Corazón de la Iglesia",
-      "p1": "Los Frailes Dominicos de la Provincia de San José han servido al South Side de Youngstown desde 1923, formando generaciones de católicos para celebrar los sagrados misterios de nuestra fe.",
+      "p1": "<friars>Los Frailes Dominicos</friars> de la Provincia de San José han servido al South Side de Youngstown desde 1923, formando generaciones de católicos para celebrar los sagrados misterios de nuestra fe.",
       "p2": "Sea usted un antiguo alumno de St. Dom's o alguien que anhela conocer más la fe católica, es bienvenido aquí."
     },
     "priests": {
@@ -777,7 +778,8 @@
       "ctaDesc": "Comuníquese con la oficina parroquial para comenzar el proceso. A los padres primerizos se les pide reunirse con un sacerdote antes de programar el bautismo de su hijo.",
       "cardQuote": "“Por el Bautismo el hombre es regenerado a la vida espiritual.”",
       "cardQuoteSrc": "ST III, q. 66, a. 1",
-      "cardCta": "Cómo Nacer de Nuevo"
+      "cardCta": "Cómo Nacer de Nuevo",
+      "photoAlt": "Un fraile dominico bautiza a un bebé en la pila bautismal de la Iglesia Santo Domingo mientras la familia observa."
     },
     "firstCommunion": {
       "title": "Primera Comunión",
@@ -966,20 +968,6 @@
       "cardQuoteSrc": "ST Supl., q. 71, a. 1",
       "cardCta": "Planee un Funeral"
     },
-    "pathways": {
-      "infantBaptism": {
-        "title": "Bautismo de Niños",
-        "desc": "La fe de los padres se transmite a la vida de sus hijos a través de las aguas del bautismo."
-      },
-      "sundaySchool": {
-        "title": "Catecismo Dominical",
-        "desc": "Los niños reciben una valiosa formación en la fe y preparación sacramental en nuestras clases dominicales de catecismo (CCD)."
-      },
-      "adultCatechesis": {
-        "title": "Catequesis de Adultos",
-        "desc": "Hombres y mujeres que deseen conocer más la fe católica y recibir los sacramentos pueden inscribirse en nuestras clases de OCIA (RICA)."
-      }
-    },
     "ccdRegistration": "Inscripción al Catecismo (CCD)",
     "ccdCoordinator": "Sra. Adamaris Cortes"
   },
@@ -1115,7 +1103,7 @@
       "title": "Hacia Nuestro Segundo Siglo",
       "p1": "En mayo de 2023, Santo Domingo celebró su centenario con una Misa celebrada por el Obispo David Bonnar y un banquete al que asistieron más de 230 feligreses. Cien años después de aquella primera Misa en un local comercial, la iglesia sigue siendo un faro de fe en el lado sur de Youngstown — sirviendo ahora a más de 700 familias registradas de todo el Valle de Mahoning.",
       "p2": "La iglesia mantiene una vibrante variedad de ministerios enraizados en el carisma dominicano: un programa de Laicos Dominicos, la Fraternidad de Hombres Cor, el ministerio de Vida Parroquial y Familiar, Sociedad de San Vicente de Paúl, y un próspero Ministerio Hispano con Misas semanales en español. Los frailes dominicos del Priorato también sirven a la Iglesia de Santa Rosa en Girard y al Centro Newman de la Universidad Estatal de Youngstown.",
-      "p3": "Servida por los frailes de la Provincia de San José — la provincia dominicana más antigua de las Américas, fundada en 1805 — la iglesia de Santo Domingo lleva adelante una tradición de 800 años de predicación, oración y servicio en el corazón del Valle de Mahoning.",
+      "p3": "Servida por los frailes de la Provincia de San José — la primera provincia dominicana de los Estados Unidos, fundada en 1805 — la iglesia de Santo Domingo lleva adelante una tradición de 800 años de predicación, oración y servicio en el corazón del Valle de Mahoning.",
       "aerialAlt": "Vista aérea del campus parroquial de Santo Domingo hoy",
       "aerialCap": "El campus de Santo Domingo hoy — más de 100 años de fe en el lado sur de Youngstown"
     }
@@ -1263,6 +1251,58 @@
       "sub": "El Campus Dominicano",
       "title": "Un Lugar de Oración, Estudio y Comunidad",
       "desc": "La iglesia está conectada al priorato dominicano por un claustro con grabados de las Estaciones de la Cruz de Eric Gill. Junto con el salón parroquial y los edificios escolares, el campus forma un centro completo para la vida dominicana."
+    }
+  },
+  "friars": {
+    "title": "Conozca a los Santos",
+    "more": {
+      "title": "Conozca Más",
+      "desc": "Conozca más sobre la Provincia de San José o explore Dominican Friars Media.",
+      "province": "Provincia de San José"
+    },
+    "mural": {
+      "caption": "En el gran mural de nuestro santuario, la Virgen María entrega el Rosario a Santo Domingo, rodeado de siete santos dominicos.",
+      "alt": "El mural del santuario: la Virgen María, con el Niño Jesús, entrega el Rosario a Santo Domingo, rodeado de siete santos dominicos."
+    },
+    "saints": {
+      "open": "Conozca a {{name}}",
+      "close": "Cerrar",
+      "mary": {
+        "name": "Nuestra Señora del Rosario",
+        "bio": "Según la tradición, la Virgen entregó el Rosario a Santo Domingo, y aquí, con el Niño Jesús en su regazo, se lo da. Desde entonces los dominicos han predicado el Rosario. La Iglesia celebra su fiesta el 7 de octubre."
+      },
+      "dominic": {
+        "name": "Santo Domingo",
+        "bio": "Santo Domingo de Guzmán (1170–1221), sacerdote español, fundó la Orden de Predicadores para llevar a todos la verdad del Evangelio; el Papa aprobó la Orden en 1216. Antes de que naciera, su madre soñó con un perro que llevaba una antorcha para encender el mundo. Aquí se estira para recibir el Rosario. Fiesta: 8 de agosto."
+      },
+      "aquinas": {
+        "name": "Santo Tomás de Aquino",
+        "bio": "Santo Tomás de Aquino (1225–1274), dominico italiano, es el gran teólogo de la Iglesia, autor de la Suma Teológica y Doctor de la Iglesia. El sol en su pecho representa la luz de su enseñanza, y sostiene una pluma y un libro. Fiesta: 28 de enero."
+      },
+      "rose": {
+        "name": "Santa Rosa de Lima",
+        "bio": "Santa Rosa de Lima (1586–1617) vivió una vida de oración y penitencia como dominica seglar en Lima, Perú, cuidando a los pobres y a los enfermos. Fue la primera santa de las Américas en ser canonizada. Lleva una corona de rosas y sostiene una cruz. Fiesta: 23 de agosto."
+      },
+      "albert": {
+        "name": "San Alberto Magno",
+        "bio": "San Alberto Magno (c. 1200–1280), dominico alemán, fue obispo, filósofo y pionero de las ciencias naturales, y maestro de Santo Tomás de Aquino. Doctor de la Iglesia y patrono de los científicos, lleva la mitra de obispo. Fiesta: 15 de noviembre."
+      },
+      "hyacinth": {
+        "name": "San Jacinto",
+        "bio": "San Jacinto (c. 1185–1257), sacerdote polaco, recibió el hábito dominico del mismo Santo Domingo y llevó el Evangelio por Polonia y el norte de Europa. La tradición cuenta que puso a salvo el Santísimo Sacramento cuando Kiev fue atacada; por eso sostiene un copón."
+      },
+      "antoninus": {
+        "name": "San Antonino",
+        "bio": "San Antonino (1389–1459), fraile dominico de Florencia, llegó a ser arzobispo de la ciudad y fue querido por su cuidado de los pobres, su vida sencilla y su sabio consejo. Escribió mucho sobre cómo vivir la vida cristiana en el mundo del trabajo y del dinero."
+      },
+      "peter": {
+        "name": "San Pedro Mártir",
+        "bio": "San Pedro Mártir (1205–1252), también llamado Pedro de Verona, fue un predicador dominico que atraía grandes multitudes en el norte de Italia. Lo mataron en el camino cerca de Milán por predicar la fe; la palma que sostiene es el signo del martirio."
+      },
+      "catherine": {
+        "name": "Santa Catalina de Siena",
+        "bio": "Santa Catalina de Siena (1347–1380), dominica seglar, fue una mística que cuidó a los enfermos y convenció al Papa Gregorio XI de volver de Aviñón a Roma. Doctora de la Iglesia y patrona de Italia y de Europa, sostiene lirios y lleva una corona de espinas. Fiesta: 29 de abril."
+      }
     }
   }
 }

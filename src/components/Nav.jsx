@@ -101,6 +101,7 @@ export default function Nav() {
   const menuRef = useRef(null);
   const brandRef = useRef(null);
   const hoverTimeout = useRef(null);
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     let ticking = false;
@@ -234,10 +235,13 @@ export default function Nav() {
           height: scrolled ? 64 : 76, transition: "height 0.4s ease",
         }}
       >
-        {/* Black crest and the "St·Dom's" lettering (the link's name is the
-            church's name). On Home the lettering arrives from the hero as the
-            page scrolls (BrandFlight), so .nav-brand-text is hidden there, and
-            the dog stands in the crest's place until then, fading into it. */}
+        {/* Black crest and the "St·Dominic's" lettering (the link's name is
+            the church's name), shrinking to fit on narrow phones. Home holds
+            the shorter "St·Dom's" instead, as the landing spot for the hero's
+            lettering, which arrives as the page scrolls and opens into the
+            full name as the dog passes (BrandFlight); .nav-brand-text is
+            hidden there, and the dog stands in the crest's place until the
+            lettering arrives, fading into it. */}
         <NavLink
           to="/"
           aria-label={t("nav.brand")}
@@ -261,20 +265,38 @@ export default function Nav() {
               style={{ height: scrolled ? 40 : 48, transition: "height 0.4s ease" }}
             />
           </span>
-          <span className="nav-brand-text">
-            <img
-              ref={brandRef}
-              src={PHOTOS.heroStDomsBurgundy}
-              alt=""
-              width={651}
-              height={192}
-              style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
-            />
+          <span className="nav-brand-text" style={isHome ? undefined : { minWidth: 0 }}>
+            {/* Separate elements (keys), so while one loads the other's
+                picture isn't stretched into its box */}
+            {isHome ? (
+              <img
+                key="short"
+                ref={brandRef}
+                src={PHOTOS.heroStDomsBurgundy}
+                alt=""
+                width={651}
+                height={192}
+                style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
+              />
+            ) : (
+              <img
+                key="full"
+                ref={brandRef}
+                src={PHOTOS.stDominicsBurgundy}
+                alt=""
+                width={896}
+                height={192}
+                style={{
+                  width: ((scrolled ? 44 : 54) * 896) / 192, maxWidth: "100%", height: "auto",
+                  display: "block", transition: "width 0.4s ease",
+                }}
+              />
+            )}
           </span>
         </NavLink>
 
         {/* Today's Masses and confessions, when the row has room for them */}
-        <NavToday brandRef={brandRef} />
+        <NavToday brandRef={brandRef} brandKey={isHome ? "short" : "full"} />
 
         {/* Desktop links */}
         <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">

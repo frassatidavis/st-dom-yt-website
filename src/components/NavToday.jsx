@@ -15,8 +15,12 @@ import { getTodayScheduleSummary, keepTimesTogether } from "../utils/schedule";
  *
  * Props:
  *   brandRef — ref to the church-name element, to notice if it would wrap
+ *              or shrink
+ *   brandKey — changes when the header swaps that element for a different
+ *              name (Home's "St·Dom's", "St·Dominic's" elsewhere), so the fit
+ *              is checked again
  */
-export default function NavToday({ brandRef }) {
+export default function NavToday({ brandRef, brandKey }) {
   const { t, i18n } = useTranslation();
   const { data: schedule } = useSchedule();
   const { masses, confessions } = getTodayScheduleSummary(schedule);
@@ -52,11 +56,13 @@ export default function NavToday({ brandRef }) {
     };
 
     check();
-    // The row resizes with the window and when the header shrinks on scroll
+    // The row resizes with the window and when the header shrinks on scroll;
+    // the name changes width as it loads and shrinks (on scroll, and to fit)
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(check) : null;
     ro?.observe(row);
+    ro?.observe(brand);
     return () => ro?.disconnect();
-  }, [brandRef, i18n.language, masses, confessions]);
+  }, [brandRef, brandKey, i18n.language, masses, confessions]);
 
   return (
     <NavLink ref={ref} to="/mass-times" className="nav-today">

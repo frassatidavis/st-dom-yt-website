@@ -138,6 +138,13 @@ export const SEARCH_INDEX = [
     keywords: ["history", "heritage", "founded", "tradition", "legacy", "timeline", "origin", "past", "historical"],
   },
   {
+    path: "/dominican-friars",
+    titleKey: "nav.dominicanFriars",
+    title: "The Dominican Friars",
+    description: "The Dominican Friars of the Province of St. Joseph, who have served St. Dominic Church since 1923",
+    keywords: ["dominican", "dominicans", "friars", "friar", "order of preachers", "province of st. joseph", "priests", "priory", "o.p.", "saint dominic", "frailes", "dominicos"],
+  },
+  {
     path: "/register",
     titleKey: "nav.register",
     title: "Church Registration",

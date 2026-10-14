@@ -38,6 +38,7 @@ const Anointing = lazy(() => import("./pages/sacraments/Anointing"));
 const Funerals = lazy(() => import("./pages/sacraments/Funerals"));
 const Visit = lazy(() => import("./pages/Visit"));
 const History = lazy(() => import("./pages/History"));
+const DominicanFriars = lazy(() => import("./pages/DominicanFriars"));
 const Register = lazy(() => import("./pages/Register"));
 const Events = lazy(() => import("./pages/Events"));
 const Architecture = lazy(() => import("./pages/Architecture"));
@@ -91,6 +92,7 @@ function AppRoutes() {
             <Route path="/sacraments/funerals" element={<Funerals />} />
             <Route path="/visit" element={<Visit />} />
             <Route path="/history" element={<History />} />
+            <Route path="/dominican-friars" element={<DominicanFriars />} />
             <Route path="/register" element={<Register />} />
             <Route path="/events" element={<Events />} />
             <Route path="/architecture" element={<Architecture />} />

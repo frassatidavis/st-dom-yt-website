@@ -36,6 +36,7 @@ const pages = [
   ["/gallery", "0.5", "monthly"],
   ["/register", "0.6", "yearly"],
   ["/history", "0.5", "yearly"],
+  ["/dominican-friars", "0.5", "yearly"],
   ["/architecture", "0.5", "yearly"],
 ];
 

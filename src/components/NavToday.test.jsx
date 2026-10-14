@@ -14,13 +14,13 @@ let root;
 let menuLeft;
 
 // Header row stand-in: name, today's times, then the menu
-function Row() {
+function Row({ brandKey }) {
   const brandRef = useRef(null);
   return (
     <MemoryRouter>
       <div className="row">
-        <div ref={brandRef} className="brand" />
-        <NavToday brandRef={brandRef} />
+        <div key={brandKey} ref={brandRef} className="brand" />
+        <NavToday brandRef={brandRef} brandKey={brandKey} />
         <div className="menu" />
       </div>
     </MemoryRouter>
@@ -61,6 +61,15 @@ describe("NavToday", () => {
   it("hides when it would crowd the menu", () => {
     menuLeft = 650; // less than 16px between today's times and the menu
     React.act(() => root.render(<Row />));
+    expect(container.querySelector(".nav-today").style.display).toBe("none");
+  });
+
+  it("checks again when the header swaps in a longer name", () => {
+    React.act(() => root.render(<Row brandKey="short" />));
+    expect(container.querySelector(".nav-today").style.display).toBe("");
+    // Leaving Home: "St·Dominic's" is wider, so the menu is now too close
+    menuLeft = 650;
+    React.act(() => root.render(<Row brandKey="full" />));
     expect(container.querySelector(".nav-today").style.display).toBe("none");
   });
 });

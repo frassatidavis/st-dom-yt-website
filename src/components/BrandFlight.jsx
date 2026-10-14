@@ -15,8 +15,9 @@ import { createPortal } from "react-dom";
  * live, so the intro zoom and the page's layout are respected) and the
  * header's copy. The light hero version fades into the dark header version as
  * it arrives. Once docked it simply stays there (the header link underneath
- * still takes clicks). With reduced motion both changes happen at once, at
- * the same scroll points, without movement.
+ * still takes clicks), and <html> carries .brand-docked, so the docked name
+ * stays in the header while the phone menu is open. With reduced motion both
+ * changes happen at once, at the same scroll points, without movement.
  *
  * Props:
  *   sourceRef    — the hero <img> to carry (hidden while its copy flies)
@@ -113,6 +114,8 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
       // travels, finishing just before it lands
       root.style.setProperty("--dog-to-crest", smooth(between(p, 0.25, 0.85)).toFixed(4));
 
+      root.classList.toggle("brand-docked", p >= 1);
+
       const flying = p > 0;
       source.style.visibility = flying ? "hidden" : "";
       fly.style.display = flying ? "block" : "none";
@@ -157,6 +160,7 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
       root.style.removeProperty("--brand-text-opacity");
       root.style.removeProperty("--brand-extra");
       root.style.removeProperty("--dog-to-crest");
+      root.classList.remove("brand-docked");
     };
   }, [sourceRef, expandRef, lightOpacity, dark]);
 

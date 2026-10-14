@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
@@ -162,7 +162,13 @@ export default function Home() {
       <Section bg={T.cream}>
         <SectionTitle>{t("home.welcome.title")}</SectionTitle>
         <div className="premium-welcome">
-          <p>{t("home.welcome.p1")}</p>
+          <p>
+            {/* "The Dominican Friars" leads to their page */}
+            <Trans
+              i18nKey="home.welcome.p1"
+              components={{ friars: <Link to="/dominican-friars" style={{ color: T.burgundy, textDecoration: "underline" }} /> }}
+            />
+          </p>
           <p>{t("home.welcome.p2")}</p>
         </div>
       </Section>

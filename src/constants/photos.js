@@ -73,6 +73,22 @@ export const PHOTOS = {
   stockCandles: `${B}photos/stock/candles.webp`,                 // Votive candles (Unsplash)
   sanctuaryAltar: `${B}photos/F69A5428-opt-1024.webp`,           // St. Dominic sanctuary: altar, tabernacle and monstrance (band size)
   dominicanMural: `${B}photos/F69A5475-opt-1024.webp`,           // St. Dominic mural: Our Lady with Dominican saints (band size)
+  baptismCard: `${B}photos/baptism-card-1024.webp`,               // A baby baptized at our font (IMG_3103), for the Baptism card on /sacraments
+  firstCommunionCard: `${B}photos/first-communion-card-1024.webp`, // First Communion class with the friars before the altar (IMG_5768)
+  confirmationCard: `${B}photos/confirmation-card-1024.webp`,     // The bishop confirming a young man, in red vestments with crozier
+  marriageCard: `${B}photos/marriage-card-1024.webp`,             // A newly married couple, joined by the lazo, walking down the aisle
+  anointingCard: `${B}photos/anointing-card-1024.webp`,           // A priest anointing a sick parishioner at home
+  funeralCard: `${B}photos/funeral-card-1024.webp`,               // The Dominican Fathers & Brothers burial ground (IMG_3849)
+  baptismFont: `${B}photos/baptism-font-opt.webp`,                // A baby baptized at our font by a friar, family gathered round (header of /sacraments/baptism)
+  sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
+  saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
+  // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)
+  muralGlow: Object.fromEntries(
+    ["aquinas", "rose", "albert", "dominic", "mary", "hyacinth", "antoninus", "peter", "catherine"].map((id) => [
+      id,
+      `${B}photos/mural-glow/${id}.webp`,
+    ])
+  ),
   stockGiving: `${B}photos/stock/giving.webp`,                   // Charity / generosity (Unsplash)
 
   // ── Provincial branding (Dominican Province of St. Joseph) ──
@@ -83,7 +99,8 @@ export const PHOTOS = {
   heroThisIsSmall: `${B}photos/branding/this-is-800.webp`,
   heroStDoms: `${B}photos/branding/st-doms-1600.webp`, // "St·Dom's"
   heroStDomsSmall: `${B}photos/branding/st-doms-800.webp`,
-  heroStDomsBurgundy: `${B}photos/branding/st-doms-burgundy-v2.webp`, // solid burgundy "St·Dom's" for the header
+  heroStDomsBurgundy: `${B}photos/branding/st-doms-burgundy-v2.webp`, // solid burgundy "St·Dom's": the header on Home, where the hero's lettering lands
+  stDominicsBurgundy: `${B}photos/branding/st-dominics-burgundy.webp`, // solid burgundy "St·Dominic's" (896x192): the header on every other page
   // "St·Dominic's" in three layers, each the full name's size: "St·Dom", "inic", "'s" (BrandFlight opens the name)
   dominicsParts: [
     `${B}photos/branding/dominics-part1.webp`,

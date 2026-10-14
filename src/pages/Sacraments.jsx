@@ -9,15 +9,14 @@ import ParallaxSection from "../components/ParallaxSection";
 import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
-import PremiumPageActions from "../components/PremiumPageActions";
 
 const SACRAMENT_LINKS = [
-  { to: "/sacraments/baptism", key: "baptism", icon: "Droplets" },
-  { to: "/sacraments/first-communion", key: "firstCommunion", icon: "Wheat" },
-  { to: "/sacraments/confirmation", key: "confirmation", icon: "Flame" },
-  { to: "/sacraments/marriage", key: "marriage", icon: "Gem" },
-  { to: "/sacraments/anointing", key: "anointing", icon: "HandHeart" },
-  { to: "/sacraments/funerals", key: "funerals", icon: "Cross" },
+  { to: "/sacraments/baptism", key: "baptism", icon: "Droplets", photo: PHOTOS.baptismCard },
+  { to: "/sacraments/first-communion", key: "firstCommunion", icon: "Wheat", photo: PHOTOS.firstCommunionCard },
+  { to: "/sacraments/confirmation", key: "confirmation", icon: "Flame", photo: PHOTOS.confirmationCard },
+  { to: "/sacraments/marriage", key: "marriage", icon: "Gem", photo: PHOTOS.marriageCard },
+  { to: "/sacraments/anointing", key: "anointing", icon: "HandHeart", photo: PHOTOS.anointingCard },
+  { to: "/sacraments/funerals", key: "funerals", icon: "Cross", photo: PHOTOS.funeralCard },
 ];
 
 export default function Sacraments() {
@@ -29,39 +28,12 @@ export default function Sacraments() {
       <Seo
         title="The Sacraments"
         description="Learn about the seven sacraments celebrated at St. Dominic Church — Baptism, Eucharist, Confirmation, Marriage, and more."
-        image={PHOTOS.stockSacraments}
+        image={PHOTOS.sacramentsHero}
       />
-      <PageHeader title={t("sacraments.title")} heroSrc={PHOTOS.stockSacraments} tall />
-
-      <PremiumPageActions
-        overlap
-        eyebrow={t("sacraments.sub")}
-        title={t("sacraments.heading")}
-        items={[
-          {
-            icon: "Droplets",
-            title: t("sacraments.pathways.infantBaptism.title"),
-            description: t("sacraments.pathways.infantBaptism.desc"),
-            to: "/sacraments/baptism",
-            primary: true,
-          },
-          {
-            icon: "BookOpen",
-            title: t("sacraments.pathways.sundaySchool.title"),
-            description: t("sacraments.pathways.sundaySchool.desc"),
-            to: "/get-involved",
-          },
-          {
-            icon: "Flame",
-            title: t("sacraments.pathways.adultCatechesis.title"),
-            description: t("sacraments.pathways.adultCatechesis.desc"),
-            to: "/becoming-catholic",
-          },
-        ]}
-      />
+      <PageHeader title={t("sacraments.title")} heroSrc={PHOTOS.sacramentsHero} position="50% 52%" tall />
 
       <Section bg={T.warmWhite}>
-        <SectionTitle sub={t("sacraments.sub")}>{t("sacraments.heading")}</SectionTitle>
+        <SectionTitle>{t("sacraments.heading")}</SectionTitle>
         <PullQuote variant="margin" text={t("sacraments.quote")} src={t("sacraments.quoteSrc")} />
         <p
           style={{
@@ -78,9 +50,12 @@ export default function Sacraments() {
       </Section>
 
       {/* Parallax visual break */}
-      <ParallaxSection image={PHOTOS.stockChaliceCruets} height="35vh" overlay={0.45}>
-        <DominicanDivider color="#fff" width={160} />
-      </ParallaxSection>
+      {/* Domini canis — the dog with the torch, as on Home */}
+      <div className="home-dog-divider" style={{ background: T.warmWhite }}>
+        <a href="https://dominicanajournal.org/essay/im-a-dog/" target="_blank" rel="noopener noreferrer">
+          <img src={PHOTOS.dominicanDog} alt={t("home.dog.label")} width={180} height={109} loading="lazy" decoding="async" />
+        </a>
+      </div>
 
       <Section bg={T.cream}>
         <div
@@ -90,7 +65,12 @@ export default function Sacraments() {
             gap: 24,
           }}
         >
-          {SACRAMENT_LINKS.map((s) => (
+          {SACRAMENT_LINKS.map((s) => {
+            // A card with a photo: the photo under a dark wash, with light text
+            const ink = s.photo
+              ? { title: "#fff", quote: "rgba(255,255,255,0.92)", cite: "rgba(255,255,255,0.75)", cta: T.goldLight, icon: T.goldLight }
+              : { title: T.burgundy, quote: T.charcoal, cite: T.warmGray, cta: T.goldText, icon: T.burgundy };
+            return (
             <Link
               key={s.to}
               to={s.to}
@@ -103,7 +83,9 @@ export default function Sacraments() {
               className="hover-lift"
               style={{
                 textDecoration: "none",
-                background: T.warmWhite,
+                background: s.photo
+                  ? `linear-gradient(180deg, rgba(26,23,20,0.55), rgba(26,23,20,0.82)), url("${s.photo}") center 40% / cover`
+                  : T.warmWhite,
                 padding: 36,
                 borderRadius: 4,
                 border: `1px solid ${T.stone}`,
@@ -113,12 +95,12 @@ export default function Sacraments() {
               }}
             >
               <div style={{ marginBottom: 12 }} aria-hidden="true">
-                <Icon name={s.icon} size={36} color={T.burgundy} />
+                <Icon name={s.icon} size={36} color={ink.icon} />
               </div>
               <h3
                 style={{
                   fontSize: 22,
-                  color: T.burgundy,
+                  color: ink.title,
                   marginBottom: 8,
                   fontFamily: "var(--font-display)",
                 }}
@@ -132,14 +114,14 @@ export default function Sacraments() {
                     fontSize: 16,
                     fontFamily: "var(--font-display)",
                     fontStyle: "italic",
-                    color: T.charcoal,
+                    color: ink.quote,
                     lineHeight: 1.55,
                     margin: 0,
                   }}
                 >
                   {t(`sacraments.${s.key}.cardQuote`)}
                 </p>
-                <cite style={{ display: "block", marginTop: 8, fontSize: 13, fontStyle: "normal", color: T.warmGray }}>
+                <cite style={{ display: "block", marginTop: 8, fontSize: 13, fontStyle: "normal", color: ink.cite }}>
                   ({t(`sacraments.${s.key}.cardQuoteSrc`)})
                 </cite>
               </blockquote>
@@ -147,7 +129,7 @@ export default function Sacraments() {
                 style={{
                   fontSize: 13,
                   fontWeight: 600,
-                  color: T.goldText,
+                  color: ink.cta,
                   letterSpacing: 0.5,
                   textTransform: "uppercase",
                   marginTop: 16,
@@ -156,7 +138,8 @@ export default function Sacraments() {
                 {t(`sacraments.${s.key}.cardCta`)} →
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </Section>
     </div>

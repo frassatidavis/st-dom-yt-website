@@ -869,12 +869,306 @@ body.nav-open .nav-crest {
 body.nav-open .nav-dog {
   opacity: 0;
 }
-/* With the phone menu open the header shows its usual name */
-body.nav-open .brand-flight {
+/* With the phone menu open the header shows its own name, except on Home
+   once the lettering has docked (BrandFlight), when the docked copy stays */
+html:not(.brand-docked) body.nav-open .brand-flight {
   visibility: hidden;
 }
-body.nav-open .nav-brand-text {
+html:not(.brand-docked) body.nav-open .nav-brand-text {
   opacity: 1;
+}
+
+/* MuralReveal (Meet The Saints): a sticky stage below the site header. The
+   picture's window (clip-path) and the picture (transform) are set from the
+   scroll position; the runway is the stage, the opening and the hold. */
+.mural-reveal {
+  --stage-h: calc(100vh - 64px);
+  position: relative;
+  height: calc(var(--stage-h) * 2.4);
+}
+@supports (height: 100svh) {
+  .mural-reveal {
+    --stage-h: calc(100svh - 64px);
+  }
+}
+.mural-reveal__stage {
+  position: sticky;
+  top: 64px;
+  height: var(--stage-h);
+  overflow: hidden;
+  background: var(--color-warm-white);
+}
+.mural-reveal__stage.is-zoomed {
+  cursor: zoom-out;
+}
+.mural-reveal__dark {
+  position: absolute;
+  inset: 0;
+  background: var(--color-soft-black);
+  opacity: 0;
+}
+.mural-reveal__caption {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--color-warm-gray);
+  text-align: center;
+}
+.mural-reveal__caption p {
+  max-width: 34ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-charcoal);
+  text-wrap: balance;
+}
+.mural-reveal__caption svg:last-child {
+  color: var(--color-gold-text);
+}
+.mural-reveal__window {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--color-burgundy-dark);
+}
+.mural-reveal__stack {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+.mural-reveal__stack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* Same scrim as PageHeader's photo (HeroImage with its default tint) */
+.mural-reveal__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(74, 16, 25, 0.55), rgba(0, 0, 0, 0.38));
+  pointer-events: none;
+}
+.premium-page-header.mural-reveal__band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: transparent;
+  pointer-events: none;
+}
+/* Zooming in on a figure (and back out) */
+.mural-reveal__stack.is-zooming {
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.mural-reveal__stack.is-focused .mural-reveal__picture {
+  filter: grayscale(1) brightness(0.8);
+}
+.mural-reveal__stack img.mural-reveal__focus {
+  z-index: 1;
+  animation: mural-focus-in 0.6s ease both;
+}
+@keyframes mural-focus-in {
+  from { opacity: 0; }
+}
+/* Gold frame: sizes divided by the picture's scale stay the same on screen */
+.mural-reveal__frame {
+  position: absolute;
+  z-index: 2;
+  border: calc(3px / var(--scale, 1)) solid var(--color-gold);
+  box-shadow:
+    0 0 0 calc(1px / var(--scale, 1)) rgba(26, 23, 20, 0.5),
+    0 calc(12px / var(--scale, 1)) calc(36px / var(--scale, 1)) rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  animation: mural-focus-in 0.6s ease both;
+}
+/* The figures' glowing outlines, breathing slowly; brighter when pointed at */
+.mural-reveal__stack img.mural-reveal__glow {
+  z-index: 1;
+  pointer-events: none;
+  animation: mural-glow 3.2s ease-in-out infinite;
+  transition: filter 0.25s ease;
+}
+.mural-reveal__stack img.mural-reveal__glow.is-active {
+  animation: none;
+  opacity: 1;
+  filter: brightness(1.25) drop-shadow(0 0 calc(4px / var(--scale, 1)) rgba(243, 207, 107, 0.9));
+}
+@keyframes mural-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mural-reveal__stack img.mural-reveal__glow {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+/* Over the open picture: finds the figure under the pointer */
+.mural-reveal__spots {
+  position: absolute;
+  z-index: 4;
+}
+.mural-reveal__spots.is-over {
+  cursor: pointer;
+}
+/* One button per face, unseen until focused from the keyboard */
+.mural-reveal__spot {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.mural-reveal__spot:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 2px;
+}
+.mural-reveal__spot-label,
+.mural-reveal__pointer-label {
+  position: absolute;
+  padding: 3px 8px;
+  border-radius: var(--radius-control);
+  background: rgba(26, 23, 20, 0.85);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.mural-reveal__spot-label {
+  left: 50%;
+  bottom: calc(100% + 4px);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.mural-reveal__spot:focus-visible .mural-reveal__spot-label {
+  opacity: 1;
+}
+.mural-reveal__pointer-label {
+  transform: translate(-50%, calc(-100% - 14px));
+}
+/* A figure's life, under its frame */
+.mural-reveal__card {
+  position: absolute;
+  z-index: 5;
+  overflow-y: auto;
+  padding: 18px 44px 18px 20px;
+  border-top: 2px solid var(--color-gold);
+  border-radius: var(--radius-card);
+  background: rgba(26, 23, 20, 0.92);
+  color: var(--color-cream);
+  animation: mural-focus-in 0.5s 0.3s ease both;
+}
+.mural-reveal__card h2 {
+  margin: 0 0 8px;
+  color: var(--color-gold-light);
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.2;
+}
+.mural-reveal__card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.mural-reveal__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-gold-light);
+  cursor: pointer;
+}
+.mural-reveal__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.mural-reveal__close:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+}
+
+/* PhotoBackdrop (Baptism): the photo layer sticks under the site header;
+   its window (clip-path), scrim, wash and zoom follow the scroll */
+.photo-backdrop {
+  position: relative;
+  background: var(--color-warm-white);
+}
+.photo-backdrop__layer {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  margin-bottom: calc(-100vh + 64px);
+  overflow: hidden;
+  background: var(--color-burgundy-dark);
+}
+@supports (height: 100svh) {
+  .photo-backdrop__layer {
+    height: calc(100svh - 64px);
+    margin-bottom: calc(-100svh + 64px);
+  }
+}
+.photo-backdrop__layer picture,
+.photo-backdrop__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.photo-backdrop__img {
+  display: block;
+  object-fit: cover;
+  transform: scale(var(--zoom, 1));
+  transition: opacity 0.8s ease;
+  will-change: transform;
+}
+/* Same scrim as PageHeader's photo, lifting as the photo opens */
+.photo-backdrop__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(74, 16, 25, 0.55), rgba(0, 0, 0, 0.38));
+  opacity: var(--scrim, 1);
+}
+/* The light wash that sets the photo behind the text */
+.photo-backdrop__wash {
+  position: absolute;
+  inset: 0;
+  background: var(--color-warm-white);
+  opacity: var(--wash, 0);
+}
+.premium-page-header.photo-backdrop__band {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+/* The header's bottom shading lifts with the scrim */
+.photo-backdrop__band::after {
+  opacity: var(--scrim, 1);
+}
+.photo-backdrop__content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
@@ -1583,8 +1877,6 @@ a.contact-link:hover {
 /* ── Nav responsive ── */
 .nav-desktop { display: flex !important; }
 .nav-mobile-toggle { display: none !important; }
-/* Nav wordmark: one line, except on the narrowest phones where the Spanish
-   name ("Iglesia Santo Domingo") would push the menu button off-screen. */
 /* Header: today's Masses and confessions beside the crest and lettering (NavToday
    hides it when the row has no room). Free space goes after it, so the menu
    stays on the right. */
@@ -1632,9 +1924,9 @@ a.contact-link:hover {
   }
 }
 
-/* Wordmark + full link row need ~1100px (Spanish "Parroquia Santo Domingo",
-   Nunito Sans); switch to the menu button a little earlier so the row never
-   looks crammed. */
+/* The crest, the full "St·Dominic's" lettering and the link row need
+   ~1100px; switch to the menu button a little earlier so the row never looks
+   crammed. */
 @media (max-width: 1160px) {
   .nav-desktop { display: none !important; }
   .nav-mobile-toggle { display: block !important; }

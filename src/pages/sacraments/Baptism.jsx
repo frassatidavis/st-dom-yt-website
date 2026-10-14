@@ -6,10 +6,9 @@ import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
-import PageHeader from "../../components/PageHeader";
+import PhotoBackdrop from "../../components/PhotoBackdrop";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
-import SacramentPageActions from "../../components/SacramentPageActions";
 
 export default function Baptism() {
   const { t } = useTranslation();
@@ -20,23 +19,30 @@ export default function Baptism() {
       <Seo
         title="Baptism"
         description="Information about the Sacrament of Baptism at St. Dominic Church. Requirements, preparation, and how to schedule."
-        image={PHOTOS.baptismHero}
+        image={PHOTOS.baptismFont}
       />
-      <PageHeader title={t("sacraments.baptism.title")} heroSrc={PHOTOS.baptismHero} tall />
-      <SacramentPageActions sacramentKey="baptism" icon="Droplets" />
-
-      <Section bg={T.warmWhite}>
-        <div style={{ maxWidth: 760, margin: "0 auto" }}>
-          <SectionTitle sub={t("sacraments.baptism.sub")}>
-            {t("sacraments.baptism.heading")}
-          </SectionTitle>
-          <PullQuote variant="margin" text={t("sacraments.baptism.quote")} src={t("sacraments.baptism.quoteSrc")} />
-          <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.baptism.p1")}</p>
-            <p style={{ marginBottom: 20 }}>{t("sacraments.baptism.p2")}</p>
+      {/* The photo opens out of the header and settles behind the opening
+          text, slowly zooming in on the baby */}
+      <PhotoBackdrop
+        title={t("sacraments.baptism.title")}
+        src={PHOTOS.baptismFont}
+        alt={t("sacraments.baptism.photoAlt")}
+        position="50% 40%"
+        focus="60% 68%"
+      >
+        <Section bg="transparent">
+          <div style={{ maxWidth: 760, margin: "0 auto" }}>
+            <SectionTitle sub={t("sacraments.baptism.sub")}>
+              {t("sacraments.baptism.heading")}
+            </SectionTitle>
+            <PullQuote variant="margin" text={t("sacraments.baptism.quote")} src={t("sacraments.baptism.quoteSrc")} />
+            <div style={{ fontSize: 16, color: T.warmGray, lineHeight: 2 }}>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.baptism.p1")}</p>
+              <p style={{ marginBottom: 20 }}>{t("sacraments.baptism.p2")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </PhotoBackdrop>
 
       <Section bg={T.cream}>
         <SectionTitle sub={t("sacraments.baptism.reqSub")}>

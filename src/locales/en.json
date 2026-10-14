@@ -29,7 +29,8 @@
     "gallery": "Gallery",
     "faithFormation": "Faith Formation",
     "connect": "Connect",
-    "more": "More"
+    "more": "More",
+    "dominicanFriars": "The Dominican Friars"
   },
   "footer": {
     "subtitle": "Catholic Church · Youngstown, OH",
@@ -86,7 +87,7 @@
     },
     "welcome": {
       "title": "Saving Truth in the Heart of the Church",
-      "p1": "The Dominican Friars of the Province of St. Joseph have served Youngstown's South Side since 1923, forming generations of Catholics to celebrate the sacred mysteries of our faith.",
+      "p1": "<friars>The Dominican Friars</friars> of the Province of St. Joseph have served Youngstown's South Side since 1923, forming generations of Catholics to celebrate the sacred mysteries of our faith.",
       "p2": "Whether you are a classic St. Dom's alum or pining to learn more about the Catholic faith, you are welcome here."
     },
     "priests": {
@@ -777,7 +778,8 @@
       "ctaDesc": "Contact the parish office to begin the process. First time parents are asked to meet with a priest before scheduling the baptism of their child.",
       "cardQuote": "“By Baptism a man is regenerated unto the spiritual life.”",
       "cardQuoteSrc": "ST III, Q. 66, A. 1",
-      "cardCta": "How to Be Reborn"
+      "cardCta": "How to Be Reborn",
+      "photoAlt": "A Dominican friar baptizes a baby at the font of St. Dominic Church as the family looks on."
     },
     "firstCommunion": {
       "title": "First Holy Communion",
@@ -966,20 +968,6 @@
       "cardQuoteSrc": "ST Supp., Q. 71, A. 1",
       "cardCta": "Plan a Funeral"
     },
-    "pathways": {
-      "infantBaptism": {
-        "title": "Infant Baptism",
-        "desc": "The faith of parents is passed on to the life of their children through the waters of baptism."
-      },
-      "sundaySchool": {
-        "title": "Sunday School",
-        "desc": "Kids receive valuable faith formation and sacrament preparation through our Sunday CCD classes."
-      },
-      "adultCatechesis": {
-        "title": "Adult Catechesis",
-        "desc": "Men and women seeking to learn more about the Catholic Faith and to receive the sacraments should enroll in our OCIA classes."
-      }
-    },
     "ccdRegistration": "CCD Registration",
     "ccdCoordinator": "Ms. Adamaris Cortes"
   },
@@ -1115,7 +1103,7 @@
       "title": "Into Our Second Century",
       "p1": "In May 2023, St. Dominic celebrated its centennial with a Mass celebrated by Bishop David Bonnar and a banquet attended by over 230 members. One hundred years after that first Mass in a storeroom, the church remains a beacon of faith on Youngstown's South Side — now serving over 700 registered households from across the Mahoning Valley.",
       "p2": "The church maintains a vibrant array of ministries rooted in the Dominican charism: a Lay Dominican program, Cor Men's Fellowship, Parish & Family Life ministry, St. Vincent de Paul Society, and a thriving Hispanic Ministry with weekly Spanish Masses. Dominican friars from the Priory also serve St. Rose Church in Girard and the Youngstown State University Newman Center.",
-      "p3": "Served by the friars of the Province of St. Joseph — the oldest Dominican province in the Americas, founded in 1805 — St. Dominic Church carries forward an 800-year tradition of preaching, prayer, and service in the heart of the Mahoning Valley.",
+      "p3": "Served by the friars of the Province of St. Joseph — the first Dominican province in the United States, founded in 1805 — St. Dominic Church carries forward an 800-year tradition of preaching, prayer, and service in the heart of the Mahoning Valley.",
       "aerialAlt": "Aerial view of the St. Dominic church campus today",
       "aerialCap": "The St. Dominic campus today — over 100 years of faith on Youngstown's South Side"
     }
@@ -1263,6 +1251,58 @@
       "sub": "The Dominican Campus",
       "title": "A Place of Prayer, Study, & Community",
       "desc": "The church is connected to the Dominican priory by a cloister walk featuring Eric Gill's Stations of the Cross etchings. Together with the church hall and school buildings, the campus forms a complete center for Dominican life — prayer, study, community, and preaching."
+    }
+  },
+  "friars": {
+    "title": "Meet The Saints",
+    "more": {
+      "title": "Learn More",
+      "desc": "Learn more about the Province of St. Joseph, or explore Dominican Friars Media.",
+      "province": "Province of St. Joseph"
+    },
+    "mural": {
+      "caption": "In the great mural of our sanctuary, Our Lady gives the Rosary to St. Dominic, surrounded by seven Dominican saints.",
+      "alt": "The sanctuary mural: Our Lady, holding the Child Jesus, gives the Rosary to St. Dominic, surrounded by seven Dominican saints."
+    },
+    "saints": {
+      "open": "Meet {{name}}",
+      "close": "Close",
+      "mary": {
+        "name": "Our Lady of the Rosary",
+        "bio": "By tradition, Our Lady gave the Rosary to St. Dominic, and here, with the Child Jesus on her knee, she hands it down to him. Dominicans have preached the Rosary ever since. The Church keeps her feast on October 7."
+      },
+      "dominic": {
+        "name": "St. Dominic",
+        "bio": "St. Dominic (1170–1221), a priest from Spain, founded the Order of Preachers to bring the truth of the Gospel to all; the Pope approved the Order in 1216. Before he was born, his mother dreamed of a dog carrying a torch to set the world on fire. Here he reaches up to receive the Rosary. Feast: August 8."
+      },
+      "aquinas": {
+        "name": "St. Thomas Aquinas",
+        "bio": "St. Thomas Aquinas (1225–1274), an Italian Dominican, is the Church's great theologian, the author of the Summa Theologiae and a Doctor of the Church. The sun on his chest stands for the light of his teaching, and he holds a quill and a book. Feast: January 28."
+      },
+      "rose": {
+        "name": "St. Rose of Lima",
+        "bio": "St. Rose of Lima (1586–1617) lived a life of prayer and penance as a lay Dominican in Lima, Peru, caring for the poor and the sick. She was the first saint of the Americas to be canonized. She wears a crown of roses and holds a cross. Feast: August 23."
+      },
+      "albert": {
+        "name": "St. Albert the Great",
+        "bio": "St. Albert the Great (c. 1200–1280), a German Dominican, was a bishop, a philosopher and a pioneer of the natural sciences, and the teacher of St. Thomas Aquinas. A Doctor of the Church and the patron saint of scientists, he wears a bishop's mitre. Feast: November 15."
+      },
+      "hyacinth": {
+        "name": "St. Hyacinth",
+        "bio": "St. Hyacinth (c. 1185–1257), a priest from Poland, received the Dominican habit from St. Dominic himself and carried the Gospel across Poland and northern Europe. Tradition says he carried the Blessed Sacrament to safety when Kyiv was attacked, which is why he holds a ciborium."
+      },
+      "antoninus": {
+        "name": "St. Antoninus",
+        "bio": "St. Antoninus (1389–1459), a Dominican friar of Florence, became the city's archbishop and was loved for his care of the poor, his simple life and his wise counsel. He wrote widely on how to live the Christian life in the world of work and money."
+      },
+      "peter": {
+        "name": "St. Peter Martyr",
+        "bio": "St. Peter Martyr (1205–1252), also called Peter of Verona, was a Dominican preacher who drew great crowds across northern Italy. He was killed on the road near Milan for preaching the faith; the palm he holds is the sign of a martyr."
+      },
+      "catherine": {
+        "name": "St. Catherine of Siena",
+        "bio": "St. Catherine of Siena (1347–1380), a lay Dominican, was a mystic who nursed the sick and persuaded Pope Gregory XI to return from Avignon to Rome. A Doctor of the Church and a patron saint of Italy and Europe, she holds lilies and wears a crown of thorns. Feast: April 29."
+      }
     }
   }
 }
