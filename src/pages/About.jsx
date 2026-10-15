@@ -13,7 +13,7 @@ import PhotoGallery from "../components/PhotoGallery";
 import ResponsivePicture from "../components/ResponsivePicture";
 import TextReveal from "../components/TextReveal";
 import { isClassic } from "../classic";
-import { PHOTOS } from "../constants/photos";
+import { CLASSIC_GALLERY, PHOTOS } from "../constants/photos";
 
 export default function About() {
   const { t } = useTranslation();
@@ -264,7 +264,8 @@ export default function About() {
       {PHOTOS.gallery.length > 0 && (
         <Section>
           <SectionTitle>{t("gallery.title")}</SectionTitle>
-          <PhotoGallery photos={PHOTOS.gallery} />
+          {/* Classic Mode: only the parish's old photographs */}
+          <PhotoGallery photos={isClassic() ? CLASSIC_GALLERY : PHOTOS.gallery} />
         </Section>
       )}
 

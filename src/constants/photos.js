@@ -228,3 +228,22 @@ export const CLASSIC_HOME_PHOTOS = [
   { src: `${A}home-boys-first-communion-procession-opt.webp`, position: "50% 45%" }, // boys in white jackets processing up the aisle
   { src: `${A}home-friar-leading-prayer-opt.webp`, position: "48% 60%" }, // a friar leading prayer down the aisle of a full church
 ];
+
+// Classic Mode's "Your Parish in Photos": only the parish's old photographs
+// (the ones the parish supplied, and the historic ones from the archive)
+export const CLASSIC_GALLERY = [
+  ...CLASSIC_HOME_PHOTOS.map(({ src }) => ({ src })),
+  { src: `${A}wedding-at-the-altar-opt.webp` },
+  { src: `${A}nave-newspaper-photo-opt.webp` },
+  { src: PHOTOS.historyStorefront },
+  { src: PHOTOS.historyFoundation },
+  { src: PHOTOS.historyConstructionExt },
+  { src: PHOTOS.historyConstruction },
+  { src: PHOTOS.historyPastorConstruction },
+  { src: PHOTOS.historyPastorEntrance },
+  { src: PHOTOS.historyExteriorOld },
+  { src: PHOTOS.historyInteriorVintage },
+  { src: PHOTOS.historyAltarboys },
+  { src: PHOTOS.sacramentsHero },
+  { src: PHOTOS.historyCommunity },
+].map((p, i) => ({ ...p, alt: p.alt || `gallery.classic${i}` }));
