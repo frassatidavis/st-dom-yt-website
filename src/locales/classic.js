@@ -4,7 +4,7 @@
 // telephone or call at the rectory, and the offertory goes in the envelope.
 export const CLASSIC_TEXT = {
   en: {
-    nav: { give: "Your Tithe", about: "Our History", architecture: "Dedication of St. Dominic Church" },
+    nav: { give: "Tithing 10%", about: "Our History", architecture: "Dedication of St. Dominic Church" },
     footer: { cards: { emailTitle: "Write to Us" } },
     home: {
       involved: {
@@ -134,7 +134,7 @@ export const CLASSIC_TEXT = {
     },
   },
   es: {
-    nav: { give: "Su Diezmo", about: "Nuestra Historia", architecture: "Dedicación de la Iglesia de Santo Domingo" },
+    nav: { give: "Diezmo 10%", about: "Nuestra Historia", architecture: "Dedicación de la Iglesia de Santo Domingo" },
     footer: { cards: { emailTitle: "Escríbanos" } },
     home: {
       involved: {
