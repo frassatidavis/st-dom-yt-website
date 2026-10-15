@@ -275,30 +275,33 @@ export default function Give() {
         </div>
       </Section>
 
-      <NextSteps
-        eyebrow={t("give.nextSub")}
-        title={t("give.nextTitle")}
-        items={[
-          {
-            icon: "Phone",
-            title: t("give.next.office.title"),
-            description: t("give.next.office.desc"),
-            href: CONFIG.phoneLink,
-          },
-          {
-            icon: "Church",
-            title: t("give.next.mass.title"),
-            description: t("give.next.mass.desc"),
-            to: "/mass-times",
-          },
-          {
-            icon: "ClipboardList",
-            title: t("give.next.register.title"),
-            description: t("give.next.register.desc"),
-            to: "/register",
-          },
-        ]}
-      />
+      {/* Classic Mode: no "Giving next steps" */}
+      {!classic && (
+        <NextSteps
+          eyebrow={t("give.nextSub")}
+          title={t("give.nextTitle")}
+          items={[
+            {
+              icon: "Phone",
+              title: t("give.next.office.title"),
+              description: t("give.next.office.desc"),
+              href: CONFIG.phoneLink,
+            },
+            {
+              icon: "Church",
+              title: t("give.next.mass.title"),
+              description: t("give.next.mass.desc"),
+              to: "/mass-times",
+            },
+            {
+              icon: "ClipboardList",
+              title: t("give.next.register.title"),
+              description: t("give.next.register.desc"),
+              to: "/register",
+            },
+          ]}
+        />
+      )}
     </div>
   );
 }
