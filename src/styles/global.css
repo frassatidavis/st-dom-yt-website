@@ -1587,6 +1587,21 @@ body.nav-open .name-leap {
   border-left-color: var(--color-gold-text);
   transform: translateX(3px);
 }
+/* A card with a photo of the place: the photo under a dark wash, light text */
+.route-map__list button.has-photo {
+  background:
+    linear-gradient(90deg, rgba(26, 23, 20, 0.82), rgba(26, 23, 20, 0.45)),
+    var(--card-photo) center / cover;
+}
+.route-map__list button.has-photo strong {
+  color: #fff;
+}
+.route-map__list button.has-photo span {
+  color: rgba(255, 255, 255, 0.85);
+}
+.route-map__list button.has-photo em {
+  color: var(--color-gold-light);
+}
 .route-map__list strong {
   color: var(--color-soft-black);
   font-size: 15px;

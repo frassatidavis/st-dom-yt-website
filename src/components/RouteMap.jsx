@@ -24,10 +24,11 @@ const project = ([lat, lon], z) => {
  * Props:
  *   church — { name, address, at: [lat, lon] }
  *   routes — [{ id, name, at, minutes, miles, path: [[lat, lon], …] }]
+ *   photos — optional { [id]: photo }: a picture of the place behind its card
  *   town   — (id) => the town's name, for the labels
  *   mapsHref — directions link for the church
  */
-export default function RouteMap({ church, routes, town, mapsHref }) {
+export default function RouteMap({ church, routes, town, mapsHref, photos = {} }) {
   const { t } = useTranslation();
   const boxRef = useRef(null);
   const [size, setSize] = useState(null);
@@ -168,7 +169,8 @@ export default function RouteMap({ church, routes, town, mapsHref }) {
           <li key={r.id}>
             <button
               type="button"
-              className={active === r.id ? "is-active" : ""}
+              className={`${active === r.id ? "is-active" : ""}${photos[r.id] ? " has-photo" : ""}`}
+              style={photos[r.id] ? { "--card-photo": `url("${photos[r.id]}")` } : undefined}
               onMouseEnter={() => setActive(r.id)}
               onMouseLeave={() => setActive(null)}
               onFocus={() => setActive(r.id)}

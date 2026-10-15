@@ -94,6 +94,10 @@ export const PHOTOS = {
   stDominicStatue: `${B}photos/st-dominic-statue-opt.webp`,       // The statue of St. Dominic (lilies, book, dog with torch) before the sanctuary mural (behind Before You Come on /visit)
   stDominicStrip: `${B}photos/st-dominic-statue-strip.webp`,      // Just the statue of St. Dominic, a tall strip of that photo (600x1700)
   altarServers: `${B}photos/altar-servers-procession-opt.webp`,  // Altar servers in red cassocks and surplices walking in procession (behind Join Us This Weekend on /visit)
+  // Pictures behind the place cards on the Start Here map (RouteMap), by route id
+  mapPlaces: {
+    boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
+  },
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
   // Glowing gold outline of each figure in that mural, picture-sized and transparent (MuralReveal)

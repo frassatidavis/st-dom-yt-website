@@ -247,6 +247,7 @@ export default function Visit() {
           church={CHURCH}
           routes={ROUTES}
           town={(id) => t(`visit.map.towns.${id}`)}
+          photos={PHOTOS.mapPlaces}
           mapsHref={`https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`}
         />
       </Section>
