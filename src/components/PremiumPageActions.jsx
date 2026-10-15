@@ -58,7 +58,7 @@ export default function PremiumPageActions({ eyebrow, title, items = [], overlap
           </div>
         )}
         <div className="premium-page-actions__grid">
-          {items.map(renderItem)}
+          {items.filter(Boolean).map(renderItem)}
         </div>
       </div>
     </section>

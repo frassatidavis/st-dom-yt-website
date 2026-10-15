@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { isClassic } from "./classic";
 import { useTranslation } from "react-i18next";
 import Nav from "./components/Nav";
 import Breadcrumbs from "./components/Breadcrumbs";
@@ -101,7 +102,7 @@ function AppRoutes() {
             <Route path="/faith-formation" element={<FaithFormation />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/writers-guide" element={<WritersGuide />} />
-            <Route path="/connect" element={<Connect />} />
+            <Route path="/connect" element={isClassic() ? <Navigate to="/contact" replace /> : <Connect />} />
             {/* Old eCatholic URLs (the build also writes static redirect pages for these) */}
             {Object.entries(LEGACY_REDIRECTS).map(([from, to]) => (
               <Route key={from} path={from} element={<Navigate to={to} replace />} />

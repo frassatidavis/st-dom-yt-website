@@ -11,10 +11,13 @@ import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import { NextSteps, PastoralActionPanel } from "../components/PastoralActionPanel";
 import PremiumPageActions from "../components/PremiumPageActions";
+import { isClassic } from "../classic";
 
 export default function Give() {
   const { t } = useTranslation();
 
+  // Classic Mode: the offertory envelope and the mail, no online giving
+  const classic = isClassic();
   const hasGivingPortal = Boolean(CONFIG.flocknoteGivingUrl);
   const portalFeatures = [
     { key: "oneTime", icon: "Gift" },
@@ -36,7 +39,7 @@ export default function Give() {
       <PremiumPageActions
         title={t("give.clarityTitle")}
         items={[
-          {
+          !classic && {
             icon: "Gift",
             title: t("give.flocknoteBtn"),
             description: t("give.onlineDesc"),
@@ -83,129 +86,131 @@ export default function Give() {
         </p>
       </Section>
 
-      {/* Flocknote Online Giving */}
-      <Section bg={T.cream} style={donationSectionStyle}>
-        <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
-          <div
-            style={{
-              background: T.warmWhite,
-              border: `1px solid ${T.stone}`,
-              borderRadius: 4,
-              padding: 48,
-            }}
-          >
-            <div style={{ marginBottom: 16 }} aria-hidden="true">
-              <Icon name="Gift" size={48} color={T.burgundy} />
-            </div>
-            <h3
-              style={{
-                fontSize: 28,
-                color: T.burgundy,
-                marginBottom: 16,
-                fontFamily: "var(--font-display)",
-              }}
-            >
-              {t("give.onlineTitle")}
-            </h3>
-            <p
-              style={{
-                fontSize: 15,
-                color: T.warmGray,
-                lineHeight: 1.8,
-                marginBottom: 24,
-                maxWidth: 500,
-                margin: "0 auto 24px",
-              }}
-            >
-              {t("give.onlineDesc")}
-            </p>
+      {/* Flocknote Online Giving (not in Classic Mode) */}
+      {!classic && (
+        <Section bg={T.cream} style={donationSectionStyle}>
+          <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(135px, 1fr))",
-                gap: 12,
-                margin: "0 auto 28px",
-                maxWidth: 560,
-                textAlign: "left",
+                background: T.warmWhite,
+                border: `1px solid ${T.stone}`,
+                borderRadius: 4,
+                padding: 48,
               }}
             >
-              {portalFeatures.map(({ key, icon }) => (
-                <div
-                  key={key}
-                  style={{
-                    display: "flex",
-                    gap: 10,
-                    alignItems: "flex-start",
-                    background: T.cream,
-                    border: `1px solid ${T.stone}`,
-                    borderRadius: 4,
-                    padding: 14,
-                    minHeight: 88,
-                  }}
-                >
-                  <Icon name={icon} size={20} color={T.burgundy} />
-                  <div>
-                    <h4
-                      style={{ fontSize: 13, color: T.softBlack, marginBottom: 4, fontWeight: 700 }}
-                    >
-                      {t(`give.portalFeatures.${key}.title`)}
-                    </h4>
-                    <p style={{ fontSize: 12, color: T.warmGray, lineHeight: 1.45, margin: 0 }}>
-                      {t(`give.portalFeatures.${key}.desc`)}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {hasGivingPortal ? (
-              <a
-                href={CONFIG.flocknoteGivingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-hover"
+              <div style={{ marginBottom: 16 }} aria-hidden="true">
+                <Icon name="Gift" size={48} color={T.burgundy} />
+              </div>
+              <h3
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                  padding: "16px 40px",
-                  background: T.gold,
-                  color: T.softBlack,
-                  fontSize: 15,
-                  fontWeight: 600,
-                  letterSpacing: 0.5,
-                  textTransform: "uppercase",
-                  borderRadius: 2,
-                  textDecoration: "none",
-                  fontFamily: "var(--font-body)",
+                  fontSize: 28,
+                  color: T.burgundy,
+                  marginBottom: 16,
+                  fontFamily: "var(--font-display)",
                 }}
               >
-                {t("give.flocknoteBtn")}
-                <Icon name="ExternalLink" size={16} color={T.softBlack} strokeWidth={2} />
-              </a>
-            ) : (
+                {t("give.onlineTitle")}
+              </h3>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: T.warmGray,
+                  lineHeight: 1.8,
+                  marginBottom: 24,
+                  maxWidth: 500,
+                  margin: "0 auto 24px",
+                }}
+              >
+                {t("give.onlineDesc")}
+              </p>
               <div
                 style={{
-                  background: T.cream,
-                  borderRadius: 4,
-                  padding: 24,
-                  border: `1px solid ${T.stone}`,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(135px, 1fr))",
+                  gap: 12,
+                  margin: "0 auto 28px",
+                  maxWidth: 560,
+                  textAlign: "left",
                 }}
               >
-                <p style={{ fontSize: 15, color: T.warmGray, lineHeight: 1.7 }}>
-                  {t("give.comingSoon")}
-                </p>
-                <p style={{ fontSize: 14, color: T.warmGray, marginTop: 8 }}>
-                  {t("give.contactOffice")}
-                </p>
+                {portalFeatures.map(({ key, icon }) => (
+                  <div
+                    key={key}
+                    style={{
+                      display: "flex",
+                      gap: 10,
+                      alignItems: "flex-start",
+                      background: T.cream,
+                      border: `1px solid ${T.stone}`,
+                      borderRadius: 4,
+                      padding: 14,
+                      minHeight: 88,
+                    }}
+                  >
+                    <Icon name={icon} size={20} color={T.burgundy} />
+                    <div>
+                      <h4
+                        style={{ fontSize: 13, color: T.softBlack, marginBottom: 4, fontWeight: 700 }}
+                      >
+                        {t(`give.portalFeatures.${key}.title`)}
+                      </h4>
+                      <p style={{ fontSize: 12, color: T.warmGray, lineHeight: 1.45, margin: 0 }}>
+                        {t(`give.portalFeatures.${key}.desc`)}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            )}
-            <p style={{ fontSize: 12, color: T.warmGray, marginTop: 20, fontStyle: "italic" }}>
-              {t("give.flocknoteNote")}
-            </p>
-            <p style={{ fontSize: 12, color: T.warmGray, marginTop: 8 }}>{t("give.feeNote")}</p>
+              {hasGivingPortal ? (
+                <a
+                  href={CONFIG.flocknoteGivingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-hover"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "16px 40px",
+                    background: T.gold,
+                    color: T.softBlack,
+                    fontSize: 15,
+                    fontWeight: 600,
+                    letterSpacing: 0.5,
+                    textTransform: "uppercase",
+                    borderRadius: 2,
+                    textDecoration: "none",
+                    fontFamily: "var(--font-body)",
+                  }}
+                >
+                  {t("give.flocknoteBtn")}
+                  <Icon name="ExternalLink" size={16} color={T.softBlack} strokeWidth={2} />
+                </a>
+              ) : (
+                <div
+                  style={{
+                    background: T.cream,
+                    borderRadius: 4,
+                    padding: 24,
+                    border: `1px solid ${T.stone}`,
+                  }}
+                >
+                  <p style={{ fontSize: 15, color: T.warmGray, lineHeight: 1.7 }}>
+                    {t("give.comingSoon")}
+                  </p>
+                  <p style={{ fontSize: 14, color: T.warmGray, marginTop: 8 }}>
+                    {t("give.contactOffice")}
+                  </p>
+                </div>
+              )}
+              <p style={{ fontSize: 12, color: T.warmGray, marginTop: 20, fontStyle: "italic" }}>
+                {t("give.flocknoteNote")}
+              </p>
+              <p style={{ fontSize: 12, color: T.warmGray, marginTop: 8 }}>{t("give.feeNote")}</p>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      )}
 
       {/* Parallax visual break */}
       <ParallaxSection image={PHOTOS.stockCandles} height="30vh" overlay={0.45}>

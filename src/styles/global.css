@@ -2678,3 +2678,36 @@ html.classic .premium-hero__logo img {
 html.classic {
   filter: grayscale(1);
 }
+/* Classic: the "St·Dominic's" lettering in black ink; the footer's crest
+   in white */
+html.classic img[src*="/branding/st-dominics-burgundy"],
+html.classic img[src*="/branding/st-doms-burgundy"] {
+  filter: brightness(0) !important;
+}
+html.classic footer img[src*="/branding/st-dom-crest-light"] {
+  filter: brightness(0) invert(1) !important;
+}
+/* Classic: nothing from after 1954 — no email, online safe-environment
+   training or embedded web map (src/locales/classic.js rewords the rest) */
+html.classic a[href^="mailto:"],
+html.classic a[href*="virtusonline.org"],
+html.classic .modern-only {
+  display: none !important;
+}
+/* Classic: true black and white bars — a white header ruled in black, and
+   a black bar and footer with white type (the office phone only) */
+html.classic nav {
+  background: #fff !important;
+  border-bottom-color: #000 !important;
+}
+html.classic .parish-action-bar {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: #fff;
+  border-color: #000;
+}
+html.classic .parish-action-bar__item,
+html.classic .parish-action-bar__contact-cell,
+html.classic footer {
+  background: #000 !important;
+  color: #fff !important;
+}

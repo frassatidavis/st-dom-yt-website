@@ -12,9 +12,9 @@ import { FloatingInput, FloatingTextarea, StyledSelect } from "../components/for
 import { validateEmail, validatePhone } from "../utils/formValidation";
 
 /* ── Info card item ── */
-function InfoItem({ icon: IconComp, label, children }) {
+function InfoItem({ icon: IconComp, label, className, children }) {
   return (
-    <div style={{ display: "flex", gap: 14, alignItems: "flex-start", padding: "14px 0" }}>
+    <div className={className} style={{ display: "flex", gap: 14, alignItems: "flex-start", padding: "14px 0" }}>
       <IconComp size={20} color={T.burgundy} style={{ flexShrink: 0, marginTop: 3 }} />
       <div>
         <div
@@ -499,7 +499,7 @@ export default function Contact() {
                   {t("contact.fax")}: {CONFIG.fax}
                 </span>
               </InfoItem>
-              <InfoItem icon={Mail} label="Email">
+              <InfoItem icon={Mail} label="Email" className="modern-only">
                 <a
                   href={`mailto:${CONFIG.email}`}
                   style={{ color: T.burgundy, textDecoration: "none", fontWeight: 600 }}
@@ -514,6 +514,7 @@ export default function Contact() {
 
             {/* Google Maps */}
             <div
+              className="modern-only"
               style={{
                 borderRadius: "var(--radius-card)",
                 overflow: "hidden",

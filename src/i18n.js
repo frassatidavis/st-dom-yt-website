@@ -1,5 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import { isClassic } from "./classic";
+import { CLASSIC_TEXT } from "./locales/classic";
 
 // The active locale ships in its own chunk (Vite splits the dynamic import
 // per file). The inactive locale is fetched only if the user toggles
@@ -15,8 +17,19 @@ const initialLang = (() => {
   return "en";
 })();
 
+// In Classic Mode the 1954 wording (locales/classic.js) replaces the
+// everyday lines
+const deepMerge = (base, over) => {
+  const out = { ...base };
+  for (const [k, v] of Object.entries(over)) {
+    out[k] = v && typeof v === "object" && !Array.isArray(v) ? deepMerge(base?.[k] ?? {}, v) : v;
+  }
+  return out;
+};
 const loadLocale = (lng) =>
-  import(`./locales/${lng}.json`).then((m) => m.default);
+  import(`./locales/${lng}.json`).then((m) =>
+    isClassic() && CLASSIC_TEXT[lng] ? deepMerge(m.default, CLASSIC_TEXT[lng]) : m.default
+  );
 
 const initialBundle = await loadLocale(initialLang);
 

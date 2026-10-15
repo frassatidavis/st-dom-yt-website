@@ -86,6 +86,18 @@ const NAV_ITEMS = [
 export default function Nav() {
   const { t } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
+  // Give goes to the Flocknote form; in Classic Mode (no online giving) to
+  // the Offertory page
+  const giveLink = isClassic()
+    ? {
+        href: `${import.meta.env.BASE_URL}give`,
+        onClick: (e) => {
+          e.preventDefault();
+          navigate("/give");
+        },
+      }
+    : { href: CONFIG.flocknoteGivingUrl, target: "_blank", rel: "noopener noreferrer" };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -416,9 +428,7 @@ export default function Nav() {
           )}
           {/* Give goes straight to the parish's Flocknote giving form (it can't be embedded) */}
           <a
-            href={CONFIG.flocknoteGivingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...giveLink}
             className="premium-give-link"
             style={{
               textDecoration: "none", padding: "8px 16px", fontSize: 13, fontWeight: 600,
@@ -546,10 +556,11 @@ export default function Nav() {
             )
           )}
           <a
-            href={CONFIG.flocknoteGivingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileOpen(false)}
+            {...giveLink}
+            onClick={(e) => {
+              setMobileOpen(false);
+              giveLink.onClick?.(e);
+            }}
             style={{
               display: "block",
               textDecoration: "none",

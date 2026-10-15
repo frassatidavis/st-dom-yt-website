@@ -6,6 +6,7 @@ import PageHeader from "../components/PageHeader";
 import ParallaxSection from "../components/ParallaxSection";
 import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
+import { isClassic } from "../classic";
 import { BookOpen, Headphones, GraduationCap, Church, ExternalLink } from "lucide-react";
 
 const RESOURCES = [
@@ -17,12 +18,14 @@ const RESOURCES = [
   },
   {
     key: "godsplaining",
+    podcast: true,
     icon: Headphones,
     url: "https://godsplaining.org",
     color: "#2D6A4F",
   },
   {
     key: "rosary",
+    podcast: true,
     icon: Headphones,
     url: "https://ascensionpress.com/rosaryinayear",
     color: "#3A5BA0",
@@ -35,6 +38,7 @@ const RESOURCES = [
   },
   {
     key: "saintsAlive",
+    podcast: true,
     icon: Headphones,
     url: "https://www.saintsalivepodcast.com",
     color: "#8B6914",
@@ -145,7 +149,7 @@ export default function FaithFormation() {
             margin: "0 auto",
           }}
         >
-          {RESOURCES.map(({ key, icon: Icon, url, color }) => (
+          {RESOURCES.filter((r) => !(isClassic() && r.podcast)).map(({ key, icon: Icon, url, color }) => (
             <a
               key={key}
               href={url}
@@ -219,71 +223,73 @@ export default function FaithFormation() {
         </div>
       </Section>
 
-      {/* ════ Embedded Podcasts ════ */}
-      <Section bg={T.cream}>
-        <SectionTitle>{t("faithFormation.listen.title")}</SectionTitle>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 28,
-            maxWidth: 1000,
-            margin: "0 auto",
-          }}
-        >
-          {/* Godsplaining */}
-          <div style={cardStyle}>
-            <div style={{ padding: 24 }}>
-              <h3
-                style={{
-                  fontSize: 18,
-                  fontFamily: "var(--font-display)",
-                  color: T.softBlack,
-                  marginBottom: 12,
-                }}
-              >
-                Godsplaining
-              </h3>
-              <iframe
-                src="https://open.spotify.com/embed/show/0aIOz3chYeQZxsdjyJzlOb?utm_source=generator&theme=0"
-                width="100%"
-                height="152"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                style={{ borderRadius: "var(--radius-card)" }}
-                title="Godsplaining Podcast"
-              />
+      {/* ════ Embedded Podcasts (not in Classic Mode: nothing from after 1954) ════ */}
+      {!isClassic() && (
+        <Section bg={T.cream}>
+          <SectionTitle>{t("faithFormation.listen.title")}</SectionTitle>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 28,
+              maxWidth: 1000,
+              margin: "0 auto",
+            }}
+          >
+            {/* Godsplaining */}
+            <div style={cardStyle}>
+              <div style={{ padding: 24 }}>
+                <h3
+                  style={{
+                    fontSize: 18,
+                    fontFamily: "var(--font-display)",
+                    color: T.softBlack,
+                    marginBottom: 12,
+                  }}
+                >
+                  Godsplaining
+                </h3>
+                <iframe
+                  src="https://open.spotify.com/embed/show/0aIOz3chYeQZxsdjyJzlOb?utm_source=generator&theme=0"
+                  width="100%"
+                  height="152"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  style={{ borderRadius: "var(--radius-card)" }}
+                  title="Godsplaining Podcast"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Rosary in a Year */}
-          <div style={cardStyle}>
-            <div style={{ padding: 24 }}>
-              <h3
-                style={{
-                  fontSize: 18,
-                  fontFamily: "var(--font-display)",
-                  color: T.softBlack,
-                  marginBottom: 12,
-                }}
-              >
-                Rosary in a Year
-              </h3>
-              <iframe
-                src="https://open.spotify.com/embed/show/3Rx1puBjE0xZBiuy4BT4i7?utm_source=generator&theme=0"
-                width="100%"
-                height="152"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                style={{ borderRadius: "var(--radius-card)" }}
-                title="Rosary in a Year Podcast"
-              />
+            {/* Rosary in a Year */}
+            <div style={cardStyle}>
+              <div style={{ padding: 24 }}>
+                <h3
+                  style={{
+                    fontSize: 18,
+                    fontFamily: "var(--font-display)",
+                    color: T.softBlack,
+                    marginBottom: 12,
+                  }}
+                >
+                  Rosary in a Year
+                </h3>
+                <iframe
+                  src="https://open.spotify.com/embed/show/3Rx1puBjE0xZBiuy4BT4i7?utm_source=generator&theme=0"
+                  width="100%"
+                  height="152"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  style={{ borderRadius: "var(--radius-card)" }}
+                  title="Rosary in a Year Podcast"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      )}
 
       {/* ════ Getting Started CTA ════ */}
       <Section bg={T.warmWhite}>

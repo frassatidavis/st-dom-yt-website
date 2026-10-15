@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { T } from "../../constants/theme";
+import { isClassic } from "../../classic";
 import { CONFIG } from "../../constants/config";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
@@ -95,9 +96,15 @@ export default function Confirmation() {
           <LinkBtn href={CONFIG.ccdRegistrationUrl}>{t("sacraments.ccdRegistration")}</LinkBtn>
           <p style={{ fontSize: 14, color: T.warmGray, marginTop: 16 }}>
             {t("sacraments.ccdCoordinator")},{" "}
-            <a href={`mailto:${CONFIG.religiousEdEmail}`} className="contact-link" style={{ color: T.burgundy }}>
-              {CONFIG.religiousEdEmail}
-            </a>
+            {isClassic() ? (
+              <a href={CONFIG.phoneLink} className="contact-link" style={{ color: T.burgundy }}>
+                {CONFIG.phone}
+              </a>
+            ) : (
+              <a href={`mailto:${CONFIG.religiousEdEmail}`} className="contact-link" style={{ color: T.burgundy }}>
+                {CONFIG.religiousEdEmail}
+              </a>
+            )}
           </p>
           <BackToSacraments />
         </div>
