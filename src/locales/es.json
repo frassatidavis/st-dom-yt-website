@@ -1004,6 +1004,23 @@
       "desc": "Ya sea que haya sido católico toda su vida o nunca haya entrado a una iglesia, nuestras puertas están abiertas. Los Frailes Dominicos y el pueblo de Santo Domingo le dan la bienvenida.",
       "contact": "Contáctenos",
       "becoming": "¿Ser Católico?"
+    },
+    "map": {
+      "title": "Más Cerca de lo que Piensa",
+      "label": "Mapa de rutas en auto a la Iglesia Santo Domingo desde Boardman, Canfield, Poland, Struthers y Campbell",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "miles_one": "{{count}} milla",
+      "miles_other": "{{count}} millas",
+      "note": "Tiempos de manejo habituales sin tráfico.",
+      "directions": "Cómo llegar desde donde está →",
+      "towns": {
+        "boardman": "Boardman",
+        "canfield": "Canfield",
+        "poland": "Poland",
+        "struthers": "Struthers",
+        "campbell": "Campbell"
+      }
     }
   },
   "gallery": {

@@ -1004,6 +1004,23 @@
       "desc": "Whether you've been Catholic your whole life or have never stepped foot in a church, our doors are open. The Dominican Friars and the people of St. Dominic Church are here to welcome you home.",
       "contact": "Contact Us",
       "becoming": "Becoming Catholic?"
+    },
+    "map": {
+      "title": "Closer Than You Think",
+      "label": "Map of driving routes to St. Dominic Church from Boardman, Canfield, Poland, Struthers and Campbell",
+      "minutes_one": "{{count}} min",
+      "minutes_other": "{{count}} min",
+      "miles_one": "{{count}} mile",
+      "miles_other": "{{count}} miles",
+      "note": "Typical driving times without traffic.",
+      "directions": "Get directions from where you are →",
+      "towns": {
+        "boardman": "Boardman",
+        "canfield": "Canfield",
+        "poland": "Poland",
+        "struthers": "Struthers",
+        "campbell": "Campbell"
+      }
     }
   },
   "gallery": {

@@ -1436,6 +1436,199 @@ body.nav-open .name-leap {
   visibility: hidden;
 }
 
+/* RouteMap (Start Here): the church and the drive from nearby towns */
+.route-map {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 20px 28px;
+  align-items: start;
+}
+.route-map__map {
+  position: relative;
+  height: clamp(420px, 52vw, 560px);
+  overflow: hidden;
+  border: 1px solid var(--color-stone);
+  border-radius: var(--radius-card);
+  background: #f2efe9;
+}
+.route-map__tile {
+  position: absolute;
+  max-width: none;
+  /* quiet the map's colours so the routes stand out */
+  filter: grayscale(0.75) sepia(0.12) brightness(1.04) contrast(0.92);
+  user-select: none;
+  pointer-events: none;
+}
+.route-map__overlay {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+.route-map__casing,
+.route-map__line {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.route-map__casing {
+  stroke: #fff;
+  stroke-width: 7;
+}
+.route-map__line {
+  stroke: var(--color-burgundy);
+  stroke-width: 3.5;
+}
+.route-map__map.is-drawn .route-map__casing,
+.route-map__map.is-drawn .route-map__line {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.8s cubic-bezier(0.45, 0, 0.2, 1) calc(var(--i, 0) * 0.25s);
+}
+.route-map__route {
+  transition: opacity 0.3s ease;
+}
+.route-map__route.is-dim {
+  opacity: 0.4;
+}
+.route-map__route.is-active .route-map__line {
+  stroke: var(--color-gold-text);
+  stroke-width: 5;
+}
+.route-map__place {
+  cursor: pointer;
+}
+.route-map__place circle {
+  fill: #fff;
+  stroke: var(--color-burgundy);
+  stroke-width: 3;
+}
+.route-map__place.is-active circle {
+  stroke: var(--color-gold-text);
+}
+.route-map__place text,
+.route-map__church text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--color-soft-black);
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.route-map__place text.route-map__time {
+  font-weight: 600;
+  font-size: 12px;
+  fill: var(--color-burgundy);
+}
+.route-map__church circle {
+  fill: var(--color-burgundy);
+  stroke: #fff;
+  stroke-width: 3;
+}
+.route-map__church path {
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.route-map__church text {
+  font-family: var(--font-display);
+  font-size: 15px;
+  fill: var(--color-burgundy);
+}
+.route-map__church .route-map__pulse {
+  fill: rgba(107, 29, 42, 0.18);
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: route-map-pulse 2.4s ease-out infinite;
+}
+@keyframes route-map-pulse {
+  from { transform: scale(0.6); opacity: 1; }
+  to { transform: scale(1.8); opacity: 0; }
+}
+.route-map__credit {
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-warm-gray);
+  font-size: 10.5px;
+}
+.route-map__credit a {
+  color: inherit;
+}
+.route-map__list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.route-map__list button {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-stone);
+  border-left: 4px solid var(--color-burgundy);
+  border-radius: var(--radius-card);
+  background: #fff;
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.route-map__list button:hover,
+.route-map__list button.is-active {
+  border-left-color: var(--color-gold-text);
+  transform: translateX(3px);
+}
+.route-map__list strong {
+  color: var(--color-soft-black);
+  font-size: 15px;
+}
+.route-map__list span {
+  color: var(--color-warm-gray);
+  font-size: 13px;
+}
+.route-map__list em {
+  color: var(--color-burgundy);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+}
+.route-map__note {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-warm-gray);
+  font-size: 13px;
+}
+.route-map__note a {
+  color: var(--color-burgundy);
+}
+@media (max-width: 860px) {
+  .route-map {
+    grid-template-columns: 1fr;
+  }
+  .route-map__list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-map__map .route-map__casing,
+  .route-map__map .route-map__line {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .route-map__church .route-map__pulse {
+    animation: none;
+  }
+}
+
 /* Home hero intro video (HeroIntroVideo): covers the photo, then dissolves into it */
 .hero-intro-video {
   position: absolute;

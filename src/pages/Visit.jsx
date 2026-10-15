@@ -11,6 +11,8 @@ import PageHeader from "../components/PageHeader";
 import HeroImage from "../components/HeroImage";
 import FadeInPortrait from "../components/FadeInPortrait";
 import NameLeap from "../components/NameLeap";
+import RouteMap from "../components/RouteMap";
+import { CHURCH, ROUTES } from "../data/mapRoutes";
 import { PHOTOS } from "../constants/photos";
 
 export default function Visit() {
@@ -236,6 +238,17 @@ export default function Visit() {
         <p className="u-lede" style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7 }}>
           {t("visit.directions.parking")}
         </p>
+      </Section>
+
+      {/* ════ How close we are: routes from nearby towns ════ */}
+      <Section bg={T.warmWhite}>
+        <SectionTitle>{t("visit.map.title")}</SectionTitle>
+        <RouteMap
+          church={CHURCH}
+          routes={ROUTES}
+          town={(id) => t(`visit.map.towns.${id}`)}
+          mapsHref={`https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`}
+        />
       </Section>
 
       {/* ════ Closing welcome over the Sacred Heart shrine ════ */}
