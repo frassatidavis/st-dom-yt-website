@@ -12,7 +12,9 @@
 const KEY = "mode";
 // Antic: the closest free match to the parish's old sans-serif lettering
 // (the owner's "The Meaney Building 1906" sample, early-1900s American gothic)
-const FONTS = "https://fonts.googleapis.com/css2?family=Antic&display=swap";
+// Fascinate: a 1930s Broadway-style Art Deco display face, like the old
+// RKO picture titles, for the page titles
+const FONTS = "https://fonts.googleapis.com/css2?family=Antic&family=Fascinate&display=swap";
 
 function read() {
   try {

@@ -2796,3 +2796,13 @@ html.classic .premium-charism__inner {
 html.classic .parish-action-bar__mode .parish-action-bar__full {
   color: #fff;
 }
+/* Classic: page titles in old picture-show lettering (Fascinate, after the
+   1930s Broadway Deco titles), capitals with a block shadow */
+html.classic h1 {
+  font-family: "Fascinate", var(--font-display) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em !important;
+  line-height: 1.05;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.45);
+}
