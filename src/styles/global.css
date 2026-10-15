@@ -2760,13 +2760,12 @@ html.classic .premium-charism__inner {
 html.classic .parish-action-bar__mode .parish-action-bar__full {
   color: #fff;
 }
-/* Classic: page titles in old picture-show lettering (Limelight, after the
-   1930s Hollywood Deco serif titles), in capitals */
+/* Classic: page titles in a 1920s Art Deco sans (Federo), in capitals */
 html.classic h1 {
-  font-family: "Limelight", var(--font-display) !important;
+  font-family: "Federo", var(--font-display) !important;
   font-weight: 400 !important;
   text-transform: uppercase;
-  letter-spacing: 0.03em !important;
+  letter-spacing: 0.05em !important;
   line-height: 1.08;
 }
 /* Classic: section titles in old title-card capitals — a bold condensed
