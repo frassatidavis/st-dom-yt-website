@@ -2755,3 +2755,13 @@ html.classic .parish-action-bar__hours-time {
     height: 13px;
   }
 }
+/* Classic: "Sunday is Just the Start" is only a title, so the photo gets
+   the room — a tall band with the title near its foot */
+html.classic .premium-charism {
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(440px, 78vh, 820px);
+}
+html.classic .premium-charism__inner {
+  width: 100%;
+}
