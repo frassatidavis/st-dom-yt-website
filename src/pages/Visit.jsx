@@ -235,9 +235,6 @@ export default function Visit() {
             {t("visit.directions.cta")}
           </Btn>
         </div>
-        <p className="u-lede" style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7 }}>
-          {t("visit.directions.parking")}
-        </p>
       </Section>
 
       {/* ════ How close we are: routes from nearby towns ════ */}
@@ -250,6 +247,10 @@ export default function Visit() {
           photos={PHOTOS.mapPlaces}
           mapsHref={`https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`}
         />
+        {/* Parking and access, after the map */}
+        <p className="u-lede" style={{ fontSize: 14, color: T.warmGray, lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+          {t("visit.directions.parking")}
+        </p>
       </Section>
 
       {/* ════ Closing welcome over the Sacred Heart shrine ════ */}
