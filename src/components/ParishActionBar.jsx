@@ -15,6 +15,12 @@ export default function ParishActionBar() {
     <aside className="parish-action-bar" aria-label={t("actionBar.label")}>
       <div className="parish-action-bar__contact-cell">
         <div className="parish-action-bar__contact">
+          {/* Office hours above the phone (shown in Classic Mode) */}
+          <span className="parish-action-bar__hours">
+            <span className="parish-action-bar__hours-label">{t("footer.cards.hoursTitle")}</span>{" "}
+            <span className="parish-action-bar__hours-time">{t("footer.cards.hoursDays")}</span>{" "}
+            <span className="parish-action-bar__hours-time">{t("footer.cards.hoursTime")}</span>
+          </span>
           <a href={CONFIG.phoneLink} aria-label={`${t("actionBar.call")} ${CONFIG.phone}`}>
             <Icon name="Phone" size={13} color={T.goldLight} />
             <span className="parish-action-bar__contact-text">{CONFIG.phone.replace(" ", "\u00a0")}</span>
