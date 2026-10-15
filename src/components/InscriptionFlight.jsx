@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import ResponsivePicture from "./ResponsivePicture";
+import { reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const between = (v, a, b) => clamp01((v - a) / (b - a));
@@ -39,7 +40,7 @@ export default function InscriptionFlight({ src, alt, box, position = "50% 50%",
     const fly = flyRef.current;
     if (!photo || !fly || !natural) return undefined;
     const root = document.documentElement;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     const [px, py] = position.split(" ").map((v) => parseFloat(v) / 100);
     let frame = 0;
 

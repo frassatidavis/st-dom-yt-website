@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * Lenis smooth scroll — physics-based smooth scrolling.
@@ -9,7 +10,7 @@ export default function useLenis() {
 
   useEffect(() => {
     // Skip on reduced motion preference
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (reducedMotionQuery().matches) return;
 
     let raf;
     import("lenis").then(({ default: Lenis }) => {

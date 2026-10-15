@@ -1289,5 +1289,10 @@
       "desc": "Nuestra parroquia está al cuidado de los frailes dominicos de la Provincia de San José. Para comunicarse con un sacerdote, llame o escriba a la oficina parroquial.",
       "all": "Conozca a todos nuestros frailes y personal"
     }
+  },
+  "classic": {
+    "toClassic": "Modo Clásico",
+    "toModern": "Modo Moderno",
+    "years": "Fundada en 1923 · Piedra angular de 1954"
   }
 }

@@ -2498,3 +2498,173 @@ a.contact-link:hover {
     display: none;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════════════
+   CLASSIC MODE (html.classic, see src/classic.js) — the parish's own
+   1923 / 1954 look: letterpress typefaces, paper and ink, black-and-white
+   photographs, square corners, double rules, and no motion. Everything
+   here only applies while Classic Mode is on.
+   ════════════════════════════════════════════════════════════════════════ */
+html.classic {
+  --font-display: "IM Fell English", "Old Standard TT", Georgia, serif;
+  --font-body: "Old Standard TT", Georgia, "Times New Roman", serif;
+  --font-caps: "IM Fell English SC", "Old Standard TT", Georgia, serif;
+  --tracking-display: 0;
+  --paper: #f3ecdb;
+  --paper-deep: #e9dfc8;
+  --ink: #221b15;
+  --color-warm-white: var(--paper);
+  --color-cream: var(--paper-deep);
+  --color-stone: #c9b993;
+  --color-stone-light: #dccfb1;
+  --color-charcoal: var(--ink);
+  --color-soft-black: var(--ink);
+  --color-warm-gray: #4b4137;
+  --radius-control: 0;
+  --radius-card: 0;
+  --radius-modal: 0;
+}
+html.classic body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* Paper instead of the modern whites (sections set these inline) */
+html.classic [style*="background: rgb(255, 253, 249)"],
+html.classic [style*="background-color: rgb(255, 253, 249)"],
+html.classic [style*="background: rgb(255, 255, 255)"],
+html.classic [style*="background: rgb(250, 246, 240)"],
+html.classic [style*="background-color: rgb(250, 246, 240)"] {
+  background: var(--paper) !important;
+}
+html.classic .premium-page-actions__inner,
+html.classic .glass-card,
+html.classic .route-map__list button:not(.has-photo) {
+  background: var(--paper) !important;
+}
+
+/* Every photograph in black and white (the parish's lettering keeps its ink) */
+html.classic img:not([src*="/branding/"]),
+html.classic video,
+html.classic .sacrament-card,
+html.classic .route-map__list button.has-photo {
+  filter: grayscale(1) contrast(1.06) !important;
+}
+
+/* Type: letterpress headings, a book face for reading, small caps for labels */
+html.classic h1,
+html.classic h2,
+html.classic h3 {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+html.classic main h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  margin-top: 12px;
+  border-top: 3px double currentColor;
+  opacity: 0.55;
+}
+html.classic main [style*="text-align: center"] h2::after,
+html.classic main h2[style*="text-align: center"]::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+html.classic p,
+html.classic li,
+html.classic dd,
+html.classic button,
+html.classic a {
+  font-family: var(--font-body) !important;
+}
+html.classic .kicker,
+html.classic dt,
+html.classic .btn-hover,
+html.classic .link-btn,
+html.classic .premium-nav-link,
+html.classic .premium-give-link,
+html.classic .nav-today__label {
+  font-family: var(--font-caps) !important;
+  text-transform: none !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 400 !important;
+}
+html.classic .btn-hover,
+html.classic .link-btn {
+  font-size: 16px !important;
+}
+
+/* Square corners and printed rules instead of shadows */
+html.classic *,
+html.classic *::before,
+html.classic *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+html.classic nav {
+  background: var(--paper) !important;
+  border-bottom: 3px double var(--ink) !important;
+  backdrop-filter: none !important;
+}
+html.classic .premium-page-actions__inner,
+html.classic .glass-card,
+html.classic .route-map__list button,
+html.classic .sacrament-card {
+  border: 1px solid var(--ink) !important;
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Still: no animation, transitions or hover lifts */
+html.classic *,
+html.classic *::before,
+html.classic *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+html.classic .sacrament-card:hover,
+html.classic .sacrament-card:focus-visible {
+  translate: none !important;
+  rotate: none !important;
+}
+html.classic .sacraments-page > *,
+html.classic #sacrament-cards .sacrament-card {
+  opacity: 1 !important;
+}
+
+/* The founding and cornerstone years under the hero lettering */
+.classic-years {
+  display: none;
+}
+html.classic .classic-years {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+  font-family: var(--font-caps);
+  font-size: clamp(16px, 2.2vw, 22px);
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Classic: the years go under the lettering; photo headers fully grey
+   (their scrims are tinted); no intro video, so no Skip/Replay */
+html.classic .premium-hero__center {
+  flex-direction: column;
+  align-items: center;
+}
+html.classic .premium-page-header,
+html.classic .photo-backdrop__layer,
+html.classic .mural-reveal__window,
+html.classic .stone-finale__stage,
+html.classic .inscription-flight,
+html.classic .premium-member-cta--photo {
+  filter: grayscale(1);
+}
+html.classic .hero-intro-control {
+  display: none;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getLiturgicalSeason, GOLD_SEASONS } from "../utils/liturgical";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * Thin liturgical-season indicator strip.
@@ -20,7 +21,7 @@ export default function LiturgicalBanner() {
   const prefersReducedMotion =
     typeof window !== "undefined" &&
     window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    reducedMotionQuery().matches;
   const duration = prefersReducedMotion ? 0 : 600;
 
   const prevGradientRef = useRef(gradient);

@@ -14,6 +14,7 @@ import StickyHero from "../components/StickyHero";
 import { PHOTOS, VIDEOS } from "../constants/photos";
 import useScrollVar from "../hooks/useScrollVar";
 import BrandFlight from "../components/BrandFlight";
+import { isClassic, setClassic } from "../classic";
 
 // The header lettering, cut from the 1960x420 "St·Dominic's" artwork: "St·Dom"
 // ends at x=1179 and "'s" starts at x=1716, so the middle "inic" is 537 wide
@@ -106,6 +107,10 @@ export default function Home() {
                 alt=""
               />
             </h1>
+            {/* Classic Mode only: the parish's two key years */}
+            <p className="classic-years" aria-hidden={!isClassic()}>
+              {t("classic.years")}
+            </p>
           </div>
 
           <div className="premium-hero__actions">
@@ -131,6 +136,14 @@ export default function Home() {
                 style={{ minWidth: 168, boxShadow: "inset 0 0 0 1px rgba(232, 213, 163, 0.55)" }}
               >
                 {t("home.hero.ctaBulletin")}
+              </Btn>
+              {/* Classic Mode: the 1923/1954 look, and back */}
+              <Btn
+                variant="light"
+                onClick={() => setClassic(!isClassic())}
+                style={{ minWidth: 168 }}
+              >
+                {isClassic() ? t("classic.toModern") : t("classic.toClassic")}
               </Btn>
             </div>
           </div>

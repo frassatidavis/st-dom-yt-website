@@ -3,6 +3,7 @@ import { T } from "../constants/theme";
 import ResponsivePicture from "./ResponsivePicture";
 import HeroIntroVideo from "./HeroIntroVideo";
 import useScrollVar from "../hooks/useScrollVar";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * StickyHero — Apple-style hero that stays pinned while content scrolls.
@@ -53,7 +54,7 @@ export default function StickyHero({
   useScrollVar(wrapperRef, { name: "--hero-exit", mode: "exit", enabled: popOnScroll });
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = reducedMotionQuery();
     setReducedMotion(mq.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener?.("change", handler);

@@ -4,6 +4,7 @@ import { ChevronDown, X } from "lucide-react";
 import ResponsivePicture from "./ResponsivePicture";
 import DominicanDivider from "./DominicanDivider";
 import { MURAL_MAP, MURAL_MAP_IDS, MURAL_MAP_SIZE } from "../data/muralSaintMap";
+import { reducedMotionQuery } from "../classic";
 
 // The header sticks just below the shrunken (scrolled) site header
 const STICKY_TOP = 64;
@@ -113,7 +114,7 @@ export default function MuralReveal({ title, src, alt, caption, position = "50% 
     const wrap = wrapRef.current;
     const stage = stageRef.current;
     if (!wrap || !stage) return undefined;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     const [fx, fy] = position.split(" ").map((v) => parseFloat(v) / 100);
     let geo = null;
     let frame = 0;

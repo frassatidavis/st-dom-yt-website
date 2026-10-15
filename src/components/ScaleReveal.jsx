@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useScrollProgress from "../hooks/useScrollProgress";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * ScaleReveal — image that scales up from small to full size on scroll.
@@ -21,7 +22,7 @@ export default function ScaleReveal({
 }) {
   const [reducedMotion, setReducedMotion] = useState(false);
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = reducedMotionQuery();
     setReducedMotion(mq.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener?.("change", handler);

@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (v) => v * v * (3 - 2 * v);
@@ -28,7 +29,7 @@ export default function NameLeap({ targetRef, src, behind, outline }) {
     const target = targetRef.current;
     if (!fly || !target) return undefined;
     const root = document.documentElement;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     target.style.visibility = "hidden";
     let frame = 0;
 

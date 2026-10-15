@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
+import { isClassic, setClassic } from "../classic";
 
 function FooterLink({ to, children, style }) {
   const navigate = useNavigate();
@@ -327,6 +328,18 @@ export default function Footer() {
         <div style={{ fontSize: 12, color: "rgba(255,255,255,0.55)", textAlign: "right" }}>
           © <span style={{ fontVariantNumeric: "oldstyle-nums" }}>{new Date().getFullYear()}</span>{" "}
           St. Dominic Catholic Church · Youngstown, OH · {t("footer.rights")}
+          <span style={{ margin: "0 6px" }}>·</span>
+          {/* Classic Mode switch, reachable from every page */}
+          <button
+            type="button"
+            onClick={() => setClassic(!isClassic())}
+            style={{
+              background: "none", border: 0, padding: 0, cursor: "pointer", font: "inherit",
+              color: "rgba(255,255,255,0.85)", textDecoration: "underline",
+            }}
+          >
+            {isClassic() ? t("classic.toModern") : t("classic.toClassic")}
+          </button>
           <span style={{ margin: "0 6px" }}>·</span>
           <FooterLink
             to="/writers-guide"

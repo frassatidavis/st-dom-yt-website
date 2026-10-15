@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * Write how far an element has travelled through the viewport to a CSS custom
@@ -26,7 +27,7 @@ export default function useScrollVar(ref, { name = "--scroll", mode = "through",
   useEffect(() => {
     const el = ref.current;
     if (!el || !enabled) return undefined;
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return undefined;
+    if (reducedMotionQuery().matches) return undefined;
 
     let frame = 0;
     let near = true;

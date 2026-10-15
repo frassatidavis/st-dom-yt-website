@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import ResponsivePicture from "./ResponsivePicture";
+import { isClassic, reducedMotionQuery } from "../classic";
+import PageHeader from "./PageHeader";
 
 // The photo layer sticks just below the shrunken (scrolled) site header
 const STICKY_TOP = 64;
@@ -38,7 +40,20 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *              text turns dark again.
  *   children — the content it becomes the background of (transparent sections)
  */
-export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", tone = "light", children }) {
+export default function PhotoBackdrop(props) {
+  // Classic Mode: a plain photo header, then the text on paper
+  if (isClassic()) {
+    return (
+      <>
+        <PageHeader title={props.title} heroSrc={props.src} position={props.position} tall />
+        {props.children}
+      </>
+    );
+  }
+  return <PhotoBackdropScroll {...props} />;
+}
+
+function PhotoBackdropScroll({ title, src, alt, subject = [0.5, 0.5], zoom = [1, 1.45], subjectAt = 0.55, position = "50% 50%", tone = "light", children }) {
   const [zoomFrom, zoomTo] = zoom;
   const [subjectX, subjectY] = subject;
   const wrapRef = useRef(null);
@@ -51,7 +66,7 @@ export default function PhotoBackdrop({ title, src, alt, subject = [0.5, 0.5], z
     const layer = layerRef.current;
     const band = bandRef.current;
     if (!wrap || !layer || !band) return undefined;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     let frame = 0;
 
     const update = () => {

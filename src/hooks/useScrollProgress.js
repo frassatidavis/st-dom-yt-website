@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * Track how far an element has scrolled through the viewport.
@@ -16,7 +17,7 @@ export default function useScrollProgress({ offset = 0.85 } = {}) {
 
   const handleScroll = useCallback(() => {
     // When reduced motion is preferred, jump to fully visible immediately
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (reducedMotionQuery().matches) {
       const el = ref.current;
       if (el) {
         const rect = el.getBoundingClientRect();

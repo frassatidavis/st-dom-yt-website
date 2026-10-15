@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * BrandFlight — as the page scrolls, carries a piece of hero lettering up
@@ -43,7 +44,7 @@ export default function BrandFlight({ sourceRef, lightSrc, lightOpacity = 1, dar
     const source = sourceRef.current;
     if (!fly || !source) return undefined;
     const root = document.documentElement;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     const smooth = (t) => t * t * (3 - 2 * t);
     const clamp01 = (t) => Math.min(1, Math.max(0, t));
     const between = (t, a, b) => clamp01((t - a) / (b - a));

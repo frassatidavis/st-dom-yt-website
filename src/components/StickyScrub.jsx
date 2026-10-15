@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { T } from "../constants/theme";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * StickyScrub — Apple-style sticky section that scrubs text panels past
@@ -26,7 +27,7 @@ export default function StickyScrub({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = reducedMotionQuery();
     setReducedMotion(mq.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener?.("change", handler);

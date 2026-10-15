@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * HeroIntroVideo — plays a short, silent intro over a hero's photo, then
@@ -35,7 +36,7 @@ let playedThisPageLoad = false;
 
 function shouldAutoplay() {
   if (playedThisPageLoad || typeof window === "undefined") return false;
-  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return false;
+  if (reducedMotionQuery().matches) return false;
   const connection = navigator.connection;
   if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || "")) return false;
   return true;
@@ -79,7 +80,7 @@ export default function HeroIntroVideo({ src, poster, skipLabel, replayLabel, tr
   // as soon as the video starts dissolving or is skipped
   useLayoutEffect(() => {
     const target = progressTarget?.current;
-    if (!target || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return undefined;
+    if (!target || reducedMotionQuery().matches) return undefined;
     const set = (p) => target.style.setProperty("--intro-progress", p.toFixed(4));
     // data-intro lets styles follow playback exactly and ease only the final step
     target.dataset.intro = phase === "playing" ? "playing" : "done";

@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import ResponsivePicture from "./ResponsivePicture";
+import { reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 
@@ -25,7 +26,7 @@ export default function FadeInPortrait({ src, bg, strength = 0.22, position = "5
   useLayoutEffect(() => {
     const wrap = wrapRef.current;
     if (!wrap) return undefined;
-    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const reduced = reducedMotionQuery().matches;
     let frame = 0;
     const update = () => {
       frame = 0;

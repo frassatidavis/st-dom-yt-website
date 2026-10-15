@@ -1289,5 +1289,10 @@
       "desc": "Our parish is cared for by Dominican friars of the Province of St. Joseph. To reach a priest, call or email the parish office.",
       "all": "Meet all our friars and staff"
     }
+  },
+  "classic": {
+    "toClassic": "Classic Mode",
+    "toModern": "Modern Mode",
+    "years": "Founded 1923 · Cornerstone 1954"
   }
 }

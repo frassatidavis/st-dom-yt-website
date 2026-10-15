@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * Kinetic typography component — reveals text word-by-word or line-by-line
@@ -25,7 +26,7 @@ export default function TextReveal({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = reducedMotionQuery();
     setReducedMotion(mq.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener?.("change", handler);
@@ -126,7 +127,7 @@ export function AnimatedDivider({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mq = reducedMotionQuery();
     setReducedMotion(mq.matches);
     const handler = (e) => setReducedMotion(e.matches);
     mq.addEventListener?.("change", handler);

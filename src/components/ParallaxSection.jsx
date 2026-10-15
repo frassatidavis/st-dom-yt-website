@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { reducedMotionQuery } from "../classic";
 
 /**
  * ParallaxSection — a full-width image band with parallax depth effect.
@@ -27,7 +28,7 @@ export default function ParallaxSection({
 
   const handleScroll = useCallback(() => {
     // Respect prefers-reduced-motion
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (reducedMotionQuery().matches) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
