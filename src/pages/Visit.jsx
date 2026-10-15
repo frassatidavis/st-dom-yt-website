@@ -36,22 +36,6 @@ export default function Visit() {
         heroSrc={PHOTOS.marianShrine}
       />
 
-      {/* ════ Sunday at St. Dominic ════ */}
-      <Section>
-        <SectionTitle>{t("visit.steps.title")}</SectionTitle>
-        <p
-          className="u-lede"
-          style={{
-            fontSize: "clamp(16px, 2vw, 19px)",
-            color: T.warmGray,
-            lineHeight: 1.7,
-            margin: 0,
-          }}
-        >
-          {t("visit.steps.intro")}
-        </p>
-      </Section>
-
       {/* ════ What to Know — editorial list, hairline rules ════ */}
       {/* St. Dominic slides in from the left, behind the questions, as it scrolls up */}
       <FadeInPortrait src={PHOTOS.stDominicStrip} bg={T.cream} strength={0.35} position="50% 15%" side="left">
