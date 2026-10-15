@@ -190,19 +190,19 @@ export const CLASSIC_PHOTOS = {
   [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
   [PHOTOS.aboutHero]: `${A}youngstown-interior-1936-opt.webp`, // PSJ-H02A-000-001: St. Dominic, Youngstown, the church interior, 1936
   [PHOTOS.archRoseExt]: `${A}youngstown-church-drawing-opt.webp`, // PSJ-H02A-000-002: the architect's drawing of St. Dominic, Youngstown
-  [PHOTOS.dominicanCharism]: `${A}mass-high-altar-opt.webp`, // PSJ-H09A-000-003: Mass at the high altar, St. Vincent Ferrer, New York
-  [PHOTOS.archSideAisle]: `${A}side-aisle-arches-opt.webp`, // PSJ-H14A-000-001: side aisle arches, Sacred Heart, Jersey City
-  [PHOTOS.stockEucharist]: `${A}servers-at-the-altar-opt.webp`, // PSJ-H09A-000-045: servers with candles before the altar, St. Vincent Ferrer
-  [PHOTOS.marianShrine]: `${A}lady-altar-opt.webp`, // PSJ-H03A-000-012: Our Lady's altar, St. Mary, New Haven
+  [PHOTOS.dominicanCharism]: `${A}home-full-church-mass-opt.webp`, // the parish at Mass: a full church down the nave to the mural (photo from the parish)
+  [PHOTOS.archSideAisle]: `${A}home-nave-and-mural-opt.webp`, // St. Dominic's nave and mural (photo from the parish)
+  [PHOTOS.stockEucharist]: `${A}home-altar-boys-under-the-mural-opt.webp`, // St. Dominic's altar boys kneeling before the sanctuary mural (photo from the parish)
+  [PHOTOS.marianShrine]: `${A}home-may-crowning-opt.webp`, // the May crowning of Our Lady at St. Dominic's (photo from the parish)
   [PHOTOS.stDominicStrip]: `${A}lady-niche-statue-opt.webp`, // PSJ-H09A-000-034: statue of Our Lady in a stone niche, St. Vincent Ferrer
-  [PHOTOS.altarServers]: `${A}friars-procession-opt.webp`, // PSJ-H16-000-004.8: outdoor procession, St. Monica, Raleigh
+  [PHOTOS.altarServers]: `${A}home-ladies-on-the-steps-opt.webp`, // parishioners coming down St. Dominic's front steps after Mass (photo from the parish)
   [PHOTOS.pageHeader]: `${A}friars-greeting-opt.webp`, // PSJ-H03A-000-010: friars greeting one another, St. Mary, New Haven
-  [PHOTOS.firstCommunionRail]: `${A}communion-rail-opt.webp`, // PSJ-H11A-000-013: children in white at the altar rail, St. Rose, Kentucky
+  [PHOTOS.firstCommunionRail]: `${A}home-boys-first-communion-procession-opt.webp`, // St. Dominic's First Communion boys processing up the aisle (photo from the parish)
   [PHOTOS.confirmationFire]: `${A}bishop-and-friars-opt.webp`, // PSJ-H03A-000-011: the bishop with the friars, St. Mary, New Haven
-  [PHOTOS.stockAnointing]: `${A}boys-with-candles-opt.webp`, // PSJ-H09A-000-001: choir boys holding lit candles, St. Vincent Ferrer
+  [PHOTOS.stockAnointing]: `${A}home-lady-at-the-shrine-opt.webp`, // a parishioner praying at the shrine candles, St. Dominic's (photo from the parish)
   [PHOTOS.funeralCommittal]: `${A}dominican-cemetery-opt.webp`, // PSJ-H17-000-048: the Dominican cemetery, St. Rose, Kentucky
   [PHOTOS.dominicanBurial]: `${A}cemetery-statue-opt.webp`, // PSJ-H17-000-050: statue among the crosses, Dominican cemetery, St. Rose
-  [PHOTOS.sanctuaryAltar]: `${A}high-altar-somerset-opt.webp`, // PSJ-H10A-000-017: the high altar, Holy Trinity, Somerset, Ohio
+  [PHOTOS.sanctuaryAltar]: `${A}home-sanctuary-postcard-opt.webp`, // postcard: St. Dominic's sanctuary with the servers and choir (photo from the parish)
   [PHOTOS.dominicanMural]: `${A}parish-classroom-1939-opt.webp`, // PSJ-H16-000-005.5: a parish school classroom, St. Monica, Raleigh, 1939
 };
 export const classicPhoto = (src) => (isClassic() && CLASSIC_PHOTOS[src]) || src;
