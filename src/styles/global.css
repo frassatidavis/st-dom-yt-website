@@ -1522,15 +1522,39 @@ body.nav-open .name-leap {
   font-size: 12px;
   fill: var(--color-burgundy);
 }
-.route-map__church circle {
-  fill: var(--color-burgundy);
-  stroke: #fff;
-  stroke-width: 3;
+.route-map__church {
+  cursor: pointer;
 }
-.route-map__church path {
-  stroke: #fff;
-  stroke-width: 2;
-  stroke-linecap: round;
+.route-map__church .route-map__badge {
+  fill: #fff;
+  stroke: var(--color-burgundy);
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 4px rgba(26, 23, 20, 0.3));
+}
+/* The address card under the dog, shown when pointed at */
+.route-map__address {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.route-map__church.is-open .route-map__address {
+  opacity: 1;
+}
+.route-map__address rect {
+  fill: var(--color-burgundy);
+  stroke: none;
+}
+.route-map__church .route-map__address text {
+  fill: #fff;
+  stroke: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+}
+.route-map__church .route-map__address text.route-map__address-city {
+  fill: var(--color-gold-light);
+  font-size: 12px;
+  font-weight: 600;
 }
 .route-map__church text {
   font-family: var(--font-display);

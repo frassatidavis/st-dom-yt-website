@@ -22,18 +22,20 @@ const project = ([lat, lon], z) => {
  * OpenStreetMap tiles laid out by hand with the routes as an SVG over them.
  *
  * Props:
- *   church — { name, address, at: [lat, lon] }
+ *   church — { name, address, city, at: [lat, lon] }
+ *   dog    — picture marking the church (the Dominican dog)
  *   routes — [{ id, name, at, minutes, miles, path: [[lat, lon], …] }]
  *   photos — optional { [id]: photo }: a picture of the place behind its card
  *   town   — (id) => the town's name, for the labels
  *   mapsHref — directions link for the church
  */
-export default function RouteMap({ church, routes, town, mapsHref, photos = {} }) {
+export default function RouteMap({ church, routes, town, mapsHref, photos = {}, dog }) {
   const { t } = useTranslation();
   const boxRef = useRef(null);
   const [size, setSize] = useState(null);
   const [active, setActive] = useState(null);
   const [drawn, setDrawn] = useState(false);
+  const [showAddress, setShowAddress] = useState(false);
 
   useLayoutEffect(() => {
     const box = boxRef.current;
@@ -145,11 +147,22 @@ export default function RouteMap({ church, routes, town, mapsHref, photos = {} }
               {(() => {
                 const [x, y] = view.at(church.at);
                 return (
-                  <g className="route-map__church">
-                    <circle cx={x} cy={y} r="20" className="route-map__pulse" />
-                    <circle cx={x} cy={y} r="11" />
-                    <path d={`M${x} ${y - 6}v12M${x - 4} ${y - 2}h8`} />
-                    <text x={x} y={y - 22} textAnchor="middle">St. Dominic</text>
+                  // The Dominican dog marks the church; pointing at it shows the address
+                  <g
+                    className={`route-map__church${showAddress ? " is-open" : ""}`}
+                    onMouseEnter={() => setShowAddress(true)}
+                    onMouseLeave={() => setShowAddress(false)}
+                    onClick={() => setShowAddress((v) => !v)}
+                  >
+                    <circle cx={x} cy={y} r="22" className="route-map__pulse" />
+                    <circle cx={x} cy={y} r="19" className="route-map__badge" />
+                    <image href={dog} x={x - 15} y={y - 9} width="30" height="18" />
+                    <text x={x} y={y - 26} textAnchor="middle">St. Dominic</text>
+                    <g className="route-map__address" transform={`translate(${x}, ${y + 28})`}>
+                      <rect x="-92" y="0" width="184" height="42" rx="4" />
+                      <text y="17" textAnchor="middle">{church.address}</text>
+                      <text y="33" textAnchor="middle" className="route-map__address-city">{church.city}</text>
+                    </g>
                   </g>
                 );
               })()}

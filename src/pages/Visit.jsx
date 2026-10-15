@@ -245,6 +245,7 @@ export default function Visit() {
           routes={ROUTES}
           town={(id) => t(`visit.map.towns.${id}`)}
           photos={PHOTOS.mapPlaces}
+          dog={PHOTOS.dominicanDog}
           mapsHref={`https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`}
         />
         {/* Parking and access, after the map */}
