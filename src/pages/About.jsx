@@ -13,7 +13,7 @@ import PhotoGallery from "../components/PhotoGallery";
 import ResponsivePicture from "../components/ResponsivePicture";
 import TextReveal from "../components/TextReveal";
 import { isClassic } from "../classic";
-import { CLASSIC_GALLERY, PHOTOS } from "../constants/photos";
+import { CLASSIC_GALLERY, CLASSIC_PSJ_GALLERY, PHOTOS } from "../constants/photos";
 
 export default function About() {
   const { t } = useTranslation();
@@ -236,7 +236,7 @@ export default function About() {
                 fontWeight: 600,
               }}
             >
-              Veritas · Truth
+              {isClassic() ? "A charism that will always be relevant" : "Veritas · Truth"}
             </div>
           </div>
           <div>
@@ -266,6 +266,14 @@ export default function About() {
           <SectionTitle>{t("gallery.title")}</SectionTitle>
           {/* Classic Mode: only the parish's old photographs */}
           <PhotoGallery photos={isClassic() ? CLASSIC_GALLERY : PHOTOS.gallery} />
+        </Section>
+      )}
+
+      {/* Classic Mode: the Province's own photographs, from its archives */}
+      {isClassic() && (
+        <Section>
+          <SectionTitle>{t("gallery.psjTitle")}</SectionTitle>
+          <PhotoGallery photos={CLASSIC_PSJ_GALLERY} />
         </Section>
       )}
 

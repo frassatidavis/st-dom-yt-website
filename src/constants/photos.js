@@ -247,3 +247,24 @@ export const CLASSIC_GALLERY = [
   { src: PHOTOS.sacramentsHero },
   { src: PHOTOS.historyCommunity },
 ].map((p, i) => ({ ...p, alt: p.alt || `gallery.classic${i}` }));
+
+// Classic Mode's "The Province of St. Joseph in Photos": the photographs
+// from the Dominican Province of St. Joseph Archives (psjarchives.org)
+export const CLASSIC_PSJ_GALLERY = [
+  "youngstown-interior-1936", // PSJ-H02A-000-001
+  "youngstown-church-drawing", // PSJ-H02A-000-002
+  "mass-high-altar", // PSJ-H09A-000-003
+  "side-aisle-arches", // PSJ-H14A-000-001
+  "servers-at-the-altar", // PSJ-H09A-000-045
+  "lady-altar", // PSJ-H03A-000-012
+  "lady-niche-statue", // PSJ-H09A-000-034
+  "friars-procession", // PSJ-H16-000-004.8
+  "friars-greeting", // PSJ-H03A-000-010
+  "communion-rail", // PSJ-H11A-000-013
+  "bishop-and-friars", // PSJ-H03A-000-011
+  "boys-with-candles", // PSJ-H09A-000-001
+  "dominican-cemetery", // PSJ-H17-000-048
+  "cemetery-statue", // PSJ-H17-000-050
+  "high-altar-somerset", // PSJ-H10A-000-017
+  "parish-classroom-1939", // PSJ-H16-000-005.5
+].map((name, i) => ({ src: `${A}${name}-opt.webp`, alt: `gallery.psj${i}` }));
