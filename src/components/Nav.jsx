@@ -8,6 +8,7 @@ import SiteSearch from "./SiteSearch";
 import NavToday from "./NavToday";
 import { PHOTOS } from "../constants/photos";
 import { CONFIG } from "../constants/config";
+import { isClassic } from "../classic";
 
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
@@ -92,7 +93,9 @@ export default function Nav() {
   const menuRef = useRef(null);
   const brandRef = useRef(null);
   const hoverTimeout = useRef(null);
-  const isHome = location.pathname === "/";
+  // Home holds the short St·Dom's for its scroll reveal; Classic Mode has no
+  // reveal, so the full name and crest show there too
+  const isHome = location.pathname === "/" && !isClassic();
 
   useEffect(() => {
     let ticking = false;

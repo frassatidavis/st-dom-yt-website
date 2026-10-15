@@ -152,13 +152,15 @@ export default function Home() {
       </StickyHero>
 
       {/* St·Dom's rises into the header; as the dog passes it opens into St·Dominic's */}
-      <BrandFlight
-        sourceRef={stDomsRef}
-        lightSrc={PHOTOS.heroStDoms}
-        lightOpacity={0.85}
-        dark={HEADER_NAME}
-        expandRef={dogRef}
-      />
+      {!isClassic() && (
+        <BrandFlight
+          sourceRef={stDomsRef}
+          lightSrc={PHOTOS.heroStDoms}
+          lightOpacity={0.85}
+          dark={HEADER_NAME}
+          expandRef={dogRef}
+        />
+      )}
 
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
       <div className="home-dog-divider">
