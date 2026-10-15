@@ -67,7 +67,7 @@ const FOOTER_GROUPS = [
     titleKey: "about",
     links: [
       { to: "/about", key: "about" },
-      { to: "/history", key: "history" },
+      { to: "/history", key: "history", notClassic: true },
       { to: "/architecture", key: "architecture" },
       { to: "/staff", key: "staff" },
     ],
@@ -221,7 +221,7 @@ export default function Footer() {
               {ruleBefore}
               {t(`footer.groups.${group.titleKey}`)}
             </h2>
-            {group.links.map((l) => (
+            {group.links.filter((l) => !(isClassic() && l.notClassic)).map((l) => (
               <div key={l.to}>
                 <FooterLink
                   to={l.to}

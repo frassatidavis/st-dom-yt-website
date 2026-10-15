@@ -75,13 +75,18 @@ const NAV_ITEMS = [
       { key: "about", to: "/about" },
       { key: "bulletin", to: "/bulletin" },
       { key: "contact", to: "/contact" },
-      { key: "history", to: "/history" },
+      { key: "history", to: "/history", notClassic: true },
       { key: "architecture", to: "/architecture" },
       { key: "gallery", to: "/gallery" },
       { key: "staff", to: "/staff" },
     ],
   },
 ];
+
+// Classic Mode leaves out the links marked notClassic (History)
+const MENU = NAV_ITEMS.map((item) =>
+  item.children ? { ...item, children: item.children.filter((c) => !(isClassic() && c.notClassic)) } : item
+);
 
 export default function Nav() {
   const { t } = useTranslation();
@@ -313,7 +318,7 @@ export default function Nav() {
 
         {/* Desktop links */}
         <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">
-          {NAV_ITEMS.map((item) =>
+          {MENU.map((item) =>
             item.children ? (
               <div
                 key={item.key}
@@ -484,7 +489,7 @@ export default function Nav() {
             overflowY: "auto",
           }}
         >
-          {NAV_ITEMS.map((item) =>
+          {MENU.map((item) =>
             item.children ? (
               <div key={item.key}>
                 {/* Accordion header */}

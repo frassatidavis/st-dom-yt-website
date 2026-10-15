@@ -12,6 +12,7 @@ import PremiumPageActions from "../components/PremiumPageActions";
 import PhotoGallery from "../components/PhotoGallery";
 import ResponsivePicture from "../components/ResponsivePicture";
 import TextReveal from "../components/TextReveal";
+import { isClassic } from "../classic";
 import { PHOTOS } from "../constants/photos";
 
 export default function About() {
@@ -34,7 +35,8 @@ export default function About() {
       <PremiumPageActions
         overlap
         items={[
-          {
+          // Classic Mode: no History page
+          !isClassic() && {
             title: t("about.actions.history.title"),
             to: "/history",
             icon: "BookOpenText",
@@ -147,9 +149,11 @@ export default function About() {
             >
               {t("about.history.p2")}
             </p>
-            <Btn variant="outline" onClick={() => navigate("/history")}>
-              {t("about.historyLink")}
-            </Btn>
+            {!isClassic() && (
+              <Btn variant="outline" onClick={() => navigate("/history")}>
+                {t("about.historyLink")}
+              </Btn>
+            )}
           </div>
         </div>
 
