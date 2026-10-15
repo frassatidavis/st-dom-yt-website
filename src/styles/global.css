@@ -2823,3 +2823,22 @@ html.classic .classic-word-button {
 html.classic main :is(span, div):has(> svg.lucide:only-child) {
   display: none !important;
 }
+/* Classic: the ministries as a plain ruled list, one under another (each
+   still opens its details) */
+html.classic .ministry-grid {
+  display: block;
+  border-top: 1px solid var(--ink);
+}
+html.classic .ministry-card {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--ink) !important;
+  padding: 18px 0 !important;
+  outline: 0;
+}
+html.classic .ministry-card h3 {
+  margin-bottom: 4px !important;
+}
+html.classic .ministry-hint {
+  display: none;
+}

@@ -9,13 +9,13 @@ export const CLASSIC_TEXT = {
     home: {
       involved: {
         desc: "Call at the rectory to register and receive your offertory envelopes. A parish registry is kept so that the pastor and his associates can know his flock. Don't stay an anonymous parishioner!",
-        ctaRegister: "Register at the Rectory",
+        ctaRegister: "Register",
       },
       formation: { title: "Sunday is Just the Start" },
     },
     getInvolved: {
       clickHint: "Select to learn more",
-      register: { cta: "Register at the Rectory" },
+      register: { cta: "Register" },
     },
     bulletin: {
       reviewed: "Printed each week and handed out at the church doors after every Mass.",
@@ -135,13 +135,13 @@ export const CLASSIC_TEXT = {
     home: {
       involved: {
         desc: "Pase por la rectoría para registrarse y recibir sus sobres para la ofrenda. El registro parroquial permite que el párroco y sus colaboradores conozcan a su rebaño. ¡No sea un feligrés anónimo!",
-        ctaRegister: "Regístrese en la Rectoría",
+        ctaRegister: "Regístrese",
       },
       formation: { title: "El Domingo es Solo el Comienzo" },
     },
     getInvolved: {
       clickHint: "Seleccione para conocer más",
-      register: { cta: "Regístrese en la Rectoría" },
+      register: { cta: "Regístrese" },
     },
     bulletin: {
       reviewed: "Impreso cada semana y repartido en las puertas de la iglesia después de cada Misa.",
