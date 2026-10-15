@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import Icon from "./Icon";
+import { isClassic, setClassic } from "../classic";
 
 export default function ParishActionBar() {
   const { t } = useTranslation();
@@ -32,12 +33,30 @@ export default function ParishActionBar() {
         </div>
       </div>
 
-      <button type="button" onClick={toTimes} className="parish-action-bar__item">
-        <Icon name="CalendarDays" size={18} color={T.goldLight} />
-        <span className="parish-action-bar__text">
-          <span className="parish-action-bar__full">{t("actionBar.fullTimes")}</span>
-        </span>
-      </button>
+      {isClassic() ? (
+        // Classic Mode: a switch back to the modern site
+        <button
+          type="button"
+          role="switch"
+          aria-checked="true"
+          onClick={() => setClassic(false)}
+          className="parish-action-bar__item parish-action-bar__mode"
+        >
+          <span className="mode-switch" aria-hidden="true">
+            <span className="mode-switch__knob" />
+          </span>
+          <span className="parish-action-bar__text">
+            <span className="parish-action-bar__full">{t("classic.backToToday")}</span>
+          </span>
+        </button>
+      ) : (
+        <button type="button" onClick={toTimes} className="parish-action-bar__item">
+          <Icon name="CalendarDays" size={18} color={T.goldLight} />
+          <span className="parish-action-bar__text">
+            <span className="parish-action-bar__full">{t("actionBar.fullTimes")}</span>
+          </span>
+        </button>
+      )}
     </aside>
   );
 }

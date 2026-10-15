@@ -1293,6 +1293,7 @@
   "classic": {
     "toClassic": "Modo Clásico",
     "toModern": "Modo Moderno",
-    "years": "Fundada en 1923 · Piedra angular de 1954"
+    "years": "Fundada en 1923 · Piedra angular de 1954",
+    "backToToday": "Volver a 2026"
   }
 }

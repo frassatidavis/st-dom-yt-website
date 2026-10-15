@@ -2765,3 +2765,34 @@ html.classic .premium-charism {
 html.classic .premium-charism__inner {
   width: 100%;
 }
+/* Classic: the bottom bar's switch back to the modern site — a small
+   toggle (on = Classic), then "Go Back to 2026" */
+.mode-switch {
+  position: relative;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 18px;
+  border: 1.5px solid #fff;
+  background: #fff;
+}
+.mode-switch__knob {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 11px;
+  height: 11px;
+  background: #000;
+}
+.parish-action-bar__mode:hover .mode-switch,
+.parish-action-bar__mode:focus-visible .mode-switch {
+  background: #000;
+}
+.parish-action-bar__mode:hover .mode-switch__knob,
+.parish-action-bar__mode:focus-visible .mode-switch__knob {
+  right: auto;
+  left: 2px;
+  background: #fff;
+}
+html.classic .parish-action-bar__mode .parish-action-bar__full {
+  color: #fff;
+}

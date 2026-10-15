@@ -1293,6 +1293,7 @@
   "classic": {
     "toClassic": "Classic Mode",
     "toModern": "Modern Mode",
-    "years": "Founded 1923 · Cornerstone 1954"
+    "years": "Founded 1923 · Cornerstone 1954",
+    "backToToday": "Go Back to 2026"
   }
 }
