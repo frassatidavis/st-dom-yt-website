@@ -13,6 +13,8 @@ import FadeInPortrait from "../components/FadeInPortrait";
 import NameLeap from "../components/NameLeap";
 import RouteMap from "../components/RouteMap";
 import { CHURCH, ROUTES } from "../data/mapRoutes";
+// Classic Mode: from landmarks of the 1930s–50s, and a horse and buggy
+import { CLASSIC_ROUTES } from "../data/mapRoutesClassic";
 import { isClassic } from "../classic";
 import { PHOTOS } from "../constants/photos";
 
@@ -227,10 +229,11 @@ export default function Visit() {
         <SectionTitle>{t("visit.map.title")}</SectionTitle>
         <RouteMap
           church={CHURCH}
-          routes={ROUTES}
+          routes={isClassic() ? CLASSIC_ROUTES : ROUTES}
           town={(id) => t(`visit.map.towns.${id}`)}
-          photos={PHOTOS.mapPlaces}
+          photos={isClassic() ? undefined : PHOTOS.mapPlaces}
           marker={PHOTOS.churchFacadeMarker}
+          icon={isClassic() ? PHOTOS.horseBuggy : undefined}
           mapsHref={`https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`}
         />
         {/* Parking and access, after the map */}

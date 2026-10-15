@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { classicPhoto } from "../constants/photos";
 import { reducedMotionQuery } from "../classic";
 
 /**
@@ -15,13 +16,15 @@ import { reducedMotionQuery } from "../classic";
  *   children  — optional content rendered on top
  */
 export default function ParallaxSection({
-  image,
+  image: everydayImage,
   height = "50vh",
   speed = 0.35,
   overlay = 0.4,
   position = "center",
   children,
 }) {
+  // Classic Mode may have its own photo for this band
+  const image = classicPhoto(everydayImage);
   const ref = useRef(null);
   const [offset, setOffset] = useState(0);
   const [loaded, setLoaded] = useState(false);

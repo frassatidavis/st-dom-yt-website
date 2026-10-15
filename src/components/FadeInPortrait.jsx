@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import ResponsivePicture from "./ResponsivePicture";
+import { classicPhoto } from "../constants/photos";
 import { reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
@@ -56,7 +57,7 @@ export default function FadeInPortrait({ src, bg, strength = 0.22, position = "5
     >
       <div className="fade-portrait__picture" aria-hidden="true">
         {side ? (
-          <img src={src} alt="" loading="lazy" style={{ objectPosition: position }} />
+          <img src={classicPhoto(src)} alt="" loading="lazy" style={{ objectPosition: position }} />
         ) : (
           <ResponsivePicture src={src} widths={[480, 1024, 1920]} sizes="100vw" alt="" style={{ objectPosition: position }} />
         )}

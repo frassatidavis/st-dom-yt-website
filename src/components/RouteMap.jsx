@@ -24,12 +24,14 @@ const project = ([lat, lon], z) => {
  * Props:
  *   church — { name, address, city, at: [lat, lon] }
  *   marker — small square picture marking the church (its front)
+ *   icon   — instead of `marker`: a wide black-on-clear picture (Classic
+ *            Mode's horse and buggy), shown on a small white plate
  *   routes — [{ id, name, at, minutes, miles, path: [[lat, lon], …] }]
  *   photos — optional { [id]: photo }: a picture of the place behind its card
  *   town   — (id) => the town's name, for the labels
  *   mapsHref — directions link for the church
  */
-export default function RouteMap({ church, routes, town, mapsHref, photos = {}, marker }) {
+export default function RouteMap({ church, routes, town, mapsHref, photos = {}, marker, icon }) {
   const { t } = useTranslation();
   const boxRef = useRef(null);
   const [size, setSize] = useState(null);
@@ -154,14 +156,23 @@ export default function RouteMap({ church, routes, town, mapsHref, photos = {}, 
                     onMouseLeave={() => setShowAddress(false)}
                     onClick={() => setShowAddress((v) => !v)}
                   >
-                    <defs>
-                      <clipPath id="route-map-church-clip">
-                        <circle cx={x} cy={y} r="20" />
-                      </clipPath>
-                    </defs>
-                    <circle cx={x} cy={y} r="26" className="route-map__pulse" />
-                    <circle cx={x} cy={y} r="22" className="route-map__badge" />
-                    <image href={marker} x={x - 20} y={y - 20} width="40" height="40" clipPath="url(#route-map-church-clip)" preserveAspectRatio="xMidYMid slice" />
+                    {icon ? (
+                      <>
+                        <rect x={x - 34} y={y - 17} width="68" height="34" className="route-map__badge" />
+                        <image href={icon} x={x - 29} y={y - 12} width="58" height="24" preserveAspectRatio="xMidYMid meet" />
+                      </>
+                    ) : (
+                      <>
+                        <defs>
+                          <clipPath id="route-map-church-clip">
+                            <circle cx={x} cy={y} r="20" />
+                          </clipPath>
+                        </defs>
+                        <circle cx={x} cy={y} r="26" className="route-map__pulse" />
+                        <circle cx={x} cy={y} r="22" className="route-map__badge" />
+                        <image href={marker} x={x - 20} y={y - 20} width="40" height="40" clipPath="url(#route-map-church-clip)" preserveAspectRatio="xMidYMid slice" />
+                      </>
+                    )}
                     <text x={x} y={y - 30} textAnchor="middle">St. Dom&apos;s</text>
                     <g className="route-map__address" transform={`translate(${x}, ${y + 30})`}>
                       <rect x="-92" y="0" width="184" height="42" rx="4" />

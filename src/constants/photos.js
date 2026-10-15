@@ -138,6 +138,7 @@ export const PHOTOS = {
   stDomCrestLight: `${B}photos/branding/st-dom-crest-light.webp`, // Same crest as light-gold ink on transparent, for dark grounds (footer)
   psjShield: `${B}photos/branding/psj-shield.png`,             // Official PSJ shield with VERITAS
   psjShieldBw: `${B}photos/branding/psj-shield-bw.png`,        // B&W shield (watermark use)
+  horseBuggy: `${B}photos/branding/horse-buggy.svg`, // Horse and buggy silhouette from US road sign W11-14 (public domain): the church's marker on the Classic Mode map
   opCrestVeritas: `${B}photos/branding/op-crest-veritas-white.png`, // The Order's old engraved crest (VERITAS scroll, crown, rosary), white on clear (Classic Mode footer)
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
   psjWordmarkWhite: `${B}photos/branding/psj-wordmark-white.png`, // White wordmark for dark backgrounds
@@ -182,7 +183,26 @@ export const VIDEOS = {
 
 // Classic Mode's own photos, in place of everyday ones: { everyday: classic }
 // (each needs the same -480/-1024/-1920 files; ResponsivePicture swaps them)
+// Archive photos: Dominican Province of St. Joseph Archives (psjarchives.org),
+// web copies of the item named in each comment
+const A = `${B}photos/classic/`;
 export const CLASSIC_PHOTOS = {
   [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
+  [PHOTOS.aboutHero]: `${A}youngstown-interior-1936-opt.webp`, // PSJ-H02A-000-001: St. Dominic, Youngstown, the church interior, 1936
+  [PHOTOS.archRoseExt]: `${A}youngstown-church-drawing-opt.webp`, // PSJ-H02A-000-002: the architect's drawing of St. Dominic, Youngstown
+  [PHOTOS.dominicanCharism]: `${A}mass-high-altar-opt.webp`, // PSJ-H09A-000-003: Mass at the high altar, St. Vincent Ferrer, New York
+  [PHOTOS.archSideAisle]: `${A}side-aisle-arches-opt.webp`, // PSJ-H14A-000-001: side aisle arches, Sacred Heart, Jersey City
+  [PHOTOS.stockEucharist]: `${A}servers-at-the-altar-opt.webp`, // PSJ-H09A-000-045: servers with candles before the altar, St. Vincent Ferrer
+  [PHOTOS.marianShrine]: `${A}lady-altar-opt.webp`, // PSJ-H03A-000-012: Our Lady's altar, St. Mary, New Haven
+  [PHOTOS.stDominicStrip]: `${A}lady-niche-statue-opt.webp`, // PSJ-H09A-000-034: statue of Our Lady in a stone niche, St. Vincent Ferrer
+  [PHOTOS.altarServers]: `${A}friars-procession-opt.webp`, // PSJ-H16-000-004.8: outdoor procession, St. Monica, Raleigh
+  [PHOTOS.pageHeader]: `${A}friars-greeting-opt.webp`, // PSJ-H03A-000-010: friars greeting one another, St. Mary, New Haven
+  [PHOTOS.firstCommunionRail]: `${A}communion-rail-opt.webp`, // PSJ-H11A-000-013: children in white at the altar rail, St. Rose, Kentucky
+  [PHOTOS.confirmationFire]: `${A}bishop-and-friars-opt.webp`, // PSJ-H03A-000-011: the bishop with the friars, St. Mary, New Haven
+  [PHOTOS.stockAnointing]: `${A}boys-with-candles-opt.webp`, // PSJ-H09A-000-001: choir boys holding lit candles, St. Vincent Ferrer
+  [PHOTOS.funeralCommittal]: `${A}dominican-cemetery-opt.webp`, // PSJ-H17-000-048: the Dominican cemetery, St. Rose, Kentucky
+  [PHOTOS.dominicanBurial]: `${A}cemetery-statue-opt.webp`, // PSJ-H17-000-050: statue among the crosses, Dominican cemetery, St. Rose
+  [PHOTOS.sanctuaryAltar]: `${A}high-altar-somerset-opt.webp`, // PSJ-H10A-000-017: the high altar, Holy Trinity, Somerset, Ohio
+  [PHOTOS.dominicanMural]: `${A}parish-classroom-1939-opt.webp`, // PSJ-H16-000-005.5: a parish school classroom, St. Monica, Raleigh, 1939
 };
 export const classicPhoto = (src) => (isClassic() && CLASSIC_PHOTOS[src]) || src;

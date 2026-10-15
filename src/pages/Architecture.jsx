@@ -10,7 +10,7 @@ import TextReveal from "../components/TextReveal";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import PremiumPageActions from "../components/PremiumPageActions";
-import { PHOTOS } from "../constants/photos";
+import { PHOTOS, classicPhoto } from "../constants/photos";
 
 /* ── Reusable helpers (same patterns as History) ── */
 
@@ -18,7 +18,7 @@ function ArchPhoto({ src, alt, caption, maxWidth = 760 }) {
   return (
     <figure style={{ margin: "36px 0", textAlign: "center" }}>
       <img
-        src={src}
+        src={classicPhoto(src)}
         alt={alt}
         loading="lazy"
         style={{

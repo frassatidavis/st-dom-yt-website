@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useScrollProgress from "../hooks/useScrollProgress";
 import { reducedMotionQuery } from "../classic";
+import { classicPhoto } from "../constants/photos";
 
 /**
  * ScaleReveal — image that scales up from small to full size on scroll.
@@ -64,7 +65,7 @@ export default function ScaleReveal({
         }}
       >
         <img
-          src={src}
+          src={classicPhoto(src)}
           alt={alt}
           loading="lazy"
           style={{

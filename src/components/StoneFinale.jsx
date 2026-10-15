@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import ResponsivePicture from "./ResponsivePicture";
+import { classicPhoto } from "../constants/photos";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (v) => v * v * (3 - 2 * v);
@@ -71,9 +72,14 @@ export default function StoneFinale({ src, keep, outline, alt, position = "50% 5
           className="stone-finale__img"
           style={layer}
         />
-        <div className="stone-finale__black" aria-hidden="true" />
-        <img src={keep} alt="" aria-hidden="true" loading="lazy" className="stone-finale__img" style={layer} />
-        <img src={outline} alt="" aria-hidden="true" loading="lazy" className="stone-finale__img stone-finale__outline" style={layer} />
+        {/* A Classic Mode stand-in photo has no cut-out stone to keep */}
+        {classicPhoto(src) === src && (
+          <>
+            <div className="stone-finale__black" aria-hidden="true" />
+            <img src={keep} alt="" aria-hidden="true" loading="lazy" className="stone-finale__img" style={layer} />
+            <img src={outline} alt="" aria-hidden="true" loading="lazy" className="stone-finale__img stone-finale__outline" style={layer} />
+          </>
+        )}
       </div>
     </div>
   );
