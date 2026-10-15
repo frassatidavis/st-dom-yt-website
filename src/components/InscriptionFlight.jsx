@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import ResponsivePicture from "./ResponsivePicture";
-import { reducedMotionQuery } from "../classic";
+import { isClassic, reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const between = (v, a, b) => clamp01((v - a) / (b - a));
@@ -28,7 +28,29 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *   href     — optional: the photo links here (opens in a new tab)
  *   linkLabel — what that link is, for screen readers
  */
-export default function InscriptionFlight({ src, alt, box, position = "50% 50%", outline, fill, aspect, href, linkLabel }) {
+export default function InscriptionFlight(props) {
+  // Classic Mode: just the photo (and its link), nothing flies
+  if (isClassic()) {
+    const { src, alt, position = "50% 50%", href, linkLabel } = props;
+    const picture = (
+      <ResponsivePicture src={src} widths={[480, 1024, 1920]} sizes="100vw" alt={alt} style={{ objectPosition: position }} />
+    );
+    return (
+      <div className="inscription-flight">
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={linkLabel} className="inscription-flight__link">
+            {picture}
+          </a>
+        ) : (
+          picture
+        )}
+      </div>
+    );
+  }
+  return <InscriptionFlightLive {...props} />;
+}
+
+function InscriptionFlightLive({ src, alt, box, position = "50% 50%", outline, fill, aspect, href, linkLabel }) {
   const photoRef = useRef(null);
   const flyRef = useRef(null);
   const outlineRef = useRef(null);

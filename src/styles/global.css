@@ -2668,3 +2668,13 @@ html.classic .premium-member-cta--photo {
 html.classic .hero-intro-control {
   display: none;
 }
+/* Classic: no "THIS IS St·Dom's" lettering over the home photo (the page
+   title stays for screen readers); just the years */
+html.classic .premium-hero__logo img {
+  display: none;
+}
+/* Classic: everything in greyscale — text, colours, buttons, photos, map.
+   On the root element, so the fixed header and bars keep working. */
+html.classic {
+  filter: grayscale(1);
+}

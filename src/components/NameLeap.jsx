@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { reducedMotionQuery } from "../classic";
+import { isClassic, reducedMotionQuery } from "../classic";
 
 const clamp01 = (v) => Math.min(1, Math.max(0, v));
 const smooth = (v) => v * v * (3 - 2 * v);
@@ -19,7 +19,13 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *               behind on its way: over it, only an outline of the name shows
  *   outline   — that outline (same proportions as `src`)
  */
-export default function NameLeap({ targetRef, src, behind, outline }) {
+export default function NameLeap(props) {
+  // Classic Mode: no leap; the heading simply shows the name
+  if (isClassic()) return null;
+  return <NameLeapLive {...props} />;
+}
+
+function NameLeapLive({ targetRef, src, behind, outline }) {
   const flyRef = useRef(null);
   const fillRef = useRef(null);
   const lineRef = useRef(null);
