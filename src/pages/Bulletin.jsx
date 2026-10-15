@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
-import PremiumPageActions from "../components/PremiumPageActions";
 
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
@@ -89,34 +88,6 @@ export default function Bulletin() {
           </p>
         </div>
       </section>
-
-      <PremiumPageActions
-        overlap
-        eyebrow={t("bulletin.hero.sub")}
-        title={t("bulletin.title")}
-        items={[
-          {
-            title: t("bulletin.heading"),
-            description: t("bulletin.reviewed"),
-            href: "#current-bulletin",
-            icon: "Newspaper",
-            primary: true,
-          },
-          {
-            title: t("bulletin.archive.title"),
-            description: t("bulletin.archive.sub"),
-            href: hasLinkedArchive ? "#bulletin-archive" : CONFIG.diocesanBulletinUrl,
-            external: !hasLinkedArchive,
-            icon: "FileText",
-          },
-          {
-            title: t("bulletin.info.contact"),
-            description: t("bulletin.info.contactDesc"),
-            href: `mailto:${CONFIG.email}`,
-            icon: "Mail",
-          },
-        ]}
-      />
 
       {/* ════ Embedded Flipbook ════ */}
       <Section id="current-bulletin">
