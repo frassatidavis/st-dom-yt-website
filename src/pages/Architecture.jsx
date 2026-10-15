@@ -207,32 +207,35 @@ export default function Architecture() {
         )}
       </StickyHero>
 
-      <PremiumPageActions
-        overlap
-        eyebrow={t("arch.hero.sub")}
-        title={t("arch.title")}
-        items={[
-          {
-            title: t("nav.gallery"),
-            description: t("gallery.title"),
-            to: "/gallery",
-            icon: "Maximize",
-            primary: true,
-          },
-          {
-            title: t("nav.about"),
-            description: t("about.history.p2"),
-            to: "/about",
-            icon: "BookOpenText",
-          },
-          {
-            title: t("nav.visit"),
-            description: t("visit.hero.desc"),
-            to: "/visit",
-            icon: "MapPin",
-          },
-        ]}
-      />
+      {/* Classic Mode: no box of links under the photo */}
+      {!isClassic() && (
+        <PremiumPageActions
+          overlap
+          eyebrow={t("arch.hero.sub")}
+          title={t("arch.title")}
+          items={[
+            {
+              title: t("nav.gallery"),
+              description: t("gallery.title"),
+              to: "/gallery",
+              icon: "Maximize",
+              primary: true,
+            },
+            {
+              title: t("nav.about"),
+              description: t("about.history.p2"),
+              to: "/about",
+              icon: "BookOpenText",
+            },
+            {
+              title: t("nav.visit"),
+              description: t("visit.hero.desc"),
+              to: "/visit",
+              icon: "MapPin",
+            },
+          ]}
+        />
+      )}
 
       <StickyScrub
         image={PHOTOS.archSanctuary || PHOTOS.interiorNave || PHOTOS.archHero}
