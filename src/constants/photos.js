@@ -138,6 +138,7 @@ export const PHOTOS = {
   stDomCrestLight: `${B}photos/branding/st-dom-crest-light.webp`, // Same crest as light-gold ink on transparent, for dark grounds (footer)
   psjShield: `${B}photos/branding/psj-shield.png`,             // Official PSJ shield with VERITAS
   psjShieldBw: `${B}photos/branding/psj-shield-bw.png`,        // B&W shield (watermark use)
+  opCrestVeritas: `${B}photos/branding/op-crest-veritas-white.png`, // The Order's old engraved crest (VERITAS scroll, crown, rosary), white on clear (Classic Mode footer)
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
   psjWordmarkWhite: `${B}photos/branding/psj-wordmark-white.png`, // White wordmark for dark backgrounds
   doyLogoWhite: `${B}photos/branding/doy-logo-white.png`,         // Diocese of Youngstown crest + wordmark (inverted, doy.org)

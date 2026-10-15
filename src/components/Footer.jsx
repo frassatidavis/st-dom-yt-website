@@ -296,16 +296,30 @@ export default function Footer() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
           >
-            <img
-              src={PHOTOS.psjShield}
-              alt="Dominican Province of St. Joseph Shield"
-              style={{ width: 44, height: 44, objectFit: "contain" }}
-            />
-            <img
-              src={PHOTOS.psjWordmarkWhite}
-              alt="Dominican Friars — Province of Saint Joseph"
-              style={{ height: 28, objectFit: "contain", opacity: 0.85 }}
-            />
+            {/* Classic Mode: the Order's old engraved crest in place of the
+                Province's shield and wordmark */}
+            {isClassic() ? (
+              <img
+                src={PHOTOS.opCrestVeritas}
+                alt="Dominican Friars — Province of Saint Joseph"
+                width={57}
+                height={78}
+                style={{ height: 78, width: "auto", objectFit: "contain" }}
+              />
+            ) : (
+              <>
+                <img
+                  src={PHOTOS.psjShield}
+                  alt="Dominican Province of St. Joseph Shield"
+                  style={{ width: 44, height: 44, objectFit: "contain" }}
+                />
+                <img
+                  src={PHOTOS.psjWordmarkWhite}
+                  alt="Dominican Friars — Province of Saint Joseph"
+                  style={{ height: 28, objectFit: "contain", opacity: 0.85 }}
+                />
+              </>
+            )}
           </a>
           <a
             href={CONFIG.dioceseUrl}
