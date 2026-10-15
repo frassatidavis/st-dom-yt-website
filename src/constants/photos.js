@@ -97,6 +97,7 @@ export const PHOTOS = {
   // Pictures behind the place cards on the Start Here map (RouteMap), by route id
   mapPlaces: {
     boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
+    canfield: `${B}photos/map/canfield.webp`, // Meijer: the produce department
   },
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
