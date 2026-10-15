@@ -97,7 +97,7 @@ export const PHOTOS = {
   // Pictures behind the place cards on the Start Here map (RouteMap), by route id
   mapPlaces: {
     boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
-    canfield: `${B}photos/map/canfield.webp`, // Meijer: the produce department
+    canfield: `${B}photos/map/canfield.webp`, // Tippecanoe Country Club: the clubhouse across the pond
     poland: `${B}photos/map/poland.webp`, // The clock tower on Main Street, Poland
     struthers: `${B}photos/map/struthers.webp`, // The Elmton: the bar
     campbell: `${B}photos/map/campbell.webp`, // The Four Seasons flea market from the air, the water tower beside it
