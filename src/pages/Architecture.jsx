@@ -248,6 +248,14 @@ export default function Architecture() {
             loading="lazy"
             style={{ width: "100%", height: "auto", display: "block" }}
           />
+          <figcaption style={{ marginTop: 18 }}>
+            <p style={{ fontSize: 16, lineHeight: 1.8, color: T.charcoal, fontStyle: "italic", margin: 0 }}>
+              {t("arch.classicNave.caption")}
+            </p>
+            <p style={{ fontSize: 13, letterSpacing: "0.08em", textTransform: "uppercase", color: T.warmGray, marginTop: 10 }}>
+              {t("arch.classicNave.source")}
+            </p>
+          </figcaption>
         </figure>
       )}
 
