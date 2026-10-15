@@ -4,7 +4,7 @@
 // telephone or call at the rectory, and the offertory goes in the envelope.
 export const CLASSIC_TEXT = {
   en: {
-    nav: { give: "Offertory" },
+    nav: { give: "Offertory", about: "Our History", architecture: "Dedication of St. Dominic Church" },
     footer: { cards: { emailTitle: "Write to Us" } },
     home: {
       involved: {
@@ -60,6 +60,7 @@ export const CLASSIC_TEXT = {
       },
     },
     friars: { priests: { desc: "Our parish is cared for by Dominican friars of the Province of St. Joseph. To reach a priest, telephone or call at the rectory." } },
+    about: { title: "Our History" },
     // Catechism quotes from the Baltimore Catechism (1891 text, intratext.com),
     // not the 1992 Catechism; pope quotes from before 1930 (vatican.va)
     massTimes: {
@@ -130,7 +131,7 @@ export const CLASSIC_TEXT = {
     },
   },
   es: {
-    nav: { give: "Ofertorio" },
+    nav: { give: "Ofertorio", about: "Nuestra Historia", architecture: "Dedicación de la Iglesia de Santo Domingo" },
     footer: { cards: { emailTitle: "Escríbanos" } },
     home: {
       involved: {
@@ -179,6 +180,7 @@ export const CLASSIC_TEXT = {
         directions: "Cómo llegar desde donde está →",
       },
     },
+    about: { title: "Nuestra Historia" },
     massTimes: {
       mass: {
         quote: "\"La Misa es el sacrificio incruento del cuerpo y la sangre de Cristo.\"",
