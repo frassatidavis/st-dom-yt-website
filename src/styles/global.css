@@ -2701,59 +2701,23 @@ html.classic nav {
   border-bottom-color: #000 !important;
 }
 html.classic .parish-action-bar {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  left: auto !important;
+  right: calc(10px + env(safe-area-inset-right)) !important;
+  width: auto !important;
+  max-width: calc(100vw - 20px);
+  transform: none !important;
+  grid-template-columns: auto;
   background: #fff;
   border-color: #000;
+}
+html.classic .parish-action-bar__mode {
+  padding: 10px 22px;
 }
 html.classic .parish-action-bar__item,
 html.classic .parish-action-bar__contact-cell,
 html.classic footer {
   background: #000 !important;
   color: #fff !important;
-}
-/* Classic: the office hours above the phone in the bottom bar */
-.parish-action-bar__hours {
-  display: none;
-}
-html.classic .parish-action-bar__hours {
-  display: block;
-  color: #fff;
-  font-family: var(--font-body);
-  font-size: 12px;
-  line-height: 1.35;
-}
-html.classic .parish-action-bar__hours-label {
-  font-family: var(--font-caps);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 11px;
-  opacity: 0.75;
-}
-html.classic .parish-action-bar__hours-label {
-  display: block;
-}
-html.classic .parish-action-bar__hours-time {
-  white-space: nowrap;
-}
-/* Narrow phones: no email in Classic, so the phone keeps its number */
-@container (max-width: 200px) {
-  html.classic .parish-action-bar__contact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-  html.classic .parish-action-bar__contact-text {
-    display: inline;
-  }
-  html.classic .parish-action-bar__contact a {
-    width: auto;
-    height: auto;
-    border: 0;
-  }
-  html.classic .parish-action-bar__contact svg {
-    width: 13px;
-    height: 13px;
-  }
 }
 /* Classic: "Sunday is Just the Start" is only a title, so the photo gets
    the room — a tall band with the title near its foot */

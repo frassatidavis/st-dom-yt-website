@@ -14,24 +14,26 @@ export default function ParishActionBar() {
   // phone + email and the way to the full schedule
   return (
     <aside className="parish-action-bar" aria-label={t("actionBar.label")}>
-      <div className="parish-action-bar__contact-cell">
-        <div className="parish-action-bar__contact">
-          {/* Office hours above the phone (shown in Classic Mode) */}
-          <span className="parish-action-bar__hours">
-            <span className="parish-action-bar__hours-label">{t("footer.cards.hoursTitle")}</span>{" "}
-            <span className="parish-action-bar__hours-time">{t("footer.cards.hoursDays")}</span>{" "}
-            <span className="parish-action-bar__hours-time">{t("footer.cards.hoursTime")}</span>
-          </span>
-          <a href={CONFIG.phoneLink} aria-label={`${t("actionBar.call")} ${CONFIG.phone}`}>
-            <Icon name="Phone" size={13} color={T.goldLight} />
-            <span className="parish-action-bar__contact-text">{CONFIG.phone.replace(" ", "\u00a0")}</span>
-          </a>
-          <a href={`mailto:${CONFIG.email}`} aria-label={`${t("actionBar.email")} ${CONFIG.email}`}>
-            <Icon name="Mail" size={13} color={T.goldLight} />
-            <span className="parish-action-bar__contact-text">{CONFIG.email}</span>
-          </a>
+      {/* Classic Mode: only the switch back to 2026, on the right */}
+      {!isClassic() && (
+        <div className="parish-action-bar__contact-cell">
+          <div className="parish-action-bar__contact">
+            <a href={CONFIG.phoneLink} aria-label={`${t("actionBar.call")} ${CONFIG.phone}`}>
+              <Icon name="Phone" size={13} color={T.goldLight} />
+              <span className="parish-action-bar__contact-text">
+                {CONFIG.phone.replace(" ", "\u00a0")}
+              </span>
+            </a>
+            <a
+              href={`mailto:${CONFIG.email}`}
+              aria-label={`${t("actionBar.email")} ${CONFIG.email}`}
+            >
+              <Icon name="Mail" size={13} color={T.goldLight} />
+              <span className="parish-action-bar__contact-text">{CONFIG.email}</span>
+            </a>
+          </div>
         </div>
-      </div>
+      )}
 
       {isClassic() ? (
         // Classic Mode: a switch back to the modern site
