@@ -1007,7 +1007,7 @@
     },
     "map": {
       "title": "Closer Than You Think",
-      "label": "Map of driving routes to St. Dominic Church from Boardman, Canfield, Poland, Struthers and Campbell",
+      "label": "Map of driving routes to St. Dominic Church from Boardman, Canfield, Poland, Struthers, Campbell and Austintown",
       "minutes_one": "{{count}} min",
       "minutes_other": "{{count}} min",
       "miles_one": "{{count}} mile",
@@ -1019,7 +1019,8 @@
         "canfield": "Canfield",
         "poland": "Poland",
         "struthers": "Struthers",
-        "campbell": "Campbell"
+        "campbell": "Campbell",
+        "austintown": "Austintown"
       }
     }
   },

@@ -120,7 +120,8 @@ export default function RouteMap({ church, routes, town, mapsHref }) {
               })}
               {routes.map((r) => {
                 const [x, y] = view.at(r.at);
-                const right = x < size.w / 2;
+                // Labels go toward the middle, so they never run off the edge
+                const right = x > size.w / 2;
                 const on = active === r.id;
                 return (
                   <g

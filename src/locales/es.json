@@ -1007,7 +1007,7 @@
     },
     "map": {
       "title": "Más Cerca de lo que Piensa",
-      "label": "Mapa de rutas en auto a la Iglesia Santo Domingo desde Boardman, Canfield, Poland, Struthers y Campbell",
+      "label": "Mapa de rutas en auto a la Iglesia Santo Domingo desde Boardman, Canfield, Poland, Struthers, Campbell y Austintown",
       "minutes_one": "{{count}} min",
       "minutes_other": "{{count}} min",
       "miles_one": "{{count}} milla",
@@ -1019,7 +1019,8 @@
         "canfield": "Canfield",
         "poland": "Poland",
         "struthers": "Struthers",
-        "campbell": "Campbell"
+        "campbell": "Campbell",
+        "austintown": "Austintown"
       }
     }
   },
