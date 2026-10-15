@@ -509,19 +509,22 @@ export default function MassTimes() {
         <SectionTitle>
           {t("massTimes.adoration.title")}
         </SectionTitle>
-        <p
-          style={{
-            fontSize: 16,
-            lineHeight: 1.8,
-            color: T.warmGray,
-            textAlign: "center",
-            maxWidth: 700,
-            margin: "0 auto 40px",
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          {t("massTimes.adoration.desc")}
-        </p>
+        {/* Classic Mode: no introduction under the title */}
+        {!isClassic() && (
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: 1.8,
+              color: T.warmGray,
+              textAlign: "center",
+              maxWidth: 700,
+              margin: "0 auto 40px",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            {t("massTimes.adoration.desc")}
+          </p>
+        )}
 
         {/* Monstrance ScaleReveal */}
         <ScaleReveal
