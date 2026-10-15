@@ -23,13 +23,13 @@ const project = ([lat, lon], z) => {
  *
  * Props:
  *   church — { name, address, city, at: [lat, lon] }
- *   dog    — picture marking the church (the Dominican dog)
+ *   marker — small square picture marking the church (its front)
  *   routes — [{ id, name, at, minutes, miles, path: [[lat, lon], …] }]
  *   photos — optional { [id]: photo }: a picture of the place behind its card
  *   town   — (id) => the town's name, for the labels
  *   mapsHref — directions link for the church
  */
-export default function RouteMap({ church, routes, town, mapsHref, photos = {}, dog }) {
+export default function RouteMap({ church, routes, town, mapsHref, photos = {}, marker }) {
   const { t } = useTranslation();
   const boxRef = useRef(null);
   const [size, setSize] = useState(null);
@@ -147,18 +147,23 @@ export default function RouteMap({ church, routes, town, mapsHref, photos = {}, 
               {(() => {
                 const [x, y] = view.at(church.at);
                 return (
-                  // The Dominican dog marks the church; pointing at it shows the address
+                  // The church's front marks it; pointing at it shows the address
                   <g
                     className={`route-map__church${showAddress ? " is-open" : ""}`}
                     onMouseEnter={() => setShowAddress(true)}
                     onMouseLeave={() => setShowAddress(false)}
                     onClick={() => setShowAddress((v) => !v)}
                   >
-                    <circle cx={x} cy={y} r="22" className="route-map__pulse" />
-                    <circle cx={x} cy={y} r="19" className="route-map__badge" />
-                    <image href={dog} x={x - 15} y={y - 9} width="30" height="18" />
-                    <text x={x} y={y - 26} textAnchor="middle">St. Dominic</text>
-                    <g className="route-map__address" transform={`translate(${x}, ${y + 28})`}>
+                    <defs>
+                      <clipPath id="route-map-church-clip">
+                        <circle cx={x} cy={y} r="20" />
+                      </clipPath>
+                    </defs>
+                    <circle cx={x} cy={y} r="26" className="route-map__pulse" />
+                    <circle cx={x} cy={y} r="22" className="route-map__badge" />
+                    <image href={marker} x={x - 20} y={y - 20} width="40" height="40" clipPath="url(#route-map-church-clip)" preserveAspectRatio="xMidYMid slice" />
+                    <text x={x} y={y - 30} textAnchor="middle">St. Dominic</text>
+                    <g className="route-map__address" transform={`translate(${x}, ${y + 30})`}>
                       <rect x="-92" y="0" width="184" height="42" rx="4" />
                       <text y="17" textAnchor="middle">{church.address}</text>
                       <text y="33" textAnchor="middle" className="route-map__address-city">{church.city}</text>

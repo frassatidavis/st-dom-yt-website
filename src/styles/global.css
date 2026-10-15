@@ -1528,7 +1528,7 @@ body.nav-open .name-leap {
 .route-map__church .route-map__badge {
   fill: #fff;
   stroke: var(--color-burgundy);
-  stroke-width: 3;
+  stroke-width: 4;
   filter: drop-shadow(0 2px 4px rgba(26, 23, 20, 0.3));
 }
 /* The address card under the dog, shown when pointed at */

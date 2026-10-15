@@ -95,6 +95,7 @@ export const PHOTOS = {
   stDominicStrip: `${B}photos/st-dominic-statue-strip.webp`,      // Just the statue of St. Dominic, a tall strip of that photo (600x1700)
   altarServers: `${B}photos/altar-servers-procession-opt.webp`,  // Altar servers in red cassocks and surplices walking in procession (behind Join Us This Weekend on /visit)
   // Pictures behind the place cards on the Start Here map (RouteMap), by route id
+  churchFacadeMarker: `${B}photos/map/church-facade.webp`, // The church front (gable, cross, rose window), 160px square, for the map marker
   mapPlaces: {
     youngstown: `${B}photos/map/youngstown.webp`, // Two Youngstown police cruisers downtown
     boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
