@@ -13,8 +13,9 @@ const KEY = "mode";
 // Antic: the closest free match to the parish's old sans-serif lettering
 // (the owner's "The Meaney Building 1906" sample, early-1900s American gothic)
 // Limelight: a 1930s Hollywood Art Deco serif (thick stems, hairline
-// crossbars), like the old Columbia picture titles, for the page titles
-const FONTS = "https://fonts.googleapis.com/css2?family=Antic&family=Limelight&display=swap";
+// crossbars), like the old Columbia picture titles, for the page titles;
+// Gilda Display, a lighter Deco serif, for the section titles
+const FONTS = "https://fonts.googleapis.com/css2?family=Antic&family=Gilda+Display&family=Limelight&display=swap";
 
 function read() {
   try {
