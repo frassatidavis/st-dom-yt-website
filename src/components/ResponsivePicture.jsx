@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { classicPhoto } from "../constants/photos";
 
 // React 18 doesn't whitelist the lowercase `fetchpriority` attribute and warns
 // on the camelCase form. Set it imperatively via a ref so the attribute lands
@@ -15,7 +16,7 @@ function useFetchPriority(priority) {
 }
 
 export default function ResponsivePicture({
-  src,
+  src: everydaySrc,
   widths,
   sizes,
   alt,
@@ -28,6 +29,8 @@ export default function ResponsivePicture({
   onError,
 }) {
   const imgRef = useFetchPriority(fetchPriority);
+  // Classic Mode may have its own photo for this spot
+  const src = classicPhoto(everydaySrc);
 
   if (!src) return null;
 

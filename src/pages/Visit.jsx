@@ -13,6 +13,7 @@ import FadeInPortrait from "../components/FadeInPortrait";
 import NameLeap from "../components/NameLeap";
 import RouteMap from "../components/RouteMap";
 import { CHURCH, ROUTES } from "../data/mapRoutes";
+import { isClassic } from "../classic";
 import { PHOTOS } from "../constants/photos";
 
 export default function Visit() {
@@ -240,7 +241,9 @@ export default function Visit() {
 
       {/* ════ Closing welcome over the Sacred Heart shrine ════ */}
       <section className="premium-member-cta premium-member-cta--photo">
-        <HeroImage src={PHOTOS.sacredHeart} overlay={0.62} position="center 15%" lazy />
+        {/* Classic Mode has a closer, upright photo of the shrine (CLASSIC_PHOTOS):
+            keep the head of the statue in the band */}
+        <HeroImage src={PHOTOS.sacredHeart} overlay={0.62} position={isClassic() ? "center 3%" : "center 15%"} lazy />
         <div className="section-inner">
           <h2
             style={{

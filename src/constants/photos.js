@@ -5,6 +5,8 @@
  * automatically so they work on GitHub Pages.
  */
 
+import { isClassic } from "../classic";
+
 const B = import.meta.env.BASE_URL;
 
 export const PHOTOS = {
@@ -139,6 +141,7 @@ export const PHOTOS = {
   psjLogoBlue: `${B}photos/branding/psj-logo-blue.png`,        // Full logo — shield + "Dominican Friars"
   psjWordmarkWhite: `${B}photos/branding/psj-wordmark-white.png`, // White wordmark for dark backgrounds
   doyLogoWhite: `${B}photos/branding/doy-logo-white.png`,         // Diocese of Youngstown crest + wordmark (inverted, doy.org)
+  doyCoatOfArms: `${B}photos/branding/doy-coat-of-arms.svg`,      // The Diocese's coat of arms (Classic Mode footer). Wikimedia Commons "Roman Catholic Diocese of Youngstown.svg", CC BY 1.0
   dominicanDog: `${B}photos/branding/dominican-dog.webp`,         // Domini canis: dog with torch (St. Dominic's mother's dream), ink on transparent
 
   // ── Mass Times page ──
@@ -175,3 +178,10 @@ export const VIDEOS = {
     { src: `${B}videos/home-intro-3.mp4`, poster: `${B}videos/home-intro-3-poster.webp` },
   ],
 };
+
+// Classic Mode's own photos, in place of everyday ones: { everyday: classic }
+// (each needs the same -480/-1024/-1920 files; ResponsivePicture swaps them)
+export const CLASSIC_PHOTOS = {
+  [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
+};
+export const classicPhoto = (src) => (isClassic() && CLASSIC_PHOTOS[src]) || src;

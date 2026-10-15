@@ -315,13 +315,24 @@ export default function Footer() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.85")}
           >
-            <img
-              src={PHOTOS.doyLogoWhite}
-              alt="Catholic Diocese of Youngstown"
-              width={115}
-              height={64}
-              style={{ height: 64, width: "auto", objectFit: "contain" }}
-            />
+            {/* Classic Mode: the Diocese's coat of arms in place of its logo */}
+            {isClassic() ? (
+              <img
+                src={PHOTOS.doyCoatOfArms}
+                alt="Catholic Diocese of Youngstown"
+                width={54}
+                height={78}
+                style={{ height: 78, width: "auto", objectFit: "contain" }}
+              />
+            ) : (
+              <img
+                src={PHOTOS.doyLogoWhite}
+                alt="Catholic Diocese of Youngstown"
+                width={115}
+                height={64}
+                style={{ height: 64, width: "auto", objectFit: "contain" }}
+              />
+            )}
           </a>
         </div>
 
