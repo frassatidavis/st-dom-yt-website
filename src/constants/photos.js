@@ -170,6 +170,8 @@ export const VIDEOS = {
   // Home hero intros (parish life montages, ~26 s, silent). One plays per day,
   // taking turns (see Home.jsx); add each new intro here with its first frame.
   homeIntros: [
-    { src: `${B}videos/home-intro.mp4`, poster: `${B}videos/home-intro-poster.webp` },
+    { src: `${B}videos/home-intro-1.mp4`, poster: `${B}videos/home-intro-1-poster.webp` },
+    { src: `${B}videos/home-intro-2.mp4`, poster: `${B}videos/home-intro-2-poster.webp` },
+    { src: `${B}videos/home-intro-3.mp4`, poster: `${B}videos/home-intro-3-poster.webp` },
   ],
 };
