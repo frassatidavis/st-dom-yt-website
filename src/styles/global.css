@@ -2842,3 +2842,7 @@ html.classic .ministry-card h3 {
 html.classic .ministry-hint {
   display: none;
 }
+/* Classic: no small label lines over the headings */
+html.classic .kicker {
+  display: none !important;
+}

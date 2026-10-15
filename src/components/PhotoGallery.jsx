@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { createPortal } from "react-dom";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { isClassic } from "../classic";
 import { T } from "../constants/theme";
 
 /**
@@ -160,8 +162,8 @@ export default function PhotoGallery({ photos = [] }) {
         ))}
       </div>
 
-      {/* Lightbox Modal */}
-      {lightbox !== null && (
+      {/* Lightbox Modal — on <body>, so no page section can box it in */}
+      {lightbox !== null && createPortal(
         <div
           ref={lightboxRef}
           role="dialog"
@@ -207,7 +209,7 @@ export default function PhotoGallery({ photos = [] }) {
               zIndex: 2,
             }}
           >
-            <X size={22} color="#fff" />
+            {isClassic() ? <span className="classic-word-button" style={{ color: "#fff", fontSize: 11 }}>{t("classic.close")}</span> : <X size={22} color="#fff" />}
           </button>
 
           {/* Previous */}
@@ -235,7 +237,7 @@ export default function PhotoGallery({ photos = [] }) {
                 zIndex: 2,
               }}
             >
-              <ChevronLeft size={28} color="#fff" />
+              {isClassic() ? <span style={{ color: "#fff", fontSize: 28, lineHeight: 1 }}>‹</span> : <ChevronLeft size={28} color="#fff" />}
             </button>
           )}
 
@@ -264,7 +266,7 @@ export default function PhotoGallery({ photos = [] }) {
                 zIndex: 2,
               }}
             >
-              <ChevronRight size={28} color="#fff" />
+              {isClassic() ? <span style={{ color: "#fff", fontSize: 28, lineHeight: 1 }}>›</span> : <ChevronRight size={28} color="#fff" />}
             </button>
           )}
 
@@ -311,7 +313,8 @@ export default function PhotoGallery({ photos = [] }) {
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
