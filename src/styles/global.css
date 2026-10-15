@@ -2807,11 +2807,18 @@ html.classic .classic-big-header .premium-page-header {
   min-height: clamp(440px, 74vh, 780px);
   align-items: flex-end;
 }
-/* Classic: no little line icons in the page or footer (the menu button and
-   the switch back to 2026 keep theirs); an icon's own holder goes too */
-html.classic main svg.lucide,
-html.classic footer svg.lucide {
+/* Classic: no icons anywhere (the menu, search and clear buttons say what
+   they do in words instead); an icon's own holder goes too */
+html.classic svg.lucide {
   display: none !important;
+}
+html.classic .classic-word-button {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 1;
 }
 html.classic main :is(span, div):has(> svg.lucide:only-child) {
   display: none !important;

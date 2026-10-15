@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Search, X, ArrowRight } from "lucide-react";
+import { isClassic } from "../classic";
 import { T } from "../constants/theme";
 import { searchPages } from "../data/searchIndex";
 
@@ -185,7 +186,7 @@ export default function SiteSearch() {
         onMouseEnter={(e) => (e.currentTarget.style.color = T.burgundy)}
         onMouseLeave={(e) => (e.currentTarget.style.color = T.warmGray)}
       >
-        <Search size={18} strokeWidth={2} />
+        {isClassic() ? <span className="classic-word-button">{t("classic.search")}</span> : <Search size={18} strokeWidth={2} />}
       </button>
 
       {/* Modal overlay — portaled to <body> so it shows even when the trigger's
@@ -270,7 +271,7 @@ export default function SiteSearch() {
                     alignItems: "center",
                   }}
                 >
-                  <X size={16} />
+                  {isClassic() ? <span className="classic-word-button">{t("classic.clear")}</span> : <X size={16} />}
                 </button>
               )}
               <kbd

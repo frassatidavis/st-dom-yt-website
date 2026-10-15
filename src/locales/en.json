@@ -1295,6 +1295,10 @@
     "toModern": "Modern Mode",
     "years": "Founded 1923 · Cornerstone 1954",
     "backToToday": "Go Back to 2026",
-    "photoCredit": "Historical photographs © 2026 Dominican Province of St. Joseph Archives. Used with permission."
+    "photoCredit": "Historical photographs © 2026 Dominican Province of St. Joseph Archives. Used with permission.",
+    "menu": "Menu",
+    "close": "Close",
+    "search": "Search",
+    "clear": "Clear"
   }
 }

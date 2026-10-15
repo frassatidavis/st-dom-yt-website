@@ -462,7 +462,14 @@ export default function Nav() {
             padding: 8, fontSize: 24, color: T.burgundy, lineHeight: 1, flexShrink: 0,
           }}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* Classic Mode: words instead of icons */}
+          {isClassic() ? (
+            <span className="classic-word-button">{mobileOpen ? t("classic.close") : t("classic.menu")}</span>
+          ) : mobileOpen ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} />
+          )}
         </button>
       </div>
 

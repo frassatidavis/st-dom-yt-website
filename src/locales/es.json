@@ -1295,6 +1295,10 @@
     "toModern": "Modo Moderno",
     "years": "Fundada en 1923 · Piedra angular de 1954",
     "backToToday": "Volver a 2026",
-    "photoCredit": "Fotografías históricas © 2026 Dominican Province of St. Joseph Archives. Usadas con permiso."
+    "photoCredit": "Fotografías históricas © 2026 Dominican Province of St. Joseph Archives. Usadas con permiso.",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "clear": "Borrar"
   }
 }
