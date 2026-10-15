@@ -11,7 +11,7 @@ import LiturgicalBanner from "../components/LiturgicalBanner";
 import Icon from "../components/Icon";
 import HeroImage from "../components/HeroImage";
 import StickyHero from "../components/StickyHero";
-import { PHOTOS, VIDEOS } from "../constants/photos";
+import { CLASSIC_HOME_PHOTOS, PHOTOS, VIDEOS } from "../constants/photos";
 import useScrollVar from "../hooks/useScrollVar";
 import BrandFlight from "../components/BrandFlight";
 import { isClassic, setClassic } from "../classic";
@@ -43,6 +43,21 @@ function introForToday(intros) {
 const HERO_HEIGHT =
   typeof CSS !== "undefined" && CSS.supports?.("height", "100svh") ? "calc(100svh - 88px)" : "calc(100vh - 88px)";
 
+// Classic Mode: the next parish photo behind the home page on each visit,
+// cycling through them in turn (remembered per visitor)
+const classicHome = (() => {
+  if (!isClassic()) return null;
+  let i = Math.floor(Math.random() * CLASSIC_HOME_PHOTOS.length);
+  try {
+    const last = Number.parseInt(localStorage.getItem("classicHome"), 10);
+    if (Number.isFinite(last)) i = (last + 1) % CLASSIC_HOME_PHOTOS.length;
+    localStorage.setItem("classicHome", String(i));
+  } catch {
+    /* storage unavailable: a random one */
+  }
+  return CLASSIC_HOME_PHOTOS[i];
+})();
+
 export default function Home() {
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
@@ -65,7 +80,8 @@ export default function Home() {
       <LiturgicalBanner />
 
       <StickyHero
-        image={PHOTOS.homeHeroProcession}
+        image={classicHome ? classicHome.src : PHOTOS.homeHeroProcession}
+        imagePosition={classicHome?.position}
         introVideo={{
           src: intro.src,
           poster: intro.poster,

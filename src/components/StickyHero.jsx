@@ -27,11 +27,13 @@ import { reducedMotionQuery } from "../classic";
  *               viewport height): as it scrolls away, the picture drifts
  *               slower than the page and zooms toward the viewer
  *   height    — total scroll runway (default "180vh")
+ *   imagePosition — which part of the photo to keep in view ("x% y%")
  *   showScrollHint — whether to show the small scroll cue
  *   children  — hero content (title, subtitle, etc.)
  */
 export default function StickyHero({
   image,
+  imagePosition = "50% 50%",
   introVideo,
   overlay = 0.5,
   tint,
@@ -130,6 +132,7 @@ export default function StickyHero({
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                objectPosition: imagePosition,
                 display: "block",
               }}
             />

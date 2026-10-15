@@ -188,7 +188,6 @@ export const VIDEOS = {
 const A = `${B}photos/classic/`;
 export const CLASSIC_PHOTOS = {
   [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
-  [PHOTOS.homeHeroProcession]: `${A}congregation-at-prayer-opt.webp`, // the congregation kneeling at prayer under the nave's arches (photo from the parish owner)
   [PHOTOS.aboutHero]: `${A}youngstown-interior-1936-opt.webp`, // PSJ-H02A-000-001: St. Dominic, Youngstown, the church interior, 1936
   [PHOTOS.archRoseExt]: `${A}youngstown-church-drawing-opt.webp`, // PSJ-H02A-000-002: the architect's drawing of St. Dominic, Youngstown
   [PHOTOS.dominicanCharism]: `${A}mass-high-altar-opt.webp`, // PSJ-H09A-000-003: Mass at the high altar, St. Vincent Ferrer, New York
@@ -207,3 +206,20 @@ export const CLASSIC_PHOTOS = {
   [PHOTOS.dominicanMural]: `${A}parish-classroom-1939-opt.webp`, // PSJ-H16-000-005.5: a parish school classroom, St. Monica, Raleigh, 1939
 };
 export const classicPhoto = (src) => (isClassic() && CLASSIC_PHOTOS[src]) || src;
+
+// Classic Mode's home page: a different parish photo on each visit
+// (photos from the parish; position = which part of each to keep in view)
+export const CLASSIC_HOME_PHOTOS = [
+  { src: `${A}congregation-at-prayer-opt.webp`, position: "50% 50%" }, // the congregation kneeling at prayer under the nave's arches
+  { src: `${A}home-ladies-on-the-steps-opt.webp`, position: "50% 55%" }, // parish ladies in their hats coming down the front steps
+  { src: `${A}home-altar-boys-under-the-mural-opt.webp`, position: "50% 70%" }, // the altar boys kneeling before the sanctuary mural
+  { src: `${A}home-may-crowning-opt.webp`, position: "40% 50%" }, // the May crowning of Our Lady's statue
+  { src: `${A}home-church-under-construction-opt.webp`, position: "45% 50%" }, // the church going up: the steel frame and stacked stone
+  { src: `${A}home-full-church-mass-opt.webp`, position: "50% 55%" }, // a full church at Mass, down the nave to the mural
+  { src: `${A}home-first-communion-class-opt.webp`, position: "40% 60%" }, // a First Communion class in white in the pews
+  { src: `${A}home-nave-and-mural-opt.webp`, position: "50% 50%" }, // the empty nave and the mural
+  { src: `${A}home-choir-before-the-mural-opt.webp`, position: "50% 60%" }, // the children's choir before the mural
+  { src: `${A}home-lady-at-the-shrine-opt.webp`, position: "40% 50%" }, // a parishioner at the Infant of Prague shrine
+  { src: `${A}home-sanctuary-postcard-opt.webp`, position: "50% 50%" }, // postcard: the sanctuary with the servers and choir
+  { src: `${A}home-boys-first-communion-procession-opt.webp`, position: "50% 45%" }, // boys in white jackets processing up the aisle
+];
