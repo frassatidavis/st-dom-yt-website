@@ -41,19 +41,19 @@ export const CLASSIC_TEXT = {
       },
       cta: { desc: "Pick up a good book, pray the Rosary, or open the Catechism. Every step you take toward understanding your faith is a step closer to Christ." },
       quote: "\"Be reformed in the newness of your mind, that you may prove what is the good, and the acceptable, and the perfect will of God.\"",
-      quoteSrc: "— Romans 12:2 (Douay-Rheims)",
+      quoteSrc: "— Romans 12:2",
     },
     give: {
       title: "The Offertory",
       clarityDesc: "Most parishioners use their weekly offertory envelopes, but one-time gifts, memorial gifts, and mailed checks are always welcome.",
       quote: "\"Every one as he hath determined in his heart, not with sadness, or of necessity: for God loveth a cheerful giver.\"",
-      quoteSrc: "— 2 Corinthians 9:7 (Douay-Rheims)",
+      quoteSrc: "— 2 Corinthians 9:7",
     },
     visit: {
       hero: { desc: "Don't let your Catholic upbringing lapse. Pope St. Pius X gave the Church his motto: \"To renew all things in Christ.\" Whether you are a lifelong parishioner or a fallen-away Catholic, an alum of the school or curious about the Catholic faith — you are welcome here." },
       directions: { cta: "Get Directions" },
       quote: "\"And hospitality do not forget; for by this some, being not aware of it, have entertained angels.\"",
-      quoteSrc: "— Hebrews 13:2 (Douay-Rheims)",
+      quoteSrc: "— Hebrews 13:2",
       map: {
         note: "Pile in the buggy or get on your feet!",
         directions: "Get directions from where you are →",
@@ -92,41 +92,41 @@ export const CLASSIC_TEXT = {
     // Bible quotes in the Challoner Douay-Rheims (drbo.org)
     becomingCatholic: {
       quote: "\"Faith then cometh by hearing; and hearing by the word of Christ.\"",
-      quoteSrc: "— Romans 10:17 (Douay-Rheims)",
+      quoteSrc: "— Romans 10:17",
     },
     sacraments: {
       quote: "\"A Sacrament is an outward sign instituted by Christ to give grace.\"",
       quoteSrc: "— Baltimore Catechism",
       baptism: {
         quote: "\"Going therefore, teach ye all nations; baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.\"",
-        quoteSrc: "— Matthew 28:19 (Douay-Rheims)",
+        quoteSrc: "— Matthew 28:19",
       },
       firstCommunion: {
         quote: "\"I am the living bread which came down from heaven. If any man eat of this bread, he shall live for ever.\"",
-        quoteSrc: "— John 6:51–52 (Douay-Rheims)",
+        quoteSrc: "— John 6:51–52",
       },
       confirmation: {
         quote: "\"You shall receive the power of the Holy Ghost coming upon you, and you shall be witnesses unto me.\"",
-        quoteSrc: "— Acts 1:8 (Douay-Rheims)",
+        quoteSrc: "— Acts 1:8",
       },
       marriage: {
         quote: "\"Wherefore a man shall leave father and mother, and shall cleave to his wife: and they shall be two in one flesh.\"",
-        quoteSrc: "— Genesis 2:24 (Douay-Rheims)",
+        quoteSrc: "— Genesis 2:24",
         ccc: "\"The Sacrament of Matrimony is the Sacrament which unites a Christian man and woman in lawful marriage.\"",
         cccSrc: "— Baltimore Catechism",
       },
       anointing: {
         quote: "\"Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil in the name of the Lord.\"",
-        quoteSrc: "— James 5:14 (Douay-Rheims)",
+        quoteSrc: "— James 5:14",
       },
       funerals: {
         quote: "\"I am the resurrection and the life: he that believeth in me, although he be dead, shall live.\"",
-        quoteSrc: "— John 11:25 (Douay-Rheims)",
+        quoteSrc: "— John 11:25",
       },
     },
     arch: {
       roseQuote: "I am the light of the world: he that followeth me, walketh not in darkness, but shall have the light of life.",
-      roseQuoteSrc: "John 8:12 (Douay-Rheims)",
+      roseQuoteSrc: "John 8:12",
     },
   },
   es: {

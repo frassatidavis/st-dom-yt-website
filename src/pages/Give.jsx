@@ -9,7 +9,7 @@ import ParallaxSection from "../components/ParallaxSection";
 import DominicanDivider from "../components/DominicanDivider";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
-import { NextSteps, PastoralActionPanel } from "../components/PastoralActionPanel";
+import { NextSteps } from "../components/PastoralActionPanel";
 import PremiumPageActions from "../components/PremiumPageActions";
 import { isClassic } from "../classic";
 
@@ -214,7 +214,8 @@ export default function Give() {
 
       {/* Parallax visual break */}
       <ParallaxSection image={PHOTOS.stockCandles} height="30vh" overlay={0.45}>
-        <DominicanDivider color={T.goldLight} width={160} />
+        {/* Classic Mode: just the photo */}
+        {!classic && <DominicanDivider color={T.goldLight} width={160} />}
       </ParallaxSection>
 
       {/* Other giving methods */}

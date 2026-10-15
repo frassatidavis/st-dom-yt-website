@@ -206,6 +206,7 @@ export const CLASSIC_PHOTOS = {
   [PHOTOS.funeralCommittal]: `${A}dominican-cemetery-opt.webp`, // PSJ-H17-000-048: the Dominican cemetery, St. Rose, Kentucky
   [PHOTOS.dominicanBurial]: `${A}cemetery-statue-opt.webp`, // PSJ-H17-000-050: statue among the crosses, Dominican cemetery, St. Rose
   [PHOTOS.sanctuaryAltar]: `${A}home-sanctuary-postcard-opt.webp`, // postcard: St. Dominic's sanctuary with the servers and choir (photo from the parish)
+  [PHOTOS.stockCandles]: `${A}mass-high-altar-opt.webp`, // PSJ-H09A-000-003: Mass at the high altar, St. Vincent Ferrer, New York (band on the Offertory page)
   [PHOTOS.dominicanMural]: `${A}parish-classroom-1939-opt.webp`, // PSJ-H16-000-005.5: a parish school classroom, St. Monica, Raleigh, 1939
 };
 export const classicPhoto = (src) => (isClassic() && CLASSIC_PHOTOS[src]) || src;
