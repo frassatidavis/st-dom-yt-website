@@ -271,7 +271,6 @@ export default function Visit() {
           >
             {t("visit.cta.title")}
           </h2>
-          <p>{t("visit.cta.desc")}</p>
           <div className="premium-centered-actions">
             <Btn variant="gold" onClick={() => navigate("/contact")}>
               {t("visit.cta.contact")}
