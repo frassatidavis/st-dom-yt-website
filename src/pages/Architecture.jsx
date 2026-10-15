@@ -237,28 +237,31 @@ export default function Architecture() {
         />
       )}
 
-      <StickyScrub
-        image={PHOTOS.archSanctuary || PHOTOS.interiorNave || PHOTOS.archHero}
-        overlay={0.5}
-        panels={[
-          {
-            id: "a-threshold",
-            title: "The Threshold",
-            body: "Pass under the Romanesque arches into a century of prayer rendered in wood, stone, and stained glass.",
-          },
-          {
-            id: "a-nave",
-            title: "The Nave",
-            body: "Every line of the church draws the eye — and the soul — toward the altar.",
-          },
-          {
-            id: "a-sanctuary",
-            title: "The Sanctuary",
-            body: "Where heaven meets earth in the daily celebration of the Sacred Mysteries.",
-          },
-        ]}
-        height="300vh"
-      />
+      {/* Classic Mode: no Threshold / Nave / Sanctuary scroll */}
+      {!isClassic() && (
+        <StickyScrub
+          image={PHOTOS.archSanctuary || PHOTOS.interiorNave || PHOTOS.archHero}
+          overlay={0.5}
+          panels={[
+            {
+              id: "a-threshold",
+              title: "The Threshold",
+              body: "Pass under the Romanesque arches into a century of prayer rendered in wood, stone, and stained glass.",
+            },
+            {
+              id: "a-nave",
+              title: "The Nave",
+              body: "Every line of the church draws the eye — and the soul — toward the altar.",
+            },
+            {
+              id: "a-sanctuary",
+              title: "The Sanctuary",
+              body: "Where heaven meets earth in the daily celebration of the Sacred Mysteries.",
+            },
+          ]}
+          height="300vh"
+        />
+      )}
 
       {/* ════ Stop 1 — Exterior & Facade ════ */}
       <Section>
