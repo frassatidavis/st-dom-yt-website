@@ -60,6 +60,13 @@ export const CLASSIC_TEXT = {
       },
     },
     friars: { priests: { desc: "Our parish is cared for by Dominican friars of the Province of St. Joseph. To reach a priest, telephone or call at the rectory." } },
+    // From the Baltimore Catechism (1891 text), not the 1992 Catechism
+    massTimes: {
+      mass: {
+        quote: "\"The Mass is the unbloody sacrifice of the body and blood of Christ.\"",
+        quoteSrc: "— Baltimore Catechism, Q. 917",
+      },
+    },
     // Bible quotes in the Challoner Douay-Rheims (drbo.org)
     becomingCatholic: {
       quote: "\"Faith then cometh by hearing; and hearing by the word of Christ.\"",
@@ -144,6 +151,12 @@ export const CLASSIC_TEXT = {
       map: {
         note: "¡Súbase a la carreta o vaya a pie!",
         directions: "Cómo llegar desde donde está →",
+      },
+    },
+    massTimes: {
+      mass: {
+        quote: "\"La Misa es el sacrificio incruento del cuerpo y la sangre de Cristo.\"",
+        quoteSrc: "— Catecismo de Baltimore, P. 917",
       },
     },
     friars: { priests: { desc: "Nuestra parroquia está al cuidado de los frailes dominicos de la Provincia de San José. Para comunicarse con un sacerdote, llame por teléfono o pase por la rectoría." } },
