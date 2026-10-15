@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
+import { isClassic } from "../classic";
 import { Section, SectionTitle } from "../components/Section";
 import Btn from "../components/Btn";
 import ParallaxSection from "../components/ParallaxSection";
@@ -238,26 +239,29 @@ export default function MassTimes() {
           {t("massTimes.mass.title")}
         </SectionTitle>
         <Quote text={t("massTimes.mass.quote")} src={t("massTimes.mass.quoteSrc")} />
-        <p
-          style={{
-            fontSize: 16,
-            lineHeight: 1.8,
-            color: T.warmGray,
-            textAlign: "center",
-            maxWidth: 700,
-            margin: "0 auto 40px",
-            fontFamily: "var(--font-body)",
-          }}
-        >
-          {t("massTimes.mass.desc")}
-        </p>
+        {/* Classic Mode: no introduction under the quote */}
+        {!isClassic() && (
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: 1.8,
+              color: T.warmGray,
+              textAlign: "center",
+              maxWidth: 700,
+              margin: "0 auto 40px",
+              fontFamily: "var(--font-body)",
+            }}
+          >
+            {t("massTimes.mass.desc")}
+          </p>
+        )}
         <p
           style={{
             fontSize: 13,
             color: T.warmGray,
             textAlign: "center",
             maxWidth: 680,
-            margin: "-24px auto 36px",
+            margin: isClassic() ? "0 auto 36px" : "-24px auto 36px",
             fontFamily: "var(--font-body)",
           }}
         >

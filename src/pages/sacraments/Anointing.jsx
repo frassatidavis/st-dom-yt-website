@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../../constants/theme";
 import { CONFIG } from "../../constants/config";
+import { isClassic } from "../../classic";
 import { PHOTOS } from "../../constants/photos";
 import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
@@ -18,8 +19,8 @@ export default function Anointing() {
   return (
     <div style={{ paddingTop: 76 }}>
       <Seo
-        title="Anointing of the Sick"
-        description="The Sacrament of Anointing of the Sick at St. Dominic Church. For those who are seriously ill or facing surgery."
+        title={isClassic() ? "Extreme Unction" : "Anointing of the Sick"}
+        description={`The Sacrament of ${isClassic() ? "Extreme Unction" : "Anointing of the Sick"} at St. Dominic Church. For those who are seriously ill or facing surgery.`}
         image={PHOTOS.stockAnointing}
       />
       {/* The nave opens out of the header; then darkness closes in and falls,

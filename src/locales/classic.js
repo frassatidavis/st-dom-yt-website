@@ -13,7 +13,6 @@ export const CLASSIC_TEXT = {
       },
       formation: { title: "Sunday is Just the Start" },
     },
-    staff: { clickHint: "Select to learn more" },
     getInvolved: {
       clickHint: "Select to learn more",
       register: { cta: "Register at the Rectory" },
@@ -51,6 +50,7 @@ export const CLASSIC_TEXT = {
       quoteSrc: "— 2 Corinthians 9:7 (Douay-Rheims)",
     },
     visit: {
+      hero: { desc: "Don't let your Catholic upbringing lapse. Pope St. Pius X gave the Church his motto: \"To renew all things in Christ.\" Whether you are a lifelong parishioner or a fallen-away Catholic, an alum of the school or curious about the Catholic faith — you are welcome here." },
       directions: { cta: "Get Directions" },
       quote: "\"And hospitality do not forget; for by this some, being not aware of it, have entertained angels.\"",
       quoteSrc: "— Hebrews 13:2 (Douay-Rheims)",
@@ -60,11 +60,33 @@ export const CLASSIC_TEXT = {
       },
     },
     friars: { priests: { desc: "Our parish is cared for by Dominican friars of the Province of St. Joseph. To reach a priest, telephone or call at the rectory." } },
-    // From the Baltimore Catechism (1891 text), not the 1992 Catechism
+    // Catechism quotes from the Baltimore Catechism (1891 text, intratext.com),
+    // not the 1992 Catechism; pope quotes from before 1930 (vatican.va)
     massTimes: {
       mass: {
         quote: "\"The Mass is the unbloody sacrifice of the body and blood of Christ.\"",
-        quoteSrc: "— Baltimore Catechism, Q. 917",
+        quoteSrc: "— Baltimore Catechism",
+      },
+      confession: {
+        quote: "\"The Sacrament of Penance remits sins and restores the friendship of God to the soul by means of the absolution of the priest.\"",
+        quoteSrc: "— Baltimore Catechism",
+      },
+      adoration: {
+        quote: "\"The Holy Eucharist is the Sacrament which contains the body and blood, soul and divinity, of our Lord Jesus Christ under the appearances of bread and wine.\"",
+        quoteSrc: "— Baltimore Catechism",
+      },
+      parallax2: {
+        quote: "\"May God, 'who is rich in mercy,' benignly speed this restoration of the human race in Jesus Christ.\"",
+        src: "— Pope St. Pius X, E Supremi (1903)",
+      },
+    },
+    staff: {
+      clickHint: "Select to learn more",
+      quotes: {
+        "charles-rooney": {
+          text: "This Sacrament is, as it were, the very soul of the Church.",
+          source: "Pope Leo XIII, Mirae Caritatis (1902)",
+        },
       },
     },
     // Bible quotes in the Challoner Douay-Rheims (drbo.org)
@@ -73,6 +95,8 @@ export const CLASSIC_TEXT = {
       quoteSrc: "— Romans 10:17 (Douay-Rheims)",
     },
     sacraments: {
+      quote: "\"A Sacrament is an outward sign instituted by Christ to give grace.\"",
+      quoteSrc: "— Baltimore Catechism",
       baptism: {
         quote: "\"Going therefore, teach ye all nations; baptizing them in the name of the Father, and of the Son, and of the Holy Ghost.\"",
         quoteSrc: "— Matthew 28:19 (Douay-Rheims)",
@@ -88,6 +112,8 @@ export const CLASSIC_TEXT = {
       marriage: {
         quote: "\"Wherefore a man shall leave father and mother, and shall cleave to his wife: and they shall be two in one flesh.\"",
         quoteSrc: "— Genesis 2:24 (Douay-Rheims)",
+        ccc: "\"The Sacrament of Matrimony is the Sacrament which unites a Christian man and woman in lawful marriage.\"",
+        cccSrc: "— Baltimore Catechism",
       },
       anointing: {
         quote: "\"Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil in the name of the Lord.\"",
@@ -113,7 +139,6 @@ export const CLASSIC_TEXT = {
       },
       formation: { title: "El Domingo es Solo el Comienzo" },
     },
-    staff: { clickHint: "Seleccione para conocer más" },
     getInvolved: {
       clickHint: "Seleccione para conocer más",
       register: { cta: "Regístrese en la Rectoría" },
@@ -147,6 +172,7 @@ export const CLASSIC_TEXT = {
       clarityDesc: "La mayoría de los feligreses usan sus sobres semanales para la ofrenda, pero las donaciones únicas, memoriales y cheques por correo siempre son bienvenidos.",
     },
     visit: {
+      hero: { desc: "No deje que su fe católica se apague. San Pío X dio a la Iglesia su lema: \"Instaurar todas las cosas en Cristo\". Sea usted feligrés de toda la vida o un católico alejado, exalumno de la escuela o alguien con curiosidad por la fe católica — es bienvenido aquí." },
       directions: { cta: "Cómo Llegar" },
       map: {
         note: "¡Súbase a la carreta o vaya a pie!",
@@ -156,9 +182,68 @@ export const CLASSIC_TEXT = {
     massTimes: {
       mass: {
         quote: "\"La Misa es el sacrificio incruento del cuerpo y la sangre de Cristo.\"",
-        quoteSrc: "— Catecismo de Baltimore, P. 917",
+        quoteSrc: "— Catecismo de Baltimore",
+      },
+      confession: {
+        quote: "\"El Sacramento de la Penitencia perdona los pecados y devuelve al alma la amistad de Dios por medio de la absolución del sacerdote.\"",
+        quoteSrc: "— Catecismo de Baltimore",
+      },
+      adoration: {
+        quote: "\"La Sagrada Eucaristía es el Sacramento que contiene el cuerpo y la sangre, el alma y la divinidad de nuestro Señor Jesucristo bajo las apariencias de pan y vino.\"",
+        quoteSrc: "— Catecismo de Baltimore",
+      },
+      parallax2: {
+        quote: "\"Que Dios, 'rico en misericordia', apresure benignamente esta restauración del género humano en Jesucristo.\"",
+        src: "— San Pío X, E Supremi (1903)",
+      },
+    },
+    staff: {
+      clickHint: "Seleccione para conocer más",
+      quotes: {
+        "charles-rooney": {
+          text: "Este Sacramento es, por así decirlo, el alma misma de la Iglesia.",
+          source: "León XIII, Mirae Caritatis (1902)",
+        },
+      },
+    },
+    sacraments: {
+      quote: "\"Un Sacramento es un signo exterior instituido por Cristo para dar la gracia.\"",
+      quoteSrc: "— Catecismo de Baltimore",
+      marriage: {
+        ccc: "\"El Sacramento del Matrimonio es el Sacramento que une a un hombre y una mujer cristianos en matrimonio legítimo.\"",
+        cccSrc: "— Catecismo de Baltimore",
       },
     },
     friars: { priests: { desc: "Nuestra parroquia está al cuidado de los frailes dominicos de la Provincia de San José. Para comunicarse con un sacerdote, llame por teléfono o pase por la rectoría." } },
   },
 };
+
+// Words that change everywhere in Classic Mode, applied to every line of the
+// site's text after the replacements above: the old name of the sacrament,
+// and the church's full name in place of its nickname
+export const CLASSIC_WORDS = {
+  en: [
+    [/Anointing of the Sick/g, "Extreme Unction"],
+    [/\bAnointing\b/g, "Extreme Unction"],
+    [/\bThe Extreme Unction\b/g, "Extreme Unction"],
+    [/St\. ?Dom['’]s/g, "St. Dominic Church"],
+  ],
+  es: [
+    [/[Ll]a Unción de los Enfermos/g, "la Extremaunción"],
+    [/Unción de los Enfermos/g, "Extremaunción"],
+    [/[Ll]a Unción\b/g, "la Extremaunción"],
+    [/St\. ?Dom['’]s/g, "St. Dominic Church"],
+  ],
+};
+
+/** Applies CLASSIC_WORDS[lng] to every string in a language bundle */
+export function classicWords(bundle, lng) {
+  const rules = CLASSIC_WORDS[lng] || [];
+  const fix = (v) => {
+    if (typeof v === "string") return rules.reduce((s, [re, to]) => s.replace(re, to), v);
+    if (Array.isArray(v)) return v.map(fix);
+    if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fix(x)]));
+    return v;
+  };
+  return fix(bundle);
+}

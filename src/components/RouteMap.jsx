@@ -173,7 +173,7 @@ export default function RouteMap({ church, routes, town, mapsHref, photos = {}, 
                         <image href={marker} x={x - 20} y={y - 20} width="40" height="40" clipPath="url(#route-map-church-clip)" preserveAspectRatio="xMidYMid slice" />
                       </>
                     )}
-                    <text x={x} y={y - 30} textAnchor="middle">St. Dom&apos;s</text>
+                    <text x={x} y={y - 30} textAnchor="middle">{icon ? "St. Dominic Church" : "St. Dom\u2019s"}</text>
                     <g className="route-map__address" transform={`translate(${x}, ${y + 30})`}>
                       <rect x="-92" y="0" width="184" height="42" rx="4" />
                       <text y="17" textAnchor="middle">{church.address}</text>
