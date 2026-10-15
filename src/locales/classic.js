@@ -126,6 +126,7 @@ export const CLASSIC_TEXT = {
       },
     },
     arch: {
+      title: "The Dedication of St.\u00a0Dominic Church",
       roseQuote: "I am the light of the world: he that followeth me, walketh not in darkness, but shall have the light of life.",
       roseQuoteSrc: "John 8:12",
     },
@@ -181,6 +182,7 @@ export const CLASSIC_TEXT = {
       },
     },
     about: { title: "Nuestra Historia" },
+    arch: { title: "La Dedicación de la Iglesia de Santo Domingo" },
     massTimes: {
       mass: {
         quote: "\"La Misa es el sacrificio incruento del cuerpo y la sangre de Cristo.\"",
