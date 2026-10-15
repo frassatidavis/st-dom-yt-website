@@ -379,6 +379,12 @@ export default function Footer() {
           </FooterLink>
         </div>
       </div>
+      {/* Classic Mode: credit for the historical photographs */}
+      {isClassic() && (
+        <p style={{ maxWidth: 1100, margin: "14px auto 0", fontSize: 12, color: "rgba(255,255,255,0.55)", textAlign: "right" }}>
+          {t("classic.photoCredit")}
+        </p>
+      )}
     </footer>
   );
 }

@@ -184,7 +184,9 @@ export const VIDEOS = {
 // Classic Mode's own photos, in place of everyday ones: { everyday: classic }
 // (each needs the same -480/-1024/-1920 files; ResponsivePicture swaps them)
 // Archive photos: Dominican Province of St. Joseph Archives (psjarchives.org),
-// web copies of the item named in each comment
+// web copies of the item named in each comment. Historical photographs
+// © 2026 Dominican Province of St. Joseph Archives. Used with permission
+// (credited in the Classic Mode footer: classic.photoCredit)
 const A = `${B}photos/classic/`;
 export const CLASSIC_PHOTOS = {
   [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
