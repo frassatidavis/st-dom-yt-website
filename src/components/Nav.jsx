@@ -88,7 +88,7 @@ const NAV_ITEMS = [
       { key: "history", to: "/history", notClassic: true },
       { key: "architecture", to: "/architecture" },
       { key: "gallery", to: "/gallery" },
-      { key: "staff", to: "/staff" },
+      { key: "staff", to: "/staff", notClassic: true },
     ],
   },
 ];

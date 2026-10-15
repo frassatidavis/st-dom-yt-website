@@ -78,7 +78,7 @@ function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/mass-times" element={<MassTimes />} />
             <Route path="/about" element={<About />} />
-            <Route path="/staff" element={<Staff />} />
+            <Route path="/staff" element={isClassic() ? <Navigate to="/" replace /> : <Staff />} />
             <Route path="/bulletin" element={<Bulletin />} />
             <Route path="/becoming-catholic" element={<BecomingCatholic />} />
             <Route path="/get-involved" element={<GetInvolved />} />

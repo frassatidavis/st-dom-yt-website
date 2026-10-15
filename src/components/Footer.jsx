@@ -69,7 +69,7 @@ const FOOTER_GROUPS = [
       { to: "/about", key: "about" },
       { to: "/history", key: "history", notClassic: true },
       { to: "/architecture", key: "architecture" },
-      { to: "/staff", key: "staff" },
+      { to: "/staff", key: "staff", notClassic: true },
     ],
   },
 ];

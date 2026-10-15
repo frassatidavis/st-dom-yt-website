@@ -10,6 +10,7 @@ import LinkBtn from "../components/LinkBtn";
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 import { useStaff } from "../cms/hooks";
+import { isClassic } from "../classic";
 
 // The figures in the mural: the centre of each face, in % of the picture
 const SAINTS = [
@@ -111,7 +112,8 @@ export default function DominicanFriars() {
             <Mail size={16} aria-hidden="true" /> {CONFIG.email}
           </a>
         </div>
-        <p style={{ textAlign: "center", marginTop: 20 }}>
+        {/* Classic Mode: no Priests & Staff page to link to */}
+        <p style={{ textAlign: "center", marginTop: 20, display: isClassic() ? "none" : undefined }}>
           <Link
             to="/staff"
             style={{ color: T.goldText, fontSize: 13, fontWeight: 600, letterSpacing: 0.5, textTransform: "uppercase", textDecoration: "none" }}
