@@ -2755,3 +2755,10 @@ html.classic .parish-action-bar__hours-time {
     height: 13px;
   }
 }
+/* Classic: the note under the map's title that the times are by buggy */
+.route-map__subtitle {
+  margin: -22px 0 24px;
+  color: var(--color-warm-gray);
+  font-size: 17px;
+  font-style: italic;
+}

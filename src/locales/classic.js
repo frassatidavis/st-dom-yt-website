@@ -49,6 +49,7 @@ export const CLASSIC_TEXT = {
       directions: { cta: "Get Directions" },
       map: {
         note: "Pile in the buggy or get on your feet!",
+        buggyNote: "(times adjusted for horse and buggy)",
         directions: "Get directions from where you are →",
       },
     },
@@ -100,6 +101,7 @@ export const CLASSIC_TEXT = {
       directions: { cta: "Cómo Llegar" },
       map: {
         note: "¡Súbase a la carreta o vaya a pie!",
+        buggyNote: "(tiempos calculados en carreta de caballos)",
         directions: "Cómo llegar desde donde está →",
       },
     },

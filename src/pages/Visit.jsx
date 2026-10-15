@@ -227,6 +227,7 @@ export default function Visit() {
       {/* ════ How close we are: routes from nearby towns ════ */}
       <Section bg={T.warmWhite}>
         <SectionTitle>{t("visit.map.title")}</SectionTitle>
+        {isClassic() && <p className="route-map__subtitle">{t("visit.map.buggyNote")}</p>}
         <RouteMap
           church={CHURCH}
           routes={isClassic() ? CLASSIC_ROUTES : ROUTES}
