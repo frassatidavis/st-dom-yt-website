@@ -1012,7 +1012,7 @@
       "minutes_other": "{{count}} min",
       "miles_one": "{{count}} mile",
       "miles_other": "{{count}} miles",
-      "note": "Typical driving times without traffic.",
+      "note": "Come on. It's really not that far!",
       "directions": "Get directions from where you are →",
       "towns": {
         "boardman": "Boardman",
