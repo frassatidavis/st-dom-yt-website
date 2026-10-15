@@ -1007,7 +1007,7 @@
     },
     "map": {
       "title": "Más Cerca de lo que Piensa",
-      "label": "Mapa de rutas en auto a la Iglesia Santo Domingo desde Boardman, Canfield, Poland, Struthers, Campbell y Austintown",
+      "label": "Mapa de rutas en auto a la Iglesia Santo Domingo desde Boardman, Canfield, Poland, Struthers, Campbell, Austintown y el centro de Youngstown",
       "minutes_one": "{{count}} min",
       "minutes_other": "{{count}} min",
       "miles_one": "{{count}} milla",
@@ -1020,7 +1020,8 @@
         "poland": "Poland",
         "struthers": "Struthers",
         "campbell": "Campbell",
-        "austintown": "Austintown"
+        "austintown": "Austintown",
+        "youngstown": "Youngstown"
       }
     }
   },
