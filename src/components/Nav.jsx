@@ -253,56 +253,63 @@ export default function Nav() {
           aria-label={t("nav.brand")}
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}
         >
-          <span className="nav-crest-wrap" style={{ "--crest-h": `${scrolled ? 40 : 48}px` }}>
-            <img
-              className="nav-crest"
-              src={PHOTOS.stDomCrestDark}
-              alt=""
-              width={121}
-              height={168}
-              style={{ height: scrolled ? 40 : 48, width: "auto", display: "block", transition: "height 0.4s ease" }}
-            />
-            <img
-              className="nav-dog"
-              src={PHOTOS.dominicanDog}
-              alt=""
-              width={400}
-              height={242}
-              style={{ height: scrolled ? 40 : 48, transition: "height 0.4s ease" }}
-            />
-          </span>
-          <span className="nav-brand-text" style={isHome ? undefined : { minWidth: 0 }}>
-            {/* Separate elements (keys), so while one loads the other's
-                picture isn't stretched into its box */}
-            {isHome ? (
-              <img
-                key="short"
-                ref={brandRef}
-                src={PHOTOS.heroStDomsBurgundy}
-                alt=""
-                width={651}
-                height={192}
-                style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
-              />
-            ) : (
-              <img
-                key="full"
-                ref={brandRef}
-                src={PHOTOS.stDominicsBurgundy}
-                alt=""
-                width={896}
-                height={192}
-                style={{
-                  width: ((scrolled ? 44 : 54) * 896) / 192, maxWidth: "100%", height: "auto",
-                  display: "block", transition: "width 0.4s ease",
-                }}
-              />
-            )}
-          </span>
+          {/* Classic Mode: just the church's name, in the old title lettering */}
+          {isClassic() ? (
+            <span className="nav-classic-name">Saint Dominic Church</span>
+          ) : (
+            <>
+              <span className="nav-crest-wrap" style={{ "--crest-h": `${scrolled ? 40 : 48}px` }}>
+                <img
+                  className="nav-crest"
+                  src={PHOTOS.stDomCrestDark}
+                  alt=""
+                  width={121}
+                  height={168}
+                  style={{ height: scrolled ? 40 : 48, width: "auto", display: "block", transition: "height 0.4s ease" }}
+                />
+                <img
+                  className="nav-dog"
+                  src={PHOTOS.dominicanDog}
+                  alt=""
+                  width={400}
+                  height={242}
+                  style={{ height: scrolled ? 40 : 48, transition: "height 0.4s ease" }}
+                />
+              </span>
+              <span className="nav-brand-text" style={isHome ? undefined : { minWidth: 0 }}>
+                {/* Separate elements (keys), so while one loads the other's
+                    picture isn't stretched into its box */}
+                {isHome ? (
+                  <img
+                    key="short"
+                    ref={brandRef}
+                    src={PHOTOS.heroStDomsBurgundy}
+                    alt=""
+                    width={651}
+                    height={192}
+                    style={{ height: scrolled ? 44 : 54, width: "auto", display: "block", transition: "height 0.4s ease" }}
+                  />
+                ) : (
+                  <img
+                    key="full"
+                    ref={brandRef}
+                    src={PHOTOS.stDominicsBurgundy}
+                    alt=""
+                    width={896}
+                    height={192}
+                    style={{
+                      width: ((scrolled ? 44 : 54) * 896) / 192, maxWidth: "100%", height: "auto",
+                      display: "block", transition: "width 0.4s ease",
+                    }}
+                  />
+                )}
+              </span>
+            </>
+          )}
         </NavLink>
 
         {/* Today's Masses and confessions, when the row has room for them */}
-        <NavToday brandRef={brandRef} brandKey={isHome ? "short" : "full"} />
+        {!isClassic() && <NavToday brandRef={brandRef} brandKey={isHome ? "short" : "full"} />}
 
         {/* Desktop links */}
         <div style={{ display: "flex", gap: 2, alignItems: "center" }} className="nav-desktop">

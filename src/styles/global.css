@@ -2814,3 +2814,22 @@ html.classic h2 {
   letter-spacing: 0.04em !important;
   line-height: 1.12;
 }
+/* Classic: the header's left side is just the church's name */
+.nav-classic-name {
+  font-family: "Limelight", var(--font-display);
+  font-size: clamp(15px, 4.3vw, 30px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #000;
+  white-space: nowrap;
+  line-height: 1;
+}
+/* Classic: quote credits ("— Baltimore Catechism") in the header's
+   title lettering */
+html.classic figure figcaption {
+  font-family: "Limelight", var(--font-display) !important;
+  font-variant-caps: normal !important;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+}
