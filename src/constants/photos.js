@@ -235,6 +235,9 @@ export const CLASSIC_GALLERY = [
   ...CLASSIC_HOME_PHOTOS.map(({ src }) => ({ src })),
   { src: `${A}wedding-at-the-altar-opt.webp` },
   { src: `${A}nave-newspaper-photo-opt.webp` },
+  // St. Dominic's own photos from the Province's archives
+  { src: `${A}youngstown-interior-1936-opt.webp`, alt: "gallery.psj0" }, // PSJ-H02A-000-001
+  { src: `${A}youngstown-church-drawing-opt.webp`, alt: "gallery.psj1" }, // PSJ-H02A-000-002
   { src: PHOTOS.historyStorefront },
   { src: PHOTOS.historyFoundation },
   { src: PHOTOS.historyConstructionExt },
@@ -246,25 +249,27 @@ export const CLASSIC_GALLERY = [
   { src: PHOTOS.historyAltarboys },
   { src: PHOTOS.sacramentsHero },
   { src: PHOTOS.historyCommunity },
-].map((p, i) => ({ ...p, alt: p.alt || `gallery.classic${i}` }));
+].map(
+  // Captions gallery.classic0, 1, 2… in order, skipping photos that bring their own
+  ((n) => (p) => (p.alt ? p : { ...p, alt: `gallery.classic${n++}` }))(0)
+);
 
 // Classic Mode's "The Province of St. Joseph in Photos": the photographs
 // from the Dominican Province of St. Joseph Archives (psjarchives.org)
 export const CLASSIC_PSJ_GALLERY = [
-  "youngstown-interior-1936", // PSJ-H02A-000-001
-  "youngstown-church-drawing", // PSJ-H02A-000-002
-  "mass-high-altar", // PSJ-H09A-000-003
-  "side-aisle-arches", // PSJ-H14A-000-001
-  "servers-at-the-altar", // PSJ-H09A-000-045
-  "lady-altar", // PSJ-H03A-000-012
-  "lady-niche-statue", // PSJ-H09A-000-034
-  "friars-procession", // PSJ-H16-000-004.8
-  "friars-greeting", // PSJ-H03A-000-010
-  "communion-rail", // PSJ-H11A-000-013
-  "bishop-and-friars", // PSJ-H03A-000-011
-  "boys-with-candles", // PSJ-H09A-000-001
-  "dominican-cemetery", // PSJ-H17-000-048
-  "cemetery-statue", // PSJ-H17-000-050
-  "high-altar-somerset", // PSJ-H10A-000-017
-  "parish-classroom-1939", // PSJ-H16-000-005.5
-].map((name, i) => ({ src: `${A}${name}-opt.webp`, alt: `gallery.psj${i}` }));
+  // [file, caption key] — captions keep their original numbers
+  ["mass-high-altar", 2], // PSJ-H09A-000-003
+  ["side-aisle-arches", 3], // PSJ-H14A-000-001
+  ["servers-at-the-altar", 4], // PSJ-H09A-000-045
+  ["lady-altar", 5], // PSJ-H03A-000-012
+  ["lady-niche-statue", 6], // PSJ-H09A-000-034
+  ["friars-procession", 7], // PSJ-H16-000-004.8
+  ["friars-greeting", 8], // PSJ-H03A-000-010
+  ["communion-rail", 9], // PSJ-H11A-000-013
+  ["bishop-and-friars", 10], // PSJ-H03A-000-011
+  ["boys-with-candles", 11], // PSJ-H09A-000-001
+  ["dominican-cemetery", 12], // PSJ-H17-000-048
+  ["cemetery-statue", 13], // PSJ-H17-000-050
+  ["high-altar-somerset", 14], // PSJ-H10A-000-017
+  ["parish-classroom-1939", 15], // PSJ-H16-000-005.5
+].map(([name, n]) => ({ src: `${A}${name}-opt.webp`, alt: `gallery.psj${n}` }));

@@ -2842,7 +2842,9 @@ html.classic .ministry-card h3 {
 html.classic .ministry-hint {
   display: none;
 }
-/* Classic: no small label lines over the headings */
-html.classic .kicker {
+/* Classic: no small label lines over the headings (the kicker, and the
+   small-caps labels some pages set straight above a title) */
+html.classic .kicker,
+html.classic main [style*="all-small-caps"]:has(+ h1, + h2) {
   display: none !important;
 }
