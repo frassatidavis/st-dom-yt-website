@@ -96,6 +96,7 @@ export const PHOTOS = {
   altarServers: `${B}photos/altar-servers-procession-opt.webp`,  // Altar servers in red cassocks and surplices walking in procession (behind Join Us This Weekend on /visit)
   // Pictures behind the place cards on the Start Here map (RouteMap), by route id
   mapPlaces: {
+    youngstown: `${B}photos/map/youngstown.webp`, // Two Youngstown police cruisers downtown
     boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
     canfield: `${B}photos/map/canfield.webp`, // Tippecanoe Country Club: the clubhouse across the pond
     poland: `${B}photos/map/poland.webp`, // The clock tower on Main Street, Poland
