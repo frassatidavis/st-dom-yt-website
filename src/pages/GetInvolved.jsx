@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
@@ -12,6 +12,8 @@ import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import PageHeader from "../components/PageHeader";
 import { PHOTOS } from "../constants/photos";
+import { isClassic } from "../classic";
+import SteelSparks from "../components/SteelSparks";
 import { X, Mail, Phone } from "lucide-react";
 
 /* ── Accent per ministry — muted, warm-leaning, brand-harmonized.
@@ -32,6 +34,7 @@ const ACCENTS = {
 };
 
 export default function GetInvolved() {
+  const ministryListRef = useRef(null);
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { data: ministries } = useMinistries();
@@ -203,7 +206,9 @@ export default function GetInvolved() {
             }
           `}</style>
 
-        <div className="ministry-grid">
+        <div className="ministry-grid" ref={ministryListRef} style={{ position: "relative" }}>
+          {/* Classic Mode: sparks fly off a row as the pointer moves over it */}
+          {isClassic() && <SteelSparks targetRef={ministryListRef} selector=".ministry-card" />}
           {ministries.map((m) => {
             const accent = ACCENTS[m.key] || T.burgundy;
 
