@@ -3,6 +3,7 @@ import PullQuote from "../components/PullQuote";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { PHOTOS } from "../constants/photos";
+import { isClassic } from "../classic";
 import { Section, SectionTitle } from "../components/Section";
 import PageHeader from "../components/PageHeader";
 import ParallaxSection from "../components/ParallaxSection";
@@ -31,81 +32,86 @@ export default function BecomingCatholic() {
           {t("becomingCatholic.intro.title")}
         </SectionTitle>
         <PullQuote variant="margin" text={t("becomingCatholic.quote")} src={t("becomingCatholic.quoteSrc")} />
-        <p
-          style={{
-            fontSize: 17,
-            lineHeight: 1.8,
-            color: T.warmGray,
-            maxWidth: 720,
-            margin: "0 auto",
-            textAlign: "center",
-          }}
-        >
-          {t("becomingCatholic.intro.desc")}
-        </p>
+        {/* Classic Mode: no introduction under the quote */}
+        {!isClassic() && (
+          <p
+            style={{
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: T.warmGray,
+              maxWidth: 720,
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
+            {t("becomingCatholic.intro.desc")}
+          </p>
+        )}
       </Section>
 
-      {/* ════ Cards ════ */}
-      <Section bg={T.cream}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 28,
-          }}
-        >
-          {cards.map(({ key }) => (
-            <div
-              key={key}
-              style={{
-                background: "#fff",
-                borderRadius: "var(--radius-card)",
-                overflow: "hidden",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
-              }}
-            >
-              <div style={{ height: 4, background: T.burgundy }} />
-              <div style={{ padding: 32 }}>
-                <h3
-                  style={{
-                    fontSize: 20,
-                    fontFamily: "var(--font-display)",
-                    marginBottom: 10,
-                    color: T.softBlack,
-                  }}
-                >
-                  {t(`becomingCatholic.cards.${key}.title`)}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                    color: T.warmGray,
-                    marginBottom: 16,
-                  }}
-                >
-                  {t(`becomingCatholic.cards.${key}.desc`)}
-                </p>
-                <span
-                  style={{
-                    display: "inline-block",
-                    fontSize: 12,
-                    fontWeight: 600,
-                    letterSpacing: 0.5,
-                    fontVariantCaps: "all-small-caps",
-                    color: T.burgundy,
-                    background: `${T.burgundy}10`,
-                    padding: "6px 14px",
-                    borderRadius: 4,
-                  }}
-                >
-                  {t(`becomingCatholic.cards.${key}.step`)}
-                </span>
+      {/* ════ Cards (not in Classic Mode) ════ */}
+      {!isClassic() && (
+        <Section bg={T.cream}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 28,
+            }}
+          >
+            {cards.map(({ key }) => (
+              <div
+                key={key}
+                style={{
+                  background: "#fff",
+                  borderRadius: "var(--radius-card)",
+                  overflow: "hidden",
+                  boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+                }}
+              >
+                <div style={{ height: 4, background: T.burgundy }} />
+                <div style={{ padding: 32 }}>
+                  <h3
+                    style={{
+                      fontSize: 20,
+                      fontFamily: "var(--font-display)",
+                      marginBottom: 10,
+                      color: T.softBlack,
+                    }}
+                  >
+                    {t(`becomingCatholic.cards.${key}.title`)}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 15,
+                      lineHeight: 1.7,
+                      color: T.warmGray,
+                      marginBottom: 16,
+                    }}
+                  >
+                    {t(`becomingCatholic.cards.${key}.desc`)}
+                  </p>
+                  <span
+                    style={{
+                      display: "inline-block",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      letterSpacing: 0.5,
+                      fontVariantCaps: "all-small-caps",
+                      color: T.burgundy,
+                      background: `${T.burgundy}10`,
+                      padding: "6px 14px",
+                      borderRadius: 4,
+                    }}
+                  >
+                    {t(`becomingCatholic.cards.${key}.step`)}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* Parallax visual break */}
       <ParallaxSection image={PHOTOS.sanctuaryAltar} height="30vh" overlay={0.45} />
