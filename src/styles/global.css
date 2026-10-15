@@ -2805,9 +2805,11 @@ html.classic h1 {
   letter-spacing: 0.03em !important;
   line-height: 1.08;
 }
-/* Classic: section titles in a lighter Art Deco serif (Gilda Display) */
+/* Classic: section titles in a lighter Art Deco serif (Gilda Display; it
+   has one weight, so a hairline stroke thickens it a little) */
 html.classic h2 {
   font-family: "Gilda Display", var(--font-display) !important;
   font-weight: 400 !important;
-  letter-spacing: 0.01em !important;
+  letter-spacing: 0.015em !important;
+  -webkit-text-stroke: 1.1px currentColor;
 }
