@@ -188,6 +188,7 @@ export const VIDEOS = {
 const A = `${B}photos/classic/`;
 export const CLASSIC_PHOTOS = {
   [PHOTOS.sacredHeart]: `${B}photos/sacred-heart-close-opt.webp`, // the same shrine, close and upright: Jesus with the two kneeling saints, roses and red votives
+  [PHOTOS.homeHeroProcession]: `${A}congregation-at-prayer-opt.webp`, // the congregation kneeling at prayer under the nave's arches (photo from the parish owner)
   [PHOTOS.aboutHero]: `${A}youngstown-interior-1936-opt.webp`, // PSJ-H02A-000-001: St. Dominic, Youngstown, the church interior, 1936
   [PHOTOS.archRoseExt]: `${A}youngstown-church-drawing-opt.webp`, // PSJ-H02A-000-002: the architect's drawing of St. Dominic, Youngstown
   [PHOTOS.dominicanCharism]: `${A}mass-high-altar-opt.webp`, // PSJ-H09A-000-003: Mass at the high altar, St. Vincent Ferrer, New York
