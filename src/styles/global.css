@@ -2673,10 +2673,25 @@ html.classic .hero-intro-control {
 html.classic .premium-hero__logo img {
   display: none;
 }
-/* Classic: everything in greyscale — text, colours, buttons, photos, map.
-   On the root element, so the fixed header and bars keep working. */
-html.classic {
-  filter: grayscale(1);
+/* Classic: everything in greyscale — text, colours, buttons, photos, map —
+   through a see-through grey layer over the whole screen (a filter on the
+   page itself would break its pop-up windows)... */
+html.classic body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  -webkit-backdrop-filter: grayscale(1);
+  backdrop-filter: grayscale(1);
+}
+/* ...all but the bottom bar's switch back to 2026, which sits above that
+   grey layer in maroon */
+html.classic .parish-action-bar {
+  z-index: 2147483100;
+}
+html.classic .parish-action-bar__item {
+  background: var(--color-burgundy) !important;
 }
 /* Classic: the "St·Dominic's" lettering in black ink; the footer's crest
    in white */
@@ -2713,7 +2728,6 @@ html.classic .parish-action-bar {
 html.classic .parish-action-bar__mode {
   padding: 10px 22px;
 }
-html.classic .parish-action-bar__item,
 html.classic .parish-action-bar__contact-cell,
 html.classic footer {
   background: #000 !important;
