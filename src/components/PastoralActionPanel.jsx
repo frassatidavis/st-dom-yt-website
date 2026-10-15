@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import Icon from "./Icon";
+import { isClassic } from "../classic";
 
 export function PastoralActionPanel({
   eyebrow,
@@ -165,6 +166,8 @@ export function PastoralActionPanel({
 
 export function NextSteps({ eyebrow, title, items }) {
   const navigate = useNavigate();
+  // Classic Mode: no boxes of link cards anywhere
+  if (isClassic()) return null;
 
   return (
     <section

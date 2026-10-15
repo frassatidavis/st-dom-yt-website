@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { T } from "../constants/theme";
 import Icon from "./Icon";
+import { isClassic } from "../classic";
 
 // fullText: show each card's whole description instead of two lines
 export default function PremiumPageActions({ eyebrow, title, items = [], overlap = false, fullText = false }) {
   const navigate = useNavigate();
+  // Classic Mode: no boxes of link cards anywhere
+  if (isClassic()) return null;
 
   const renderItem = (item) => {
     const content = (
