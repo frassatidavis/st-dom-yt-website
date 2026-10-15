@@ -10,6 +10,7 @@ import TextReveal from "../components/TextReveal";
 import Seo from "../components/Seo";
 import Icon from "../components/Icon";
 import PremiumPageActions from "../components/PremiumPageActions";
+import { isClassic } from "../classic";
 import { PHOTOS, classicPhoto } from "../constants/photos";
 
 /* ── Reusable helpers (same patterns as History) ── */
@@ -189,18 +190,21 @@ export default function Architecture() {
           {t("arch.title")}
         </h1>
         <div style={{ width: 56, height: 3, background: T.gold, margin: "20px auto 0" }} />
-        <p
-          style={{
-            fontSize: 18,
-            maxWidth: 560,
-            margin: "24px auto 0",
-            lineHeight: 1.6,
-            color: "rgba(255,255,255,0.9)",
-            textShadow: "0 1px 12px rgba(0,0,0,0.5)",
-          }}
-        >
-          {t("arch.hero.desc")}
-        </p>
+        {/* Classic Mode: just the title over the photo */}
+        {!isClassic() && (
+          <p
+            style={{
+              fontSize: 18,
+              maxWidth: 560,
+              margin: "24px auto 0",
+              lineHeight: 1.6,
+              color: "rgba(255,255,255,0.9)",
+              textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+            }}
+          >
+            {t("arch.hero.desc")}
+          </p>
+        )}
       </StickyHero>
 
       <PremiumPageActions
