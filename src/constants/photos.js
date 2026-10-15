@@ -99,6 +99,7 @@ export const PHOTOS = {
     boardman: `${B}photos/map/boardman.webp`, // Southern Park Mall: Dillard's and the Buffalo Wild Wings wing
     canfield: `${B}photos/map/canfield.webp`, // Meijer: the produce department
     poland: `${B}photos/map/poland.webp`, // The clock tower on Main Street, Poland
+    struthers: `${B}photos/map/struthers.webp`, // The Elmton: the bar
   },
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
