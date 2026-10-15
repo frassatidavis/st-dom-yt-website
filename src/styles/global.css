@@ -2501,14 +2501,14 @@ a.contact-link:hover {
 
 /* ════════════════════════════════════════════════════════════════════════
    CLASSIC MODE (html.classic, see src/classic.js) — the parish's own
-   1923 / 1954 look: letterpress typefaces, paper and ink, black-and-white
+   1923 / 1954 look: an early-1900s sans-serif (Antic), paper and ink, black-and-white
    photographs, square corners, double rules, and no motion. Everything
    here only applies while Classic Mode is on.
    ════════════════════════════════════════════════════════════════════════ */
 html.classic {
-  --font-display: "IM Fell English", "Old Standard TT", Georgia, serif;
-  --font-body: "Old Standard TT", Georgia, "Times New Roman", serif;
-  --font-caps: "IM Fell English SC", "Old Standard TT", Georgia, serif;
+  --font-display: "Antic", "Gill Sans", "Trebuchet MS", sans-serif;
+  --font-body: "Antic", "Gill Sans", "Trebuchet MS", sans-serif;
+  --font-caps: "Antic", "Gill Sans", "Trebuchet MS", sans-serif;
   --tracking-display: 0;
   --paper: #f3ecdb;
   --paper-deep: #e9dfc8;
@@ -2552,7 +2552,7 @@ html.classic .route-map__list button.has-photo {
   filter: grayscale(1) contrast(1.06) !important;
 }
 
-/* Type: letterpress headings, a book face for reading, small caps for labels */
+/* Type: one period sans-serif throughout; labels in spaced capitals */
 html.classic h1,
 html.classic h2,
 html.classic h3 {
@@ -2588,8 +2588,8 @@ html.classic .premium-nav-link,
 html.classic .premium-give-link,
 html.classic .nav-today__label {
   font-family: var(--font-caps) !important;
-  text-transform: none !important;
-  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
   font-weight: 400 !important;
 }
 html.classic .btn-hover,

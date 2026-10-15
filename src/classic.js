@@ -1,7 +1,7 @@
 /**
  * Classic Mode — an optional look for the whole site inspired by the
  * parish's two key years, 1923 (founding) and 1954 (the church's
- * cornerstone): period typefaces, paper and ink colours, black-and-white
+ * cornerstone): a period sans-serif, paper and ink colours, black-and-white
  * photos, and no motion. It is remembered per visitor (localStorage "mode")
  * and marked on <html> as .classic, which the stylesheet styles.
  *
@@ -10,8 +10,9 @@
  * Switching reloads the page so everything starts afresh in the new look.
  */
 const KEY = "mode";
-const FONTS =
-  "https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap";
+// Antic: the closest free match to the parish's old sans-serif lettering
+// (the owner's "The Meaney Building 1906" sample, early-1900s American gothic)
+const FONTS = "https://fonts.googleapis.com/css2?family=Antic&display=swap";
 
 function read() {
   try {
