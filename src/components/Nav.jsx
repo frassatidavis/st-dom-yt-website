@@ -72,7 +72,7 @@ const NAV_ITEMS = [
       { key: "getInvolved", to: "/get-involved" },
       { key: "register", to: "/register" },
       { key: "faithFormation", to: "/faith-formation" },
-      { key: "events", to: "/events" },
+      { key: "events", to: "/events", notClassic: true },
       { key: "connect", to: "/connect" },
     ],
   },

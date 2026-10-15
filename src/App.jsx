@@ -95,7 +95,7 @@ function AppRoutes() {
             <Route path="/history" element={<History />} />
             <Route path="/dominican-friars" element={<DominicanFriars />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/events" element={<Events />} />
+            <Route path="/events" element={isClassic() ? <Navigate to="/" replace /> : <Events />} />
             <Route path="/architecture" element={<Architecture />} />
             {/* Blog removed — redirect any old/indexed blog URLs to home (/blog itself is in LEGACY_REDIRECTS) */}
             <Route path="/blog/:slug" element={<Navigate to="/" replace />} />

@@ -237,6 +237,20 @@ export default function Architecture() {
         />
       )}
 
+      {/* Classic Mode: the nave as a 1950s newspaper photo, in its place */}
+      {isClassic() && (
+        <figure style={{ maxWidth: 760, margin: "56px auto 0", padding: "0 24px" }}>
+          <img
+            src={`${import.meta.env.BASE_URL}photos/classic/nave-newspaper-photo-opt.webp`}
+            alt="The nave of St. Dominic Church, a man kneeling in the center aisle before the altar, from a 1950s newspaper photograph"
+            width={1088}
+            height={1125}
+            loading="lazy"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </figure>
+      )}
+
       {/* Classic Mode: no Threshold / Nave / Sanctuary scroll */}
       {!isClassic() && (
         <StickyScrub

@@ -60,7 +60,7 @@ const FOOTER_GROUPS = [
       { to: "/get-involved", key: "getInvolved" },
       { to: "/register", key: "register" },
       { to: "/faith-formation", key: "faithFormation" },
-      { to: "/events", key: "events" },
+      { to: "/events", key: "events", notClassic: true },
     ],
   },
   {
