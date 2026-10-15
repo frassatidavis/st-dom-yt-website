@@ -198,7 +198,7 @@ export const CLASSIC_PHOTOS = {
   [PHOTOS.marianShrine]: `${A}home-may-crowning-opt.webp`, // the May crowning of Our Lady at St. Dominic's (photo from the parish)
   [PHOTOS.stDominicStrip]: `${A}lady-niche-statue-opt.webp`, // PSJ-H09A-000-034: statue of Our Lady in a stone niche, St. Vincent Ferrer
   [PHOTOS.altarServers]: `${A}home-ladies-on-the-steps-opt.webp`, // parishioners coming down St. Dominic's front steps after Mass (photo from the parish)
-  [PHOTOS.pageHeader]: `${A}friars-greeting-opt.webp`, // PSJ-H03A-000-010: friars greeting one another, St. Mary, New Haven
+  [PHOTOS.pageHeader]: `${A}home-friar-leading-prayer-opt.webp`, // a friar leading prayer down the aisle of a full St. Dominic's (photo from the parish)
   [PHOTOS.firstCommunionRail]: `${A}home-boys-first-communion-procession-opt.webp`, // St. Dominic's First Communion boys processing up the aisle (photo from the parish)
   [PHOTOS.confirmationFire]: `${A}bishop-and-friars-opt.webp`, // PSJ-H03A-000-011: the bishop with the friars, St. Mary, New Haven
   [PHOTOS.stockAnointing]: `${A}home-lady-at-the-shrine-opt.webp`, // a parishioner praying at the shrine candles, St. Dominic's (photo from the parish)
@@ -224,4 +224,5 @@ export const CLASSIC_HOME_PHOTOS = [
   { src: `${A}home-lady-at-the-shrine-opt.webp`, position: "40% 50%" }, // a parishioner at the Infant of Prague shrine
   { src: `${A}home-sanctuary-postcard-opt.webp`, position: "50% 50%" }, // postcard: the sanctuary with the servers and choir
   { src: `${A}home-boys-first-communion-procession-opt.webp`, position: "50% 45%" }, // boys in white jackets processing up the aisle
+  { src: `${A}home-friar-leading-prayer-opt.webp`, position: "48% 60%" }, // a friar leading prayer down the aisle of a full church
 ];
