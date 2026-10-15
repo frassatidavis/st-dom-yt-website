@@ -13,7 +13,17 @@ import { isClassic } from "../classic";
 /** Navigate with View Transition when supported */
 function NavLink({ to, children, style, ...props }) {
   const navigate = useNavigate();
-  const href = useHref(to);
+  // Another website (e.g. the PSJ Archives): an ordinary link in a new tab
+  const external = /^https?:\/\//.test(to);
+  const localHref = useHref(external ? "/" : to);
+  if (external) {
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer" style={style} {...props}>
+        {children}
+      </a>
+    );
+  }
+  const href = localHref;
   const handleClick = (e) => {
     if (
       e.defaultPrevented ||
@@ -83,9 +93,18 @@ const NAV_ITEMS = [
   },
 ];
 
-// Classic Mode leaves out the links marked notClassic (History)
+// Classic Mode leaves out the links marked notClassic (History) and puts the
+// Dominican Province of St. Joseph Archives in place of the Gallery
+const PSJ_ARCHIVES = { key: "psjArchives", to: "https://www.psjarchives.org/" };
 const MENU = NAV_ITEMS.map((item) =>
-  item.children ? { ...item, children: item.children.filter((c) => !(isClassic() && c.notClassic)) } : item
+  item.children && isClassic()
+    ? {
+        ...item,
+        children: item.children
+          .filter((c) => !c.notClassic)
+          .map((c) => (c.key === "gallery" ? PSJ_ARCHIVES : c)),
+      }
+    : item
 );
 
 export default function Nav() {
