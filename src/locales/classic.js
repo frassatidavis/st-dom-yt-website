@@ -4,11 +4,11 @@
 // telephone or call at the rectory, and the offertory goes in the envelope.
 export const CLASSIC_TEXT = {
   en: {
-    nav: { give: "Offertory", about: "Our History", architecture: "Dedication of St. Dominic Church" },
+    nav: { give: "Your Tithe", about: "Our History", architecture: "Dedication of St. Dominic Church" },
     footer: { cards: { emailTitle: "Write to Us" } },
     home: {
       involved: {
-        desc: "Call at the rectory to register and receive your offertory envelopes. A parish registry is kept so that the pastor and his associates can know his flock. Don't stay an anonymous parishioner!",
+        desc: "Call at the rectory to register and receive your tithing envelopes. A parish registry is kept so that the pastor and his associates can know his flock. Don't stay an anonymous parishioner!",
         ctaRegister: "Register",
       },
       formation: { title: "Sunday is Just the Start" },
@@ -44,8 +44,10 @@ export const CLASSIC_TEXT = {
       quoteSrc: "— Romans 12:2",
     },
     give: {
-      title: "The Offertory",
-      clarityDesc: "Most parishioners use their weekly offertory envelopes, but one-time gifts, memorial gifts, and mailed checks are always welcome.",
+      title: "Your Tithe",
+      next: { mass: { title: "Your Sunday Tithe" } },
+      methods: { offertory: { title: "Your Sunday Tithe" } },
+      clarityDesc: "Most parishioners use their weekly tithing envelopes, but one-time gifts, memorial gifts, and mailed checks are always welcome.",
       quote: "\"Every one as he hath determined in his heart, not with sadness, or of necessity: for God loveth a cheerful giver.\"",
       quoteSrc: "— 2 Corinthians 9:7",
     },
@@ -132,7 +134,7 @@ export const CLASSIC_TEXT = {
     },
   },
   es: {
-    nav: { give: "Ofertorio", about: "Nuestra Historia", architecture: "Dedicación de la Iglesia de Santo Domingo" },
+    nav: { give: "Su Diezmo", about: "Nuestra Historia", architecture: "Dedicación de la Iglesia de Santo Domingo" },
     footer: { cards: { emailTitle: "Escríbanos" } },
     home: {
       involved: {
@@ -170,7 +172,9 @@ export const CLASSIC_TEXT = {
       cta: { desc: "Tome un buen libro, rece el Rosario o abra el Catecismo. Cada paso que da hacia la comprensión de su fe es un paso más cerca de Cristo." },
     },
     give: {
-      title: "El Ofertorio",
+      title: "Su Diezmo",
+      next: { mass: { title: "Su Diezmo Dominical" } },
+      methods: { offertory: { title: "Su Diezmo Dominical" } },
       clarityDesc: "La mayoría de los feligreses usan sus sobres semanales para la ofrenda, pero las donaciones únicas, memoriales y cheques por correo siempre son bienvenidos.",
     },
     visit: {
