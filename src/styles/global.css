@@ -2789,3 +2789,8 @@ html.classic h2 {
   white-space: nowrap;
   line-height: 1;
 }
+/* Classic: a much taller photo header where the whole scene matters */
+html.classic .classic-big-header .premium-page-header {
+  min-height: clamp(440px, 74vh, 780px);
+  align-items: flex-end;
+}

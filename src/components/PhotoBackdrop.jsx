@@ -38,6 +38,7 @@ const smooth = (v) => v * v * (3 - 2 * v);
  *              With "dark", a child marked data-dawn brings the light back:
  *              as it rises up the screen the black lifts to white and the
  *              text turns dark again.
+ *   classicBig — Classic Mode: a much taller header, so more of the photo shows
  *   children — the content it becomes the background of (transparent sections)
  */
 export default function PhotoBackdrop(props) {
@@ -45,7 +46,9 @@ export default function PhotoBackdrop(props) {
   if (isClassic()) {
     return (
       <>
-        <PageHeader title={props.title} heroSrc={props.src} position={props.position} tall />
+        <div className={props.classicBig ? "classic-big-header" : undefined}>
+          <PageHeader title={props.title} heroSrc={props.src} position={props.position} tall />
+        </div>
         {props.children}
       </>
     );

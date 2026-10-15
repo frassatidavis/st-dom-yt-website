@@ -7,6 +7,7 @@ import { Section, SectionTitle } from "../../components/Section";
 import Btn from "../../components/Btn";
 import LinkBtn from "../../components/LinkBtn";
 import PhotoBackdrop from "../../components/PhotoBackdrop";
+import { isClassic } from "../../classic";
 import Seo from "../../components/Seo";
 import DominicanDivider from "../../components/DominicanDivider";
 import PullQuote from "../../components/PullQuote";
@@ -33,7 +34,8 @@ export default function Marriage() {
         subject={[0.47, 0.34]}
         subjectAt={0.4}
         zoom={[1, 1.5]}
-        position="50% 35%"
+        position={isClassic() ? "50% 20%" : "50% 35%"}
+        classicBig
       >
         <Section bg="transparent">
           <div style={{ maxWidth: 760, margin: "0 auto" }}>

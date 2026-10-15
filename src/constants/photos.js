@@ -200,6 +200,7 @@ export const CLASSIC_PHOTOS = {
   [PHOTOS.altarServers]: `${A}home-ladies-on-the-steps-opt.webp`, // parishioners coming down St. Dominic's front steps after Mass (photo from the parish)
   [PHOTOS.pageHeader]: `${A}home-friar-leading-prayer-opt.webp`, // a friar leading prayer down the aisle of a full St. Dominic's (photo from the parish)
   [PHOTOS.firstCommunionRail]: `${A}home-boys-first-communion-procession-opt.webp`, // St. Dominic's First Communion boys processing up the aisle (photo from the parish)
+  [PHOTOS.marriageWide]: `${A}wedding-at-the-altar-opt.webp`, // a bride kneeling at the altar with the groom as the priest reads the rite, St. Dominic's (photo from the parish)
   [PHOTOS.confirmationFire]: `${A}bishop-and-friars-opt.webp`, // PSJ-H03A-000-011: the bishop with the friars, St. Mary, New Haven
   [PHOTOS.stockAnointing]: `${A}home-lady-at-the-shrine-opt.webp`, // a parishioner praying at the shrine candles, St. Dominic's (photo from the parish)
   [PHOTOS.funeralCommittal]: `${A}dominican-cemetery-opt.webp`, // PSJ-H17-000-048: the Dominican cemetery, St. Rose, Kentucky
