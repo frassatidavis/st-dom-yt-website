@@ -100,6 +100,7 @@ export const PHOTOS = {
     canfield: `${B}photos/map/canfield.webp`, // Meijer: the produce department
     poland: `${B}photos/map/poland.webp`, // The clock tower on Main Street, Poland
     struthers: `${B}photos/map/struthers.webp`, // The Elmton: the bar
+    campbell: `${B}photos/map/campbell.webp`, // The Four Seasons flea market from the air, the water tower beside it
   },
   sacramentsHero: `${B}photos/history/altar-mass-old.webp`,       // Historic b&w: Mass at the high altar under the mural, servers kneeling
   saintsMural: `${B}photos/saints-mural-opt.webp`,               // The sanctuary mural (Our Lady with eight named Dominican saints), square crop of DSC_0468
