@@ -27,8 +27,11 @@ const HEADER_NAME = {
 
 // Today's intro video: the intros take turns, a different one each day (by
 // the visitor's date), so the same one plays all day and returning visitors
-// see the next one tomorrow
+// see the next one tomorrow. "?intro=2" in the address plays a chosen one
+// (for previewing).
 function introForToday(intros) {
+  const pick = Number(new URLSearchParams(window.location.search).get("intro"));
+  if (pick >= 1 && pick <= intros.length) return intros[pick - 1];
   const now = new Date();
   const day = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
   return intros[day % intros.length];
