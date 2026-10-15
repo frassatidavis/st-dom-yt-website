@@ -2824,12 +2824,3 @@ html.classic h2 {
   white-space: nowrap;
   line-height: 1;
 }
-/* Classic: quote credits ("— Baltimore Catechism") in the header's
-   title lettering */
-html.classic figure figcaption {
-  font-family: "Limelight", var(--font-display) !important;
-  font-variant-caps: normal !important;
-  text-transform: uppercase;
-  font-weight: 400 !important;
-  letter-spacing: 0.05em !important;
-}
