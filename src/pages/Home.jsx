@@ -215,20 +215,27 @@ export default function Home() {
         </div>
         <div className="premium-charism__inner">
           <h2>{t("home.formation.title")}</h2>
-          <p>{t("home.formation.desc")}</p>
-          <span className="home-media-cue" aria-hidden="true">
-            {t("home.formation.mediaOpen")}
-            <Icon name="ExternalLink" size={14} color={T.goldLight} />
-          </span>
+          {/* Classic Mode: only the title (no online media) */}
+          {!isClassic() && (
+            <>
+              <p>{t("home.formation.desc")}</p>
+              <span className="home-media-cue" aria-hidden="true">
+                {t("home.formation.mediaOpen")}
+                <Icon name="ExternalLink" size={14} color={T.goldLight} />
+              </span>
+            </>
+          )}
         </div>
         {/* The whole picture is one link to Dominican Friars Media (no buttons) */}
-        <a
-          className="home-media-card-link"
-          href={CONFIG.dominicanMediaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${t("home.formation.title")}: ${t("home.formation.mediaOpen")}`}
-        />
+        {!isClassic() && (
+          <a
+            className="home-media-card-link"
+            href={CONFIG.dominicanMediaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${t("home.formation.title")}: ${t("home.formation.mediaOpen")}`}
+          />
+        )}
       </section>
     </div>
   );

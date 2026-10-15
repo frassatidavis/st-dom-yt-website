@@ -11,6 +11,7 @@ export const CLASSIC_TEXT = {
         desc: "Call at the rectory to register and receive your offertory envelopes. A parish registry is kept so that the pastor and his associates can know his flock. Don't stay an anonymous parishioner!",
         ctaRegister: "Register at the Rectory",
       },
+      formation: { title: "Sunday is Just the Start" },
     },
     staff: { clickHint: "Select to learn more" },
     getInvolved: {
@@ -103,6 +104,7 @@ export const CLASSIC_TEXT = {
         desc: "Pase por la rectoría para registrarse y recibir sus sobres para la ofrenda. El registro parroquial permite que el párroco y sus colaboradores conozcan a su rebaño. ¡No sea un feligrés anónimo!",
         ctaRegister: "Regístrese en la Rectoría",
       },
+      formation: { title: "El Domingo es Solo el Comienzo" },
     },
     staff: { clickHint: "Seleccione para conocer más" },
     getInvolved: {
