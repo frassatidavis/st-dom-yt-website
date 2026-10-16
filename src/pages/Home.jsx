@@ -15,6 +15,7 @@ import { CLASSIC_HOME_PHOTOS, PHOTOS, VIDEOS } from "../constants/photos";
 import useScrollVar from "../hooks/useScrollVar";
 import BrandFlight from "../components/BrandFlight";
 import { isClassic, setClassic } from "../classic";
+import SteelSparks from "../components/SteelSparks";
 
 // The header lettering, cut from the 1960x420 "St·Dominic's" artwork: "St·Dom"
 // ends at x=1179 and "'s" starts at x=1716, so the middle "inic" is 537 wide
@@ -59,6 +60,7 @@ const classicHome = (() => {
 })();
 
 export default function Home() {
+  const registerLinksRef = useRef(null);
   const { t, i18n } = useTranslation();
   const isSpanish = i18n.language === "es";
   const intro = introForToday(VIDEOS.homeIntros);
@@ -230,7 +232,11 @@ export default function Home() {
             {t("home.involved.title")}
           </SectionTitle>
           <p>{t("home.involved.desc")}</p>
-          <div className="premium-centered-actions">
+          <div className="premium-centered-actions" ref={registerLinksRef} style={{ position: "relative" }}>
+            {/* Classic Mode: white sparks fly off a link as the pointer moves over it */}
+            {isClassic() && (
+              <SteelSparks targetRef={registerLinksRef} selector="button" color="255, 255, 255" bleed={90} />
+            )}
             <Btn variant="gold" onClick={() => navigate("/register")}>
               {t("home.involved.ctaRegister")}
             </Btn>

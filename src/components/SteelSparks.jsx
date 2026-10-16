@@ -9,8 +9,10 @@ import { useEffect, useRef } from "react";
  * Props:
  *   targetRef — the list's container (position: relative)
  *   selector  — which children throw sparks (e.g. ".ministry-card")
+ *   color     — the sparks' colour as "r, g, b" (ink by default; white on dark)
+ *   bleed     — how far (px) the sparks may fly beyond the container
  */
-export default function SteelSparks({ targetRef, selector }) {
+export default function SteelSparks({ targetRef, selector, color = "20, 16, 12", bleed = 0 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -25,11 +27,13 @@ export default function SteelSparks({ targetRef, selector }) {
     let frame = 0;
     let last = 0;
 
+    const W = () => box.offsetWidth + bleed * 2;
+    const H = () => box.offsetHeight + bleed * 2;
     const size = () => {
-      canvas.width = box.offsetWidth * dpr;
-      canvas.height = box.offsetHeight * dpr;
-      canvas.style.width = `${box.offsetWidth}px`;
-      canvas.style.height = `${box.offsetHeight}px`;
+      canvas.width = W() * dpr;
+      canvas.height = H() * dpr;
+      canvas.style.width = `${W()}px`;
+      canvas.style.height = `${H()}px`;
     };
     size();
     const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(size) : null;
@@ -39,7 +43,7 @@ export default function SteelSparks({ targetRef, selector }) {
       const dt = Math.min(0.05, (now - last) / 1000 || 0.016);
       last = now;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.clearRect(0, 0, box.offsetWidth, box.offsetHeight);
+      ctx.clearRect(0, 0, W(), H());
       for (let i = sparks.length - 1; i >= 0; i--) {
         const s = sparks[i];
         s.life -= dt;
@@ -54,7 +58,7 @@ export default function SteelSparks({ targetRef, selector }) {
         s.x += s.vx * dt;
         s.y += s.vy * dt;
         const a = Math.min(1, s.life / s.max) * 0.85;
-        ctx.strokeStyle = `rgba(20, 16, 12, ${a})`;
+        ctx.strokeStyle = `rgba(${color}, ${a})`;
         ctx.lineWidth = s.w;
         ctx.lineCap = "round";
         ctx.beginPath();
@@ -96,7 +100,7 @@ export default function SteelSparks({ targetRef, selector }) {
       const b = box.getBoundingClientRect();
       const r = row.getBoundingClientRect();
       // From under the pointer, along the row's ruled line
-      emit(e.clientX - b.left, r.bottom - b.top - 1, 2 + Math.floor(Math.random() * 2));
+      emit(e.clientX - b.left + bleed, r.bottom - b.top - 1 + bleed, 2 + Math.floor(Math.random() * 2));
     };
     const onEnter = (e) => {
       const row = e.target.closest?.(selector);
@@ -104,7 +108,7 @@ export default function SteelSparks({ targetRef, selector }) {
       if (!row || row.contains(e.relatedTarget)) return;
       const b = box.getBoundingClientRect();
       const r = row.getBoundingClientRect();
-      emit((e.clientX || r.left + r.width / 2) - b.left, r.bottom - b.top - 1, 7);
+      emit((e.clientX || r.left + r.width / 2) - b.left + bleed, r.bottom - b.top - 1 + bleed, 7);
     };
 
     box.addEventListener("pointermove", onMove);
@@ -115,13 +119,13 @@ export default function SteelSparks({ targetRef, selector }) {
       box.removeEventListener("pointermove", onMove);
       box.removeEventListener("pointerover", onEnter);
     };
-  }, [targetRef, selector]);
+  }, [targetRef, selector, color, bleed]);
 
   return (
     <canvas
       ref={canvasRef}
       aria-hidden="true"
-      style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 2 }}
+      style={{ position: "absolute", left: -bleed, top: -bleed, pointerEvents: "none", zIndex: 2 }}
     />
   );
 }
