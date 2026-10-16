@@ -13,7 +13,7 @@ export const CLASSIC_TEXT = {
         title: "Be a Hero. Register Your Family.",
       },
       welcome: { title: "Laudare, Benedicere, Praedicare" },
-      formation: { title: "Sunday is Just the Start" },
+      formation: { title: "Sunday Will Never Be the Same" },
     },
     getInvolved: {
       clickHint: "Select to learn more",
@@ -145,7 +145,7 @@ export const CLASSIC_TEXT = {
         title: "Sea un héroe. Registre a su familia.",
       },
       welcome: { title: "Laudare, Benedicere, Praedicare" },
-      formation: { title: "El Domingo es Solo el Comienzo" },
+      formation: { title: "El domingo nunca volverá a ser igual" },
     },
     getInvolved: {
       clickHint: "Seleccione para conocer más",
