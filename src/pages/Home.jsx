@@ -185,6 +185,17 @@ export default function Home() {
 
       {/* Domini canis — the dog with the torch from St. Dominic's mother's dream */}
       <div className="home-dog-divider">
+        {/* Classic Mode: the parish's Dominican crest in the dog's place */}
+        {isClassic() ? (
+          <img
+            src={PHOTOS.stDomCrestLight}
+            alt="The St. Dominic parish crest"
+            width={130}
+            height={180}
+            decoding="async"
+            style={{ height: 150, width: "auto", filter: "brightness(0)" }}
+          />
+        ) : (
         <a href="https://dominicanajournal.org/essay/im-a-dog/" target="_blank" rel="noopener noreferrer">
           <img
             ref={dogRef}
@@ -196,6 +207,7 @@ export default function Home() {
             decoding="async"
           />
         </a>
+        )}
       </div>
 
       <Section bg={T.cream}>
