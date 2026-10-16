@@ -2848,3 +2848,23 @@ html.classic .kicker,
 html.classic main [style*="all-small-caps"]:has(+ h1, + h2) {
   display: none !important;
 }
+/* Classic: the Register / Recent Bulletins buttons on Home as quiet text
+   links — spaced capitals with a thin rule under them */
+html.classic .premium-member-cta .premium-centered-actions {
+  gap: 36px;
+}
+html.classic .premium-member-cta .premium-centered-actions button {
+  background: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+  padding: 0 0 4px !important;
+  min-height: 0 !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  letter-spacing: 0.14em !important;
+  box-shadow: none !important;
+}
+html.classic .premium-member-cta .premium-centered-actions button:hover,
+html.classic .premium-member-cta .premium-centered-actions button:focus-visible {
+  border-bottom-color: #fff !important;
+}
