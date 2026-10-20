@@ -187,7 +187,8 @@ export default function MuralReveal({ title, src, alt, caption, position = "50% 
         y = wy + wh * ZOOM_FRAME_Y - (f.top + f.height / 2) * SZ;
       }
       const scale = size / box;
-      stackRef.current.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+      // A 2D move: a 3D one draws the mural black under Classic Mode's grey filter
+      stackRef.current.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
       stackRef.current.style.setProperty("--scale", scale.toFixed(4));
       // The window: the header's box at the top, the space it fills when open
       const top = wy * e;
@@ -315,7 +316,10 @@ export default function MuralReveal({ title, src, alt, caption, position = "50% 
               alt={alt}
               loading="eager"
               fetchPriority="high"
-              onLoad={() => setLoaded(true)}
+              onLoad={() => {
+                setLoaded(true);
+                relayoutRef.current?.();
+              }}
               className="mural-reveal__picture"
               style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s ease, filter 0.6s ease" }}
             />

@@ -2524,8 +2524,14 @@ html.classic {
   --radius-card: 0;
   --radius-modal: 0;
 }
+html.classic,
 html.classic body {
-  background: var(--paper);
+  /* the paper's own grey (the page is greyed part by part; this shows at
+     its edges) */
+  background: #ececec;
+}
+html.classic body {
+  background: #ececec;
   color: var(--ink);
   font-family: var(--font-body);
 }
@@ -2544,13 +2550,8 @@ html.classic .route-map__list button:not(.has-photo) {
   background: var(--paper) !important;
 }
 
-/* Every photograph in black and white (the parish's lettering keeps its ink) */
-html.classic img:not([src*="/branding/"]),
-html.classic video,
-html.classic .sacrament-card,
-html.classic .route-map__list button.has-photo {
-  filter: grayscale(1) contrast(1.06) !important;
-}
+/* Every photograph is black and white through the grey filter on each part
+   of the page (see "everything in greyscale" below), not a filter of its own */
 
 /* Type: one period sans-serif throughout; labels in spaced capitals */
 html.classic h1,
@@ -2651,19 +2652,11 @@ html.classic .classic-years {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Classic: the years go under the lettering; photo headers fully grey
-   (their scrims are tinted); no intro video, so no Skip/Replay */
+/* Classic: the years go under the lettering; no intro video, so no
+   Skip/Replay */
 html.classic .premium-hero__center {
   flex-direction: column;
   align-items: center;
-}
-html.classic .premium-page-header,
-html.classic .photo-backdrop__layer,
-html.classic .mural-reveal__window,
-html.classic .stone-finale__stage,
-html.classic .inscription-flight,
-html.classic .premium-member-cta--photo {
-  filter: grayscale(1);
 }
 html.classic .hero-intro-control {
   display: none;
@@ -2674,21 +2667,13 @@ html.classic .premium-hero__logo img {
   display: none;
 }
 /* Classic: everything in greyscale — text, colours, buttons, photos, map —
-   through a see-through grey layer over the whole screen (a filter on the
-   page itself would break its pop-up windows)... */
-html.classic body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 2147483000;
-  pointer-events: none;
-  -webkit-backdrop-filter: grayscale(1);
-  backdrop-filter: grayscale(1);
-}
-/* ...all but the bottom bar's switch back to 2026, which sits above that
-   grey layer in maroon */
-html.classic .parish-action-bar {
-  z-index: 2147483100;
+   by greying each part of the page (header, page, footer, and anything
+   shown over the page) but the bottom bar's switch back to 2026, which
+   stays maroon. (A grey layer over the page drew some photos black in
+   Chrome, and a filter on the whole page can't leave one part in colour.) */
+html.classic #root > div > :not(.parish-action-bar),
+html.classic body > :not(#root) {
+  filter: grayscale(1);
 }
 html.classic .parish-action-bar__item {
   background: var(--color-burgundy) !important;
@@ -2886,4 +2871,8 @@ html.classic .premium-member-cta .premium-centered-actions button:focus-visible 
 .footer-classic-card a {
   color: inherit;
   text-decoration: none;
+}
+html.classic .ministry-modal-close {
+  width: auto !important;
+  padding: 0 10px !important;
 }

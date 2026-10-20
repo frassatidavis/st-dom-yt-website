@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { createPortal } from "react-dom";
 import { T } from "../constants/theme";
 import { PHOTOS } from "../constants/photos";
 import { Section, SectionTitle } from "../components/Section";
@@ -155,7 +156,7 @@ export default function Gallery() {
       </Section>
 
       {/* ════ Lightbox Modal ════ */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && createPortal(
         <div
           onClick={closeLightbox}
           style={{
@@ -225,7 +226,8 @@ export default function Gallery() {
           >
             {t(photos[lightboxIndex].alt)}
           </p>
-        </div>
+        </div>,
+        document.body
       )}
 
       <style>{`

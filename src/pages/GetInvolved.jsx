@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
 import { T } from "../constants/theme";
 import { CONFIG } from "../constants/config";
 import { Section, SectionTitle } from "../components/Section";
@@ -317,14 +318,14 @@ export default function GetInvolved() {
       </section>
 
       {/* ════ Ministry Modal ════ */}
-      {selected && (
+      {selected && createPortal(
         <div
           className="ministry-modal-backdrop"
           onClick={(e) => e.target === e.currentTarget && close()}
         >
           <div className="ministry-modal" role="dialog" aria-modal="true">
             <button className="ministry-modal-close" onClick={close} aria-label="Close">
-              <X size={18} color="#fff" />
+              {isClassic() ? <span className="classic-word-button" style={{ color: "#fff", fontSize: 11 }}>{t("classic.close")}</span> : <X size={18} color="#fff" />}
             </button>
 
             {/* Header with accent color */}
@@ -447,7 +448,8 @@ export default function GetInvolved() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
