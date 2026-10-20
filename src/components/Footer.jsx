@@ -130,59 +130,77 @@ export default function Footer() {
           borderBottom: "1px solid rgba(255,255,255,0.12)",
         }}
       >
-        <div style={{ flex: "1 1 380px", maxWidth: 560 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(28px, 3.4vw, 38px)",
-              fontWeight: 700,
-              lineHeight: 1.1,
-              letterSpacing: "var(--tracking-display)",
-              color: T.goldLight,
-              marginBottom: 14,
-            }}
-          >
-            St. Dominic Catholic Church
-          </p>
-          <p style={{ fontSize: 15, lineHeight: 1.8, maxWidth: "52ch" }}>
-            {t("footer.description")}
-          </p>
+        {/* Classic Mode: just the church's name, address, telephone and hours */}
+        {isClassic() ? (
+          <div className="footer-classic-card" style={{ flex: "1 1 380px", maxWidth: 560 }}>
+            <p className="footer-classic-card__name">St. Dominic Church</p>
+            <p>
+              {CONFIG.address}
+              <br />
+              {CONFIG.city}, {CONFIG.state} {CONFIG.zip}
+            </p>
+            <p>
+              <a href={CONFIG.phoneLink}>{CONFIG.phone}</a>
+            </p>
+            <p>
+              {t("footer.cards.hoursDays")}, {t("footer.cards.hoursTime")}
+            </p>
+          </div>
+        ) : (
+          <div style={{ flex: "1 1 380px", maxWidth: 560 }}>
+            <p
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(28px, 3.4vw, 38px)",
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: "var(--tracking-display)",
+                color: T.goldLight,
+                marginBottom: 14,
+              }}
+            >
+              St. Dominic Catholic Church
+            </p>
+            <p style={{ fontSize: 15, lineHeight: 1.8, maxWidth: "52ch" }}>
+              {t("footer.description")}
+            </p>
 
-          {/* Visit / call / office hours / email */}
-          <address className="footer-contact">
-            {[
-              {
-                key: "visit",
-                value: `${CONFIG.address}, ${CONFIG.city}, ${CONFIG.state} ${CONFIG.zip}`,
-                href: `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`,
-              },
-              { key: "call", value: CONFIG.phone, href: CONFIG.phoneLink },
-              { key: "hours", value: `${t("footer.cards.hoursDays")} · ${t("footer.cards.hoursTime")}` },
-              { key: "email", value: CONFIG.email, href: `mailto:${CONFIG.email}` },
-            ].map((item) => {
-              const body = (
-                <>
-                  <span className="footer-contact__label">{t(`footer.cards.${item.key}Title`)}</span>
-                  <span className="footer-contact__value">{item.value}</span>
-                </>
-              );
-              return item.href ? (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className="footer-contact__item"
-                  {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                >
-                  {body}
-                </a>
-              ) : (
-                <div key={item.key} className="footer-contact__item">
-                  {body}
-                </div>
-              );
-            })}
-          </address>
-        </div>
+            {/* Visit / call / office hours / email */}
+            <address className="footer-contact">
+              {[
+                {
+                  key: "visit",
+                  value: `${CONFIG.address}, ${CONFIG.city}, ${CONFIG.state} ${CONFIG.zip}`,
+                  href: `https://www.google.com/maps/search/?api=1&query=${CONFIG.mapsQuery}`,
+                },
+                { key: "call", value: CONFIG.phone, href: CONFIG.phoneLink },
+                { key: "hours", value: `${t("footer.cards.hoursDays")} · ${t("footer.cards.hoursTime")}` },
+                { key: "email", value: CONFIG.email, href: `mailto:${CONFIG.email}` },
+              ].map((item) => {
+                const body = (
+                  <>
+                    <span className="footer-contact__label">{t(`footer.cards.${item.key}Title`)}</span>
+                    <span className="footer-contact__value">{item.value}</span>
+                  </>
+                );
+                return item.href ? (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    className="footer-contact__item"
+                    {...(item.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  >
+                    {body}
+                  </a>
+                ) : (
+                  <div key={item.key} className="footer-contact__item">
+                    {body}
+                  </div>
+                );
+              })}
+            </address>
+          </div>
+        )}
 
         {/* Dominican crest opposite the parish identity */}
         <div className="footer-mass" style={{ flex: "0 1 280px" }}>
