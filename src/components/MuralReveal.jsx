@@ -4,7 +4,7 @@ import { ChevronDown, X } from "lucide-react";
 import ResponsivePicture from "./ResponsivePicture";
 import DominicanDivider from "./DominicanDivider";
 import { MURAL_MAP, MURAL_MAP_IDS, MURAL_MAP_SIZE } from "../data/muralSaintMap";
-import { reducedMotionQuery } from "../classic";
+import { isClassic, reducedMotionQuery } from "../classic";
 
 // The header sticks just below the shrunken (scrolled) site header
 const STICKY_TOP = 64;
@@ -402,7 +402,11 @@ export default function MuralReveal({ title, src, alt, caption, position = "50% 
             aria-labelledby="mural-reveal-card-title"
           >
             <button ref={closeRef} type="button" className="mural-reveal__close" onClick={close} aria-label={t("friars.saints.close")}>
-              <X size={18} aria-hidden="true" />
+              {isClassic() ? (
+                <span className="classic-word-button" style={{ color: "#fff", fontSize: 11 }}>{t("classic.close")}</span>
+              ) : (
+                <X size={18} aria-hidden="true" />
+              )}
             </button>
             <h2 id="mural-reveal-card-title">{spot.name}</h2>
             <p>{spot.bio}</p>

@@ -2876,3 +2876,12 @@ html.classic .ministry-modal-close {
   width: auto !important;
   padding: 0 10px !important;
 }
+/* Classic: the one movement kept — the mural glides in on a chosen saint
+   (and back out), as in Modern Mode */
+html.classic .mural-reveal__stack.is-zooming {
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+}
+html.classic .mural-reveal__close {
+  width: auto !important;
+  padding: 0 10px !important;
+}
