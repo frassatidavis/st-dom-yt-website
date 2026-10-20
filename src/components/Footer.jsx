@@ -69,6 +69,7 @@ const FOOTER_GROUPS = [
       { to: "/about", key: "about" },
       { to: "/history", key: "history", notClassic: true },
       { to: "/architecture", key: "architecture" },
+      { to: "/dominican-friars", key: "dominicanFriars" },
       { to: "/staff", key: "staff", notClassic: true },
     ],
   },
