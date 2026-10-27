@@ -33,6 +33,7 @@ const APPS_SCRIPT_URL =
 const ALLOWED_ORIGINS = [
   "https://saintdominic.org",
   "https://www.saintdominic.org",
+  "https://frassatidavis.github.io",
   "https://jmmarquez2025.github.io",
 ];
 // ──────────────────────────────────────────────────────────────────

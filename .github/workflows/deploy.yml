@@ -16,7 +16,7 @@ env:
   # Stays on the GitHub Pages project URL until the saintdominic.org cutover:
   # then set the repository variable VITE_SITE_URL=https://saintdominic.org
   # and re-run this workflow (docs/domain-transfer.md).
-  VITE_SITE_URL: ${{ vars.VITE_SITE_URL || 'https://jmmarquez2025.github.io/st-dom-yt-website' }}
+  VITE_SITE_URL: ${{ vars.VITE_SITE_URL || 'https://frassatidavis.github.io/st-dom-yt-website' }}
   # Diocesan's bulletin-widget key for the parish (adds the PDF link and past
   # issues to /bulletin). Without it the page still shows the weekly cover.
   VITE_DISCOVERMASS_KEY: ${{ vars.VITE_DISCOVERMASS_KEY }}

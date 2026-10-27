@@ -27,7 +27,7 @@ function cloudflareWebAnalytics() {
 
 // The site's public URL decides the path it is served under:
 // https://saintdominic.org → "/", the GitHub Pages project URL
-// (https://jmmarquez2025.github.io/st-dom-yt-website) → "/st-dom-yt-website/".
+// (https://frassatidavis.github.io/st-dom-yt-website) → "/st-dom-yt-website/".
 function basePathFor(siteUrl) {
   const path = new URL(siteUrl).pathname.replace(/\/$/, "");
   return `${path}/`;
